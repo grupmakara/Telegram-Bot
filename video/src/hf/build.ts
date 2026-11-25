@@ -135,11 +135,12 @@ function sceneComposition(cid: string, scene: Scene, lines: RelLine[], dur: numb
     const sp = scene.karakterler.find((c) => c.id === lines[0]?.line.kim);
     js.push(`tl.fromTo("#${cid}-push", { scale: 1 }, { scale: 1.3, duration: 0.6, ease: "power2.out", transformOrigin: "${Math.round((sp?.x ?? 0.5) * W)}px 820px" }, 0);`);
   } else {
+    js.push(`tl.set("#${cid}-push", { scale: 1, transformOrigin: "50% 50%" }, 0);`);
     for (const l of lines) {
       const sp = scene.karakterler.find((c) => c.id === l.line.kim);
       if (!sp || l.t1 - l.t0 < 2.5) continue;
       const o = `${Math.round(sp.x * W)}px 900px`;
-      js.push(`tl.fromTo("#${cid}-push", { scale: 1 }, { scale: 1.14, duration: 0.45, ease: "power2.out", transformOrigin: "${o}" }, ${l.t0});`);
+      js.push(`tl.to("#${cid}-push", { scale: 1.14, duration: 0.45, ease: "power2.out", transformOrigin: "${o}" }, ${l.t0});`);
       js.push(`tl.to("#${cid}-push", { scale: 1, duration: 0.4, ease: "power2.inOut" }, ${r3(l.t1 - 0.4)});`);
     }
   }
