@@ -45,9 +45,34 @@ export const BackHair: React.FC<{ look: Look }> = ({ look }) => {
   return null;
 };
 
-export const Face: React.FC<{ look: Look; ifade: Ifade; mouthOpen: number; blink: boolean; look_dx: number }> = ({ look, ifade, mouthOpen, blink, look_dx }) => {
+export const Face: React.FC<{ look: Look; ifade: Ifade; mouthOpen: number; blink: boolean; look_dx: number; all?: boolean }> = ({ look, ifade, mouthOpen, blink, look_dx, all }) => {
   const brows = BROWS[ifade];
   const lidCover = ifade === 'sinsi' ? 0.45 : ifade === 'ofkeli' ? 0.3 : 0;
+  const renderEyes = (blink: boolean) =>
+    EYES.map((x, i) => {
+          if (look.eyepatch && i === 1) return null;
+          if (blink) return <path key={x} d={`M${x - 20},${EYE_Y + 2} Q${x},${EYE_Y + 12} ${x + 20},${EYE_Y + 2}`} fill="none" {...S} />;
+          return (
+            <g key={x}>
+              <ellipse cx={x} cy={EYE_Y} rx={20} ry={24} fill="#fff" {...S} />
+              <circle cx={x + look_dx} cy={EYE_Y + 3} r={10} fill="#3b2516" />
+              <circle cx={x + look_dx + 3} cy={EYE_Y - 1} r={3} fill="#fff" />
+              {lidCover > 0 && (
+                <path d={`M${x - 22},${EYE_Y - 24 + 48 * lidCover} L${x - 22},${EYE_Y - 30} L${x + 22},${EYE_Y - 30} L${x + 22},${EYE_Y - 24 + 48 * lidCover} Z`} fill={look.skin} stroke="none" />
+              )}
+              {lidCover > 0 && <line x1={x - 20} x2={x + 20} y1={EYE_Y - 24 + 48 * lidCover} y2={EYE_Y - 24 + 48 * lidCover} {...S} />}
+              {look.female && <path d={`M${x + (i ? 16 : -16)},${EYE_Y - 18} l${i ? 8 : -8},-8`} {...S} />}
+            </g>
+          );
+        });
+  const renderMouth = (mouthOpen: number) =>
+    mouthOpen > 0.05 ? (
+          <ellipse cx={200} cy={278} rx={17} ry={4 + mouthOpen * 13} fill="#5a1e1e" {...S} strokeWidth={4} />
+        ) : ifade === 'saskin' ? (
+          <ellipse cx={200} cy={280} rx={9} ry={11} fill="#5a1e1e" {...S} strokeWidth={4} />
+        ) : (
+          <path d={MOUTH_CLOSED[ifade]} fill="none" stroke={look.female ? '#b8433f' : INK} strokeWidth={look.female ? 7 : 5} strokeLinecap="round" />
+        );
   return (
     <g>
       {/* kulaklar */}
@@ -79,22 +104,14 @@ export const Face: React.FC<{ look: Look; ifade: Ifade; mouthOpen: number; blink
       {look.beard === 'short' && <path d="M104,212 Q108,336 200,350 Q292,336 296,212 Q280,300 200,302 Q120,300 104,212 Z" fill={look.beardColor} {...S} />}
       {look.beard === 'full' && <path d="M100,205 Q92,392 200,420 Q308,392 300,205 Q284,304 200,306 Q116,304 100,205 Z" fill={look.beardColor} {...S} />}
       {/* gözler */}
-      {EYES.map((x, i) => {
-        if (look.eyepatch && i === 1) return null;
-        if (blink) return <path key={x} d={`M${x - 20},${EYE_Y + 2} Q${x},${EYE_Y + 12} ${x + 20},${EYE_Y + 2}`} fill="none" {...S} />;
-        return (
-          <g key={x}>
-            <ellipse cx={x} cy={EYE_Y} rx={20} ry={24} fill="#fff" {...S} />
-            <circle cx={x + look_dx} cy={EYE_Y + 3} r={10} fill="#3b2516" />
-            <circle cx={x + look_dx + 3} cy={EYE_Y - 1} r={3} fill="#fff" />
-            {lidCover > 0 && (
-              <path d={`M${x - 22},${EYE_Y - 24 + 48 * lidCover} L${x - 22},${EYE_Y - 30} L${x + 22},${EYE_Y - 30} L${x + 22},${EYE_Y - 24 + 48 * lidCover} Z`} fill={look.skin} stroke="none" />
-            )}
-            {lidCover > 0 && <line x1={x - 20} x2={x + 20} y1={EYE_Y - 24 + 48 * lidCover} y2={EYE_Y - 24 + 48 * lidCover} {...S} />}
-            {look.female && <path d={`M${x + (i ? 16 : -16)},${EYE_Y - 18} l${i ? 8 : -8},-8`} {...S} />}
-          </g>
-        );
-      })}
+      {all ? (
+        <>
+          <g className="eo">{renderEyes(false)}</g>
+          <g className="ec" opacity={0}>{renderEyes(true)}</g>
+        </>
+      ) : (
+        renderEyes(blink)
+      )}
       {look.eyepatch && (
         <g>
           <path d="M214,178 L98,150 M262,182 L302,166" stroke={INK} strokeWidth={5} />
@@ -134,12 +151,13 @@ export const Face: React.FC<{ look: Look; ifade: Ifade; mouthOpen: number; blink
         <path d="M200,252 Q170,244 150,268 Q176,262 200,262 Q224,262 250,268 Q230,244 200,252 Z" fill={look.beard === 'none' ? look.hairColor : look.beardColor} {...S} strokeWidth={4} />
       )}
       {/* ağız */}
-      {mouthOpen > 0.05 ? (
-        <ellipse cx={200} cy={278} rx={17} ry={4 + mouthOpen * 13} fill="#5a1e1e" {...S} strokeWidth={4} />
-      ) : ifade === 'saskin' ? (
-        <ellipse cx={200} cy={280} rx={9} ry={11} fill="#5a1e1e" {...S} strokeWidth={4} />
+      {all ? (
+        <>
+          <g className="mc">{renderMouth(0)}</g>
+          <g className="mo" opacity={0}>{renderMouth(0.8)}</g>
+        </>
       ) : (
-        <path d={MOUTH_CLOSED[ifade]} fill="none" stroke={look.female ? '#b8433f' : INK} strokeWidth={look.female ? 7 : 5} strokeLinecap="round" />
+        renderMouth(mouthOpen)
       )}
     </g>
   );

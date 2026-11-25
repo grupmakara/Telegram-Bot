@@ -24,17 +24,19 @@ export type PuppetProps = {
   mouthOpen?: number;
   frame: number;
   height: number;
+  /** Tüm göz/ağız durumlarını sınıflarla çiz (HyperFrames GSAP için); hareket yok. */
+  all?: boolean;
 };
 
-export const Puppet: React.FC<PuppetProps> = ({ id, ifade = 'normal', poz = 'durus', yon = 'sag', mouthOpen = 0, frame, height }) => {
+export const Puppet: React.FC<PuppetProps> = ({ id, ifade = 'normal', poz = 'durus', yon = 'sag', mouthOpen = 0, frame, height, all }) => {
   const look = CHARACTERS[id];
   const seed = seedOf(id);
   const period = 100 + (seed % 30);
-  const blink = (frame + seed * 7) % period < 4;
-  const breathe = Math.sin(frame / 18 + seed) * 4;
-  const sway = Math.sin(frame / 40 + seed) * 1.2 + mouthOpen * 1.5;
+  const blink = !all && (frame + seed * 7) % period < 4;
+  const breathe = all ? 0 : Math.sin(frame / 18 + seed) * 4;
+  const sway = all ? 0 : Math.sin(frame / 40 + seed) * 1.2 + mouthOpen * 1.5;
   const [gu, gl] = POSES[poz];
-  const idle = Math.sin(frame / 25 + seed) * 2;
+  const idle = all ? 0 : Math.sin(frame / 25 + seed) * 2;
   const width = (height * VIEW.w) / VIEW.h;
   const flip = yon === 'sol' ? 'translate(400,0) scale(-1,1)' : '';
 
@@ -49,7 +51,7 @@ export const Puppet: React.FC<PuppetProps> = ({ id, ifade = 'normal', poz = 'dur
         </g>
         <g transform={`translate(0,${breathe}) rotate(${sway},200,330)`}>
           <BackHair look={look} />
-          <Face look={look} ifade={ifade} mouthOpen={mouthOpen} blink={blink} look_dx={5} />
+          <Face look={look} ifade={ifade} mouthOpen={mouthOpen} blink={blink} look_dx={5} all={all} />
           <Headwear look={look} />
         </g>
         <g transform={`translate(275,${370 + breathe * 0.4}) scale(-1,1)`}>
