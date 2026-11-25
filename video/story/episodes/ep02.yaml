@@ -8,28 +8,28 @@ sahneler:
     satirlar:
       - { kim: zeynep, metin: "Efendim? Bana bir şey mi dediniz?", ifade: saskin }
       - { kim: murad, metin: "Yok… Bir an birine benzettim. Adın nedir kızım?", poz: el_gogus }
-      - { kim: zeynep, metin: "Gerçek adımı bilmem efendim. Paşam bana Gülfem der. Küçükken bu konağa getirilmişim." }
-      - { kim: anlatici, metin: "Zeynep kim olduğunu hatırlamıyordu. Bekir onun adını bile elinden almıştı." }
+      - { kim: zeynep, metin: "Adımı bilmem efendim. Paşam bana Gülfem der." }
+      - { kim: anlatici, metin: "Zeynep geçmişini hatırlamıyordu. Bekir adını bile elinden almıştı." }
       - { kim: murad, metin: "Gülfem… Peki. Paşanı bekletmeyelim.", ifade: uzgun }
   - mekan: konak_salon
     gece: true
     karakterler: [{ id: murad, x: 0.3 }, { id: bekir, x: 0.72 }]
     satirlar:
-      - { kim: bekir, metin: "Hoş geldin Murad Ağa! İstanbul'da yeni bir altın kokusu varsa, ilk ben duyarım.", ifade: gulumseyen, poz: kol_kaldir }
+      - { kim: bekir, metin: "Hoş geldin Murad Ağa! İstanbul'da altın kokusunu ilk ben duyarım.", ifade: gulumseyen, poz: kol_kaldir }
       - { kim: murad, metin: "Paşam, ben tüccarım. Altını seven, altını getireni de sever.", ifade: gulumseyen }
       - { kim: bekir, metin: "Söyle bakalım, nereden gelirsin? Hangi diyardan?", ifade: sinsi }
-      - { kim: murad, metin: "Venedik'ten, Mısır'dan, Kırım'dan… Deniz beni nereye götürürse." }
+      - { kim: murad, metin: "Venedik'ten, Mısır'dan… Deniz nereye götürürse." }
       - { kim: bekir, metin: "Bu gözleri bir yerden tanıyorum, Murad Ağa…", ifade: sinsi, poz: isaret }
       - { kim: murad, metin: "Bütün tüccarların gözü aynıdır paşam. Hepsi kâr arar.", ifade: sinsi }
-      - { kim: bekir, metin: "Ha ha ha! Hoşuma gittin tüccar. Seninle iyi iş yaparız.", ifade: gulumseyen }
+      - { kim: bekir, metin: "Ha ha ha! Hoşuma gittin tüccar.", ifade: gulumseyen }
   - mekan: lale_bahcesi
     gece: true
     karakterler: [{ id: murad, x: 0.3 }, { id: nilufer, x: 0.7 }]
     satirlar:
-      - { kim: anlatici, metin: "Sofradan kalkan Murad, bahçede tek başına nefes almak istedi. Ama yalnız değildi." }
+      - { kim: anlatici, metin: "Murad bahçeye çıktı. Ama yalnız değildi." }
       - { kim: nilufer, metin: "Kimsiniz? Burası harem bahçesi, yabancılar giremez!", ifade: ofkeli, poz: isaret }
       - { kim: murad, metin: "Affedin hanımım. Lalelerin kokusu beni buraya kadar getirdi.", ifade: saskin, poz: el_gogus }
-      - { kim: nilufer, metin: "Babamın misafirlerini hep sıkıcı bulurum. Ama siz… farklısınız.", ifade: gulumseyen }
+      - { kim: nilufer, metin: "Babamın misafirleri hep sıkıcıdır. Ama siz… farklısınız.", ifade: gulumseyen }
       - { kim: murad, metin: "Babanız mı? Yoksa siz…", ifade: saskin }
 son: { kim: nilufer, metin: "Ben Nilüfer. Vezir Kara Bekir Paşa'nın kızıyım.", ifade: gulumseyen }
 aciklama: |
