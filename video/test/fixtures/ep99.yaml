@@ -1,0 +1,17 @@
+bolum: 99
+baslik: "Deneme"
+kanca: { kim: emir, metin: "On yıl önce beni öldürdüler." }
+sahneler:
+  - mekan: halic_liman
+    karakterler: [{ id: emir, x: 0.35 }, { id: hizir, x: 0.7, yon: sol }]
+    satirlar:
+      - { kim: anlatici, metin: "İstanbul, 1720." }
+      - { kim: hizir, metin: "Hazır mısın evlat?" }
+      - { kim: emir, metin: "On yıldır hazırım.", ifade: ofkeli }
+  - mekan: konak_salon
+    karakterler: [{ id: zeynep, x: 0.5 }]
+    satirlar:
+      - { kim: zeynep, metin: "Kimsiniz efendim?", ifade: saskin }
+son: { kim: emir, metin: "Zeynep?.. Sen yaşıyor musun?" }
+aciklama: "Deneme bölümü"
+etiketler: ["#laleilekan"]
