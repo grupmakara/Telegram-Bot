@@ -1,4 +1,8 @@
-# Lale ile Kan — 1. Sezon Akışı (30 bölüm)
+# Lale ile Kan — 1. Sezon Akışı
+
+> **Güncelleme (3 dk format):** Her yayın bölümü ~3 dakika ve aşağıdaki akıştan yaklaşık iki adımı kapsar.
+> Yayın 1 = adım 1–2, Yayın 2 = adım 3–4, Yayın 3 = adım 5–6 (+ 7'nin başı). Sezon ≈ 15 yayın bölümü.
+> Aşağıdaki numaralar hikâye adımlarıdır.
 
 **Öncül:** 1710'da saray kâtibi Yusuf Efendi, Vezir Kara Bekir Paşa'nın hazine yolsuzluğunu fark eder.
 Bekir onu sahte belgelerle ihanetle suçlatıp idam ettirir, konağını yaktırır. Oğlu Emir'i Hızır Reis kurtarır.

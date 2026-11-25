@@ -6,11 +6,21 @@ sahneler:
     gecmis: true
     karakterler: [{ id: yusuf, x: 0.3, ifade: uzgun }, { id: bekir, x: 0.72, ifade: sinsi }]
     satirlar:
-      - { kim: anlatici, metin: "İstanbul, 1710. Kâtip Yusuf Efendi ihanetle suçlanmıştı." }
+      - { kim: anlatici, metin: "İstanbul, 1710. Saray kâtibi Yusuf Efendi ihanetle suçlanmıştı." }
       - { kim: yusuf, metin: "Ben devletin hazinesini korudum! Asıl hırsız sensin, Bekir!", ifade: ofkeli, poz: isaret }
       - { kim: bekir, metin: "Mühür benim, hüküm benim. Senin sesin kimseye ulaşmaz.", poz: isaret }
       - { kim: yusuf, metin: "Emir… Zeynep… Sizi Allah'a emanet ediyorum.", poz: el_gogus }
       - { kim: bekir, metin: "Konağını yakın! Soyundan kimse sağ kalmasın!", ifade: ofkeli, poz: kol_kaldir }
+  - mekan: halic_liman
+    gecmis: true
+    gece: true
+    karakterler: [{ id: emir, x: 0.32, ifade: uzgun }, { id: hizir, x: 0.72 }]
+    satirlar:
+      - { kim: anlatici, metin: "O gece konak yanarken, yaşlı bir kaptan Emir'i alevlerden çıkardı." }
+      - { kim: emir, metin: "Bırak beni Reis! Kardeşim içeride kaldı!", poz: kol_kaldir }
+      - { kim: hizir, metin: "Konak çöktü evlat! Geri dönersen ikiniz de ölürsünüz!", ifade: ofkeli, poz: isaret }
+      - { kim: emir, metin: "Babamı öldürdüler… Onları asla affetmeyeceğim!", ifade: ofkeli, poz: el_gogus }
+      - { kim: hizir, metin: "O zaman yaşa. İntikam, ancak yaşayanların hakkıdır." }
   - mekan: halic_liman
     karakterler: [{ id: murad, x: 0.32 }, { id: hizir, x: 0.72 }]
     satirlar:
@@ -24,7 +34,7 @@ sahneler:
     satirlar:
       - { kim: anlatici, metin: "Vezirin konağında…" }
       - { kim: saffet, metin: "Paşam, limana zengin bir tüccar inmiş. Gemisi altınla dolu.", poz: isaret }
-      - { kim: bekir, metin: "O tüccarı yarın akşam soframa çağır.", ifade: sinsi }
+      - { kim: bekir, metin: "O tüccarı yarın akşam soframa çağır.", ifade: sinsi, poz: isaret }
       - { kim: saffet, metin: "Emredersiniz paşam.", ifade: sinsi, poz: el_gogus }
   - mekan: konak_salon
     gece: true
@@ -33,8 +43,32 @@ sahneler:
       - { kim: anlatici, metin: "Ertesi akşam…" }
       - { kim: zeynep, metin: "Hoş geldiniz efendim. Paşam sizi bekliyor, buyurun.", poz: el_gogus }
       - { kim: murad, metin: "Bu ses… Bu yüz… Olamaz.", ifade: saskin }
-son: { kim: murad, metin: "Zeynep?.. Kardeşim… Sen yaşıyor musun?", ifade: saskin }
+      - { kim: murad, metin: "Zeynep?.. Sen… Zeynep misin?", ifade: saskin, poz: isaret }
+      - { kim: zeynep, metin: "Efendim? Bana bir şey mi dediniz?", ifade: saskin }
+      - { kim: murad, metin: "Yok… Bir an birine benzettim. Adın nedir kızım?", poz: el_gogus }
+      - { kim: zeynep, metin: "Adımı bilmem efendim. Paşam bana Gülfem der." }
+      - { kim: anlatici, metin: "Zeynep geçmişini hatırlamıyordu. Bekir adını bile elinden almıştı." }
+      - { kim: murad, metin: "Gülfem… Peki. Paşanı bekletmeyelim.", ifade: uzgun }
+  - mekan: konak_salon
+    gece: true
+    karakterler: [{ id: murad, x: 0.3 }, { id: bekir, x: 0.72 }]
+    satirlar:
+      - { kim: bekir, metin: "Hoş geldin Murad Ağa! İstanbul'da altın kokusunu ilk ben duyarım.", ifade: gulumseyen, poz: kol_kaldir }
+      - { kim: murad, metin: "Paşam, ben tüccarım. Altını seven, altını getireni de sever.", ifade: gulumseyen }
+      - { kim: bekir, metin: "Bu gözleri bir yerden tanıyorum, Murad Ağa…", ifade: sinsi, poz: isaret }
+      - { kim: murad, metin: "Bütün tüccarların gözü aynıdır paşam. Hepsi kâr arar.", ifade: sinsi }
+      - { kim: bekir, metin: "Ha ha ha! Hoşuma gittin tüccar.", ifade: gulumseyen }
+  - mekan: lale_bahcesi
+    gece: true
+    karakterler: [{ id: murad, x: 0.3 }, { id: nilufer, x: 0.7 }]
+    satirlar:
+      - { kim: anlatici, metin: "Murad nefes almak için bahçeye çıktı. Ama yalnız değildi." }
+      - { kim: nilufer, metin: "Kimsiniz? Burası harem bahçesi, yabancılar giremez!", ifade: ofkeli, poz: isaret }
+      - { kim: murad, metin: "Affedin hanımım. Lalelerin kokusu beni buraya kadar getirdi.", ifade: saskin, poz: el_gogus }
+      - { kim: nilufer, metin: "Babamın misafirleri hep sıkıcıdır. Ama siz… farklısınız.", ifade: gulumseyen }
+      - { kim: murad, metin: "Babanız mı? Yoksa siz…", ifade: saskin }
+son: { kim: nilufer, metin: "Ben Nilüfer. Vezir Kara Bekir Paşa'nın kızıyım.", ifade: gulumseyen }
 aciklama: |
   On yıl önce babası idam edildi, konağı yakıldı, kendisi öldü sanıldı… Şimdi "Tüccar Murad" adıyla İstanbul'a döndü. 🌷🩸
-  Lale ile Kan — 1. Bölüm. Sizce Zeynep onu tanıyacak mı? Yorumlara yazın 👇
+  Lale ile Kan — 1. Bölüm. Sizce Murad, Nilüfer'e ne yapmalı? Yorumlara yazın 👇
 etiketler: ["#laleilekan", "#dizi", "#animasyon", "#intikam", "#osmanlı", "#laledevri", "#hikaye", "#reels", "#keşfet"]

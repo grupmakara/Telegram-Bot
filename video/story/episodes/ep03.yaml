@@ -1,43 +1,68 @@
 bolum: 3
-baslik: "İlk Hedef"
-kanca: { kim: saffet, metin: "O tüccar bir yalancı paşam! Gemisinde tek bir altın yok!", ifade: ofkeli, poz: isaret }
+baslik: "Gece Bıçağı"
+kanca: { kim: saffet, metin: "Demek sen Yusuf Efendi'nin oğlusun… Emir.", ifade: sinsi, poz: isaret }
 sahneler:
+  - mekan: konak_salon
+    gece: true
+    karakterler: [{ id: murad, x: 0.3 }, { id: zeynep, x: 0.72 }]
+    satirlar:
+      - { kim: murad, metin: "O ninniyi hatırlıyor musun Gülfem? Söyleyebilir misin?", ifade: uzgun }
+      - { kim: zeynep, metin: "Sadece birkaç kelime… Uyusun da büyüsün, ninni…", ifade: uzgun }
+      - { kim: murad, metin: "Tıpış tıpış yürüsün, ninni…", ifade: uzgun, poz: el_gogus }
+      - { kim: zeynep, metin: "Siz bu ninniyi nereden biliyorsunuz?!", ifade: saskin }
+      - { kim: murad, metin: "Annem söylerdi. Bütün İstanbul çocukları bilir bunu." }
+      - { kim: zeynep, metin: "Ama ben… annemi hiç hatırlamıyorum.", ifade: uzgun, poz: el_gogus }
+      - { kim: murad, metin: "Bir gün hatırlayacaksın. Söz veriyorum.", ifade: uzgun }
+      - { kim: anlatici, metin: "Murad gerçeği söylemek istedi. Ama tek bir yanlış adım, ikisinin de sonu olurdu." }
+  - mekan: carsi
+    gece: true
+    karakterler: [{ id: saffet, x: 0.5 }]
+    satirlar:
+      - { kim: anlatici, metin: "Bu sırada konaktan kovulan Saffet, karanlık bir köşede intikam planlıyordu." }
+      - { kim: saffet, metin: "Beni bir mektupla mı düşürdün, tüccar? Kim olduğunu öğreneceğim.", ifade: ofkeli }
+      - { kim: saffet, metin: "Gölge gibi takip edeceğim seni. Er geç bir hata yapacaksın.", ifade: sinsi, poz: isaret }
   - mekan: halic_liman
     gece: true
     karakterler: [{ id: murad, x: 0.3 }, { id: hizir, x: 0.72 }]
     satirlar:
-      - { kim: hizir, metin: "Vezirin kızına mı gönül verdin? Aklını mı kaçırdın evlat?", ifade: ofkeli, poz: isaret }
-      - { kim: murad, metin: "Gönül vermedim Reis. Ama onda babasının kötülüğünü göremedim.", ifade: uzgun }
-      - { kim: hizir, metin: "Ya Zeynep? Onu ne yapacaksın?" }
-      - { kim: murad, metin: "Onu kurtaracağım. Ama önce konağımızı yakan adamı düşüreceğim.", ifade: ofkeli, poz: el_gogus }
-      - { kim: hizir, metin: "Saffet Ağa mı?", ifade: saskin }
-      - { kim: murad, metin: "Evet. Bekir'in en açgözlü adamı.", ifade: sinsi }
+      - { kim: hizir, metin: "Saffet ortadan kayboldu evlat. Böyle adamlar kaybolunca daha tehlikelidir.", poz: isaret }
+      - { kim: murad, metin: "Bırak gelsin Reis. Sıradaki hedefim Kadı Lütfi.", ifade: sinsi }
+      - { kim: hizir, metin: "Babanın hükmünü imzalayan kadı mı?", ifade: saskin }
+      - { kim: murad, metin: "Sahte belgeye mührü o bastı. Bekir'in bütün sırlarını o bilir.", ifade: ofkeli, poz: el_gogus }
+      - { kim: hizir, metin: "Emir… Dikkatli ol. Bu şehirde duvarların bile kulağı var.", ifade: uzgun }
+      - { kim: murad, metin: "On yıldır dikkatliyim Reis. Artık sabrım kalmadı.", ifade: ofkeli }
+      - { kim: anlatici, metin: "Ve o gece, iskelenin gölgesinde biri o ismi duymuştu." }
   - mekan: carsi
-    karakterler: [{ id: saffet, x: 0.3 }, { id: murad, x: 0.72 }]
-    satirlar:
-      - { kim: anlatici, metin: "Ertesi gün, Kapalıçarşı'da…" }
-      - { kim: saffet, metin: "Murad Ağa! Paşamın misafiri çarşıda ne arar?", ifade: sinsi }
-      - { kim: murad, metin: "Sandıklarım için depo arıyorum. Malım çok kıymetli.", ifade: gulumseyen }
-      - { kim: saffet, metin: "Ne kadar kıymetli?", ifade: saskin }
-      - { kim: murad, metin: "Bir sandıkta Mısır valisinin hazinesi var. Kimseye söyleme.", ifade: sinsi, poz: el_gogus }
-      - { kim: saffet, metin: "Sırrınız bende güvende, ağam.", ifade: gulumseyen }
-  - mekan: halic_liman
     gece: true
-    karakterler: [{ id: saffet, x: 0.45 }]
+    karakterler: [{ id: saffet, x: 0.5 }]
     satirlar:
-      - { kim: anlatici, metin: "O gece Saffet, adamlarıyla gemiye gizlice girdi." }
-      - { kim: saffet, metin: "Sandık boş! Sadece bir mektup var…", ifade: saskin }
-      - { kim: saffet, metin: "Yusuf Efendi'nin konağını yakanın sonu da ateş olacak… Bu ne demek?!", ifade: ofkeli, poz: kol_kaldir }
-  - mekan: konak_salon
-    gece: true
-    karakterler: [{ id: bekir, x: 0.3 }, { id: saffet, x: 0.72 }]
+      - { kim: saffet, metin: "Emir mi? Yusuf Efendi'nin oğlu mu?!", ifade: saskin }
+      - { kim: saffet, metin: "Paşam bunu duyarsa beni geri alır… Ama önce kendi hesabımı göreceğim.", ifade: sinsi, poz: kol_kaldir }
+  - mekan: divan
+    karakterler: [{ id: lutfi, x: 0.68 }, { id: murad, x: 0.3 }]
     satirlar:
-      - { kim: saffet, metin: "O tüccar bir yalancı paşam! Gemisinde tek bir altın yok!", ifade: ofkeli, poz: isaret }
-      - { kim: bekir, metin: "Gece yarısı misafirimin gemisine mi girdin?!", ifade: ofkeli }
-      - { kim: saffet, metin: "Paşam, mektubu okuyun! Yusuf Efendi'nin adı yazıyor!", ifade: uzgun, poz: kol_kaldir }
-      - { kim: bekir, metin: "Yusuf Efendi… On yıl önce öldü o.", ifade: saskin }
-son: { kim: bekir, metin: "Yoksa… ölmeyen biri mi var?", ifade: sinsi }
+      - { kim: anlatici, metin: "Ertesi sabah Murad, mahkemede Kadı Lütfi'nin karşısındaydı." }
+      - { kim: lutfi, metin: "Tüccar Murad. Bir davan mı var?" }
+      - { kim: murad, metin: "Bir sorum var efendi. On yıl önceki bir davaya dair." }
+      - { kim: lutfi, metin: "On yıl mı? O kadar eski davaları kim hatırlar?", ifade: saskin }
+      - { kim: murad, metin: "Saray kâtibi Yusuf Efendi'nin davası. Hükmü siz vermişsiniz.", ifade: sinsi, poz: isaret }
+      - { kim: lutfi, metin: "O dava kapandı! Hain hak ettiğini buldu.", ifade: ofkeli }
+      - { kim: murad, metin: "Öyle mi? Peki o hükmün altındaki imza neden titrek, efendi?", ifade: sinsi }
+      - { kim: lutfi, metin: "Defol buradan! Muhafızlar!", ifade: ofkeli, poz: kol_kaldir }
+  - mekan: zindan
+    karakterler: [{ id: murad, x: 0.3 }, { id: saffet, x: 0.72 }]
+    satirlar:
+      - { kim: anlatici, metin: "O gece Murad'a imzasız bir haber geldi: Gülfem tehlikede. Eski zindana gel." }
+      - { kim: murad, metin: "Gülfem! Neredesin?!", ifade: ofkeli, poz: kol_kaldir }
+      - { kim: saffet, metin: "Gülfem burada değil, tüccar. Yoksa sana gerçek adınla mı seslenmeliyim?", ifade: sinsi }
+      - { kim: murad, metin: "Saffet…", ifade: saskin }
+      - { kim: saffet, metin: "Demek sen Yusuf Efendi'nin oğlusun… Emir.", ifade: sinsi, poz: isaret }
+      - { kim: murad, metin: "Babamın konağını sen yaktın. O gece kardeşim içerideydi!", ifade: ofkeli, poz: isaret }
+      - { kim: saffet, metin: "Kardeşin mi? Ha! Onu yangından ben çıkardım. Paşama hediye ettim.", ifade: gulumseyen }
+      - { kim: murad, metin: "Seni öldüreceğim, Saffet!", ifade: ofkeli, poz: el_gogus }
+      - { kim: saffet, metin: "Önce şu hançerden kurtul bakalım.", ifade: sinsi, poz: kol_kaldir }
+son: { kim: saffet, metin: "Selam söyle babana… Emir.", ifade: sinsi }
 aciklama: |
-  İlk tuzak kuruldu, ilk hedef yemi yuttu… Ama Kara Bekir artık şüpheleniyor. 🩸
-  Lale ile Kan — 3. Bölüm. Sizce Bekir gerçeği ne zaman öğrenecek? 👇
+  Gölgede biri gerçeği duydu… ve şimdi hançer Murad'ın boğazında. 🗡️
+  Lale ile Kan — 3. Bölüm. Sizce Murad bu tuzaktan nasıl kurtulacak? 👇
 etiketler: ["#laleilekan", "#dizi", "#animasyon", "#intikam", "#osmanlı", "#laledevri", "#hikaye", "#reels", "#keşfet"]
