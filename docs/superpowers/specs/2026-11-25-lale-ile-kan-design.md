@@ -1,6 +1,6 @@
 # "Lale ile Kan" — Animasyon Dizi Üretim Hattı · Tasarım
 
-Tarih: 2026-11-25 · Durum: onay bekliyor
+Tarih: 2026-11-25 · Durum: onay bekliyor (ses: Edge TTS; günlük üretim: istek üzerine)
 
 ## 1. Amaç ve neden
 
@@ -129,7 +129,9 @@ Lisans: bireysel/küçük ekip için ücretsiz.)*
 (ör. Bekir: Ahmet −15 Hz, yavaş; Emir: Ahmet normal; Hızır: Ahmet −8 Hz, yavaş; Nilüfer: Emel normal;
 Zeynep: Emel +10 Hz, hızlı). Anlatıcı: Ahmet, sakin.
 - **Ön koşul:** `speech.platform.bing.com` için ağ izni — kullanıcıya onay kartıyla sorulacak.
-- İzin verilmezse: yedek olarak `espeak-ng` ile taslak üretilir (kalite düşük; yalnız deneme).
+- Kullanıcı kararı: ücretsiz Edge sesi (ElevenLabs reddedildi). Deneme klibinde dinleyip onaylayacak;
+  beğenmezse ücretli servise geçiş yeniden konuşulur. espeak-ng yalnızca ağ izni gelene kadar geliştirme
+  sırasında yer tutucu olarak kullanılabilir, asla teslim edilmez.
 
 **Altyazı:** edge-tts kelime zaman damgalarından (WordBoundary) üretilir. Ekranın alt üçte birinde,
 beyaz kalın yazı + siyah kontur, o an söylenen kelime sarı vurgulu; konuşan karakterin adı küçük
@@ -162,6 +164,11 @@ etiketler: ["#laleilekan", "#dizi", "#animasyon", ...]
 **Üretim komutu:** `npm run bolum -- 1` → (1) her replik için TTS + kelime zamanları
 (`video/cache/`) → (2) zaman çizelgesi hesaplanır → (3) Remotion render → `video/out/ep01.mp4`
 + `ep01_kapak.png` + `ep01_aciklama.txt`.
+
+**Günlük akış (kullanıcı kararı):** Zamanlanmış görev yok. Kullanıcı her gün "sıradaki 3 bölüm"
+der; Claude bir sonraki bölümleri `season1.md` akışına ve önceki bölümlere bakarak yazar, üretir,
+gönderir. Hangi bölümde kalındığı repodaki `video/story/episodes/` dosyalarından anlaşılır; hikâye
+özeti `video/story/ozet.md`'de her bölümden sonra güncellenir (yeni oturum bağlamı için).
 
 **Teslim:** Videolar kullanıcıya dosya olarak gönderilir; senaryolar ve kod `claude/instagram-video-production-hfb69m`
 dalına commit edilir.
