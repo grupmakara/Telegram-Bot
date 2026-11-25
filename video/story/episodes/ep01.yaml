@@ -1,0 +1,40 @@
+bolum: 1
+baslik: "Ölü Adamın Dönüşü"
+kanca: { kim: murad, metin: "On yıl önce beni öldürdüler… Bugün geri döndüm.", ifade: ofkeli }
+sahneler:
+  - mekan: idam_meydani
+    gecmis: true
+    karakterler: [{ id: yusuf, x: 0.3, ifade: uzgun }, { id: bekir, x: 0.72, ifade: sinsi }]
+    satirlar:
+      - { kim: anlatici, metin: "İstanbul, 1710. Saray kâtibi Yusuf Efendi, yapmadığı bir ihanetin bedelini ödemek üzereydi." }
+      - { kim: yusuf, metin: "Ben devletin hazinesini korudum! Asıl hırsız sensin, Bekir!", ifade: ofkeli, poz: isaret }
+      - { kim: bekir, metin: "Hırsız mı? Mühür benim, hüküm benim. Senin sesin artık kimseye ulaşmaz.", poz: isaret }
+      - { kim: yusuf, metin: "Oğlum Emir… Kızım Zeynep… Sizi Allah'a emanet ediyorum.", poz: el_gogus }
+      - { kim: bekir, metin: "Konağını yakın! O kâtibin soyundan kimse sağ kalmasın!", ifade: ofkeli, poz: kol_kaldir }
+  - mekan: halic_liman
+    karakterler: [{ id: murad, x: 0.32 }, { id: hizir, x: 0.72 }]
+    satirlar:
+      - { kim: anlatici, metin: "On yıl sonra… Bir gemi, Haliç'e sessizce yanaştı." }
+      - { kim: hizir, metin: "Seni o yangından ben çıkardım evlat. Bu şehre intikam için mi döndün, ölmek için mi?" }
+      - { kim: murad, metin: "O gece Emir de konakla birlikte yandı, Reis. Artık ben Tüccar Murad'ım.", ifade: ofkeli, poz: el_gogus }
+      - { kim: hizir, metin: "Kara Bekir şimdi vezir. Bir sözüyle kelle uçuruyor. Dikkatli ol.", poz: isaret }
+      - { kim: murad, metin: "Ben de ondan en sevdiği şeyleri alacağım. Altınını, şanını… ve adını.", ifade: sinsi }
+  - mekan: konak_salon
+    karakterler: [{ id: bekir, x: 0.3 }, { id: saffet, x: 0.72 }]
+    satirlar:
+      - { kim: anlatici, metin: "Aynı saatlerde, vezirin konağında…" }
+      - { kim: saffet, metin: "Paşam, limana zengin bir tüccar inmiş. Adı Murad. Gemisi altınla doluymuş.", poz: isaret }
+      - { kim: bekir, metin: "Altınla dolu gemi sahipsiz kalmaz, Saffet. Bu Murad'ı yarın akşam soframa çağır.", ifade: sinsi }
+      - { kim: saffet, metin: "Emredersiniz paşam.", ifade: sinsi, poz: el_gogus }
+  - mekan: konak_salon
+    gece: true
+    karakterler: [{ id: murad, x: 0.3 }, { id: zeynep, x: 0.72 }]
+    satirlar:
+      - { kim: anlatici, metin: "Ertesi akşam, Murad düşmanının kapısından içeri adım attı." }
+      - { kim: zeynep, metin: "Hoş geldiniz efendim. Paşam sizi bekliyor, buyurun.", poz: el_gogus }
+      - { kim: murad, metin: "Bu ses… Bu yüz… Olamaz.", ifade: saskin }
+son: { kim: murad, metin: "Zeynep?.. Kardeşim… Sen yaşıyor musun?", ifade: saskin }
+aciklama: |
+  On yıl önce babası idam edildi, konağı yakıldı, kendisi öldü sanıldı… Şimdi "Tüccar Murad" adıyla İstanbul'a döndü. 🌷🩸
+  Lale ile Kan — 1. Bölüm. Sizce Zeynep onu tanıyacak mı? Yorumlara yazın 👇
+etiketler: ["#laleilekan", "#dizi", "#animasyon", "#intikam", "#osmanlı", "#laledevri", "#hikaye", "#reels", "#keşfet"]

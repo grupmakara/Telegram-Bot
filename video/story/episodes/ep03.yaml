@@ -1,0 +1,43 @@
+bolum: 3
+baslik: "İlk Hedef"
+kanca: { kim: saffet, metin: "O tüccar bir yalancı paşam! Gemisinde tek bir altın yok!", ifade: ofkeli, poz: isaret }
+sahneler:
+  - mekan: halic_liman
+    gece: true
+    karakterler: [{ id: murad, x: 0.3 }, { id: hizir, x: 0.72 }]
+    satirlar:
+      - { kim: hizir, metin: "Vezirin kızına mı gönül verdin? Aklını mı kaçırdın evlat?", ifade: ofkeli, poz: isaret }
+      - { kim: murad, metin: "Gönül vermedim Reis. Sadece… onun gözlerinde babasının kötülüğünü göremedim.", ifade: uzgun }
+      - { kim: hizir, metin: "Ya Zeynep? Onu ne yapacaksın?" }
+      - { kim: murad, metin: "Onu o konaktan çıkaracağım. Ama önce, babamın konağını yakan adamı düşüreceğim.", ifade: ofkeli, poz: el_gogus }
+      - { kim: hizir, metin: "Saffet Ağa mı?", ifade: saskin }
+      - { kim: murad, metin: "Evet. Bekir'in sağ kolu. Hem de en açgözlüsü.", ifade: sinsi }
+  - mekan: carsi
+    karakterler: [{ id: saffet, x: 0.3 }, { id: murad, x: 0.72 }]
+    satirlar:
+      - { kim: anlatici, metin: "Ertesi gün, Kapalıçarşı'da…" }
+      - { kim: saffet, metin: "Murad Ağa! Paşamın misafiri çarşıda ne arar?", ifade: sinsi }
+      - { kim: murad, metin: "Gemimdeki sandıklar için sağlam bir depo arıyorum Saffet Ağa. Malım çok kıymetli.", ifade: gulumseyen }
+      - { kim: saffet, metin: "Ne kadar kıymetli?", ifade: saskin }
+      - { kim: murad, metin: "Tek bir sandıkta, Mısır valisinin altın hazinesi var. Ama kimseye söyleme.", ifade: sinsi, poz: el_gogus }
+      - { kim: saffet, metin: "Sırrınız bende güvende, ağam.", ifade: gulumseyen }
+  - mekan: halic_liman
+    gece: true
+    karakterler: [{ id: saffet, x: 0.45 }]
+    satirlar:
+      - { kim: anlatici, metin: "O gece Saffet, adamlarıyla gemiye gizlice girdi." }
+      - { kim: saffet, metin: "Bu ne? Sandık boş! İçinde sadece bir mektup var…", ifade: saskin }
+      - { kim: saffet, metin: "Yusuf Efendi'nin konağını yakanın sonu da ateş olacak… Bu ne demek?!", ifade: ofkeli, poz: kol_kaldir }
+  - mekan: konak_salon
+    gece: true
+    karakterler: [{ id: bekir, x: 0.3 }, { id: saffet, x: 0.72 }]
+    satirlar:
+      - { kim: saffet, metin: "O tüccar bir yalancı paşam! Gemisinde tek bir altın yok!", ifade: ofkeli, poz: isaret }
+      - { kim: bekir, metin: "Gece yarısı misafirimin gemisine mi girdin? Benim adımı mı lekelemek istiyorsun?", ifade: ofkeli }
+      - { kim: saffet, metin: "Paşam, mektubu okuyun! Yusuf Efendi'nin adı yazıyor!", ifade: uzgun, poz: kol_kaldir }
+      - { kim: bekir, metin: "Yusuf Efendi… On yıl önce öldü o.", ifade: saskin }
+son: { kim: bekir, metin: "Yoksa… ölmeyen biri mi var?", ifade: sinsi }
+aciklama: |
+  İlk tuzak kuruldu, ilk hedef yemi yuttu… Ama Kara Bekir artık şüpheleniyor. 🩸
+  Lale ile Kan — 3. Bölüm. Sizce Bekir gerçeği ne zaman öğrenecek? 👇
+etiketler: ["#laleilekan", "#dizi", "#animasyon", "#intikam", "#osmanlı", "#laledevri", "#hikaye", "#reels", "#keşfet"]
