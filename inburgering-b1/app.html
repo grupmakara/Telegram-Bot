@@ -1,0 +1,988 @@
+<title>B1 Hollandaca Çalışma</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: tek sütunlu mobil uygulama; üstte başlık, altta sabit sekme çubuğu, ortada kartlar */
+:root{
+  --bg:#f3f5f9; --surface:#ffffff; --surface2:#e9edf4; --fg:#18202e; --muted:#5b6578;
+  --line:#d6dce7; --accent:#e4640e; --accent-fg:#ffffff; --accent-soft:#fde9da;
+  --blue:#1f4d8f; --blue-soft:#dfe8f6; --ok:#1d7a46; --ok-soft:#dcf1e4; --bad:#b4302a; --bad-soft:#f8e0de;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10141c; --surface:#181e29; --surface2:#222a38; --fg:#e8ecf3; --muted:#9aa5b8;
+  --line:#2d3646; --accent:#ff8a3d; --accent-fg:#1a0d03; --accent-soft:#3a2414;
+  --blue:#8fb4ee; --blue-soft:#1d2a40; --ok:#5fd394; --ok-soft:#163223; --bad:#ff8a80; --bad-soft:#3a1b1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10141c; --surface:#181e29; --surface2:#222a38; --fg:#e8ecf3; --muted:#9aa5b8;
+  --line:#2d3646; --accent:#ff8a3d; --accent-fg:#1a0d03; --accent-soft:#3a2414;
+  --blue:#8fb4ee; --blue-soft:#1d2a40; --ok:#5fd394; --ok-soft:#163223; --bad:#ff8a80; --bad-soft:#3a1b1a; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--body);font-size:16px;line-height:1.55;margin:0;-webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line);
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;gap:10px}
+header.top .back{border:0;background:var(--surface2);color:var(--fg);width:38px;height:38px;border-radius:10px;font-size:20px;cursor:pointer;flex:none}
+header.top h1{font-family:var(--display);font-size:1.2rem;margin:0;line-height:1.2;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge{font-size:.75rem;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:99px;white-space:nowrap}
+main{max-width:720px;margin:0 auto;padding-block:16px 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px 9px;color:var(--muted);text-decoration:none;font-size:.72rem;font-weight:600}
+nav.tabs a svg{width:23px;height:23px}
+nav.tabs a.on{color:var(--accent)}
+h2{font-family:var(--display);font-size:1.35rem;margin:6px 0 0;line-height:1.25;text-wrap:balance}
+h3{font-family:var(--display);font-size:1.08rem;margin:0;line-height:1.3}
+p{margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.hero{background:var(--blue);color:#fff;border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px}
+:root[data-theme="dark"] .hero{color:#0d1626}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero{color:#0d1626}}
+.hero h2{margin:0;font-size:1.5rem}
+.bar{height:9px;border-radius:9px;background:rgba(255,255,255,.3);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent);border-radius:9px}
+.bar.plain{background:var(--surface2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:4px;min-height:96px}
+.tile b{font-family:var(--display);font-size:1.05rem}
+.tile span{font-size:.82rem;color:var(--muted);line-height:1.35}
+.tile .ic{width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-family:var(--display);font-size:.9rem}
+.list{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--fg);cursor:pointer;text-align:left;font:inherit;width:100%}
+.row .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.row.done .num{background:var(--ok-soft);color:var(--ok)}
+.row .t{flex:1;min-width:0}
+.row .t b{display:block;font-weight:600;line-height:1.3}
+.row .t small{color:var(--muted);font-size:.8rem}
+.row .chev{color:var(--muted);flex:none}
+.ex{border-left:3px solid var(--blue);padding:4px 0 4px 12px;display:flex;flex-direction:column;gap:2px}
+.ex .nl{font-weight:600}
+.ex .tr{color:var(--muted)}
+.ex .note{font-size:.82rem;color:var(--blue)}
+.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.rules li::marker{color:var(--accent)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--surface2);font-weight:600;font-size:.8rem;letter-spacing:.02em}
+tr:last-child td{border-bottom:0}
+.btn{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:600;cursor:pointer;background:var(--accent);color:var(--accent-fg);text-decoration:none;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn.sec{background:var(--surface2);color:var(--fg)}
+.btn.ghost{background:transparent;color:var(--blue);padding:8px 10px}
+.btn:disabled{opacity:.45;cursor:default}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btns .btn{flex:1 1 auto}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.q{display:flex;flex-direction:column;gap:10px}
+.q .qt{font-weight:600}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:12px;padding:11px 14px;font:inherit;cursor:pointer}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.fb{font-size:.9rem;border-radius:10px;padding:9px 12px}
+.fb.ok{background:var(--ok-soft);color:var(--ok)}
+.fb.no{background:var(--bad-soft);color:var(--bad)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--surface2);color:var(--fg);border-radius:10px;padding:8px 12px;font:inherit;cursor:pointer}
+.built{min-height:48px;border:1.5px dashed var(--line);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.built .chip{background:var(--blue-soft);border-color:transparent}
+input[type=text],textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;font:inherit;background:var(--surface);color:var(--fg)}
+textarea{min-height:220px;resize:vertical}
+.flash{min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;cursor:pointer;user-select:none}
+.flash .w{font-family:var(--display);font-size:1.8rem;line-height:1.2}
+.flash .m{font-size:1.15rem;color:var(--accent);font-weight:600}
+.pill{align-self:flex-start;display:inline-block;font-size:.74rem;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--surface2);color:var(--muted)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.segs{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}
+.segs button{flex:none;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:99px;padding:7px 13px;font:inherit;font-size:.88rem;cursor:pointer}
+.segs button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.timer{font-family:var(--display);font-size:2.4rem;font-variant-numeric:tabular-nums;text-align:center}
+.speak{border:0;background:var(--blue-soft);color:var(--blue);border-radius:10px;padding:8px 12px;font:inherit;font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.check{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
+.tip{background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-size:.92rem}
+.tip b{color:var(--accent)}
+details{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 14px}
+details summary{cursor:pointer;padding:12px 0;font-weight:600}
+details[open]{padding-bottom:12px}
+.score{font-family:var(--display);font-size:3rem;text-align:center;line-height:1}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top">
+  <button class="back" id="backBtn" aria-label="Geri" hidden>‹</button>
+  <h1 id="title">B1 Hollandaca</h1>
+  <span class="badge" id="topBadge">Staatsexamen Nt2 · B1</span>
+</header>
+<main id="app"></main>
+<nav class="tabs" id="tabs">
+  <a href="#home" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Ana sayfa</a>
+  <a href="#dersler" data-tab="dersler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></svg>Gramer</a>
+  <a href="#kelime" data-tab="kelime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 2h12a2 2 0 0 1 2 2v12"/></svg>Kelime</a>
+  <a href="#beceri" data-tab="beceri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Beceriler</a>
+  <a href="#deneme" data-tab="deneme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Sınav</a>
+</nav>
+
+<script>
+/* ============================ VERİ ============================ */
+// Alıştırma biçimleri:
+// ["mc", soru, [seçenekler], doğruIndex, açıklama]
+// ["order", "parça|parça|parça", "Doğru cümle."]
+// ["fill", "Boşluklu cümle ____", ["kabul edilen cevaplar"], "ipucu"]
+const LESSONS = [
+{id:"v2", t:"V2 ve inversie", s:"Fiil her zaman 2. pozisyonda",
+ rules:[
+  "Ana cümlede <b>çekimli fiil her zaman 2. sırada</b> durur.",
+  "Cümle özneyle değil de zaman, yer veya başka bir öğeyle başlarsa özne fiilin <b>arkasına</b> geçer. Buna <b>inversie</b> denir.",
+  "Mastar veya geçmiş zaman ortacı (gewerkt, gegaan) <b>en sona</b> gider.",
+  "Evet/hayır sorusunda fiil başa gelir: <i>Werk je vandaag?</i> Soru kelimesiyle: <i>Waar werk je?</i>",
+  "Dikkat: <i>je/jij</i> fiilden sonra gelince fiildeki <b>-t düşer</b>: jij werkt → werk jij?"],
+ ex:[["Ik werk vandaag in de fabriek.","Bugün fabrikada çalışıyorum.","Özne + fiil"],
+     ["Vandaag werk ik in de fabriek.","Bugün fabrikada çalışıyorum.","Vandaag başta → werk ik"],
+     ["Morgen moet ik vroeg beginnen.","Yarın erken başlamalıyım.","Modal fiil 2. sırada, mastar sonda"],
+     ["Na het werk ga ik naar huis.","İşten sonra eve gidiyorum.","Na het werk öne geldi → inversie"]],
+ q:[["order","morgen|moet|ik|werken","Morgen moet ik werken."],
+    ["order","vandaag|werk|ik|thuis","Vandaag werk ik thuis."],
+    ["order","om acht uur|begint|mijn dienst","Om acht uur begint mijn dienst."],
+    ["order","in Almere|wonen|wij","In Almere wonen wij."],
+    ["mc","Volgende week ____ een afspraak.",["ik heb","heb ik","ik hebben"],1,"Volgende week başta olduğu için fiil (heb) önce, özne (ik) sonra gelir."],
+    ["mc","In het weekend ____ mijn familie.",["ik bezoek","bezoek ik","bezoeken ik"],1,"Zaman ifadesi başta → bezoek ik."],
+    ["mc","Hangisi doğru soru?",["Werkt jij morgen?","Werk jij morgen?","Jij werkt morgen?"],1,"jij fiilden sonra gelince -t düşer: Werk jij?"]]},
+
+{id:"bijzin", t:"Yan cümleler ve bağlaçlar", s:"omdat, als, hoewel… fiil sona",
+ rules:[
+  "<b>Yan cümle bağlaçları</b>: omdat (çünkü), als (eğer / -dığında), hoewel (-mesine rağmen), terwijl (-iken), voordat (-meden önce), nadat (-dikten sonra), zodra (-ır -maz), dat (ki), of (-ıp -madığı), toen (geçmişte -dığında), zodat (böylece), totdat (-e kadar).",
+  "Yan cümlede <b>çekimli fiil sona</b> gider: <i>…omdat ik ziek <b>ben</b>.</i>",
+  "Yan cümle başa gelirse ana cümle <b>fiille</b> başlar (fiil – virgül – fiil): <i>Als ik tijd heb, <b>ga</b> ik wandelen.</i>",
+  "<b>want, maar, en, of (veya), dus</b> ise ana cümle bağlacıdır; sıra değişmez: <i>Ik blijf thuis, want ik <b>ben</b> ziek.</i>",
+  "Geçmişte tek bir olay için <b>toen</b>, şimdiki/gelecek veya tekrar eden durum için <b>als</b> kullan."],
+ ex:[["Ik blijf thuis omdat ik ziek ben.","Hasta olduğum için evde kalıyorum.","ben sonda"],
+     ["Als ik tijd heb, ga ik wandelen.","Vaktim olursa yürüyüşe giderim.","Yan cümle başta → ga ik"],
+     ["Hoewel ik moe ben, ga ik werken.","Yorgun olmama rağmen işe gidiyorum.","hoewel = -mesine rağmen"],
+     ["Ik bel je zodra ik klaar ben.","Hazır olur olmaz seni ararım.","zodra = -ır -maz"],
+     ["Toen ik in Nederland kwam, sprak ik geen Nederlands.","Hollanda'ya geldiğimde Hollandaca bilmiyordum.","Geçmişte bir kez → toen"]],
+ q:[["fill","Ik blijf thuis omdat ik ziek ____ (zijn).",["ben"],"Yan cümlede fiil sonda, ik ile çekim."],
+    ["fill","Als ik tijd ____ (hebben), ga ik wandelen.",["heb"],"ik heb"],
+    ["order","ik werk|terwijl|mijn vrouw|thuis|is","Ik werk terwijl mijn vrouw thuis is."],
+    ["order","voordat ik ga slapen,|poets|ik|mijn tanden","Voordat ik ga slapen, poets ik mijn tanden."],
+    ["mc","Hangisi doğru?",["Ik blijf thuis want ik ziek ben.","Ik blijf thuis, want ik ben ziek.","Ik blijf thuis, want ben ik ziek."],1,"want ana cümle bağlacıdır; fiil yerinden oynamaz."],
+    ["mc","Ik weet niet ____ hij morgen komt.",["of","dat","als"],0,"'-ıp -madığını bilmiyorum' → of."],
+    ["mc","____ ik gisteren thuiskwam, was het huis leeg.",["Als","Toen","Wanneer"],1,"Geçmişte tek seferlik olay → toen."],
+    ["mc","Hoewel het regent, ____ ik op de fiets.",["ik ga","ga ik","gaan ik"],1,"Yan cümle başta → ana cümle fiille başlar."]]},
+
+{id:"modal", t:"Modal fiiller", s:"kunnen, moeten, mogen, willen, zullen",
+ rules:[
+  "<b>kunnen</b> = -ebilmek, <b>moeten</b> = -meli / zorunda olmak, <b>mogen</b> = izinli olmak, <b>willen</b> = istemek, <b>zullen</b> = -ecek (gelecek, öneri).",
+  "Modal fiil 2. sırada, ikinci fiil <b>mastar halinde en sonda</b>: <i>Ik wil beter Nederlands <b>spreken</b>.</i>",
+  "Modal fiilden sonra <b>te kullanılmaz</b>: <i>Ik moet werken</i> (✗ te werken).",
+  "Kibar rica: <i>Kunt u…? / Kun je…? / Mag ik…? / Zullen we…?</i> (öneri: yapalım mı?)"],
+ table:[["","kunnen","moeten","mogen","willen","zullen"],["ik","kan","moet","mag","wil","zal"],["jij/u","kunt (kan)","moet","mag","wilt (wil)","zult (zal)"],["hij/zij","kan","moet","mag","wil","zal"],["wij/jullie/zij","kunnen","moeten","mogen","willen","zullen"]],
+ ex:[["Kun je mij helpen?","Bana yardım edebilir misin?","Kun je + mastar"],
+     ["Ik moet morgen vroeg opstaan.","Yarın erken kalkmalıyım.","moeten + mastar"],
+     ["Mag ik hier parkeren?","Buraya park edebilir miyim?","İzin → mogen"],
+     ["Zullen we koffie drinken?","Kahve içelim mi?","Öneri → zullen we"]],
+ q:[["order","kun|je|mij|helpen?","Kun je mij helpen?"],
+    ["order","ik|moet|morgen|vroeg|opstaan","Ik moet morgen vroeg opstaan."],
+    ["order","mogen|wij|hier|parkeren?","Mogen wij hier parkeren?"],
+    ["mc","Ik wil beter Nederlands ____.",["spreken","te spreken","spreek"],0,"Modal fiilden sonra te yok, mastar sonda."],
+    ["mc","'Buraya sigara içebilir miyim?' (izin)",["Kan ik hier roken?","Mag ik hier roken?","Wil ik hier roken?"],1,"İzin istemek → mogen."],
+    ["mc","'Sinemaya gidelim mi?'",["Zullen we naar de bioscoop gaan?","Willen we naar de bioscoop?","Moeten we naar de bioscoop gaan?"],0,"Öneri → Zullen we…?"],
+    ["fill","Jij ____ (kunnen) goed koken.",["kunt","kan"],"jij kunt (konuşmada kan da olur)"]]},
+
+{id:"hoeven", t:"moeten ve niet hoeven te", s:"'zorunda değilsin' nasıl denir?",
+ rules:[
+  "<b>moeten</b> = zorunda olmak: <i>Ik moet werken.</i>",
+  "<b>Zorunda değil</b> demek için <b>niet hoeven te</b> (veya geen … hoeven te) kullanılır: <i>Je <b>hoeft</b> morgen niet <b>te</b> werken.</i>",
+  "<b>niet moeten</b> çoğu zaman 'yapmamalısın / yapma' anlamı verir: <i>Je moet hier niet roken.</i>",
+  "hoeven çekimi: ik hoef, jij hoeft, hij hoeft, wij hoeven. Mastar sona gider ve önüne <b>te</b> gelir.",
+  "Ayrılabilen fiilde te araya girer: <i>Je hoeft niet vroeg op <b>te</b> staan.</i>"],
+ ex:[["Je hoeft morgen niet te werken.","Yarın çalışmak zorunda değilsin.","niet hoeven te"],
+     ["U hoeft geen kopie mee te nemen.","Fotokopi getirmeniz gerekmiyor.","geen + hoeven te"],
+     ["Je moet niet te laat komen.","Geç kalmamalısın.","niet moeten = yapmamalısın"],
+     ["Hoef ik dat formulier in te vullen?","O formu doldurmam gerekiyor mu?","Soru"]],
+ q:[["mc","'Bugün gelmek zorunda değilsin.'",["Je moet vandaag niet komen.","Je hoeft vandaag niet te komen.","Je hoeft vandaag niet komen."],1,"zorunda değil → niet hoeven te + mastar."],
+    ["mc","'Burada sigara içmemelisin.'",["Je hoeft hier niet te roken.","Je moet hier niet roken.","Je mag hier roken."],1,"Yasak/tavsiye → moet niet (veya mag niet)."],
+    ["fill","Ik ____ (hoeven) morgen niet te werken.",["hoef"],"ik hoef"],
+    ["order","u|hoeft|niet|te|betalen","U hoeft niet te betalen."],
+    ["mc","Je hoeft niet vroeg ____.",["op te staan","te opstaan","opstaan"],0,"Ayrılabilen fiilde te araya girer: op te staan."]]},
+
+{id:"te", t:"te ve om te", s:"proberen te…, om … te (amacıyla)",
+ rules:[
+  "Bazı fiillerden sonra ikinci fiil <b>te + mastar</b> olur: proberen (denemek), beginnen, vergeten, beloven (söz vermek), hopen, besluiten (karar vermek), durven (cesaret etmek), stoppen met.",
+  "<b>om … te</b> = '-mek için / amacıyla': <i>Ik leer Nederlands <b>om</b> werk <b>te</b> vinden.</i>",
+  "Kalıplar: <i>Het is belangrijk/moeilijk/leuk <b>om</b> … <b>te</b> …</i>",
+  "Modal fiillerden (kunnen, moeten, willen, mogen, zullen) ve gaan, laten, blijven, komen'den sonra <b>te yok</b>.",
+  "Ayrılabilen fiilde te ortaya girer: <i>op te staan, mee te nemen.</i>"],
+ ex:[["Ik probeer elke dag Nederlands te spreken.","Her gün Hollandaca konuşmaya çalışıyorum.","proberen + te"],
+     ["Ik ben vergeten de deur dicht te doen.","Kapıyı kapatmayı unuttum.","vergeten + te"],
+     ["Ik spaar geld om een auto te kopen.","Araba almak için para biriktiriyorum.","om … te = amacıyla"],
+     ["Het is belangrijk om op tijd te komen.","Zamanında gelmek önemlidir.","Het is … om te"]],
+ q:[["mc","Ik probeer Nederlands ____.",["leren","te leren","om leren"],1,"proberen + te + mastar."],
+    ["mc","Ik ga naar de gemeente ____ een paspoort aan te vragen.",["om","te","voor"],0,"Amaç → om … te."],
+    ["mc","Ik wil morgen ____.",["te werken","werken","om werken"],1,"Modal fiil willen → te yok."],
+    ["order","het is|belangrijk|om|op tijd|te komen","Het is belangrijk om op tijd te komen."],
+    ["mc","Hij is begonnen een cursus ____.",["volgen","te volgen","om volgen"],1,"beginnen + te."],
+    ["fill","Ik heb besloten een nieuwe baan ____ zoeken.",["te"],"besluiten + te"]]},
+
+{id:"perfectum", t:"Perfectum (konuşma geçmişi)", s:"heb gewerkt / ben gegaan",
+ rules:[
+  "Konuşmada geçmiş olaylar için en çok kullanılan zaman: <b>hebben/zijn + voltooid deelwoord</b> (ortaç sonda).",
+  "Düzenli fiil: <b>ge + kök + t/d</b>. Kök 't kofschip harflerinden biriyle (t, k, f, s, ch, p) bitiyorsa <b>-t</b>, yoksa <b>-d</b>: werken → gewerkt, wonen → gewoond.",
+  "Kök v/z ile biten mastar kökte f/s olur ama kural mastardaki harfe bakar: reizen → gereisd, leven → geleefd.",
+  "<b>be-, ge-, her-, ont-, ver-, er-</b> ile başlayan fiiller ge- almaz: betalen → betaald, vertellen → verteld.",
+  "<b>zijn</b> ile kurulanlar: yer/durum değişimi bildiren fiiller: gaan, komen, vertrekken, aankomen, opstaan, worden, blijven, zijn, beginnen, vallen, verhuizen.",
+  "Ayrılabilen fiilde ge- ortaya girer: opbellen → opgebeld, opstaan → opgestaan."],
+ ex:[["Ik heb gisteren gewerkt.","Dün çalıştım.","heb + gewerkt"],
+     ["Ik ben om zes uur naar huis gegaan.","Saat altıda eve gittim.","Hareket → zijn"],
+     ["Wij hebben de rekening betaald.","Faturayı ödedik.","be- → ge- yok"],
+     ["Hij is vroeg opgestaan.","Erken kalktı.","op-ge-staan"]],
+ q:[["order","ik|heb|gisteren|gewerkt","Ik heb gisteren gewerkt."],
+    ["order","wij|zijn|naar huis|gegaan","Wij zijn naar huis gegaan."],
+    ["mc","Ik ____ vorig jaar naar Almere verhuisd.",["heb","ben","was"],1,"verhuizen yer değişimi → zijn."],
+    ["mc","Zij ____ een brief geschreven.",["heeft","is","hebben"],0,"schrijven → hebben."],
+    ["fill","maken → ik heb ____",["gemaakt"],"maak + t ('t kofschip: k)"],
+    ["fill","wonen → ik heb in Turkije ____",["gewoond"],"woon + d"],
+    ["fill","betalen → ik heb ____",["betaald"],"be- ile başlayan fiil ge- almaz"],
+    ["fill","opbellen → ik heb hem ____",["opgebeld"],"op + ge + beld"]]},
+
+{id:"imperfectum", t:"Imperfectum (hikâye/alışkanlık geçmişi)", s:"werkte, woonde, ging",
+ rules:[
+  "Geçmişteki <b>durum, alışkanlık</b> ve <b>hikâye anlatımı</b> için kullanılır: <i>Vroeger werkte ik in de bouw.</i>",
+  "Düzenli fiil: kök + <b>te/ten</b> ('t kofschip) veya <b>de/den</b>: werken → werkte/werkten, wonen → woonde/woonden.",
+  "Düzensiz fiilleri ezberle: zijn → was/waren, hebben → had/hadden, gaan → ging, komen → kwam, doen → deed, zien → zag, krijgen → kreeg (Fiil Bankası bölümüne bak).",
+  "İpucu kelimeler: <i>vroeger</i> (eskiden), <i>toen</i> (o zaman), <i>elke dag</i>, <i>altijd</i>."],
+ ex:[["Vroeger werkte ik in een fabriek.","Eskiden fabrikada çalışıyordum.","Alışkanlık"],
+     ["Toen ik klein was, woonde ik in Ankara.","Küçükken Ankara'da yaşıyordum.","Durum"],
+     ["Gisteren ging ik naar de markt en kocht ik groente.","Dün pazara gidip sebze aldım.","Hikâye"]],
+ q:[["mc","Vroeger ____ ik elke dag met de bus.",["ga","ging","gegaan"],1,"gaan → ging"],
+    ["fill","wonen → vroeger ____ ik in Turkije.",["woonde"],"woon + de"],
+    ["fill","werken → wij ____ in de bouw.",["werkten"],"çoğul: werk + ten"],
+    ["mc","Toen ik jong ____, sportte ik veel.",["ben","was","had"],1,"zijn → was"],
+    ["order","vroeger|werkte|ik|in een fabriek","Vroeger werkte ik in een fabriek."],
+    ["mc","Hij ____ gisteren een nieuwe telefoon.",["kocht","koopte","kopte"],0,"kopen düzensiz → kocht"]]},
+
+{id:"plusq", t:"Plusquamperfectum", s:"had gewerkt / was vertrokken",
+ rules:[
+  "Geçmişteki bir olaydan <b>daha önce</b> olmuş şeyi anlatır: 'yapmıştım / gitmişti'.",
+  "Yapı: <b>had/hadden</b> veya <b>was/waren</b> + ortaç.",
+  "Çoğunlukla <i>toen, nadat, al</i> ile birlikte gelir."],
+ ex:[["Toen ik aankwam, was hij al vertrokken.","Ben geldiğimde o çoktan gitmişti.","was + vertrokken"],
+     ["Nadat ik had gegeten, ging ik werken.","Yemek yedikten sonra işe gittim.","had + gegeten"],
+     ["Ik had het formulier al ingevuld.","Formu zaten doldurmuştum.","had + ingevuld"]],
+ q:[["mc","Toen de bus kwam, ____ ik al lang gewacht.",["heb","had","was"],1,"wachten → hebben → had"],
+    ["mc","Toen ik thuiskwam, ____ mijn vrouw al weggegaan.",["had","was","is"],1,"weggaan → zijn → was"],
+    ["order","nadat|ik|had gegeten,|ging|ik|werken","Nadat ik had gegeten, ging ik werken."]]},
+
+{id:"nietgeen", t:"niet ve geen", s:"olumsuzluk",
+ rules:[
+  "<b>geen</b>: belirsiz isimden (een + isim veya artikelsiz isim) önce: <i>Ik heb geen auto. Ik drink geen koffie.</i>",
+  "<b>niet</b>: fiil, sıfat, zarf, belirli isim (de/het/mijn…) ve isimleri olumsuzlar.",
+  "niet'nin yeri: genelde <b>cümle sonunda</b>; ama sıfattan, edatlı öbekten ve sonraki fiil/ortaçtan <b>önce</b>: <i>Ik ga niet naar huis. Ik heb het niet gedaan.</i>",
+  "<b>nog niet</b> = henüz değil, <b>geen … meer</b> = artık yok, <b>niet meer</b> = artık değil."],
+ ex:[["Ik heb geen tijd.","Vaktim yok.","Belirsiz isim → geen"],
+     ["Ik werk vandaag niet.","Bugün çalışmıyorum.","Fiil → niet sonda"],
+     ["Dat is niet moeilijk.","Bu zor değil.","Sıfat → niet önce"],
+     ["Ik heb geen auto meer.","Artık arabam yok.","geen … meer"]],
+ q:[["mc","Ik heb ____ tijd.",["niet","geen"],1,"tijd belirsiz isim → geen"],
+    ["mc","Ik werk vandaag ____.",["niet","geen"],0,"Fiili olumsuzlama → niet"],
+    ["mc","Dat is ____ probleem.",["niet","geen"],1,"een probleem → geen probleem"],
+    ["mc","Ik begrijp het ____.",["niet","geen"],0,"het belirli → niet"],
+    ["mc","Ik ken die man ____.",["niet","geen"],0,"die man belirli → niet"],
+    ["mc","Hij heeft ____ kinderen.",["niet","geen"],1,"Artikelsiz çoğul → geen"],
+    ["order","ik|ga|vandaag|niet|naar mijn werk","Ik ga vandaag niet naar mijn werk."]]},
+
+{id:"die", t:"die / dat / waar / wie", s:"ilgi cümleleri",
+ rules:[
+  "<b>de</b>-kelimeleri ve tüm çoğullar → <b>die</b>: <i>de man die…, de mensen die…</i>",
+  "<b>het</b>-kelimeleri (tekil) → <b>dat</b>: <i>het huis dat…</i>",
+  "Edatla birlikte: <b>insan</b> → edat + <b>wie</b> (<i>met wie</i>), <b>şey</b> → <b>waar</b> + edat (<i>waarmee, waarover, waar … naar</i>).",
+  "İlgi cümlesinde de fiil <b>sona</b> gider."],
+ ex:[["De man die daar werkt, is mijn collega.","Orada çalışan adam iş arkadaşım.","de man → die"],
+     ["Het huis dat we huren, is groot.","Kiraladığımız ev büyük.","het huis → dat"],
+     ["De collega met wie ik werk, is aardig.","Birlikte çalıştığım meslektaş kibar.","insan → met wie"],
+     ["De pen waarmee ik schrijf, is van mij.","Yazdığım kalem benim.","şey → waarmee"]],
+ q:[["mc","De vrouw ____ daar werkt, is mijn buurvrouw.",["die","dat","wie"],0,"de vrouw → die"],
+    ["mc","Het bedrijf ____ ik ken, is groot.",["die","dat","waar"],1,"het bedrijf → dat"],
+    ["mc","De baan ____ ik naar zoek, is interessant.",["die","dat","waar"],2,"zoeken naar + şey → waar … naar"],
+    ["mc","De collega met ____ ik werk, is aardig.",["die","wie","waar"],1,"Edat + insan → wie"],
+    ["mc","De kinderen ____ buiten spelen, zijn van de buren.",["die","dat"],0,"Çoğul → die"],
+    ["mc","Het formulier ____ ik heb ingevuld, ligt op tafel.",["die","dat"],1,"het formulier → dat"]]},
+
+{id:"scheid", t:"Ayrılabilen fiiller", s:"opstaan → ik sta op",
+ rules:[
+  "opstaan, aankomen, meenemen, terugkomen, opbellen, invullen, afspreken, uitleggen gibi fiillerin ön eki vardır.",
+  "<b>Ana cümlede ayrılır</b>, ön ek sona gider: <i>Ik <b>sta</b> om zes uur <b>op</b>.</i>",
+  "<b>Modal</b> fiille ve <b>yan cümlede</b> bitişik kalır: <i>Ik moet vroeg opstaan. …omdat ik vroeg opsta.</i>",
+  "Perfectum'da ge- araya girer: opgestaan, meegenomen. te ile: op te staan.",
+  "Vurgu ön ektedir: <b>OP</b>staan. be-, ver-, ont- ile başlayanlar ayrılmaz (betalen, vertellen)."],
+ ex:[["Ik sta om zes uur op.","Saat altıda kalkarım.","sta … op"],
+     ["Ik moet vroeg opstaan.","Erken kalkmalıyım.","Modal → bitişik"],
+     ["Omdat ik vroeg opsta, ben ik op tijd.","Erken kalktığım için zamanında oradayım.","Yan cümle → bitişik"],
+     ["Ik neem mijn lunch mee.","Öğle yemeğimi yanıma alırım.","neem … mee"]],
+ q:[["order","ik|sta|om 6 uur|op","Ik sta om 6 uur op."],
+    ["order","ik|neem|mijn tas|mee","Ik neem mijn tas mee."],
+    ["mc","Wanneer ____ je ____?",["kom … terug","terugkom … –","komt … terug"],0,"terugkomen → Wanneer kom je terug?"],
+    ["mc","Kunt u dit formulier ____?",["invullen","vullen in","in vullen"],0,"Modal fiil ile bitişik mastar."],
+    ["fill","De trein ____ om 10 uur aan. (aankomen)",["komt"],"De trein komt om 10 uur aan."],
+    ["fill","Ik heb mijn moeder ____ (opbellen).",["opgebeld"],"op + ge + beld"]]},
+
+{id:"voorz", t:"Edatlı fiiller (vaste voorzetsels)", s:"wachten op, denken aan…",
+ rules:[
+  "Bazı fiiller her zaman aynı edatla kullanılır; <b>edatıyla birlikte ezberle</b>.",
+  "Soru: <b>waar + edat</b>: <i>Waar wacht je op?</i> Cevapta şey için <b>er/daar + edat</b>: <i>Ik wacht erop. Daar denk ik aan.</i>",
+  "Liste aşağıdaki tabloda."],
+ table:[["Hollandaca","Türkçe"],["wachten op","beklemek"],["luisteren naar","dinlemek"],["kijken naar","bakmak, izlemek"],["denken aan","düşünmek (aklına gelmek)"],["denken over","hakkında düşünmek (fikir)"],["zoeken naar","aramak"],["zorgen voor","bakmak, ilgilenmek"],["praten over","hakkında konuşmak"],["houden van","sevmek"],["beginnen met / stoppen met","başlamak / bırakmak"],["helpen met","yardım etmek"],["vragen om","istemek, rica etmek"],["solliciteren naar","(işe) başvurmak"],["deelnemen aan","katılmak"],["bang zijn voor","korkmak"],["trots zijn op","gurur duymak"],["geïnteresseerd zijn in","ilgilenmek"],["genieten van","keyif almak"],["zich voorbereiden op","hazırlanmak"],["zich ergeren aan","sinirlenmek"],["rekening houden met","dikkate almak"],["afhankelijk zijn van","bağlı olmak"],["reageren op","tepki vermek, cevap vermek"]],
+ ex:[["Ik wacht op de bus.","Otobüsü bekliyorum.","wachten op"],
+     ["Ik denk vaak aan mijn familie.","Ailemi sık sık düşünüyorum.","denken aan"],
+     ["Ik solliciteer naar een baan als monteur.","Montajcı olarak bir işe başvuruyorum.","solliciteren naar"],
+     ["Waar ben je bang voor?","Neyden korkuyorsun?","waar … voor"]],
+ q:[["mc","Ik wacht ____ de trein.",["op","naar","aan"],0,"wachten op"],
+    ["mc","Ik luister ____ de leraar.",["op","naar","aan"],1,"luisteren naar"],
+    ["mc","Ik denk ____ mijn familie.",["op","van","aan"],2,"denken aan"],
+    ["mc","Ik zorg ____ mijn kind.",["voor","met","op"],0,"zorgen voor"],
+    ["mc","Ik houd ____ voetbal.",["van","voor","aan"],0,"houden van"],
+    ["mc","Hij is trots ____ zijn dochter.",["op","van","aan"],0,"trots zijn op"],
+    ["mc","Ik bereid me voor ____ het examen.",["op","aan","voor"],0,"zich voorbereiden op"],
+    ["mc","Ze heeft gesolliciteerd ____ een baan bij de gemeente.",["op","naar","voor"],1,"solliciteren naar"]]},
+
+{id:"vergelijk", t:"Karşılaştırma ve sıfatlar", s:"groter dan, het grootst, een groot huis",
+ rules:[
+  "Karşılaştırma: sıfat + <b>-er</b> + <b>dan</b>: <i>groot → groter dan</i>. -r ile bitenler <b>-der</b>: duur → duurder, ver → verder.",
+  "En üstün: <b>het</b> + sıfat + <b>-st</b>: <i>het grootst / de grootste</i>.",
+  "Düzensiz: goed – beter – best, veel – meer – meest, weinig – minder – minst, graag – liever – liefst.",
+  "Eşitlik: <b>even … als / net zo … als</b>: <i>Hij is even oud als ik.</i>",
+  "<b>Sıfat çekimi</b>: İsmin önünde sıfat genelde <b>-e</b> alır (<i>de grote stad, het grote huis, mooie huizen</i>). <b>İstisna</b>: het-kelimesi tekil + een/geen/artikelsiz → -e yok: <i>een groot huis</i>."],
+ ex:[["Deze baan is beter betaald dan mijn vorige baan.","Bu iş önceki işimden daha iyi ücretli.","beter dan"],
+     ["Ik heb minder tijd dan vroeger.","Eskisinden daha az vaktim var.","minder dan"],
+     ["Amsterdam is de grootste stad van Nederland.","Amsterdam Hollanda'nın en büyük şehridir.","de grootste"],
+     ["We hebben een klein huis met een mooie tuin.","Güzel bahçeli küçük bir evimiz var.","een klein huis (het) / een mooie tuin (de)"]],
+ q:[["mc","Mijn Nederlands is ____ dan vorig jaar.",["goeder","beter","best"],1,"goed → beter"],
+    ["mc","Een appartement in Amsterdam is ____ dan in Almere.",["duurer","duurder","meer duur"],1,"-r ile bitiyor → duurder"],
+    ["mc","Ik drink ____ thee dan koffie.",["liever","graager","meer graag"],0,"graag → liever"],
+    ["mc","Wij wonen in een ____ huis.",["groot","grote"],0,"het huis + een → -e yok"],
+    ["mc","Het ____ huis staat op de hoek.",["groot","grote"],1,"het + sıfat → -e"],
+    ["mc","Hij is even oud ____ zijn vrouw.",["dan","als","zo"],1,"even … als"],
+    ["fill","Dit is het ____ resultaat. (goed, en iyi)",["beste"],"goed – beter – best → het beste resultaat"]]},
+
+{id:"zich", t:"Dönüşlü fiiller (zich)", s:"ik voel me, hij meldt zich ziek",
+ rules:[
+  "Bazı fiiller dönüşlü zamir alır: <b>ik me, jij je, u zich, hij/zij zich, wij ons, jullie je, zij zich</b>.",
+  "Sık kullanılanlar: zich voelen (hissetmek), zich ziek melden (hastalık bildirmek), zich aanmelden/inschrijven (kaydolmak), zich voorbereiden (hazırlanmak), zich vergissen (yanılmak), zich herinneren (hatırlamak), zich vervelen (sıkılmak), zich haasten (acele etmek), zich ergeren (sinirlenmek), zich schamen (utanmak).",
+  "Zamir fiilden hemen sonra gelir; inversiede öznenin arkasına: <i>Morgen meld ik <b>me</b> aan.</i>"],
+ ex:[["Ik voel me niet goed.","Kendimi iyi hissetmiyorum.","ik … me"],
+     ["Ik moet me ziek melden.","Hastalık bildirmeliyim.","zich ziek melden"],
+     ["Wij bereiden ons voor op het examen.","Sınava hazırlanıyoruz.","wij … ons"],
+     ["Hij vergist zich.","Yanılıyor.","hij … zich"]],
+ q:[["mc","Ik voel ____ vandaag beter.",["me","zich","ons"],0,"ik → me"],
+    ["mc","Wij melden ____ aan voor de cursus.",["ons","zich","je"],0,"wij → ons"],
+    ["mc","Zij herinnert ____ de naam niet.",["haar","zich","me"],1,"zij (o) → zich"],
+    ["mc","Jullie moeten ____ haasten.",["zich","je","ons"],1,"jullie → je"],
+    ["order","ik|moet|me|ziek|melden","Ik moet me ziek melden."]]},
+
+{id:"zou", t:"zou / zouden", s:"kibar rica, tavsiye, hayal",
+ rules:[
+  "<b>Kibar rica</b>: <i>Zou u mij kunnen helpen?</i> (Bana yardım edebilir misiniz?)",
+  "<b>Tavsiye</b>: <i>Ik zou naar de huisarts gaan.</i> (Ben olsam doktora giderdim.)",
+  "<b>Hayali / koşullu durum</b>: <i>Als ik meer tijd had, zou ik vaker sporten.</i>",
+  "<b>İstek</b>: <i>Ik zou graag … willen</i> = … istiyorum (çok kibar).",
+  "Çekim: ik/jij/u/hij zou, wij/jullie/zij zouden. Mastar sona gider."],
+ ex:[["Zou u dat nog een keer kunnen uitleggen?","Bunu bir kez daha açıklayabilir misiniz?","Kibar rica"],
+     ["Ik zou graag een afspraak willen maken.","Randevu almak istiyorum.","Kibar istek"],
+     ["Als ik rijk was, zou ik een huis kopen.","Zengin olsaydım ev alırdım.","Hayal"],
+     ["Ik zou eerst met je leidinggevende praten.","Ben olsam önce amirinle konuşurdum.","Tavsiye"]],
+ q:[["mc","____ u het raam dicht willen doen?",["Zal","Zou","Zouden"],1,"u → zou"],
+    ["mc","Als ik meer geld had, ____ ik een auto kopen.",["zal","zou","wil"],1,"Hayali durum → zou"],
+    ["order","ik|zou|graag|een afspraak|willen maken","Ik zou graag een afspraak willen maken."],
+    ["mc","Wat ____ jij doen als je de loterij won?",["zou","zouden","zal"],0,"jij → zou"]]},
+
+{id:"imperatief", t:"Emir kipi (imperatief)", s:"Kom binnen! Rook hier niet.",
+ rules:[
+  "Emir: fiilin <b>kökü</b> (ik-hali) cümlenin başında: <i>Kom hier. Wacht even.</i>",
+  "Resmi: kök + t + <b>u</b>: <i>Komt u binnen. Neemt u plaats.</i>",
+  "Yumuşatmak için: <b>even, maar, eens, alstublieft</b>: <i>Wacht u even, alstublieft.</i>",
+  "Olumsuz: <i>Rook hier niet. Vergeet je pas niet.</i>",
+  "Ayrılabilen fiil: <i>Vul het formulier in. Neem je paspoort mee.</i>"],
+ ex:[["Neem morgen uw identiteitsbewijs mee.","Yarın kimliğinizi getirin.","meenemen → neem … mee"],
+     ["Bel 112 bij een noodgeval.","Acil durumda 112'yi arayın.","bellen → bel"],
+     ["Vergeet de deur niet op slot te doen.","Kapıyı kilitlemeyi unutma.","Olumsuz"]],
+ q:[["mc","(invullen) ____ het formulier ____.",["Vul … in","Invul … –","Vult … in"],0,"Vul het formulier in."],
+    ["mc","Hangisi resmi emir?",["Kom binnen.","Komt u binnen.","Kommen u binnen."],1,"Komt u binnen."],
+    ["order","vergeet|je paspoort|niet","Vergeet je paspoort niet."]]},
+
+{id:"er", t:"'er' kelimesi", s:"Er is een storing. Ik heb er twee.",
+ rules:[
+  "<b>1. Belirsiz özne</b> ile 'var': <i><b>Er</b> is een storing. Er staat een man voor de deur.</i>",
+  "<b>2. Yer</b> (orada): <i>Woon je in Almere? Ja, ik woon <b>er</b> al vijf jaar.</i>",
+  "<b>3. Miktar</b> (ondan): <i>Hoeveel kinderen heb je? Ik heb <b>er</b> twee.</i>",
+  "<b>4. Edatla</b> (ona/onu): <i>Ik denk <b>er</b>aan. Ik wacht <b>er</b>op.</i>",
+  "<b>5. Edilgen</b>: <i><b>Er</b> wordt hier veel gewerkt.</i>"],
+ ex:[["Er is iets mis met de machine.","Makinede bir sorun var.","Belirsiz özne"],
+     ["Hoeveel broers heb je? Ik heb er drie.","Kaç erkek kardeşin var? Üç.","Miktar"],
+     ["Heb je aan de afspraak gedacht? Ja, ik heb eraan gedacht.","Randevuyu hatırladın mı? Evet.","er + aan"]],
+ q:[["mc","____ is een probleem met mijn rooster.",["Het","Er","Daar"],1,"Belirsiz özne → Er is"],
+    ["mc","Heb je appels? Ja, ik heb ____ vijf.",["het","er","ze"],1,"Miktar → er"],
+    ["mc","Wacht je op de bus? Ja, ik wacht ____.",["erop","op het","op hem"],0,"Şey + edat → erop"]]},
+
+{id:"vragen", t:"Soru kurma", s:"wie, wat, waar, hoe, waarom…",
+ rules:[
+  "Evet/hayır sorusu: <b>fiil başa</b>: <i>Heb je tijd?</i>",
+  "Soru kelimesi + fiil + özne: <i>Waar woon je?</i>",
+  "Soru kelimeleri: wie (kim), wat (ne), waar (nerede), waarheen/waar…naartoe (nereye), wanneer (ne zaman), waarom (neden), hoe (nasıl), hoeveel (kaç/ne kadar), hoe laat (saat kaçta), welk(e) (hangi), hoelang (ne kadar süre).",
+  "<b>Dolaylı soru</b> (kibar): fiil sona gider: <i>Weet u waar het station <b>is</b>? Kunt u mij vertellen hoe laat de trein <b>vertrekt</b>?</i>",
+  "welk + het-kelimesi (welk huis), welke + de-kelimesi/çoğul (welke bus)."],
+ ex:[["Hoe laat begint mijn dienst?","Vardiyam saat kaçta başlıyor?","hoe laat"],
+     ["Waarom ben je te laat?","Neden geç kaldın?","waarom"],
+     ["Weet u of de winkel morgen open is?","Mağazanın yarın açık olup olmadığını biliyor musunuz?","Dolaylı soru: of + fiil sonda"]],
+ q:[["mc","____ kost dit?",["Hoeveel","Hoe laat","Welke"],0,"Fiyat → Hoeveel kost dit?"],
+    ["mc","____ bus gaat naar het centrum?",["Welk","Welke","Wat"],1,"de bus → welke"],
+    ["order","weet u|waar|het gemeentehuis|is?","Weet u waar het gemeentehuis is?"],
+    ["mc","Kunt u mij vertellen hoe laat de trein ____?",["vertrekt","vertrekt hij","vertrek"],0,"Dolaylı soru → fiil sonda."],
+    ["order","hoelang|woon|je|al|in Nederland?","Hoelang woon je al in Nederland?"]]},
+
+{id:"passief", t:"Edilgen yapı (passief)", s:"De brief wordt verstuurd.",
+ rules:[
+  "Şimdiki zaman: <b>worden + ortaç</b>: <i>De brief wordt verstuurd.</i> (Mektup gönderiliyor.)",
+  "Geçmiş: <b>zijn + ortaç</b>: <i>De brief is verstuurd.</i> / imperfectum: <i>werd verstuurd</i>.",
+  "Yapanı söylemek için <b>door</b>: <i>De aanvraag wordt door de gemeente behandeld.</i>",
+  "Modal ile: <i>De aanvraag kan niet worden behandeld.</i> (resmi mektuplarda çok sık)",
+  "Okuma sınavında resmi metinlerde çok çıkar; 'kim yapıyor?' sorusuna dikkat et."],
+ ex:[["Uw aanvraag wordt binnen vier weken behandeld.","Başvurunuz dört hafta içinde işleme alınır.","wordt + behandeld"],
+     ["De machine is gisteren gerepareerd.","Makine dün tamir edildi.","is + gerepareerd"],
+     ["Het afval wordt op dinsdag opgehaald.","Çöp salı günü toplanır.","wordt + opgehaald"]],
+ q:[["mc","Het pakket ____ morgen bezorgd.",["wordt","is","heeft"],0,"Gelecek/şimdi → wordt"],
+    ["mc","De rekening ____ al betaald.",["wordt","is","heeft"],1,"Tamamlanmış → is betaald"],
+    ["mc","De brief is geschreven ____ de directeur.",["van","door","met"],1,"tarafından → door"]]},
+
+{id:"samengesteld", t:"Bileşik kelimeler", s:"het huurcontract, de werkplek",
+ rules:[
+  "Hollandacada kelimeler birleşerek yeni kelime yapar: <i>de huur + het contract = het huurcontract</i>.",
+  "Artikeli <b>son kelime</b> belirler: <i>het werk + de plek = <b>de</b> werkplek</i>.",
+  "Bazen araya <b>-s-</b> veya <b>-e(n)-</b> girer: <i>arbeid<b>s</b>markt, ziekte<b>kosten</b>, boek<b>en</b>kast</i>.",
+  "Uzun kelimeyi parçalara ayırarak anlamını tahmin et: <i>werkgevers·verklaring</i> = işveren belgesi."],
+ ex:[["het huurcontract","kira sözleşmesi","de huur + het contract → het"],
+     ["de zorgverzekering","sağlık sigortası","de zorg + de verzekering"],
+     ["de arbeidsmarkt","iş piyasası","arbeid + s + markt"]],
+ q:[["mc","____ werkplek (het werk + de plek)",["de","het"],0,"Son kelime de plek → de werkplek"],
+    ["mc","____ huurcontract (de huur + het contract)",["de","het"],1,"Son kelime het contract → het"],
+    ["mc","'loonstrook' ne demek?",["maaş bordrosu","maaş artışı","vergi iadesi"],0,"loon (maaş) + strook (şerit/kâğıt)"]]},
+
+{id:"voegwoorden", t:"Bağlaç bankası (B1 bağlantılar)", s:"daarom, toch, bovendien…",
+ rules:[
+  "<b>Düz sıra</b> (ana cümle bağlaçları): en, maar, of (veya), want, dus*. <i>Ik ben moe, maar ik ga werken.</i>",
+  "<b>Inversie</b> yapan bağlantı zarfları: daarom (bu yüzden), daardoor (bunun sonucunda), toch (yine de), bovendien (ayrıca), daarna (sonra), eerst (önce), ook, dus*: <i>Ik wil B1 halen, <b>daarom oefen ik</b> elke dag.</i>",
+  "<b>Fiil sona</b> (yan cümle): omdat, als, hoewel, terwijl, voordat, nadat, zodra, zodat, dat, of.",
+  "Konuşmada ve yazmada fikirleri bağla: <i>Aan de ene kant … aan de andere kant …</i>, <i>Ten eerste … ten tweede …</i>, <i>Kortom …</i> (kısacası), <i>Bijvoorbeeld …</i>",
+  "* dus iki şekilde de kullanılır: <i>dus ik ga / dus ga ik</i>."],
+ ex:[["Eerst ontbijt ik, daarna ga ik werken.","Önce kahvaltı ederim, sonra işe giderim.","Sıralama"],
+     ["Ik ben moe, maar ik ga toch werken.","Yorgunum ama yine de işe gidiyorum.","maar + toch"],
+     ["De bus had vertraging, daardoor kwam ik te laat.","Otobüs gecikti, bu yüzden geç kaldım.","daardoor + inversie"],
+     ["Aan de ene kant is het werk dichtbij, aan de andere kant verdien ik minder.","Bir yandan iş yakın, diğer yandan daha az kazanıyorum.","İki taraflı fikir"]],
+ q:[["mc","Ik wil B1 halen, daarom ____ elke dag.",["ik oefen","oefen ik","ik oefenen"],1,"daarom → inversie"],
+    ["mc","Ik oefen elke dag ____ ik B1 wil halen.",["daarom","omdat","want"],1,"Yan cümle (fiil sonda: wil halen) → omdat"],
+    ["mc","Het regent, ____ ga ik met de fiets.",["toch","maar","omdat"],0,"toch + inversie (ga ik)"],
+    ["mc","Ik spreek Nederlands. ____ leer ik Engels.",["Bovendien","Omdat","Hoewel"],0,"Ayrıca → Bovendien + inversie"],
+    ["order","de bus|had vertraging,|daardoor|kwam|ik|te laat","De bus had vertraging, daardoor kwam ik te laat."]]}
+];
+
+const VOCAB = {
+"Günlük hayat":[["de afspraak","randevu","Ik heb morgen een afspraak."],["de gemeente","belediye","Ik moet naar de gemeente."],["de aanvraag","başvuru","Ik heb de aanvraag verstuurd."],["de verhuurder","ev sahibi (kiraya veren)","Ik bel de verhuurder."],["de huurder","kiracı","De huurder betaalt de huur."],["de rekening","fatura / hesap","Ik heb de rekening betaald."],["de klacht","şikâyet","Ik wil een klacht indienen."],["de oplossing","çözüm","We zoeken een oplossing."],["beschikbaar","müsait / mevcut","Ben je morgen beschikbaar?"],["regelen","ayarlamak / halletmek","Ik regel het vandaag."],["aanvragen","başvurmak / talep etmek","Ik wil een verklaring aanvragen."],["uitleggen","açıklamak","Kunt u dat uitleggen?"],["beslissen","karar vermek","Ik moet vandaag beslissen."],["verbeteren","geliştirmek","Ik wil mijn Nederlands verbeteren."],["vertrouwen","güvenmek","Ik vertrouw mijn collega."],["verzetten","(randevu) ertelemek","Kan ik mijn afspraak verzetten?"],["afzeggen","iptal etmek","Ik moet de afspraak afzeggen."],["de buurt","mahalle","Mijn buurt is rustig."]],
+"İş hayatı":[["de dienst","vardiya","Mijn dienst begint om zes uur."],["de ploegendienst","vardiyalı çalışma","Ik werk in ploegendienst."],["de storing","arıza","Er is een storing."],["de leidinggevende","amir / sorumlu","Ik overleg met mijn leidinggevende."],["de veiligheidsinstructie","güvenlik talimatı","Volg de veiligheidsinstructies."],["de pauze","mola","Wanneer is de pauze?"],["overuren","fazla mesai","Ik heb overuren gemaakt."],["vrij vragen","izin istemek","Ik wil vrijdag vrij vragen."],["zich ziek melden","hastalık bildirmek","Ik moet me ziek melden."],["het contract","sözleşme","Wanneer wordt mijn contract verlengd?"],["verlengen","uzatmak","Wordt mijn contract verlengd?"],["de werkgeversverklaring","işveren belgesi","Ik wil een werkgeversverklaring aanvragen."],["de werkervaring","iş deneyimi","Ik heb veel werkervaring."],["inwerken","işe alıştırmak","Mijn collega werkt mij in."],["het rooster","çalışma programı","Ik heb een vraag over mijn rooster."],["de loonstrook","maaş bordrosu","Op de loonstrook staat mijn salaris."],["de cao","toplu iş sözleşmesi","In de cao staan afspraken over loon."],["de proeftijd","deneme süresi","Mijn proeftijd duurt een maand."]],
+"MAP / iş piyasası":[["de arbeidsmarkt","iş piyasası","Ik wil de arbeidsmarkt beter begrijpen."],["de vacature","iş ilanı","Ik heb een vacature gevonden."],["solliciteren","(işe) başvurmak","Ik wil solliciteren."],["het cv","özgeçmiş","Ik stuur mijn cv mee."],["de motivatiebrief","motivasyon mektubu","Ik schrijf een motivatiebrief."],["het sollicitatiegesprek","iş görüşmesi","Morgen heb ik een sollicitatiegesprek."],["de opleiding","eğitim","Ik wil een opleiding volgen."],["de vaardigheid","beceri","Communiceren is een belangrijke vaardigheid."],["de sector","sektör","Ik wil in de zorgsector werken."],["de werkgever","işveren","Mijn werkgever helpt mij."],["de werknemer","çalışan","Elke werknemer heeft rechten en plichten."],["het uitzendbureau","geçici iş ajansı","Ik werk via een uitzendbureau."],["de stage","staj","Ik loop stage bij een bedrijf."],["het diploma","diploma","Ik wil mijn diploma laten erkennen."]],
+"Wonen (ev)":[["de huur","kira","De huur is 900 euro per maand."],["de huurtoeslag","kira yardımı","Ik vraag huurtoeslag aan."],["de woningcorporatie","sosyal konut şirketi","Ik sta ingeschreven bij een woningcorporatie."],["de buren","komşular","Mijn buren zijn vriendelijk."],["de overlast","rahatsızlık (gürültü vb.)","We hebben overlast van de buren."],["het afval","çöp","Het afval wordt op dinsdag opgehaald."],["scheiden","ayırmak","Ik scheid plastic en papier."],["verhuizen","taşınmak","Wij verhuizen volgende maand."],["de lekkage","su sızıntısı","Er is een lekkage in de badkamer."],["de energierekening","enerji faturası","De energierekening is hoog."]],
+"Gezondheid (sağlık)":[["de huisarts","aile hekimi","Ik bel de huisarts."],["de huisartsenpost","nöbetçi doktor","'s Avonds bel ik de huisartsenpost."],["de apotheek","eczane","Ik haal medicijnen bij de apotheek."],["het recept","reçete","De huisarts schrijft een recept."],["de zorgverzekering","sağlık sigortası","Een zorgverzekering is verplicht."],["het eigen risico","sigorta muafiyeti","Ik betaal eerst het eigen risico."],["de klacht","şikâyet (rahatsızlık)","Wat zijn uw klachten?"],["de specialist","uzman doktor","De huisarts verwijst mij naar een specialist."],["gezond","sağlıklı","Ik wil gezond eten."],["de stress","stres","Sporten helpt tegen stress."]],
+"Onderwijs (eğitim)":[["de basisschool","ilkokul","Mijn dochter zit op de basisschool."],["de middelbare school","ortaokul+lise","Hij gaat naar de middelbare school."],["de leerplicht","zorunlu eğitim","Kinderen hebben leerplicht."],["het rapport","karne","Mijn zoon krijgt een goed rapport."],["de ouderavond","veli toplantısı","Vanavond is er een ouderavond."],["het schooladvies","okul tavsiyesi","Het schooladvies is havo."],["de kinderopvang","kreş","Mijn kind gaat naar de kinderopvang."],["het mbo","meslek eğitimi","Ik wil een mbo-opleiding volgen."],["de cursus","kurs","De cursus begint maandag."],["het examen","sınav","Ik bereid me voor op het examen."]],
+"Verkeer (trafik)":[["de fietser","bisikletli","Fietsers moeten licht gebruiken."],["het fietspad","bisiklet yolu","Rijd op het fietspad."],["de voorrang","geçiş önceliği","Verkeer van rechts heeft voorrang."],["het rijbewijs","ehliyet","Ik haal mijn rijbewijs."],["de vertraging","gecikme","De trein heeft vertraging."],["de ov-chipkaart","toplu taşıma kartı","Ik check in met mijn ov-chipkaart."],["inchecken / uitchecken","kart basmak (giriş/çıkış)","Vergeet niet uit te checken."],["de boete","ceza","Ik kreeg een boete."],["het verkeerslicht","trafik lambası","Stop bij het rode verkeerslicht."],["de file","trafik sıkışıklığı","Er staat een lange file."]],
+"Consumeren & economie":[["de aanbieding","indirim / kampanya","Deze koffie is in de aanbieding."],["de bon","fiş","Bewaar de bon."],["ruilen","değiştirmek (ürün)","Kan ik deze broek ruilen?"],["terugbrengen","iade etmek","Ik wil dit terugbrengen."],["de garantie","garanti","Er zit twee jaar garantie op."],["bestellen","sipariş etmek","Ik bestel online."],["sparen","biriktirmek","Ik spaar voor een vakantie."],["de schuld","borç","Hij heeft schulden."],["de belasting","vergi","Ik betaal belasting."],["de toeslag","devlet yardımı","Ik krijg zorgtoeslag."],["de rente","faiz","De rente is gestegen."],["het abonnement","abonelik","Ik zeg mijn abonnement op."]],
+"Vrije tijd & sport":[["de vereniging","kulüp / dernek","Ik ben lid van een voetbalvereniging."],["het lidmaatschap","üyelik","Het lidmaatschap kost 20 euro."],["het vrijwilligerswerk","gönüllü çalışma","Ik doe vrijwilligerswerk."],["ontspannen","rahatlamak","In het weekend ontspan ik."],["wandelen","yürüyüş yapmak","Wij wandelen in het park."],["de sportschool","spor salonu","Ik ga twee keer per week naar de sportschool."],["de blessure","sakatlık","Hij heeft een blessure."],["het evenement","etkinlik","Er is een evenement in de stad."]],
+"Samenleving & politiek":[["de verkiezingen","seçimler","Volgend jaar zijn er verkiezingen."],["stemmen","oy vermek","Ik ga stemmen."],["de Tweede Kamer","Meclis (alt kamara)","De Tweede Kamer heeft 150 leden."],["de gemeenteraad","belediye meclisi","De gemeenteraad beslist over de buurt."],["de wet","kanun","Iedereen moet zich aan de wet houden."],["de gelijkheid","eşitlik","Gelijkheid is belangrijk in Nederland."],["de vrijheid van meningsuiting","ifade özgürlüğü","Er is vrijheid van meningsuiting."],["discriminatie","ayrımcılık","Discriminatie is verboden."],["de rechten en plichten","haklar ve görevler","Iedereen heeft rechten en plichten."],["de koning","kral","Op Koningsdag is de koning jarig."]]
+};
+
+const LEZEN = [
+{t:"İş programı",x:"Vanaf volgende week werkt het team in twee ploegen. De ochtendploeg begint om 06.00 uur en de middagploeg om 14.00 uur. Werknemers moeten tien minuten voor het begin aanwezig zijn.",q:[["Wanneer begint de ochtendploeg?",["Om 06.00 uur","Om 14.00 uur","Om 05.50 uur"],0,"Tuzak: 05.50 çalışanın orada olması gereken saat; vardiya 06.00'da başlıyor."],["Wanneer moeten werknemers er zijn?",["Precies om 06.00 uur","Tien minuten voor het begin","Om 14.00 uur"],1,"'tien minuten voor het begin aanwezig'"]]},
+{t:"Randevu",x:"U heeft dinsdag om 10.30 uur een afspraak bij de gemeente. Kunt u niet komen? Bel dan zo snel mogelijk.",q:[["Waar is de afspraak?",["Bij de huisarts","Bij de gemeente","Op het werk"],1,""],["Wat moet u doen als u niet kunt komen?",["Een e-mail sturen","Zo snel mogelijk bellen","Niets doen"],1,"'Bel dan zo snel mogelijk' = mümkün olan en kısa sürede arayın."]]},
+{t:"İş ilanı",x:"Gezocht: productiemedewerker in Almere. Ervaring is niet verplicht. U werkt in ploegendienst. Nederlands is belangrijk voor de veiligheid.",q:[["Is ervaring verplicht?",["Ja","Nee","Alleen voor de nachtdienst"],1,"'niet verplicht' = zorunlu değil"],["Waarom is Nederlands belangrijk?",["Voor de veiligheid","Voor het salaris","Voor de klanten"],0,""]]},
+{t:"Ulaşım",x:"Door een storing rijdt bus 326 vandaag niet tussen Almere en Lelystad. Reizigers kunnen de trein nemen.",q:[["Waarom rijdt de bus niet?",["Door het weer","Door een storing","Door een staking"],1,""],["Wat kunnen reizigers doen?",["De trein nemen","Een taxi bellen","Morgen reizen"],0,""]]},
+{t:"Kurs",x:"De cursus Nederlands begint maandag. Deelnemers krijgen twee keer per week les.",q:[["Hoe vaak is er les?",["Elke dag","Eén keer per week","Twee keer per week"],2,""]]},
+{t:"Belge",x:"U moet een geldig identiteitsbewijs en een recente werkgeversverklaring meesturen.",q:[["Welke documenten zijn nodig?",["Een paspoort en een loonstrook","Een geldig identiteitsbewijs en een recente werkgeversverklaring","Alleen een werkgeversverklaring"],1,""]]},
+{t:"Sağlık",x:"Een wandeling van dertig minuten kan helpen om fit te blijven. U hoeft niet altijd naar de sportschool.",q:[["Moet je naar de sportschool?",["Ja, elke dag","Nee, wandelen kan ook helpen","Ja, dertig minuten"],1,"'U hoeft niet' = zorunda değilsiniz"]]},
+{t:"Toplantı",x:"Tijdens de vergadering bespreken we planning, veiligheid en nieuwe machines. Vragen kunt u aan het einde stellen.",q:[["Welke onderwerpen worden besproken?",["Salaris en vakantie","Planning, veiligheid en nieuwe machines","Alleen nieuwe machines"],1,""],["Wanneer kunt u vragen stellen?",["Aan het begin","Aan het einde","Per e-mail"],1,""]]},
+{t:"E-posta",x:"Morgen begint de vergadering om 09.00 uur in plaats van 09.30 uur. Vergeet uw documenten niet.",q:[["Hoe laat begint de vergadering?",["Om 09.00 uur","Om 09.30 uur","Om 10.00 uur"],0,"'in plaats van' = yerine. Yeni saat 09.00."]]},
+{t:"Ev",x:"De verhuurder stuurt minimaal twee maanden van tevoren een brief over een jaarlijkse huurverhoging.",q:[["Hoe wordt de huurder geïnformeerd?",["Telefonisch","Met een brief","Via een sms"],1,""],["Wanneer?",["Minimaal twee maanden van tevoren","Een week van tevoren","Na de verhoging"],0,""]]},
+{t:"Mağaza",x:"De winkel opent zaterdag om 12.00 uur vanwege een interne vergadering.",q:[["Hoe laat opent de winkel zaterdag?",["Om 09.00 uur","Om 12.00 uur","De winkel is dicht"],1,""],["Waarom?",["Door een storing","Vanwege een interne vergadering","Vanwege een feestdag"],1,"vanwege = -den dolayı"]]},
+{t:"Başvuru",x:"Zonder de gevraagde documenten kan de aanvraag niet worden behandeld.",q:[["Wat gebeurt er zonder documenten?",["De aanvraag duurt langer","De aanvraag kan niet worden behandeld","U moet extra betalen"],1,""]]},
+{t:"Gemeente: afval (uzun metin)",x:"Beste bewoner,\n\nVanaf 1 maart verandert de afvalinzameling in uw wijk. Het restafval wordt voortaan één keer per twee weken opgehaald, op donderdag. Plastic, blik en drinkpakken worden elke dinsdag opgehaald. Papier kunt u zelf naar de container bij het winkelcentrum brengen. Grof afval, zoals een oude bank of kast, wordt niet meer gratis opgehaald. U kunt dit zelf naar de milieustraat brengen of online een afspraak maken. Daarvoor betaalt u 25 euro.\n\nHeeft u vragen? Kijk op de website van de gemeente of bel 14 036.\n\nMet vriendelijke groet,\nGemeente Almere",q:[["Wanneer wordt het restafval opgehaald?",["Elke dinsdag","Eén keer per twee weken op donderdag","Elke donderdag"],1,"voortaan = bundan sonra"],["Wat moet u met papier doen?",["Op dinsdag buiten zetten","Zelf naar de container brengen","Bij de milieustraat brengen"],1,""],["Hoeveel kost het ophalen van grof afval?",["Niets","25 euro","14 euro"],1,"'niet meer gratis' → 25 euro"]]},
+{t:"Werkgever: ziekmelding (uzun metin)",x:"Aan alle medewerkers,\n\nWe hebben de regels voor ziekmelding aangepast. Als je ziek bent, bel je vóór 07.00 uur je leidinggevende. Een sms of WhatsApp-bericht is niet genoeg. Vertel hoe lang je denkt dat je ziek bent en of je bereikbaar bent. Ben je langer dan drie dagen ziek? Dan neemt de bedrijfsarts contact met je op. Ben je weer beter, meld je dan ook beter bij je leidinggevende.\n\nDeze regels gelden vanaf 1 juni.\n\nAfdeling HR",q:[["Hoe moet je je ziek melden?",["Met een WhatsApp-bericht","Bellen met je leidinggevende vóór 07.00 uur","Een e-mail sturen naar HR"],1,"'Een sms of WhatsApp-bericht is niet genoeg'"],["Wat gebeurt er als je langer dan drie dagen ziek bent?",["Je moet zelf naar de huisarts","De bedrijfsarts neemt contact op","Je krijgt geen salaris"],1,""],["Vanaf wanneer gelden de regels?",["1 juni","1 maart","Direct"],0,""]]},
+{t:"Nieuws: fietsen (uzun metin)",x:"Steeds meer Nederlanders fietsen naar hun werk. Volgens een nieuw onderzoek gaat bijna een derde van de werknemers die minder dan vijftien kilometer van hun werk wonen, met de fiets. Vooral de elektrische fiets is populair. Werkgevers zijn daar blij mee, want werknemers die fietsen, zijn minder vaak ziek. Sommige bedrijven geven hun personeel daarom een vergoeding van 23 cent per kilometer. Toch zijn er ook problemen: in grote steden zijn er te weinig plekken om fietsen te parkeren.",q:[["Waarom zijn werkgevers blij?",["Fietsers zijn minder vaak ziek","Fietsers werken langer","Fietsen is goedkoop voor het bedrijf"],0,""],["Wat is een probleem in grote steden?",["Te weinig fietspaden","Te weinig parkeerplekken voor fietsen","Te veel elektrische fietsen"],1,""],["Wat krijgen sommige werknemers?",["Een gratis fiets","Een vergoeding per kilometer","Een extra vrije dag"],1,"vergoeding = ödenek"]]}
+];
+
+const LUISTER = [
+["Goedemorgen, uw afspraak is verplaatst naar donderdag om half elf.","Randevu ne zaman?",["Donderdag om 10.30 uur","Donderdag om 11.30 uur","Dinsdag om 10.30 uur"],0,"half elf = 10.30 (11'e yarım var)"],
+["De machine wordt vandaag om drie uur gecontroleerd. Gebruik hem daarna pas met toestemming.","Makine ne zaman kontrol ediliyor?",["Om 13.00 uur","Om 15.00 uur","Morgen"],1,"om drie uur = 15.00 (öğleden sonra)"],
+["De trein naar Amsterdam heeft twintig minuten vertraging.","Ne kadar gecikme var?",["Twaalf minuten","Twintig minuten","Twee uur"],1,""],
+["Je kunt mij vanavond bellen. Als ik niet opneem, stuur dan een bericht.","Cevap vermezse ne yapmalısın?",["Morgen opnieuw bellen","Een bericht sturen","Langskomen"],1,"opnemen = telefonu açmak"],
+["Ik kan vrijdag niet werken omdat ik een afspraak bij de huisarts heb.","Neden cuma çalışamıyor?",["Hij is ziek","Een afspraak bij de huisarts","Hij heeft vakantie"],1,""],
+["De cursus begint volgende maand. Er zijn nog drie plaatsen beschikbaar.","Kaç yer boş?",["Twee","Drie","Dertien"],1,""],
+["Wilt u de deur na gebruik sluiten?","Ne yapmalısın?",["De deur openlaten","De deur sluiten","De deur op slot doen"],1,""],
+["We spreken af om kwart over acht bij de ingang.","Nerede ve saat kaçta?",["Om 8.15 bij de ingang","Om 7.45 bij de uitgang","Om 8.15 bij de uitgang"],0,"kwart over acht = 8.15"],
+["Mijn contract loopt volgende maand af. Ik wil weten of het wordt verlengd.","Ne bilmek istiyor?",["Hoeveel hij verdient","Of zijn contract wordt verlengd","Wanneer hij vakantie heeft"],1,""],
+["Door het slechte weer begint de activiteit een uur later.","Etkinlik neden geç başlıyor?",["Door het slechte weer","Door een storing","Door de vergadering"],0,""],
+["De vergadering begint niet om negen maar om half tien.","Toplantı saat kaçta?",["09.00","09.30","10.30"],1,"half tien = 9.30"],
+["Neem morgen uw identiteitsbewijs mee.","Ne getirmelisin?",["Je loonstrook","Je identiteitsbewijs","Je contract"],1,""],
+["Goedemiddag, u spreekt met de huisartsenpraktijk. De praktijk is gesloten. Bij spoed kunt u bellen met de huisartsenpost. Bij levensgevaar belt u 112.","Hayati tehlikede ne yapmalısın?",["De huisartsenpost bellen","112 bellen","Morgen terugbellen"],1,"levensgevaar = hayati tehlike"],
+["Let op: vanwege werkzaamheden rijden er dit weekend geen treinen tussen Utrecht en Amersfoort. Er rijden extra bussen.","Bu hafta sonu ne var?",["Extra treinen","Geen treinen, maar wel bussen","Geen bussen"],1,"werkzaamheden = yol/ray çalışmaları"]
+];
+
+const SPREKEN = {
+"Günlük":["Wat doe je na je werk?","Hoe ziet je normale dag eruit?","Wat doe je in het weekend?","Hoe laat sta je op?","Wat eet je graag?","Wat doe je als je weinig tijd hebt?","Hoe ga je naar je werk?","Wat doe je als het regent?","Wat vind je belangrijk in je buurt?","Welke huishoudelijke taak vind je leuk?","Wat doe je op een vrije dag?","Hoe plan je je dag?"],
+"İş":["Wat vind je belangrijk op je werk?","Werk je liever alleen of met collega's?","Wat doe je als je iets niet begrijpt?","Hoe vraag je hulp?","Wat maakt een goede leidinggevende?","Waarom is veiligheid belangrijk?","Wat doe je bij een storing?","Wil je ander werk doen? Waarom?","Wat zijn je sterke punten?","Wat wil je nog leren?","Hoe los je een probleem op?","Wat vind je belangrijk in een contract?"],
+"Ev":["Wat vind je belangrijk in een woning?","Woon je liever in een stad of in een dorp? Waarom?","Wat is een goede buur?","Wat doe je als er iets kapotgaat?","Hoe bespaar je energie?","Wat vind je van het openbaar vervoer?","Wat doe je bij een probleem met de verhuurder?","Hoe ziet je ideale woning eruit?","Wat is belangrijk in een buurt?","Wat zou je thuis willen veranderen?","Hoe verdeel je de taken thuis?","Wat doe je voor je huis?"],
+"Sağlık":["Wat doe je om gezond te blijven?","Wat doe je als je ziek bent?","Wanneer bel je de huisarts?","Waarom is slaap belangrijk?","Hoe verminder je stress?","Wat doe je als je een afspraak mist?","Wat is gezond eten?","Sport je graag?","Hoe help je iemand die ziek is?","Wat doe je als je een medicijn niet begrijpt?","Waarom is bewegen belangrijk?","Hoe zorg je voor een goede balans tussen werk en privé?"],
+"Nederland":["Wat vind je prettig aan Nederland?","Wat vind je moeilijk aan de Nederlandse taal?","Hoe oefen je Nederlands?","Waarom leer je Nederlands?","Waarom is op tijd komen belangrijk?","Hoe ga je om met een verschil van mening?","Wat vind je van fietsen?","Waar vind je informatie van de gemeente?","Waarom zijn afspraken belangrijk?","Wat doe je als je een brief niet begrijpt?","Wat wil je in Nederland bereiken?","Wat vind je van het weer in Nederland?"],
+"Eğitim":["Hoe leer je nieuwe woorden?","Wat vind je moeilijk aan grammatica?","Hoe kun je beter leren spreken?","Wat doe je als je een woord niet kent?","Waarom is herhalen belangrijk?","Hoe plan je je studie?","Leer je liever alleen of met anderen?","Wat houdt je gemotiveerd?","Wat is je doel met Nederlands?","Hoe bereid je je voor op een examen?","Hoe leer je van fouten?","Wat wil je dit jaar verbeteren?"],
+"Para":["Waar doe je boodschappen?","Hoe vergelijk je prijzen?","Koop je liever online of in de winkel?","Wat doe je als je iets wilt terugbrengen?","Waarom is sparen belangrijk?","Wat doe je bij een hoge rekening?","Hoe maak je een budget?","Waar let je op bij een grote aankoop?","Wat doe je als een bestelling te laat komt?","Hoe voorkom je dat je te veel uitgeeft?","Hoe plan je je vaste kosten?","Waar let je op bij een contract?"],
+"Aile":["Wat doe je graag met je familie?","Hoe belangrijk zijn vrienden voor jou?","Hoe vier je een verjaardag?","Wat doe je als je een afspraak moet afzeggen?","Hoe maak je nieuwe vrienden?","Wat doe je als iemand hulp nodig heeft?","Wat is belangrijk in een goede relatie?","Hoe verdeel je de taken thuis?","Wat doe je samen met je gezin?","Hoe los je een ruzie op?","Wat vind je belangrijk voor kinderen?","Hoe plan je een dag met het gezin?"],
+"Gelecek":["Wat wil je volgend jaar bereiken?","Wat wil je in Nederland doen?","Wil je een opleiding volgen?","Wat wil je verbeteren?","Waar zie je jezelf over vijf jaar?","Wat zou je doen met meer vrije tijd?","Wat zou je doen met een betere baan?","Welke vaardigheid wil je leren?","Wat is je belangrijkste plan?","Wil je later een eigen bedrijf?","Waar wil je later wonen?","Wat is je droom?"],
+"Fikir":["Is de auto beter dan het openbaar vervoer?","Moeten mensen meer thuiswerken?","Is online winkelen beter dan in de winkel?","Moet je elke dag Nederlands spreken?","Moeten kinderen sporten?","Is wonen in de stad beter dan in een dorp?","Is sparen beter dan uitgeven?","Moet iedereen fietsen?","Is het goed om vaak van baan te veranderen?","Wat is belangrijker: salaris of werkplezier?","Is een vaste baan belangrijk?","Moet iedereen een cursus volgen?"]
+};
+const MODEL_ANSWERS = [
+["Wat vind je belangrijk op je werk?","Ik vind een goede sfeer op mijn werk het belangrijkst, omdat ik veel tijd met mijn collega's doorbreng. Bijvoorbeeld: als er een probleem is, kunnen we het samen oplossen. Daarnaast vind ik veiligheid belangrijk. Daarom houd ik me altijd aan de regels. Kortom, voor mij zijn collega's en veiligheid het belangrijkst."],
+["Wat doe je om gezond te blijven?","Ik probeer gezond te leven. Ten eerste eet ik veel groente en fruit. Ten tweede ga ik twee keer per week wandelen, omdat ik dat ontspannend vind. Vroeger at ik veel snoep, maar nu doe ik dat bijna niet meer. Daardoor voel ik me fitter. Ik denk dat bewegen en gezond eten samen het beste werken."],
+["Woon je liever in een stad of in een dorp? Waarom?","Ik woon liever in een stad. Aan de ene kant is een dorp rustiger, aan de andere kant zijn er in de stad meer winkels, banen en scholen. Bovendien is het openbaar vervoer in de stad beter. Ik heb geen auto, daarom is dat voor mij belangrijk. Toch zou ik later misschien in een dorp willen wonen, als mijn kinderen groter zijn."],
+["Wat is belangrijker: salaris of werkplezier?","Volgens mij is werkplezier belangrijker dan salaris. Als je je werk leuk vindt, ga je elke dag met plezier naar je werk. Bijvoorbeeld: mijn vorige baan was goed betaald, maar ik was vaak moe en gestrest. Nu verdien ik iets minder, maar ik ben veel tevredener. Natuurlijk moet het salaris wel genoeg zijn om je rekeningen te betalen."]
+];
+
+const SCHRIJVEN = ["Yöneticine cuma günü izin istediğini yaz.","Otobüs gecikmesi nedeniyle işe geç kalacağını bildir.","Belediye randevunu değiştirmek istediğini yaz.","Bozuk gelen bir ürün için şikâyet yaz.","Hollandaca kursunun fiyatını ve saatlerini sor.","Bir üretim işi için kısa bir motivasyon e-postası yaz.","Meslektaşından vardiya değişimi rica et.","Evdeki bir arıza için ev sahibine (verhuurder) yaz.","Bir faturayı anlamadığını bildir.","Toplantıya katılamayacağını yaz.","Kaçırdığın kurs dersini sor.","İşvereninden werkgeversverklaring iste.","Fazla mesai saatlerinin yanlış olduğunu bildir.","Tatil için izin talep et.","Komşuna gürültü hakkında kibar bir mesaj yaz.","Arkadaşını hafta sonu davet et.","Randevuyu onayla ve gerekli belgeleri sor.","Bir rezervasyonu iptal et.","Bir ürünü iade etmek istediğini yaz.","Yeni iş aradığını anlat.","Bir eğitime neden katılmak istediğini yaz.","Bir belgedeki yanlış bilgiyi düzeltme talep et.","Toplu taşımadaki bir sorunu bildir.","Doktordan randevu iste.","Bir karara neden katılmadığını açıkla.","İş programındaki değişiklik hakkında bilgi iste.","Maaş bordron hakkında soru sor.","Yeni sözleşme hakkında bilgi iste.","Bir kursa kayıt olmak istediğini yaz.","Bir arkadaşından taşınma için yardım rica et."];
+const SCHRIJF_MODELS = [
+["Yöneticiden cuma izni","Onderwerp: Vrije dag op vrijdag 14 maart\n\nBeste Mark,\n\nIk schrijf je omdat ik graag op vrijdag 14 maart vrij wil nemen. Mijn dochter heeft die dag een belangrijke afspraak in het ziekenhuis en ik wil met haar meegaan. Ik heb al aan mijn collega Ahmet gevraagd of hij mijn dienst kan overnemen, en hij heeft ja gezegd. Bovendien heb ik nog genoeg vakantie-uren.\n\nKun je mij laten weten of dit mogelijk is? Als je vragen hebt, kun je mij altijd bellen.\n\nAlvast bedankt.\n\nMet vriendelijke groet,\nSelin"],
+["Ev sahibine arıza bildirimi","Onderwerp: Lekkage in de badkamer\n\nGeachte heer/mevrouw,\n\nIk ben huurder van het appartement aan de Lindelaan 12. Ik schrijf u omdat er sinds maandag water lekt uit het plafond van de badkamer. Ik denk dat er een probleem is met de leiding van de buren boven mij. Het water komt op de vloer, daardoor is de badkamer bijna niet te gebruiken.\n\nZou u zo snel mogelijk een monteur kunnen sturen? Ik ben elke dag na 16.00 uur thuis. U kunt mij bereiken op 06-12345678.\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\nMehmet Yılmaz"]
+];
+
+const KNM = [
+{t:"Wonen (barınma)",p:["Kiralık sosyal konut için <b>woningcorporatie</b>'ye kayıt olunur; bekleme listeleri uzundur.","Kira düşük gelirliyse <b>huurtoeslag</b> (kira yardımı) alınabilir; Belastingdienst/Toeslagen'den başvurulur.","Taşınınca adresini 5 gün içinde <b>gemeente</b>'ye bildirmelisin.","Çöpü ayırmak (afval scheiden) ve komşulara saygı (geluidsoverlast) önemlidir.","Ev sahibiyle kira sorununda <b>Huurcommissie</b>'ye başvurulabilir."]},
+{t:"Werk en inkomen (iş ve gelir)",p:["<b>Loonstrook</b>: brüt maaş, vergiler ve net maaş yazar.","Asgari ücret (minimumloon) yasayla belirlenir; <b>cao</b> sektör anlaşmasıdır.","Mayıs/haziranda yaklaşık %8 <b>vakantiegeld</b> (tatil parası) ödenir.","Hastaysan işverenine hemen <b>ziekmelden</b> yaparsın.","İşsizlikte UWV'den <b>WW-uitkering</b>; emeklilikte SVB'den <b>AOW</b>."]},
+{t:"Gezondheid (sağlık)",p:["Herkes Hollanda'da <b>zorgverzekering</b> (sağlık sigortası) yaptırmak zorundadır.","İlk başvuru yeri <b>huisarts</b>tır; uzman doktora (specialist) huisarts yönlendirir.","Akşam/hafta sonu acil olmayan ama beklemeyen durum: <b>huisartsenpost</b>.","Hayati tehlike: <b>112</b>. Polise acil olmayan durum: 0900-8844.","Yıllık <b>eigen risico</b> (muafiyet) vardır; düşük gelirde <b>zorgtoeslag</b> alınabilir."]},
+{t:"Onderwijs (eğitim)",p:["Çocuklar 4 yaşında okula başlayabilir; 5 yaşından itibaren <b>leerplicht</b> (zorunlu eğitim) vardır, 16'ya kadar; 18'e kadar diploma zorunluluğu (kwalificatieplicht).","Basisschool 8 yıldır (groep 1–8), sonra schooladvies ile vmbo, havo veya vwo.","Mesleki eğitim: mbo, hbo; akademik: universiteit.","Velilerin okul toplantılarına (ouderavond, 10-minutengesprek) katılması beklenir."]},
+{t:"Gemeente en overheid",p:["Gemeente: adres kaydı (BRP), pasaport/kimlik, oturma izni dışında yerel işler.","<b>BSN</b> (Burgerservicenummer) kişisel numaradır; resmi işler için gerekir.","<b>DigiD</b> ile devlet sitelerine giriş yapılır; kimseyle paylaşma.","Vergi: <b>Belastingdienst</b>; çocuk parası (kinderbijslag): <b>SVB</b>; iş/işsizlik: <b>UWV</b>; inburgering: <b>DUO</b>."]},
+{t:"Verkeer (trafik)",p:["Bisikletin önde beyaz, arkada kırmızı ışığı olmalı; karanlıkta açık olmalı.","Bisikletteyken telefonu elde tutmak yasaktır.","Sağdan gelen genelde <b>voorrang</b> (geçiş önceliği) alır, aksi işaretle belirtilmedikçe.","Toplu taşımada OV-chipkaart veya banka kartıyla <b>in- en uitchecken</b> yapılır."]},
+{t:"Gezin en kinderen",p:["0–18 yaş çocuklar için SVB'den <b>kinderbijslag</b> alınır.","Kreş: <b>kinderopvang</b>; çalışan ebeveyn <b>kinderopvangtoeslag</b> alabilir.","Çocuğa şiddet yasaktır; destek için Centrum voor Jeugd en Gezin (CJG).","Kadın ve erkek eşittir; evlilikte ve iş hayatında eşit haklar vardır."]},
+{t:"Samenleving en politiek",p:["Hollanda anayasal monarşi ve parlamenter demokrasidir; başkent Amsterdam, hükümet Den Haag'da.","<b>Tweede Kamer</b> 150, Eerste Kamer 75 üyelidir. 12 il (provincie) vardır.","Anayasa madde 1: herkese eşit davranılır, <b>ayrımcılık yasaktır</b>.","İfade, din ve basın özgürlüğü vardır; şiddete çağrı yasaktır.","Önemli günler: <b>27 nisan</b> Koningsdag, <b>4 mayıs</b> Dodenherdenking (anma), <b>5 mayıs</b> Bevrijdingsdag (kurtuluş)."]}
+];
+const KNM_Q = [
+["Waar meld je een adreswijziging?",["Bij de Belastingdienst","Bij de gemeente","Bij de huisarts"],1],
+["Waar haal je medicijnen op recept?",["Bij de apotheek","Bij de supermarkt","Bij de gemeente"],0],
+["Wat staat op een loonstrook?",["Alleen je naam","Je loon en de inhoudingen","Je huurprijs"],1],
+["Je kunt niet naar een afspraak. Wat doe je?",["Niets","Zo snel mogelijk afzeggen of verzetten","Een dag later gaan"],1],
+["Wie is in Nederland de eerste arts voor gewone klachten?",["De specialist","De huisarts","De tandarts"],1],
+["Welk nummer bel je bij levensgevaar?",["112","0900-8844","14 + netnummer"],0],
+["Is een zorgverzekering verplicht in Nederland?",["Nee","Ja, voor iedereen die hier woont of werkt","Alleen voor kinderen"],1],
+["Wie betaalt de kinderbijslag?",["De SVB","Het UWV","De gemeente"],0],
+["Vanaf welke leeftijd geldt de leerplicht?",["Vanaf 3 jaar","Vanaf 5 jaar","Vanaf 7 jaar"],1],
+["Hoeveel leden heeft de Tweede Kamer?",["75","100","150"],2],
+["Wat vieren we op 5 mei?",["Koningsdag","Bevrijdingsdag","Kerstmis"],1],
+["Wat doen we op 4 mei om 20.00 uur?",["Vuurwerk afsteken","Twee minuten stil zijn","Naar de markt gaan"],1],
+["Waarmee log je in op websites van de overheid?",["DigiD","BSN","OV-chipkaart"],0],
+["Wat zegt artikel 1 van de Grondwet?",["Iedereen moet werken","Iedereen wordt gelijk behandeld","Iedereen moet stemmen"],1],
+["Je hebt een laag inkomen en betaalt veel huur. Wat kun je aanvragen?",["Huurtoeslag","Kinderbijslag","AOW"],0],
+["Welke organisatie helpt bij werkloosheid (WW)?",["DUO","UWV","SVB"],1],
+["Wat moet een fiets hebben als het donker is?",["Een bel","Voor wit en achter rood licht","Een mandje"],1],
+["Wat krijg je meestal in mei of juni van je werkgever?",["Vakantiegeld","Kinderbijslag","Huurtoeslag"],0],
+["Wat is een huurcontract?",["Een afspraak over het huren van een woning","Een rekening van de energie","Een brief van de gemeente"],0],
+["Waar is de regering van Nederland gevestigd?",["Amsterdam","Rotterdam","Den Haag"],2]
+];
+
+const VERBS = [["zijn","was","is geweest","olmak"],["hebben","had","heeft gehad","sahip olmak"],["gaan","ging","is gegaan","gitmek"],["komen","kwam","is gekomen","gelmek"],["doen","deed","heeft gedaan","yapmak"],["maken","maakte","heeft gemaakt","yapmak, üretmek"],["werken","werkte","heeft gewerkt","çalışmak"],["wonen","woonde","heeft gewoond","oturmak, yaşamak"],["leren","leerde","heeft geleerd","öğrenmek"],["spreken","sprak","heeft gesproken","konuşmak"],["schrijven","schreef","heeft geschreven","yazmak"],["lezen","las","heeft gelezen","okumak"],["luisteren","luisterde","heeft geluisterd","dinlemek"],["begrijpen","begreep","heeft begrepen","anlamak"],["vergeten","vergat","is/heeft vergeten","unutmak"],["vinden","vond","heeft gevonden","bulmak / düşünmek"],["denken","dacht","heeft gedacht","düşünmek"],["weten","wist","heeft geweten","bilmek"],["willen","wilde","heeft gewild","istemek"],["kunnen","kon","heeft gekund","-ebilmek"],["moeten","moest","heeft gemoeten","zorunda olmak"],["mogen","mocht","heeft gemogen","izinli olmak"],["krijgen","kreeg","heeft gekregen","almak (verilen)"],["geven","gaf","heeft gegeven","vermek"],["nemen","nam","heeft genomen","almak"],["brengen","bracht","heeft gebracht","getirmek"],["kopen","kocht","heeft gekocht","satın almak"],["zoeken","zocht","heeft gezocht","aramak"],["betalen","betaalde","heeft betaald","ödemek"],["beginnen","begon","is begonnen","başlamak"],["blijven","bleef","is gebleven","kalmak"],["worden","werd","is geworden","olmak, haline gelmek"],["proberen","probeerde","heeft geprobeerd","denemek"],["beslissen","besliste","heeft beslist","karar vermek"],["eten","at","heeft gegeten","yemek"],["drinken","dronk","heeft gedronken","içmek"],["zien","zag","heeft gezien","görmek"],["zeggen","zei","heeft gezegd","söylemek"],["vragen","vroeg","heeft gevraagd","sormak"],["kijken","keek","heeft gekeken","bakmak"],["slapen","sliep","heeft geslapen","uyumak"],["lopen","liep","heeft/is gelopen","yürümek"],["rijden","reed","heeft/is gereden","sürmek"],["helpen","hielp","heeft geholpen","yardım etmek"],["staan","stond","heeft gestaan","durmak"],["zitten","zat","heeft gezeten","oturmak"],["liggen","lag","heeft gelegen","yatmak"],["vallen","viel","is gevallen","düşmek"],["vertrekken","vertrok","is vertrokken","ayrılmak, kalkmak"],["verhuizen","verhuisde","is verhuisd","taşınmak"],["kiezen","koos","heeft gekozen","seçmek"],["houden","hield","heeft gehouden","tutmak"],["opstaan","stond op","is opgestaan","kalkmak"],["aankomen","kwam aan","is aangekomen","varmak"],["terugkomen","kwam terug","is teruggekomen","geri gelmek"],["aanvragen","vroeg aan","heeft aangevraagd","başvurmak"],["afspreken","sprak af","heeft afgesproken","sözleşmek"],["uitleggen","legde uit","heeft uitgelegd","açıklamak"],["oplossen","loste op","heeft opgelost","çözmek"],["meenemen","nam mee","heeft meegenomen","yanına almak"]];
+
+const PLAN = [["V2 + inversie","20 kelime + 10 cümle","v2"],["niet/geen + modal fiiller","15 gramer + 10 konuşma","nietgeen"],["Perfectum / imperfectum","10 geçmiş zaman cümlesi","perfectum"],["Bağlaçlar ve yan cümleler","1 paragraf yaz","bijzin"],["die/dat/waar + edatlı fiiller","20 örnek cümle","die"],["İş Hollandacası","10 iş cümlesi","kelime"],["Lezen","Her gün 1 metin","lezen"],["Luisteren","15–20 dk dinleme","luisteren"],["Spreken","5 soru + 2 dk cevap","spreken"],["Schrijven","Her gün 1 e-posta","schrijven"],["KNM / MAP","Tema tekrarları","knm"],["Deneme sınavları","Her gün karma test","deneme"]];
+const FINAL_CHECK = ["V2 ve inversie'yi doğru kullanıyorum.","Yan cümlede fiili sona götürebiliyorum.","Perfectum / imperfectum farkını biliyorum.","niet/geen'i çoğunlukla doğru kullanıyorum.","die/dat/waar kullanabiliyorum.","İş yerinde yardım isteyip sorun bildirebiliyorum.","2 dakika konuşabiliyorum.","80–120 kelimelik e-posta yazabiliyorum.","Okuma metninin ana fikrini bulabiliyorum.","Dinlemede saat/tarih/sayı/yer yakalayabiliyorum.","KNM temel konularını tekrar ettim.","Mijn Inburgering'deki kişisel sınavlarımı kontrol ettim.","DUO resmi oefenexamens çözdüm."];
+
+/* ============================ DURUM ============================ */
+const KEY="b1nl_v1";
+let S={done:{},known:{},best:0,plan:{},check:{},drafts:{},theme:null};
+try{const raw=localStorage.getItem(KEY); if(raw) S=Object.assign(S,JSON.parse(raw));}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+
+/* ============================ YARDIMCILAR ============================ */
+const $=s=>document.querySelector(s);
+const app=$("#app");
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function norm(s){return String(s).toLowerCase().replace(/[.,!?¿:;'"’]/g,"").replace(/\s+/g," ").trim();}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function el(html){const d=document.createElement("div");d.innerHTML=html.trim();return d.firstElementChild;}
+let nlVoice=null;
+function pickVoice(){try{const vs=speechSynthesis.getVoices();nlVoice=vs.find(v=>/^nl(-|_)NL/i.test(v.lang))||vs.find(v=>/^nl/i.test(v.lang))||null;}catch(e){}}
+try{pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}
+function speak(text,rate){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="nl-NL";if(nlVoice)u.voice=nlVoice;u.rate=rate||0.9;speechSynthesis.speak(u);return true;}catch(e){return false;}}
+const hasTTS = typeof window.speechSynthesis!=="undefined";
+const speakBtn=(text,label)=>hasTTS?`<button class="speak" data-say="${esc(text)}">🔊 ${label||"Dinle"}</button>`:"";
+document.addEventListener("click",e=>{const b=e.target.closest("[data-say]");if(b){speak(b.dataset.say,Number(b.dataset.rate)||0.9);}});
+
+/* Alıştırma bileşeni: her soru kendi geri bildirimini verir; onAnswer(doğruMu) çağrılır */
+function renderQuestion(q,onAnswer){
+  const box=el(`<div class="q"></div>`);
+  const fb=()=>box.querySelector(".fb");
+  const show=(ok,msg)=>{let f=fb();if(!f){f=el(`<div class="fb"></div>`);box.appendChild(f);}f.className="fb "+(ok?"ok":"no");f.innerHTML=msg;};
+  let answered=false;
+  if(q[0]==="mc"){
+    const [,qt,opts,ai,expl]=q;
+    box.appendChild(el(`<div class="qt">${esc(qt)}</div>`));
+    const order=shuffle(opts.map((o,i)=>i));
+    order.forEach(i=>{const b=el(`<button class="opt">${esc(opts[i])}</button>`);b.onclick=()=>{
+      if(answered)return;answered=true;
+      box.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+      const ok=i===ai;b.classList.add(ok?"right":"wrong");
+      if(!ok)[...box.querySelectorAll(".opt")].find(x=>x.textContent===opts[ai]).classList.add("right");
+      show(ok,(ok?"✓ Doğru! ":"✗ Doğru cevap: <b>"+esc(opts[ai])+"</b>. ")+(expl?esc(expl):""));onAnswer&&onAnswer(ok);
+    };box.appendChild(b);});
+  } else if(q[0]==="order"){
+    const parts=q[1].split("|");const target=q[2];
+    box.appendChild(el(`<div class="qt">Cümleyi doğru sıraya koy:</div>`));
+    const built=el(`<div class="built" aria-label="Kurduğun cümle"></div>`);
+    const pool=el(`<div class="chips"></div>`);
+    let picked=[];
+    const redraw=()=>{built.innerHTML="";picked.forEach((p,k)=>{const c=el(`<button class="chip">${esc(p.t)}</button>`);c.onclick=()=>{if(answered)return;picked.splice(k,1);pool.querySelector(`[data-i="${p.i}"]`).hidden=false;redraw();};built.appendChild(c);});
+      if(!picked.length)built.appendChild(el(`<span class="muted small">Aşağıdaki parçalara sırayla dokun</span>`));};
+    let sh=shuffle(parts.map((t,i)=>({t,i})));
+    if(sh.map(x=>x.i).join()===parts.map((t,i)=>i).join()&&parts.length>1)sh.push(sh.shift());
+    sh.forEach(p=>{const c=el(`<button class="chip" data-i="${p.i}">${esc(p.t)}</button>`);c.onclick=()=>{if(answered)return;picked.push(p);c.hidden=true;redraw();};pool.appendChild(c);});
+    redraw();box.appendChild(built);box.appendChild(pool);
+    const chk=el(`<div class="btns"><button class="btn sec">Temizle</button><button class="btn">Kontrol et</button></div>`);
+    chk.children[0].onclick=()=>{if(answered)return;picked=[];pool.querySelectorAll(".chip").forEach(c=>c.hidden=false);redraw();};
+    chk.children[1].onclick=()=>{if(answered||picked.length<parts.length)return;answered=true;const ok=norm(picked.map(p=>p.t).join(" "))===norm(target);
+      show(ok,(ok?"✓ Doğru! ":"✗ Doğrusu: ")+"<b>"+esc(target)+"</b>");chk.remove();onAnswer&&onAnswer(ok);};
+    box.appendChild(chk);
+  } else if(q[0]==="fill"){
+    const [,qt,acc,hint]=q;
+    box.appendChild(el(`<div class="qt">${esc(qt)}</div>`));
+    const id="f"+Math.random().toString(36).slice(2,8);
+    const inp=el(`<input type="text" id="${id}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Cevabını yaz">`);
+    box.appendChild(inp);
+    const b=el(`<button class="btn">Kontrol et</button>`);
+    const go=()=>{if(answered||!inp.value.trim())return;answered=true;const ok=acc.some(a=>norm(a)===norm(inp.value));inp.disabled=true;b.remove();
+      show(ok,(ok?"✓ Doğru! ":"✗ Doğru cevap: <b>"+esc(acc[0])+"</b>. ")+(hint?esc(hint):""));onAnswer&&onAnswer(ok);};
+    b.onclick=go;inp.addEventListener("keydown",e=>{if(e.key==="Enter")go();});
+    box.appendChild(b);
+  }
+  return box;
+}
+
+/* ============================ GÖRÜNÜMLER ============================ */
+const views={};
+const lessonPct=()=>Math.round(Object.keys(S.done).filter(k=>LESSONS.some(l=>l.id===k)).length/LESSONS.length*100);
+const allWords=()=>Object.values(VOCAB).flat();
+const knownCount=()=>allWords().filter(w=>S.known[w[0]]).length;
+
+views.home=()=>{
+  const lp=lessonPct(), kc=knownCount(), tw=allWords().length;
+  const next=LESSONS.find(l=>!S.done[l.id]);
+  return `
+  <section class="hero">
+    <span class="small" style="opacity:.85">Inburgering · Staatsexamen Nt2 Programma I</span>
+    <h2>Hollandaca B1'e adım adım</h2>
+    <p class="small" style="opacity:.9">Tüm dersler Türkçe açıklamalı. İlerlemen bu telefonda saklanır.</p>
+    <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-top:4px"><span>Gramer dersleri</span><b>%${lp}</b></div>
+    <div class="bar"><i style="width:${lp}%"></i></div>
+    <div style="display:flex;justify-content:space-between;font-size:.85rem"><span>Öğrenilen kelime</span><b>${kc} / ${tw}</b></div>
+    <div class="bar"><i style="width:${Math.round(kc/tw*100)}%"></i></div>
+  </section>
+  ${next?`<a class="row" href="#ders-${next.id}"><span class="num">▶</span><span class="t"><b>Sıradaki ders: ${esc(next.t)}</b><small>${esc(next.s)}</small></span><span class="chev">›</span></a>`:`<div class="tip"><b>Tebrikler!</b> Tüm gramer derslerini bitirdin. Şimdi deneme sınavlarıyla pekiştir.</div>`}
+  <div class="tip"><b>Günlük öneri (≈80 dk):</b> 15 dk kelime · 20 dk gramer · 20 dk okuma/dinleme · 15 dk konuşma · 10 dk yazma. Sırayla çalış: öğren → sesli oku → kendi cümleni kur → alıştırma çöz → yanlışlarını tekrar et.</div>
+  <div class="grid">
+    <a class="tile" href="#dersler"><span class="ic">G</span><b>Gramer</b><span>${LESSONS.length} ders, Türkçe anlatım + alıştırma</span></a>
+    <a class="tile" href="#kelime"><span class="ic">K</span><b>Kelimeler</b><span>${tw} kelime, kartlarla çalış</span></a>
+    <a class="tile" href="#lezen"><span class="ic">L</span><b>Lezen</b><span>Okuma metinleri ve sorular</span></a>
+    <a class="tile" href="#luisteren"><span class="ic">D</span><b>Luisteren</b><span>Sesli dinleme alıştırması</span></a>
+    <a class="tile" href="#spreken"><span class="ic">S</span><b>Spreken</b><span>120 soru, 2 dk zamanlayıcı</span></a>
+    <a class="tile" href="#schrijven"><span class="ic">Y</span><b>Schrijven</b><span>30 e-posta görevi + şablon</span></a>
+    <a class="tile" href="#knm"><span class="ic">M</span><b>KNM</b><span>Hollanda toplumu bilgisi + test</span></a>
+    <a class="tile" href="#fiiller"><span class="ic">F</span><b>Fiil bankası</b><span>${VERBS.length} düzensiz/önemli fiil</span></a>
+    <a class="tile" href="#deneme"><span class="ic">✓</span><b>Deneme sınavı</b><span>Karışık 20 soru · en iyi: ${S.best||0}/20</span></a>
+    <a class="tile" href="#plan"><span class="ic">12</span><b>12 haftalık plan</b><span>Haftalık hedefler + son kontrol</span></a>
+  </div>
+  <details><summary>Sınav hakkında bilgi</summary>
+    <div class="list small">
+      <p>B1 dil sınavları <b>Staatsexamen Nt2 Programma I</b> adıyla yapılır. Dört bölüm vardır:</p>
+      <div class="tbl"><table><tr><th>Bölüm</th><th>Yaklaşık süre</th><th>Ne ölçülür?</th></tr>
+      <tr><td>Lezen</td><td>110 dk</td><td>Resmi mektup, ilan, haber metinlerini anlama</td></tr>
+      <tr><td>Luisteren</td><td>90 dk</td><td>Konuşma ve duyuruları anlama</td></tr>
+      <tr><td>Spreken</td><td>30 dk</td><td>Bilgisayara sözlü cevap verme</td></tr>
+      <tr><td>Schrijven</td><td>100 dk</td><td>E-posta, mektup, kısa metin yazma</td></tr></table></div>
+      <p>Ayrıca kişisel planına göre <b>KNM</b> ve <b>MAP/ONA</b> zorunlu olabilir. Kendi sınavlarını <b>Mijn Inburgering</b>'den kontrol et; DUO'nun resmi <b>oefenexamens</b>'ini mutlaka çöz.</p>
+      <p class="muted">Bu uygulama çalışma materyalidir, resmi sınav soruları içermez.</p>
+    </div>
+  </details>
+  <div class="btns"><button class="btn sec" id="themeBtn">Tema: ${S.theme==="dark"?"Koyu":S.theme==="light"?"Açık":"Sistem"}</button></div>`;
+};
+
+views.dersler=()=>`<h2>Gramer dersleri</h2><p class="muted small">Her derste Türkçe kural anlatımı, örnek cümleler (dinleyebilirsin) ve alıştırmalar var. Bir dersin tüm alıştırmalarını yapınca ders tamamlandı sayılır.</p>
+  <div class="list">${LESSONS.map((l,i)=>`<a class="row ${S.done[l.id]?"done":""}" href="#ders-${l.id}"><span class="num">${S.done[l.id]?"✓":i+1}</span><span class="t"><b>${esc(l.t)}</b><small>${esc(l.s)}</small></span><span class="chev">›</span></a>`).join("")}</div>`;
+
+function lessonView(id){
+  const l=LESSONS.find(x=>x.id===id); if(!l) return views.dersler();
+  setTimeout(()=>{
+    const wrap=$("#qwrap"); let n=0, correct=0;
+    l.q.forEach((q,i)=>{const c=el(`<div class="card"><span class="pill">Soru ${i+1} / ${l.q.length}</span></div>`);
+      c.appendChild(renderQuestion(q,ok=>{n++;if(ok)correct++;if(n===l.q.length){S.done[l.id]=Math.max(S.done[l.id]||0,Math.round(correct/l.q.length*100))||1;save();
+        $("#lres").innerHTML=`<div class="tip"><b>Ders tamamlandı:</b> ${correct}/${l.q.length} doğru. ${correct<l.q.length?"Yanlış yaptıklarını tekrar etmek için sayfayı yenile ve tekrar çöz.":"Harika!"}</div>`;}}));
+      wrap.appendChild(c);});
+  });
+  const idx=LESSONS.indexOf(l), nx=LESSONS[idx+1];
+  return `<h2>${esc(l.t)}</h2>
+  <div class="card"><h3>Kural (Türkçe)</h3><ul class="rules">${l.rules.map(r=>`<li>${r}</li>`).join("")}</ul></div>
+  ${l.table?`<div class="tbl"><table>${l.table.map((r,i)=>`<tr>${r.map(c=>i===0?`<th>${esc(c)}</th>`:`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table></div>`:""}
+  <div class="card"><h3>Örnekler</h3>${l.ex.map(e=>`<div class="ex"><span class="nl">${esc(e[0])}</span><span class="tr">${esc(e[1])}</span><span class="note">${esc(e[2])}</span>${hasTTS?`<span>${speakBtn(e[0])}</span>`:""}</div>`).join("")}</div>
+  <h2>Alıştırma</h2>
+  <div id="qwrap" class="list"></div>
+  <div id="lres"></div>
+  <div class="btns">${nx?`<a class="btn" href="#ders-${nx.id}">Sonraki ders: ${esc(nx.t)} ›</a>`:`<a class="btn" href="#deneme">Deneme sınavına geç ›</a>`}</div>`;
+}
+
+let vCat=Object.keys(VOCAB)[0], vMode="kart", vIdx=0, vFlip=false, vDeck=null;
+views.kelime=()=>{
+  const cats=Object.keys(VOCAB);
+  if(!vDeck) vDeck=shuffle(VOCAB[vCat]);
+  const list=VOCAB[vCat], kn=list.filter(w=>S.known[w[0]]).length;
+  let body="";
+  if(vMode==="liste"){
+    body=`<div class="tbl"><table><tr><th>Hollandaca</th><th>Türkçe</th></tr>${list.map(w=>`<tr><td><b>${esc(w[0])}</b><br><span class="muted small">${esc(w[2])}</span></td><td>${esc(w[1])} ${S.known[w[0]]?'<span class="pill ok">biliyorum</span>':""}</td></tr>`).join("")}</table></div>`;
+  } else {
+    const w=vDeck[vIdx%vDeck.length];
+    body=`<div class="card flash" id="flash" role="button" tabindex="0" aria-label="Kartı çevir">
+      <span class="pill">${vIdx%vDeck.length+1} / ${vDeck.length}</span>
+      <div class="w">${esc(w[0])}</div>
+      ${vFlip?`<div class="m">${esc(w[1])}</div><div class="muted">${esc(w[2])}</div>`:`<div class="muted small">Anlamını görmek için dokun</div>`}
+    </div>
+    <div class="btns">${speakBtn(w[0]+". "+w[2],"Dinle")}</div>
+    <div class="btns"><button class="btn sec" id="vAgain">Tekrar göster</button><button class="btn" id="vKnow">Biliyorum ✓</button></div>`;
+  }
+  return `<h2>Kelimeler</h2>
+  <div class="segs" id="vcats">${cats.map(c=>`<button class="${c===vCat?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="small muted">Bu grupta bildiğin: ${kn}/${list.length}</span>
+  <div class="segs"><button class="${vMode==="kart"?"on":""}" data-m="kart">Kart</button><button class="${vMode==="liste"?"on":""}" data-m="liste">Liste</button></div></div>
+  <div class="bar plain"><i style="width:${Math.round(kn/list.length*100)}%"></i></div>
+  ${body}
+  <p class="small muted">İpucu: Kelimeyi artikeliyle (de/het) birlikte öğren ve örnek cümleyi sesli tekrar et.</p>`;
+};
+function bindKelime(){
+  document.querySelectorAll("#vcats button").forEach(b=>b.onclick=()=>{vCat=b.dataset.c;vDeck=null;vIdx=0;vFlip=false;render();});
+  document.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{vMode=b.dataset.m;render();});
+  const f=$("#flash"); if(f){const flip=()=>{vFlip=!vFlip;render();};f.onclick=flip;f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip();}};}
+  const k=$("#vKnow"); if(k)k.onclick=()=>{const w=vDeck[vIdx%vDeck.length];S.known[w[0]]=1;save();vIdx++;vFlip=false;render();};
+  const a=$("#vAgain"); if(a)a.onclick=()=>{const w=vDeck[vIdx%vDeck.length];delete S.known[w[0]];save();vDeck.push(w);vIdx++;vFlip=false;render();};
+}
+
+views.beceri=()=>`<h2>Beceriler</h2><p class="muted small">Sınavın dört bölümü ve KNM için alıştırmalar.</p>
+  <div class="list">
+  <a class="row" href="#lezen"><span class="num">L</span><span class="t"><b>Lezen · Okuma</b><small>${LEZEN.length} metin, çoktan seçmeli sorular</small></span><span class="chev">›</span></a>
+  <a class="row" href="#luisteren"><span class="num">D</span><span class="t"><b>Luisteren · Dinleme</b><small>${LUISTER.length} kayıt (telefonun sesiyle okunur)</small></span><span class="chev">›</span></a>
+  <a class="row" href="#spreken"><span class="num">S</span><span class="t"><b>Spreken · Konuşma</b><small>120 soru, cevap formülü, zamanlayıcı</small></span><span class="chev">›</span></a>
+  <a class="row" href="#schrijven"><span class="num">Y</span><span class="t"><b>Schrijven · Yazma</b><small>30 görev, şablon, kelime sayacı</small></span><span class="chev">›</span></a>
+  <a class="row" href="#knm"><span class="num">M</span><span class="t"><b>KNM</b><small>8 tema + ${KNM_Q.length} soruluk test</small></span><span class="chev">›</span></a>
+  <a class="row" href="#fiiller"><span class="num">F</span><span class="t"><b>Fiil bankası</b><small>Tablo + hızlı test</small></span><span class="chev">›</span></a>
+  <a class="row" href="#plan"><span class="num">12</span><span class="t"><b>12 haftalık plan</b><small>Haftalık hedefler ve son kontrol listesi</small></span><span class="chev">›</span></a>
+  </div>`;
+
+views.lezen=()=>{
+  setTimeout(()=>{const w=$("#lwrap");LEZEN.forEach((t,i)=>{
+    const c=el(`<div class="card"><span class="pill">Metin ${i+1}</span><h3>${esc(t.t)}</h3><div class="ex" style="white-space:pre-line"><span>${esc(t.x)}</span></div></div>`);
+    t.q.forEach(q=>c.appendChild(renderQuestion(["mc",q[0],q[1],q[2],q[3]])));w.appendChild(c);});});
+  return `<h2>Lezen · Okuma</h2><div class="tip"><b>Strateji:</b> Önce soruyu oku, sonra metinde sadece gereken bilgiyi ara. Her kelimeyi çevirmeye çalışma. <i>in plaats van</i> (yerine), <i>vanwege</i> (-den dolayı), <i>niet verplicht</i> (zorunlu değil) gibi tuzak kelimelere dikkat et.</div><div id="lwrap" class="list"></div>`;
+};
+
+views.luisteren=()=>{
+  setTimeout(()=>{const w=$("#luwrap");LUISTER.forEach((it,i)=>{
+    const c=el(`<div class="card"><span class="pill">Kayıt ${i+1}</span>
+      <div class="btns">${hasTTS?`<button class="speak" data-say="${esc(it[0])}">🔊 Dinle</button><button class="speak" data-say="${esc(it[0])}" data-rate="0.65">🐢 Yavaş</button>`:""}<button class="btn ghost" data-show>Metni göster</button></div>
+      <div class="ex" hidden><span class="nl">${esc(it[0])}</span></div></div>`);
+    c.querySelector("[data-show]").onclick=e=>{const ex=c.querySelector(".ex");ex.hidden=!ex.hidden;e.target.textContent=ex.hidden?"Metni göster":"Metni gizle";};
+    c.appendChild(renderQuestion(["mc",it[1],it[2],it[3],it[4]]));w.appendChild(c);});});
+  return `<h2>Luisteren · Dinleme</h2>
+  ${hasTTS?"":`<div class="tip"><b>Not:</b> Bu tarayıcı sesli okumayı desteklemiyor. Metni göster düğmesiyle okuyarak çalışabilirsin.</div>`}
+  <div class="tip"><b>Strateji:</b> Önce soruyu oku, sonra dinle. Saat, tarih, sayı, yer, sorun ve çözüme odaklan. Saatler: <i>half tien</i> = 9.30, <i>kwart over acht</i> = 8.15, <i>kwart voor negen</i> = 8.45. Sesi telefonun kendi Hollandaca sesi okur.</div>
+  <div id="luwrap" class="list"></div>`;
+};
+
+let spCat="Günlük", spQ=null, spT=null, spLeft=120;
+views.spreken=()=>{
+  const cats=Object.keys(SPREKEN);
+  if(!spQ) spQ=SPREKEN[spCat][Math.floor(Math.random()*SPREKEN[spCat].length)];
+  return `<h2>Spreken · Konuşma</h2>
+  <div class="tip"><b>Cevap formülü:</b> antwoord + reden + voorbeeld + conclusie.<br><i>Ik vind … belangrijk, <b>omdat</b> … <b>Bijvoorbeeld</b> … <b>Daarom</b> …</i><br>En az 2 bağlaç kullan, geçmiş ve gelecekten de bahset.</div>
+  <div class="segs" id="spcats">${cats.map(c=>`<button class="${c===spCat?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+  <div class="card" style="text-align:center;align-items:center">
+    <span class="pill">${esc(spCat)}</span>
+    <h3 style="font-size:1.3rem">${esc(spQ)}</h3>
+    <div>${speakBtn(spQ,"Soruyu dinle")}</div>
+    <div class="timer" id="sptimer">${fmt(spLeft)}</div>
+    <div class="btns" style="width:100%"><button class="btn" id="spStart">${spT?"Durdur":"2 dk başlat"}</button><button class="btn sec" id="spNext">Yeni soru</button></div>
+    <p class="small muted">Telefonu bırak ve sesli cevap ver. İstersen kendini telefonun ses kaydedicisiyle kaydedip dinle.</p>
+  </div>
+  <h2>Örnek cevaplar</h2>
+  ${MODEL_ANSWERS.map(m=>`<details><summary>${esc(m[0])}</summary><div class="list"><p>${esc(m[1])}</p><div>${speakBtn(m[1])}</div></div></details>`).join("")}
+  <details><summary>Faydalı kalıplar</summary><ul class="rules small">
+    <li><b>Volgens mij</b> … / <b>Ik denk dat</b> … (bence)</li><li><b>Ik ben het (niet) eens met</b> … (katılıyorum / katılmıyorum)</li>
+    <li><b>Aan de ene kant</b> … <b>aan de andere kant</b> … (bir yandan … diğer yandan)</li><li><b>Ten eerste</b> … <b>ten tweede</b> … (birincisi … ikincisi)</li>
+    <li><b>Vroeger</b> … <b>nu</b> … <b>later wil ik</b> … (eskiden … şimdi … ileride)</li><li><b>Kortom</b> … / <b>Daarom vind ik</b> … (kısacası / bu yüzden)</li>
+    <li><b>Ik bedoel</b> … (demek istediğim) · <b>Hoe zeg je dat?</b> (nasıl denir?)</li></ul></details>`;
+};
+function fmt(s){return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}
+function bindSpreken(){
+  document.querySelectorAll("#spcats button").forEach(b=>b.onclick=()=>{spCat=b.dataset.c;spQ=null;stopT();render();});
+  $("#spNext").onclick=()=>{spQ=null;stopT();render();};
+  $("#spStart").onclick=()=>{if(spT){stopT();render();return;}spLeft=120;spT=setInterval(()=>{spLeft--;const t=$("#sptimer");if(t)t.textContent=fmt(spLeft);if(spLeft<=0){stopT();const t2=$("#sptimer");if(t2)t2.textContent="Süre bitti ✓";const b=$("#spStart");if(b)b.textContent="2 dk başlat";}},1000);$("#spStart").textContent="Durdur";};
+}
+function stopT(){if(spT){clearInterval(spT);spT=null;}spLeft=120;}
+
+let swIdx=0;
+const CONNECTORS=["omdat","want","daarom","maar","toch","als","hoewel","terwijl","dus","bovendien","daarna","eerst","daardoor","zodat","nadat","voordat","zodra","ook","verder","daarnaast"];
+views.schrijven=()=>{
+  const draft=S.drafts[swIdx]||"";
+  return `<h2>Schrijven · Yazma</h2>
+  <div class="tip"><b>Düzen:</b> Giriş → açıklama/neden → istek/çözüm → kapanış. Görevdeki <b>tüm maddeleri</b> cevapla. 80–120 kelime, en az 2 bağlaç.</div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="pill">Görev ${swIdx+1} / ${SCHRIJVEN.length}</span>
+      <div class="btns" style="flex:none"><button class="btn sec" id="swPrev" aria-label="Önceki görev">‹</button><button class="btn sec" id="swNext" aria-label="Sonraki görev">›</button></div></div>
+    <h3>${esc(SCHRIJVEN[swIdx])}</h3>
+    <label for="swText" class="small muted">E-postanı Hollandaca yaz (taslak bu telefonda saklanır):</label>
+    <textarea id="swText" placeholder="Beste … / Geachte heer/mevrouw,">${esc(draft)}</textarea>
+    <div id="swStats" class="small"></div>
+    <div class="btns"><button class="btn sec" id="swTpl">Şablonu ekle</button></div>
+  </div>
+  <details><summary>Hazır e-posta şablonu</summary><p style="white-space:pre-line">Onderwerp: Vraag over …
+
+Geachte heer/mevrouw, (resmi) / Beste [naam], (tanıdık)
+
+Ik schrijf u omdat …
+Ik wil graag weten of …
+Daarnaast heb ik een vraag over …
+Kunt u mij laten weten wat mogelijk is?
+
+Alvast bedankt voor uw hulp.
+
+Met vriendelijke groet,
+[Naam]</p></details>
+  ${SCHRIJF_MODELS.map(m=>`<details><summary>Örnek: ${esc(m[0])}</summary><p style="white-space:pre-line">${esc(m[1])}</p></details>`).join("")}
+  <details><summary>Kontrol listesi</summary><ul class="rules small"><li>Hitap ve kapanış doğru mu? (resmi: <i>Geachte … / Met vriendelijke groet</i>)</li><li>Görevdeki her maddeyi yazdın mı?</li><li>Fiil 2. sırada mı, yan cümlede sonda mı?</li><li>Büyük harf, nokta ve virgül doğru mu?</li><li>En az 2 bağlaç: omdat, daarom, maar, als, bovendien…</li></ul></details>`;
+};
+function bindSchrijven(){
+  const ta=$("#swText"), st=$("#swStats");
+  const upd=()=>{const words=ta.value.trim()?ta.value.trim().split(/\s+/).length:0;const low=" "+ta.value.toLowerCase().replace(/[.,!?;:]/g," ")+" ";
+    const used=CONNECTORS.filter(c=>low.includes(" "+c+" "));
+    const wc=words<80?`<span style="color:var(--bad)">${words} kelime (hedef 80–120)</span>`:words>150?`<span style="color:var(--accent)">${words} kelime (biraz uzun)</span>`:`<span style="color:var(--ok)">${words} kelime ✓</span>`;
+    st.innerHTML=`${wc} · Bağlaçlar: ${used.length?used.map(u=>`<span class="pill ok">${u}</span>`).join(" "):'<span style="color:var(--bad)">henüz yok</span>'}`;
+    S.drafts[swIdx]=ta.value;save();};
+  ta.addEventListener("input",upd);upd();
+  $("#swPrev").onclick=()=>{swIdx=(swIdx-1+SCHRIJVEN.length)%SCHRIJVEN.length;render();};
+  $("#swNext").onclick=()=>{swIdx=(swIdx+1)%SCHRIJVEN.length;render();};
+  $("#swTpl").onclick=()=>{if(!ta.value.trim()){ta.value="Geachte heer/mevrouw,\n\nIk schrijf u omdat \n\nIk wil graag weten of \n\nKunt u mij laten weten wat mogelijk is?\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n";upd();}ta.focus();};
+}
+
+views.knm=()=>{
+  setTimeout(()=>{const w=$("#knmq");let n=0,c=0;KNM_Q.forEach((q,i)=>{const card=el(`<div class="card"><span class="pill">Soru ${i+1}</span></div>`);
+    card.appendChild(renderQuestion(["mc",q[0],q[1],q[2]],ok=>{n++;if(ok)c++;if(n===KNM_Q.length)$("#knmres").innerHTML=`<div class="tip"><b>Sonuç:</b> ${c}/${KNM_Q.length} doğru.</div>`;}));w.appendChild(card);});});
+  return `<h2>KNM · Hollanda toplumu bilgisi</h2>
+  <p class="muted small">Kennis van de Nederlandse Maatschappij. Konuları Türkçe özetledik; sınav Hollandaca olduğu için anahtar kelimeleri Hollandaca öğren.</p>
+  ${KNM.map(k=>`<details><summary>${esc(k.t)}</summary><ul class="rules small">${k.p.map(p=>`<li>${p}</li>`).join("")}</ul></details>`).join("")}
+  <h2>KNM testi</h2><div id="knmq" class="list"></div><div id="knmres"></div>
+  <p class="small muted">Rakamlar ve kurallar değişebilir; güncel bilgiyi resmi kaynaklardan (DUO, Rijksoverheid, gemeente) kontrol et.</p>`;
+};
+
+let fvMode="tablo";
+views.fiiller=()=>{
+  let body;
+  if(fvMode==="tablo"){
+    body=`<div class="tbl"><table><tr><th>Mastar</th><th>Imperfectum</th><th>Perfectum</th><th>Türkçe</th></tr>${VERBS.map(v=>`<tr><td><b>${esc(v[0])}</b></td><td>${esc(v[1])}</td><td>${esc(v[2])}</td><td>${esc(v[3])}</td></tr>`).join("")}</table></div>`;
+  } else {
+    body=`<div id="fvq" class="list"></div><div class="btns"><button class="btn" id="fvNew">Yeni 10 soru</button></div>`;
+    setTimeout(()=>{const w=$("#fvq");if(!w)return;const pick=shuffle(VERBS).slice(0,10);
+      pick.forEach((v,i)=>{const kind=Math.random()<.5?1:2;const correct=v[kind];
+        const pool=shuffle(VERBS.filter(x=>x!==v)).slice(0,6).map(x=>x[kind]);
+        let fake=kind===1?v[0].replace(/en$/,"")+"de":(kind===2?"heeft ge"+v[0].replace(/en$/,"")+"d":"");
+        const opts=[correct];[fake,...pool].forEach(o=>{if(opts.length<3&&!opts.includes(o))opts.push(o);});
+        const card=el(`<div class="card"><span class="pill">${i+1} / 10</span></div>`);
+        card.appendChild(renderQuestion(["mc",`${v[0]} (${v[3]}) → ${kind===1?"imperfectum (ik/hij)":"perfectum (hij)"}?`,opts,0,`${v[0]} – ${v[1]} – ${v[2]}`]));w.appendChild(card);});
+      const nb=$("#fvNew");if(nb)nb.onclick=()=>render();});
+  }
+  return `<h2>Fiil bankası</h2>
+  <div class="tip"><b>Nasıl okunur:</b> Mastar (werken) · Imperfectum = geçmiş şekil (werkte = çalıştı/çalışıyordu) · Perfectum (heeft gewerkt = çalıştı). <b>is</b> ile olanlar hareket/değişim fiilleridir.</div>
+  <div class="segs"><button class="${fvMode==="tablo"?"on":""}" data-fv="tablo">Tablo</button><button class="${fvMode==="test"?"on":""}" data-fv="test">Hızlı test</button></div>
+  ${body}`;
+};
+
+views.plan=()=>`<h2>12 haftalık B1 planı</h2><p class="muted small">Tamamladığın haftayı işaretle.</p>
+  <div class="list">${PLAN.map((p,i)=>`<label class="row check"><input type="checkbox" id="pl${i}" data-pl="${i}" ${S.plan[i]?"checked":""}><span class="t"><b>Hafta ${i+1}: ${esc(p[0])}</b><small>Günlük görev: ${esc(p[1])}</small></span><a class="btn ghost" href="#${LESSONS.some(l=>l.id===p[2])?"ders-"+p[2]:p[2]}">Aç</a></label>`).join("")}</div>
+  <h2>Sınav öncesi son kontrol</h2>
+  <div class="card">${FINAL_CHECK.map((c,i)=>`<label class="check"><input type="checkbox" id="fc${i}" data-fc="${i}" ${S.check[i]?"checked":""}><span>${esc(c)}</span></label>`).join("")}</div>`;
+
+/* Deneme sınavı: tüm havuzdan karışık 20 soru */
+let exam=null;
+function buildExam(){
+  const pool=[];
+  LESSONS.forEach(l=>l.q.forEach(q=>pool.push({sec:"Gramer",q})));
+  LEZEN.forEach(t=>t.q.forEach(q=>pool.push({sec:"Lezen",ctx:t.x,q:["mc",q[0],q[1],q[2],q[3]]})));
+  LUISTER.forEach(it=>pool.push({sec:"Luisteren",audio:it[0],q:["mc",it[1],it[2],it[3],it[4]]}));
+  KNM_Q.forEach(q=>pool.push({sec:"KNM",q:["mc",q[0],q[1],q[2]]}));
+  const by=s=>shuffle(pool.filter(p=>p.sec===s));
+  return shuffle([...by("Gramer").slice(0,10),...by("Lezen").slice(0,4),...by("Luisteren").slice(0,3),...by("KNM").slice(0,3)]);
+}
+views.deneme=()=>{
+  if(!exam) return `<h2>Deneme sınavı</h2>
+    <div class="card"><p>Karışık <b>20 soru</b>: 10 gramer, 4 okuma, 3 dinleme, 3 KNM. Her seferinde farklı sorular gelir.</p>
+    <p class="small muted">En iyi sonucun: <b>${S.best||0}/20</b></p>
+    <button class="btn" id="exStart">Sınavı başlat</button></div>
+    <div class="tip"><b>Hatırlatma:</b> Gerçek sınava benzer pratik için DUO'nun resmi oefenexamens'ini de çöz. Konuşma ve yazma için Beceriler bölümündeki görevleri kullan.</div>`;
+  setTimeout(()=>{
+    const w=$("#exwrap");let n=0,c=0;const secs={};
+    exam.forEach((it,i)=>{const card=el(`<div class="card"><span class="pill">${i+1} / ${exam.length} · ${it.sec}</span></div>`);
+      if(it.ctx)card.appendChild(el(`<div class="ex" style="white-space:pre-line"><span>${esc(it.ctx)}</span></div>`));
+      if(it.audio){card.appendChild(el(`<div class="btns">${hasTTS?`<button class="speak" data-say="${esc(it.audio)}">🔊 Dinle</button>`:`<div class="ex"><span>${esc(it.audio)}</span></div>`}</div>`));}
+      card.appendChild(renderQuestion(it.q,ok=>{n++;if(ok)c++;secs[it.sec]=secs[it.sec]||[0,0];secs[it.sec][1]++;if(ok)secs[it.sec][0]++;
+        if(n===exam.length){if(c>(S.best||0)){S.best=c;save();}
+          $("#exres").innerHTML=`<div class="card" style="text-align:center"><div class="score">${c}/${exam.length}</div><p>${c>=16?"Çok iyi! Sınava hazırlığın güçlü.":c>=12?"İyi gidiyorsun. Yanlış bölümleri tekrar et.":"Gramer derslerini tekrar edip yeniden dene."}</p>
+          <div class="tbl"><table><tr><th>Bölüm</th><th>Doğru</th></tr>${Object.entries(secs).map(([k,v])=>`<tr><td>${k}</td><td>${v[0]} / ${v[1]}</td></tr>`).join("")}</table></div>
+          <button class="btn" id="exAgain">Yeni deneme</button></div>`;
+          $("#exAgain").onclick=()=>{exam=buildExam();render();scrollTo(0,0);};
+          $("#exres").scrollIntoView({behavior:"smooth"});}}));
+      w.appendChild(card);});
+  });
+  return `<h2>Deneme sınavı</h2><div id="exwrap" class="list"></div><div id="exres"></div><button class="btn sec" id="exQuit">Sınavı bitir</button>`;
+};
+
+/* ============================ YÖNLENDİRME ============================ */
+const TITLES={home:"B1 Hollandaca",dersler:"Gramer",kelime:"Kelimeler",beceri:"Beceriler",lezen:"Lezen",luisteren:"Luisteren",spreken:"Spreken",schrijven:"Schrijven",knm:"KNM",fiiller:"Fiil bankası",plan:"12 haftalık plan",deneme:"Deneme sınavı"};
+const TAB_OF={home:"home",dersler:"dersler",kelime:"kelime",beceri:"beceri",lezen:"beceri",luisteren:"beceri",spreken:"beceri",schrijven:"beceri",knm:"beceri",fiiller:"beceri",plan:"beceri",deneme:"deneme"};
+const PARENT={lezen:"beceri",luisteren:"beceri",spreken:"beceri",schrijven:"beceri",knm:"beceri",fiiller:"beceri",plan:"beceri"};
+let lastRoute=null;
+function route(){const h=(location.hash||"#home").slice(1);return h||"home";}
+function render(){
+  const r=route();
+  if(r!=="spreken"&&spT)stopT();
+  try{if(hasTTS)speechSynthesis.cancel();}catch(e){}
+  let html, tab, title, parent=null;
+  if(r.startsWith("ders-")){const id=r.slice(5);html=lessonView(id);tab="dersler";const l=LESSONS.find(x=>x.id===id);title=l?l.t:"Ders";parent="dersler";}
+  else if(views[r]){html=views[r]();tab=TAB_OF[r];title=TITLES[r];parent=PARENT[r]||null;}
+  else{html=views.home();tab="home";title=TITLES.home;}
+  app.innerHTML=html;
+  $("#title").textContent=title;
+  const bb=$("#backBtn");bb.hidden=!parent;bb.onclick=()=>{location.hash=parent;};
+  document.querySelectorAll("nav.tabs a").forEach(a=>a.classList.toggle("on",a.dataset.tab===tab));
+  if(r!==lastRoute){window.scrollTo(0,0);lastRoute=r;}
+  // bağlamalar
+  if(r==="kelime")bindKelime();
+  if(r==="spreken")bindSpreken();
+  if(r==="schrijven")bindSchrijven();
+  if(r==="home"){const tb=$("#themeBtn");if(tb)tb.onclick=()=>{S.theme=S.theme==null?"light":S.theme==="light"?"dark":null;save();applyTheme();render();};}
+  if(r==="fiiller")document.querySelectorAll("[data-fv]").forEach(b=>b.onclick=()=>{fvMode=b.dataset.fv;render();});
+  if(r==="plan"){document.querySelectorAll("[data-pl]").forEach(c=>c.onchange=()=>{S.plan[c.dataset.pl]=c.checked;save();});
+    document.querySelectorAll("[data-fc]").forEach(c=>c.onchange=()=>{S.check[c.dataset.fc]=c.checked;save();});}
+  if(r==="deneme"){const s=$("#exStart");if(s)s.onclick=()=>{exam=buildExam();render();};const q=$("#exQuit");if(q)q.onclick=()=>{exam=null;render();};}
+}
+function applyTheme(){if(S.theme)document.documentElement.setAttribute("data-theme",S.theme);else document.documentElement.removeAttribute("data-theme");}
+applyTheme();
+window.addEventListener("hashchange",render);
+render();
+</script>
