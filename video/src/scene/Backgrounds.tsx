@@ -4,7 +4,7 @@ import type { MekanId } from '../story/registry';
 const INK = '#2b1d14';
 const W = 1080;
 const H = 1920;
-export const FLOOR_Y = 1700;
+export const FLOOR_Y = 1880;
 
 const range = (n: number) => Array.from({ length: n }, (_, i) => i);
 

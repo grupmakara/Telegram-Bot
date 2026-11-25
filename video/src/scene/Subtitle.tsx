@@ -3,10 +3,13 @@ import type { Word } from '../audio/synth';
 import { pagesOf, wrapWords } from './subtitleLayout';
 
 const ROWS_PER_PAGE = 2;
-const MAX_CHARS = 22;
+const MAX_CHARS = 20;
 
 /** Kelime kelime vurgulu altyazı. currentMs: replik başından itibaren geçen süre. */
-export const Subtitle: React.FC<{ words: Word[]; currentMs: number; speaker?: string; top?: number }> = ({ words, currentMs, speaker, top = 1420 }) => {
+export const Subtitle: React.FC<{ words: Word[]; currentMs: number; speaker?: string; top?: number }> = ({ words, currentMs, speaker, top = 1440 }) => {
+  let activeIdx = -1;
+  words.forEach((w, i) => { if (w.startMs <= currentMs) activeIdx = i; });
+  if (activeIdx >= 0 && currentMs > words[activeIdx].endMs + 200) activeIdx = -1;
   const rows = wrapWords(words.map((w) => w.text), MAX_CHARS);
   // her satırı kelime nesnelerine geri eşle
   let idx = 0;
@@ -22,11 +25,11 @@ export const Subtitle: React.FC<{ words: Word[]; currentMs: number; speaker?: st
         </div>
       ) : null}
       {page.map((row, ri) => (
-        <div key={ri} style={{ display: 'flex', gap: 18, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div key={ri} style={{ display: 'flex', gap: 34, justifyContent: 'center', flexWrap: 'wrap' }}>
           {row.map((w, wi) => {
-            const active = currentMs >= w.startMs && currentMs < w.endMs + 80;
+            const active = words.indexOf(w) === activeIdx;
             return (
-              <span key={wi} style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 70, lineHeight: 1.15, color: active ? '#FFD54A' : '#fff', WebkitTextStroke: '14px #111', paintOrder: 'stroke fill', transform: active ? 'scale(1.08)' : undefined, display: 'inline-block' }}>
+              <span key={wi} style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 82, lineHeight: 1.12, color: active ? '#FFD54A' : '#fff', WebkitTextStroke: '16px #111', paintOrder: 'stroke fill', transform: active ? 'scale(1.05)' : undefined, display: 'inline-block' }}>
                 {w.text}
               </span>
             );
