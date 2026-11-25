@@ -36,3 +36,16 @@ describe('trUpper', () => {
     expect(trUpper('ışık')).toBe('IŞIK');
   });
 });
+
+describe('loader strictness', () => {
+  it('rejects misspelled optional keys', () => {
+    const bad = readFileSync(fixture, 'utf8').replace('ifade: ofkeli', 'ifadesi: ofkeli');
+    expect(() => loadEpisode(tmp('typo.yaml', bad))).toThrow(/typo\.yaml[\s\S]*ifadesi/);
+  });
+  it('names the file on YAML syntax errors', () => {
+    expect(() => loadEpisode(tmp('bozuk.yaml', 'bolum: 1\n  - : : [\n'))).toThrow(/bozuk\.yaml/);
+  });
+  it('names the file on an empty file', () => {
+    expect(() => loadEpisode(tmp('bos.yaml', ''))).toThrow(/bos\.yaml/);
+  });
+});

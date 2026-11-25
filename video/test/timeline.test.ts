@@ -27,3 +27,11 @@ describe('buildTimeline', () => {
     for (const l of lines) { expect(Number.isInteger(l.from)).toBe(true); expect(Number.isInteger(l.dur)).toBe(true); }
   });
 });
+
+describe('trailing silence', () => {
+  it('cuts a line 300 ms after its last word', () => {
+    const a = new Map<Line, AudioMeta>(allLines(ep).map((l) => [l, { file: 'x.mp3', durationMs: 1500, words: [{ text: 'a', startMs: 0, endMs: 500 }] }]));
+    const tl = buildTimeline(ep, a, 30);
+    expect(tl.segments[0].lines[0].dur).toBe(24);
+  });
+});

@@ -1,6 +1,9 @@
 import type { Episode, Line } from '../story/schema';
 import type { AudioMeta } from '../audio/synth';
 
+/** Son kelimeden sonra bırakılan sessizlik (edge-tts ~1.2 sn boşluk ekliyor). */
+export const TAIL_MS = 300;
+
 export const RULES = { kancaTail: 15, titleFlash: 30, lineGap: 8, sceneFade: 12, sonTail: 15, devam: 60 } as const;
 
 export type TimedLine = { line: Line; from: number; dur: number; audio: AudioMeta };
@@ -11,7 +14,8 @@ export function buildTimeline(ep: Episode, audio: Map<Line, AudioMeta>, fps = 30
   const frames = (l: Line) => {
     const a = audio.get(l);
     if (!a) throw new Error(`Ses yok: ${l.kim}: ${l.metin}`);
-    return Math.ceil((a.durationMs / 1000) * fps);
+    const last = a.words.length ? a.words[a.words.length - 1].endMs + TAIL_MS : a.durationMs;
+    return Math.ceil((Math.min(a.durationMs, last) / 1000) * fps);
   };
   const timed = (l: Line, from: number): TimedLine => ({ line: l, from, dur: frames(l), audio: audio.get(l)! });
   const segments: Segment[] = [];

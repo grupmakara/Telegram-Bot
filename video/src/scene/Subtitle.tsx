@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Word } from '../audio/synth';
-import { pagesOf, wrapWords } from './subtitleLayout';
+import { fontSizeFor, pageIndexAt, pagesOf, wrapWords } from './subtitleLayout';
 
 const ROWS_PER_PAGE = 2;
 const MAX_CHARS = 20;
@@ -15,8 +15,8 @@ export const Subtitle: React.FC<{ words: Word[]; currentMs: number; speaker?: st
   let idx = 0;
   const wordRows = rows.map((r) => r.map(() => words[idx++]));
   const pages = pagesOf(wordRows, ROWS_PER_PAGE);
-  const pageIdx = Math.max(0, pages.findIndex((p) => p[p.length - 1][p[p.length - 1].length - 1].endMs >= currentMs));
-  const page = pages[pageIdx === -1 ? pages.length - 1 : pageIdx];
+  const page = pages[pageIndexAt(pages, currentMs)];
+  const fontSize = fontSizeFor(page.map((r) => r.map((w) => w.text).join(' ')));
   return (
     <div style={{ position: 'absolute', left: 60, right: 60, top, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       {speaker ? (
@@ -29,7 +29,7 @@ export const Subtitle: React.FC<{ words: Word[]; currentMs: number; speaker?: st
           {row.map((w, wi) => {
             const active = words.indexOf(w) === activeIdx;
             return (
-              <span key={wi} style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 82, lineHeight: 1.12, color: active ? '#FFD54A' : '#fff', WebkitTextStroke: '16px #111', paintOrder: 'stroke fill', transform: active ? 'scale(1.05)' : undefined, display: 'inline-block' }}>
+              <span key={wi} style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize, lineHeight: 1.12, color: active ? '#FFD54A' : '#fff', WebkitTextStroke: '16px #111', paintOrder: 'stroke fill', transform: active ? 'scale(1.05)' : undefined, display: 'inline-block' }}>
                 {w.text}
               </span>
             );

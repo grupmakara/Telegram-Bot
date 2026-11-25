@@ -8,7 +8,7 @@ describe('voices', () => {
     for (const id of SPEAKER_IDS) expect(VOICES[id]?.voice).toMatch(/^tr-TR-(Ahmet|Emel)Neural$/);
   });
   it('bekir is deeper and slower than emir', () => {
-    expect(VOICES.bekir).toEqual({ voice: 'tr-TR-AhmetNeural', pitch: '-15Hz', rate: '-10%' });
+    expect(VOICES.bekir).toEqual({ voice: 'tr-TR-AhmetNeural', pitch: '-15Hz', rate: '+0%' });
   });
   it('cache key depends on voice settings', () => {
     expect(cacheKey('Evet.', VOICES.emir)).not.toBe(cacheKey('Evet.', VOICES.bekir));

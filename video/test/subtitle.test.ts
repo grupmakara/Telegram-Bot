@@ -32,3 +32,19 @@ describe('alignWords', () => {
     expect(t[2].startMs).toBe(2000);
   });
 });
+
+import { pageIndexAt, fontSizeFor } from '../src/scene/subtitleLayout';
+describe('pageIndexAt', () => {
+  const w = (s: number, e: number) => ({ text: 'x', startMs: s, endMs: e });
+  const pages = [[[w(0, 100)], [w(100, 200)]], [[w(200, 300)], [w(300, 400)]]];
+  it('stays on the last page after the last word ends', () => expect(pageIndexAt(pages, 900)).toBe(1));
+  it('shows the page of the current word', () => { expect(pageIndexAt(pages, 50)).toBe(0); expect(pageIndexAt(pages, 250)).toBe(1); });
+});
+describe('fontSizeFor', () => {
+  it('keeps base size for normal rows', () => expect(fontSizeFor(['Hazır mısın evlat?'])).toBe(82));
+  it('shrinks so a long single word fits in 900px', () => {
+    const s = fontSizeFor(['Anlayamadıklarımızdanmışsınız']);
+    expect(s).toBeLessThan(82);
+    expect(s * 0.55 * 29).toBeLessThanOrEqual(900);
+  });
+});

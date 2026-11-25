@@ -1,18 +1,18 @@
 import { z } from 'zod';
 import { CHAR_IDS, IFADELER, MEKAN_IDS, POZLAR, SPEAKER_IDS } from './registry';
 
-export const LineSchema = z.object({
+export const LineSchema = z.strictObject({
   kim: z.enum(SPEAKER_IDS),
   metin: z.string().min(1),
   ifade: z.enum(IFADELER).optional(),
   poz: z.enum(POZLAR).optional(),
 });
 
-export const SceneSchema = z.object({
+export const SceneSchema = z.strictObject({
   mekan: z.enum(MEKAN_IDS),
   gecmis: z.boolean().optional(),
   gece: z.boolean().optional(),
-  karakterler: z.array(z.object({
+  karakterler: z.array(z.strictObject({
     id: z.enum(CHAR_IDS),
     x: z.number().min(0).max(1),
     ifade: z.enum(IFADELER).optional(),
@@ -21,7 +21,7 @@ export const SceneSchema = z.object({
   satirlar: z.array(LineSchema).min(1),
 });
 
-export const EpisodeSchema = z.object({
+export const EpisodeSchema = z.strictObject({
   bolum: z.number().int().positive(),
   baslik: z.string().min(1),
   kanca: LineSchema,
