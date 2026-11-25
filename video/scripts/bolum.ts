@@ -34,7 +34,8 @@ const proj = join(ROOT, 'projects', name);
 mkdirSync(out, { recursive: true });
 
 console.log(`▶ ${name}: seslendiriliyor…`);
-const audio = synthEpisode(ep, join(ROOT, 'cache/audio'));
+const { audio, provider } = synthEpisode(ep, join(ROOT, 'cache/audio'));
+console.log(`  ses: ${provider === 'elevenlabs' ? 'ElevenLabs' : 'Edge (yedek)'}`);
 const timeline = buildTimeline(ep, audio, 30);
 const { total } = buildProject(ep, timeline, proj, { bgm });
 console.log(`▶ ${name}: proje hazır (${total.toFixed(1)} sn) → ${proj}${bgm ? '' : ' (müzik yok)'}`);

@@ -31,3 +31,15 @@ class SynthTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ElevenLabsAlignmentTest(unittest.TestCase):
+    def test_words_from_alignment(self):
+        text = "Sen kim?"
+        al = {"characters": list(text),
+              "character_start_times_seconds": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+              "character_end_times_seconds": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]}
+        self.assertEqual(synth.words_from_alignment(al), [
+            {"text": "Sen", "startMs": 0, "endMs": 300},
+            {"text": "kim?", "startMs": 400, "endMs": 800},
+        ])

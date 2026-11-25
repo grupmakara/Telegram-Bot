@@ -5,7 +5,8 @@
   "scripts": {
     "test": "vitest run",
     "render": "remotion render src/index.ts",
-    "bolum": "tsx scripts/bolum.ts"
+    "bolum": "tsx scripts/bolum.ts",
+    "muzik": "mkdir -p assets/bgm && .venv/bin/python tts/music.py assets/bgm/tema.mp3"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.547",
