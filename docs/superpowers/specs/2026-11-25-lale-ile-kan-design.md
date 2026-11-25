@@ -189,3 +189,20 @@ Playwright kare yakalama + ffmpeg'e taşınabilir (bileşenler aynı kalır).
 - Sahne geçiş türleri, kamera hareketlerinin tam değerleri.
 - Repliklerin arasındaki boşluk süreleri, tempo.
 - Kod yapısı, test kapsamı (zaman çizelgesi hesaplaması ve YAML doğrulaması test edilmeli).
+
+## 8. Değişiklikler (2026-11-25, kullanıcı kararları — önceki bölümlerin önüne geçer)
+
+Kullanıcı üç örnek video gönderdi (2,5–3 dk; karakter başına ayrı, geniş aralıklı doğal sesler;
+konuşmanın ~8 dB altında sürekli müzik/ortam sesi; küçük, sakin, tek satırlık altyazılar) ve şunlara karar verdi:
+
+- **Render: Remotion → HyperFrames.** Her bölüm `video/projects/epNN/` altında düzenlenebilir bir HyperFrames
+  projesi olarak üretilir (`index.html` + `compositions/` sahne başına bir dosya, GSAP zaman çizelgeleri).
+  Kuklalar ve mekânlar aynı React/SVG bileşenlerinden statik SVG olarak üretilir; göz kırpma, ağız, nefes,
+  ifade değişimi ve kamera GSAP ile canlandırılır. Remotion lisans kısıtı ortadan kalkar.
+- **Ses: ElevenLabs** (`eleven_multilingual_v2`, karakter başına ayrı hazır ses; `src/audio/voices.ts`).
+  Anahtar ağ vekilinden `xi-api-key` olarak eklenir. Anahtar yokken Edge sesleri yedek olarak kullanılır ve uyarı basılır.
+- **Süre: ~3 dakika** (150–200 sn). Her yayın bölümü sezon akışından ~2 hikâye adımı kapsar.
+- **Müzik: evet.** Fon müziği `assets/bgm/tema.mp3` (ElevenLabs Music ile `npm run muzik`), ses 0.14.
+  Sahne geçişlerinde whoosh, sonda riser + darbe (Pixabay lisanslı efektler, `assets/sfx/CREDITS.md`).
+- **Altyazı:** örnekler gibi küçük ve sakin; 5 kelime / 30 karakterlik gruplar, anlatıcı italik ve sarımsı,
+  konuşan adı yok; Reels güvenli alanında (alt kenar y ≤ 1248).
