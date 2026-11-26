@@ -67,5 +67,9 @@ VoxCPM2 runs on CPU at roughly 45–60 s per line; a whole season takes hours.
   of 0.8+ is fine. Read the heard text in `<clip>.txt` before regenerating.
 - A line that keeps failing: simplify punctuation, spell out numbers/abbreviations in `say`
   (e.g. `R. Karaca` → `Re Karaca`), then `--fix`.
+- Turkish words that are also English words get English pronunciation ("Can" → "ken",
+  "Anne" → "en"). Add a respelling to `PRONUNCIATION` in `vox.py` (`Can` → `Djan`,
+  `Anne` → `Annee`); it only changes the text sent to the model. Test candidate spellings on a
+  single line first: several obvious ones (`Jan`, `Cann`, `Cân`, `Caan`) did not work.
 - Without VoxCPM2 clips, `render.py` falls back to ElevenLabs clips in
   `seslendirme/<dizi>/bolumNN/`, then to edge-tts (flat; drafts only).

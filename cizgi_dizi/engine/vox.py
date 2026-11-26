@@ -48,6 +48,18 @@ MOOD_CUE = {
     "angry": "angry, raised voice", "sad": "sad, quiet, emotional", "surprised": "shocked, surprised",
     "worried": "worried, nervous", "smug": "smug, sarcastic", "smile": "warm, smiling", "neutral": "calm",
 }
+# Turkish words VoxCPM2 reads as English ("Can" -> "ken", "Anne" -> "en"). Respelled only in the
+# text sent to the model; subtitles and the Whisper check keep the real spelling.
+PRONUNCIATION = [(r"\bCan\b", "Djan"), (r"\b([Aa])nne\b", r"\1nnee")]
+
+
+def speakable(text):
+    import re
+    for pat, rep in PRONUNCIATION:
+        text = re.sub(pat, rep, text)
+    return text
+
+
 _model = None
 
 
@@ -61,7 +73,8 @@ def model():
 
 def save(wav, out):
     sr = model().tts_model.sample_rate
-    a = np.asarray(wav, dtype=np.float32)
+    # a short lead-in keeps the first syllable ("Can!", "Anne") from being clipped
+    a = np.concatenate([np.zeros(int(sr * 0.25), np.float32), np.asarray(wav, dtype=np.float32)])
     subprocess.run(["ffmpeg", "-v", "quiet", "-y", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-",
                     "-ar", "48000", str(out)], input=a.tobytes(), check=True)
 
@@ -116,7 +129,7 @@ def voice_episode(ep_path, force=False, fix=False):
         best = None
         for attempt in range(2):  # Whisper often mishears correct speech; avoid needless retries
             tmp = out_dir / f".try{attempt}.wav"
-            save(model().generate(text=f"({cue}){text}", reference_wav_path=str(ref), cfg_value=2.0,
+            save(model().generate(text=f"({cue}){speakable(text)}", reference_wav_path=str(ref), cfg_value=2.0,
                                   inference_timesteps=10), tmp)
             score, heard, cut = check(tmp, text)
             if best is None or score > best[0]:
