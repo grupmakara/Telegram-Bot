@@ -2,3 +2,4 @@
 __pycache__/
 cikti/**/*_preview.png
 *.wav
+.try*.wav
