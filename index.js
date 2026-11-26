@@ -2,7 +2,8 @@ require("dotenv").config();
 
 const BOT_API       = process.env.BOT_API || '';
 const PORT          = process.env.PORT || 3000;
-const URL           = process.env.URL || 'https://your-heroku-app.herokuapp.com';
+// URL verilirse webhook, verilmezse polling kullanılır (domain'i olmayan sunucular için).
+const URL           = process.env.URL || '';
 
 const Telegraf  = require("telegraf");
 const bot       = new Telegraf(BOT_API);
@@ -50,16 +51,28 @@ bot.use(
 
 bot.telegram.getMe().then(me => {
     console.log(`Bot Başlatıldı! => ${me.username}`);
-});
+}).catch(err => console.log('Bot bilgisi alınamadı:', err.message));
 
 
 bot.catch((err) => {
     console.log('Error: ', err)
 })
 
-bot.launch({
-  webhook: {
-    domain: `${URL}`,
-    port: `${PORT}`
-  }
-})
+if (URL) {
+  bot.launch({
+    webhook: {
+      domain: `${URL}`,
+      port: `${PORT}`
+    }
+  })
+} else {
+  // Daha önce ayarlanmış bir webhook varsa polling çalışmaz; önce onu kaldır.
+  bot.telegram.deleteWebhook()
+    .then(() => bot.launch())
+    .catch(err => {
+      // Çıkış kodu sayesinde Docker/systemd botu yeniden başlatır.
+      console.log('Telegram\'a bağlanılamadı:', err.message)
+      process.exit(1)
+    })
+  console.log('URL tanımlı değil, polling modunda çalışılıyor.')
+}

@@ -1,10 +1,32 @@
-# **Heroku'da Webhook İle Çalışan Deneysel Bir Bot**
+# **Telegram Botu**
 
-**Nasıl Çalışır ?**
+## Kurulum
 
-_.env dosyasını açıp @BotFather'dan aldığınız tokeni BOT_API yerine yapıştırın ve Heroku'dan aldığınız bağlantıyı URL yerine yapıştırın._
+1. `.env.example` dosyasını `.env` adıyla kopyalayın ve @BotFather'dan aldığınız tokeni `BOT_API` satırına yazın.
+2. `URL` boş bırakılırsa bot **polling** modunda çalışır; domain veya HTTPS gerekmez. Webhook kullanmak için `URL`'e botun herkese açık `https://` adresini yazın.
 
-Detaylı Bilgi İçin: https://telegra.ph/KENDİ-TELEGRAM-BOTUNUZU-YAPIN-09-11
+> `.env` dosyası token içerdiği için depoya eklenmez (`.gitignore`).
+
+### Docker ile (önerilen; video komutları için gerekli)
+
+Video komutları FFmpeg, yt-dlp ve Whisper gerektirir. Bunların hepsi Docker imajında kuruludur:
+
+```bash
+docker compose up -d --build
+docker compose logs -f
+```
+
+Sunucuda en az 2 GB RAM ve yaklaşık 5 GB disk olmalıdır. Daha doğru altyazı için imajı `docker compose build --build-arg WHISPER_MODEL=small` ile derleyip `.env` içinde `WHISPER_MODEL=small` yazın.
+
+### Docker olmadan
+
+```bash
+npm install
+pip install yt-dlp openai-whisper   # ffmpeg ayrıca kurulmalı (ör. apt install ffmpeg)
+npm start
+```
+
+> Heroku'da video komutları çalışmaz: Whisper, Heroku'nun 500 MB'lık uygulama boyutu sınırını aşar.
 
 ## Video Komutları
 
