@@ -51,8 +51,9 @@ becomes one clip; `engine/render.py` picks clips up automatically. Work from `ci
 VoxCPM2 runs on CPU at roughly 45–60 s per line; a whole season takes hours.
 - Run it detached so it outlives tool timeouts and can be resumed after a restart:
   `setsid nohup python3 -u -I worker.py > log 2>&1 < /dev/null & disown`
-- Two workers with `torch.set_num_threads(2)`, each taking every other episode, use 4 cores better
-  than one. Model load takes ~3 minutes per process; keep ~6 GB RAM per worker.
+- Run **one** worker (all 4 threads) that loops over the episodes. Two workers do not fit: loading
+  the model peaks at ~7 GB RSS each and the cgroup OOM-kills the second one. Model load takes
+  ~3 minutes.
 - After a session restart, check `pgrep -fa vox` and simply start the workers again; finished
   clips are skipped.
 - Watch progress by counting `seslendirme/<dizi>/vox/*/*.wav`; look for `!!` lines (score < 0.8)
