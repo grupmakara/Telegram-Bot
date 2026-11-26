@@ -292,7 +292,42 @@ def bg_classroom(ctx, night=False):
         fill_stroke(ctx, hexc(col), 3)
 
 
-BACKGROUNDS = {"classroom": bg_classroom, "lobby": bg_lobby, "basement": bg_basement, "salon": bg_salon, "street": bg_street}
+def bg_office(ctx, night=False):
+    _grad(ctx, 0, 1350, "#dfe3e8", "#cfd5dc")
+    ctx.rectangle(0, 1350, W, H - 1350)
+    ctx.set_source_rgb(*hexc("#6d5a4a"))
+    ctx.fill()
+    # window with city view
+    rrect(ctx, 600, 230, 400, 520, 8)
+    fill_stroke(ctx, hexc("#9fb7cc"))
+    for i, (x, h) in enumerate(((620, 260), (700, 360), (780, 220), (860, 320), (930, 280))):
+        ctx.rectangle(x, 750 - h, 60, h)
+        ctx.set_source_rgb(*hexc("#6f8399" if i % 2 else "#5d7088"))
+        ctx.fill()
+    ctx.move_to(800, 230)
+    ctx.line_to(800, 750)
+    ctx.set_source_rgb(*OUTLINE)
+    ctx.set_line_width(6)
+    ctx.stroke()
+    # file cabinets + plaque
+    for i in range(3):
+        ctx.rectangle(80, 520 + i * 170, 300, 160)
+        fill_stroke(ctx, hexc("#8a9099"))
+        rrect(ctx, 190, 580 + i * 170, 80, 18, 6)
+        fill_stroke(ctx, hexc("#d9d9d9"), 3)
+    rrect(ctx, 120, 300, 360, 110, 10)
+    fill_stroke(ctx, hexc("#24344f"))
+    _text(ctx, "İMAR MÜDÜRLÜĞÜ", 300, 368, 34, hexc("#f3d27a"), maxw=320)
+    # desk edge
+    ctx.rectangle(0, 1180, W, 70)
+    fill_stroke(ctx, hexc("#8b5e3c"))
+    if night:
+        ctx.rectangle(0, 0, W, H)
+        ctx.set_source_rgba(0.05, 0.08, 0.2, 0.35)
+        ctx.fill()
+
+
+BACKGROUNDS = {"office": bg_office, "classroom": bg_classroom, "lobby": bg_lobby, "basement": bg_basement, "salon": bg_salon, "street": bg_street}
 
 
 def make_background(name):

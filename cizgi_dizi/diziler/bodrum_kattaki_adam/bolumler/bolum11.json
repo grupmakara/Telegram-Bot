@@ -1,0 +1,35 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 11,
+  "title": "Ferit çatlağı büyütmek için gece matkapla geldi, kamera çaydanlığın içindeydi | Bodrum Kattaki Adam 11. Bölüm",
+  "story_hook": "Çatlağı kim büyüttü?",
+  "next_text": "Kenan'ın ağabeyi kim? 12. Bölüm'de...",
+  "teaser": [
+    "kimin büyüttüğünü",
+    "Bizi öldürmeye mi"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Kenan, babasının Kartal'daki binayı yapan Yaşar Kara olduğunu itiraf etti."
+  },
+  "scenes": [
+    {"bg": "lobby_night", "cast": ["ferit"], "lines": [
+      {"who": "anlatici", "text": "Gece üçte lobide bir matkap sesi..."},
+      {"who": "ferit", "mood": "smug", "text": "Bir çatlak daha. Sabah herkes binanın çöktüğünü sanacak.", "sfx": "alarm", "sfx_dur": 0.8}
+    ]},
+    {"bg": "basement", "cast": ["riza", "zeynep"], "lines": [
+      {"who": "zeynep", "mood": "worried", "text": "Baba, gece bir ses duydum. Kamera kaydetti mi?"},
+      {"who": "riza", "mood": "smug", "text": "Çaydanlığın içine koyduğum kamera hiç uyumaz kızım."}
+    ]},
+    {"bg": "lobby", "cast": ["ferit", "selma", "riza", "kenan"], "lines": [
+      {"who": "ferit", "mood": "smug", "text": "Bakın! Çatlak büyümüş. Bina çöküyor!", "prop": "crack", "prop_caption": "Lobi duvarı", "react": {"selma": "worried", "kenan": "worried"}},
+      {"who": "selma", "mood": "worried", "text": "Aman Allah'ım! Hemen imza atalım!"},
+      {"who": "riza", "mood": "smile", "text": "Çatlağı kimin büyüttüğünü görmek ister misiniz?"},
+      {"who": "riza", "mood": "smug", "text": "Saat üç on iki. Elinde matkap var.", "prop": "document", "prop_caption": "KAMERA KAYDI|03:12 – Lobi – Ferit", "pause": 0.8},
+      {"who": "selma", "mood": "angry", "text": "Ferit Bey! Bizi öldürmeye mi çalışıyorsunuz?", "react": {"ferit": "worried"}},
+      {"who": "ferit", "mood": "angry", "text": "Bu montaj! Kayıt sahte!"},
+      {"who": "riza", "mood": "smile", "text": "Kayıt sahteyse polise götürelim Ferit Bey. Ne dersiniz?"},
+      {"who": "ferit", "mood": "worried", "text": "Gerek yok... Gerek yok."},
+      {"who": "kenan", "mood": "worried", "text": "Ferit... Ağabeyim bunu duyarsa hepimiz yanarız.", "shot": "close"}
+    ]}
+  ]
+}

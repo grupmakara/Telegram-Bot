@@ -1,0 +1,41 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 8,
+  "title": "Yeni güvenlik şirketi ilk gece kapıyı açık bıraktı, hırsızı kapıcı yakaladı | Bodrum Kattaki Adam 8. Bölüm",
+  "story_hook": "Gece yarısı kapıyı kim açtı?",
+  "next_text": "Kenan'ın sırrı ortaya çıkıyor! 9. Bölüm'de...",
+  "teaser": [
+    "Bırak o sandığı",
+    "Beni Ferit gönderdi"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Zeynep, 1999 depreminde enkazdan çıkarılan bebeğin kendisi olduğunu öğrendi."
+  },
+  "scenes": [
+    {"bg": "lobby_night", "cast": ["kenan", "riza"], "lines": [
+      {"who": "anlatici", "text": "Yeni güvenlik şirketinin ilk gecesi..."},
+      {"who": "kenan", "mood": "smug", "text": "Rıza, artık nöbet tutmana gerek yok. Şirket burada."},
+      {"who": "riza", "mood": "worried", "text": "Kenan Bey, dış kapıyı açık bırakmışlar."},
+      {"who": "kenan", "mood": "angry", "text": "Abartma! Sen git yat artık."}
+    ]},
+    {"bg": "salon_night", "cast": ["selma", "hirsiz"], "lines": [
+      {"caption": "Selma Hanım'ın evinde bir gölge...", "dur": 1.4, "sfx": "door"},
+      {"who": "selma", "mood": "surprised", "text": "Kimsiniz siz? İmdat! Hırsız var!", "shot": "close"},
+      {"who": "hirsiz", "mood": "angry", "text": "Sus kadın! Sandık nerede?"}
+    ]},
+    {"bg": "salon_night", "cast": ["selma", "riza", "hirsiz"], "lines": [
+      {"who": "riza", "mood": "angry", "text": "Bırak o sandığı!", "sfx": "door"},
+      {"who": "hirsiz", "mood": "smug", "text": "Çekil yaşlı adam!"},
+      {"caption": "Rıza tek hamlede hırsızı yere serdi!", "dur": 1.4, "sfx": "thud", "shake": true, "react": {"hirsiz": "surprised", "selma": "surprised"}},
+      {"who": "hirsiz", "mood": "worried", "text": "Tamam, tamam! Beni Ferit gönderdi!"}
+    ]},
+    {"bg": "lobby", "cast": ["selma", "riza", "kenan"], "lines": [
+      {"who": "selma", "mood": "angry", "text": "Kenan Bey, şirketiniz kapıyı açık bırakmış!", "react": {"kenan": "worried"}},
+      {"who": "kenan", "mood": "worried", "text": "Ben... Ben bilmiyordum Selma Hanım."},
+      {"who": "selma", "mood": "smile", "text": "Rıza Efendi... Teşekkür ederim."},
+      {"who": "riza", "mood": "smile", "text": "Rica ederim Selma Hanım. Sandığı artık ben saklarım."},
+      {"who": "kenan", "mood": "worried", "text": "Rıza... Bu iş benim başımı yakacak."},
+      {"who": "riza", "mood": "neutral", "text": "Doğruyu söyleyenin başı yanmaz Kenan Bey."}
+    ]}
+  ]
+}

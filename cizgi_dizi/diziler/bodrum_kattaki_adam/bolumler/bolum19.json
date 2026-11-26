@@ -1,0 +1,33 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 19,
+  "title": "Belediye binayı mühürledi, kapıcı mührün üstüne 1979 projesini koydu | Bodrum Kattaki Adam 19. Bölüm",
+  "story_hook": "Mühür kalkacak mı?",
+  "next_text": "Ferit kaçıyor! 20. Bölüm'de...",
+  "teaser": [
+    "Evimize giremiyoruz",
+    "ilk ben çıkarım"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Rıza Usta, deprem tatbikatında haklı çıktı. Tarık Kara binayı mühürletmeye karar verdi."
+  },
+  "scenes": [
+    {"bg": "street", "cast": ["selma", "kenan", "riza"], "lines": [
+      {"caption": "Sabah apartman kapısına mühür vuruldu...", "dur": 1.4, "sfx": "thud", "shake": true, "react": {"selma": "surprised", "kenan": "worried"}},
+      {"who": "selma", "mood": "worried", "text": "Mühürlediler! Evimize giremiyoruz!"},
+      {"who": "kenan", "mood": "sad", "text": "Bu ağabeyimin işi..."},
+      {"who": "riza", "mood": "neutral", "text": "Kimse panik yapmasın. O kâğıt, benim projemden güçlü değil."},
+      {"who": "selma", "mood": "worried", "text": "Ya bina gerçekten çürükse Rıza Bey?"},
+      {"who": "riza", "mood": "smile", "text": "Bu binada kızım uyuyor Selma Hanım. Çürük olsa bir gece bile durmazdım."}
+    ]},
+    {"bg": "office", "cast": ["murat", "riza"], "lines": [
+      {"who": "murat", "mood": "worried", "text": "Rıza Bey, bu mührü ben vurmadım. Üst makamdan geldi."},
+      {"who": "riza", "mood": "neutral", "text": "Bağımsız bir heyet çağırın. Bina test edilsin.", "prop": "document", "prop_caption": "STATİK PROJE 1979|16 kolon – Depreme dayanıklı", "pause": 0.8},
+      {"who": "murat", "mood": "worried", "text": "Test ederiz. Ama sonuç kötü çıkarsa bina yıkılır."},
+      {"who": "riza", "mood": "smile", "text": "Sonuç kötü çıkarsa o binadan ilk ben çıkarım.", "shot": "close"}
+    ]},
+    {"bg": "street_night", "cast": ["ferit"], "lines": [
+      {"who": "ferit", "mood": "worried", "text": "Tarık Bey, test yapılacak. Rapor sahte çıkarsa biz yandık!", "prop": "phone", "prop_caption": "Tarık Bey", "sfx": "phone", "sfx_dur": 1.2}
+    ]}
+  ]
+}

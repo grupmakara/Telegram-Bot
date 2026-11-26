@@ -1,0 +1,33 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 21,
+  "title": "\"Bina yıkılmayacak\" kararı çıktı, Kenan istifasını kapıcıya verdi | Bodrum Kattaki Adam 21. Bölüm",
+  "story_hook": "Bina kurtuldu mu?",
+  "next_text": "Tarık Kara kapıcının karşısında! 22. Bölüm'de...",
+  "teaser": [
+    "Bina sağlam",
+    "Özür dilerim"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Ferit, sahte raporu Tarık Kara'nın emriyle hazırladığını itiraf etti."
+  },
+  "scenes": [
+    {"bg": "lobby", "cast": ["murat", "riza", "selma", "hakan"], "lines": [
+      {"who": "murat", "mood": "smile", "text": "Heyet raporu geldi. Bina sağlam! Mühür kaldırıldı!", "sfx": "ding", "react": {"selma": "smile", "hakan": "smile", "riza": "smile"}},
+      {"who": "selma", "mood": "smile", "text": "Evimiz kurtuldu!"},
+      {"who": "hakan", "mood": "smile", "text": "Rıza Bey, bu binayı ikinci kez kurtardınız."},
+      {"who": "murat", "mood": "smile", "text": "Ve Ferit'in ifadesiyle Tarık Kara hakkında soruşturma açıldı."},
+      {"who": "selma", "mood": "surprised", "text": "Soruşturma mı? Demek Ferit konuştu!"}
+    ]},
+    {"bg": "lobby", "cast": ["kenan", "riza"], "lines": [
+      {"who": "kenan", "mood": "sad", "text": "Rıza Bey... Bu benim istifam.", "prop": "document", "prop_caption": "İSTİFA DİLEKÇESİ|Kenan Kara – Yönetici", "pause": 0.8},
+      {"who": "kenan", "mood": "sad", "text": "Kasadaki parayı da maaşımdan geri ödeyeceğim."},
+      {"who": "riza", "mood": "neutral", "text": "Kenan, babanın günahını sen taşıma."},
+      {"who": "kenan", "mood": "sad", "text": "Kartal için... Özür dilerim Rıza Bey.", "shot": "close"},
+      {"who": "riza", "mood": "sad", "text": "Özrünü kabul ediyorum Kenan. Ama asıl özrü Kartal'daki ailelere borçlusun."}
+    ]},
+    {"bg": "street_night", "cast": ["tarik"], "lines": [
+      {"who": "tarik", "mood": "angry", "text": "Kardeşim de mi sattı beni? O zaman kapıcıyla ben konuşurum.", "shot": "close"}
+    ]}
+  ]
+}

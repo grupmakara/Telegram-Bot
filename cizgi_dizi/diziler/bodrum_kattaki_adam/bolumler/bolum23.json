@@ -1,0 +1,34 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 23,
+  "title": "Apartman toplantısında sordular: \"Yeni yönetici kapıcı mı olsun?\" | Bodrum Kattaki Adam 23. Bölüm",
+  "story_hook": "Yeni yönetici kim olacak?",
+  "next_text": "SEZON FİNALİ yarın!",
+  "teaser": [
+    "Benim bir adayım var",
+    "imza... Sahte"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Selma, Zeynep'e yüzüğünü taktı. Rıza Usta, Tarık Kara'yla yüz yüze geldi."
+  },
+  "scenes": [
+    {"bg": "salon", "cast": ["hakan", "selma", "riza", "can"], "lines": [
+      {"who": "hakan", "mood": "neutral", "text": "Yeni yönetici seçimi yapıyoruz. Aday var mı?"},
+      {"who": "selma", "mood": "smile", "text": "Benim bir adayım var: Rıza Bey.", "react": {"riza": "surprised", "can": "smile"}},
+      {"who": "riza", "mood": "surprised", "text": "Ben kapıcıyım Selma Hanım."},
+      {"who": "selma", "mood": "smile", "text": "Siz bu binanın mimarı, koruyucusu ve sahibisiniz."},
+      {"caption": "Oylama sonucu: oy birliği!", "dur": 1.4, "sfx": "ding", "react": {"riza": "smile"}},
+      {"who": "riza", "mood": "sad", "text": "Leyla görseydi... Bu binanın sahipsiz olmadığını bilirdi.", "shot": "close"}
+    ]},
+    {"bg": "lobby", "cast": ["riza", "kenan"], "lines": [
+      {"who": "kenan", "mood": "smile", "text": "Rıza Bey, kapıcılığı kim yapacak peki?"},
+      {"who": "riza", "mood": "smile", "text": "Ben yapmaya devam edeceğim Kenan. Yönetici de olsam, bu kapı benim."},
+      {"who": "kenan", "mood": "smile", "text": "O zaman ben de size çay demlerim, yönetici bey."},
+      {"who": "riza", "mood": "smile", "text": "Anlaştık Kenan."}
+    ]},
+    {"bg": "street_night", "cast": ["tarik"], "lines": [
+      {"who": "anlatici", "text": "O gece apartmanın önüne siyah bir araba yanaştı..."},
+      {"who": "tarik", "mood": "smug", "text": "Bir sorun daha var Rıza Karaca. Tapudaki imza... Sahte olabilir mi?", "shot": "close", "sfx": "thud"}
+    ]}
+  ]
+}

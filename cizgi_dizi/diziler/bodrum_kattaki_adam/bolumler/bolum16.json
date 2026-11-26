@@ -1,0 +1,36 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 16,
+  "title": "Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı | Bodrum Kattaki Adam 16. Bölüm",
+  "story_hook": "Kasadaki para nereye gitti?",
+  "next_text": "Kenan kimin tarafında? 17. Bölüm'de...",
+  "teaser": [
+    "Defter... kayboldu",
+    "Beni ihbar et"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Tarık Kara, kasadaki para yüzünden kardeşi Kenan'ı tehdit etti."
+  },
+  "scenes": [
+    {"bg": "lobby", "cast": ["selma", "hakan", "kenan"], "lines": [
+      {"who": "selma", "mood": "angry", "text": "Kenan Bey, aidat kasasında neden para yok?", "react": {"kenan": "worried"}},
+      {"who": "kenan", "mood": "worried", "text": "Banka hatasıdır Selma Hanım."},
+      {"who": "hakan", "mood": "neutral", "text": "Defteri getirin, birlikte bakalım."},
+      {"who": "kenan", "mood": "worried", "text": "Defter... kayboldu.", "shot": "close"}
+    ]},
+    {"bg": "basement", "cast": ["can", "riza"], "lines": [
+      {"who": "can", "mood": "surprised", "text": "Rıza amca, kazan dairesinde bu defteri buldum.", "prop": "document", "prop_caption": "AİDAT DEFTERİ|Eksik: 480.000 TL", "pause": 0.8},
+      {"who": "riza", "mood": "sad", "text": "Kenan bunu kendi başına yapmadı oğlum. Birisi onu köşeye sıkıştırmış."},
+      {"who": "can", "mood": "worried", "text": "Sizce Tarık Kara mı?"},
+      {"who": "riza", "mood": "angry", "text": "Başka kim olabilir oğlum?"}
+    ]},
+    {"bg": "lobby_night", "cast": ["riza", "kenan"], "lines": [
+      {"who": "riza", "mood": "neutral", "text": "Kenan Bey, defter bende.", "react": {"kenan": "sad"}},
+      {"who": "kenan", "mood": "sad", "text": "Beni ihbar et Rıza. Hak ettim."},
+      {"who": "riza", "mood": "neutral", "text": "Hayır. Sana bir şans vereceğim. Ağabeyine karşı benimle olur musun?"},
+      {"who": "kenan", "mood": "worried", "text": "Ağabeyim seni yok eder Rıza...", "shot": "close"},
+      {"who": "riza", "mood": "smile", "text": "Kartal'dan sağ çıktım Kenan. Beni kolay kolay yok edemezler."},
+      {"who": "kenan", "mood": "neutral", "text": "Tamam... Seninleyim Rıza.", "shot": "close"}
+    ]}
+  ]
+}

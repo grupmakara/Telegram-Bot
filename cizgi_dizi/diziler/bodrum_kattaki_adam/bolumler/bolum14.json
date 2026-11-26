@@ -1,0 +1,32 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 14,
+  "title": "1999'da enkazdan çıkardığı çocuk şimdi belediyede müdür | Bodrum Kattaki Adam 14. Bölüm",
+  "story_hook": "Müdür, kapıcıyı nereden tanıyor?",
+  "next_text": "Tarık Kara harekete geçiyor! 15. Bölüm'de...",
+  "teaser": [
+    "Bir adam elimi tuttu",
+    "Mavi bir montun vardı"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Hakan Bey, dönüşüm işinin patronunun Tarık Kara olduğunu söyledi."
+  },
+  "scenes": [
+    {"bg": "office", "cast": ["murat", "zeynep", "riza"], "lines": [
+      {"who": "murat", "mood": "smug", "text": "Dönüşüm onaylandı. İtiraz süresi doldu beyefendi."},
+      {"who": "zeynep", "mood": "angry", "text": "Ama rapor sahte!"},
+      {"who": "murat", "mood": "neutral", "text": "Kanıtınız var mı?"},
+      {"who": "riza", "mood": "neutral", "text": "Bu projeyi ben çizdim.", "prop": "document", "prop_caption": "STATİK PROJE 1979|Proje Müellifi: R. Karaca", "pause": 0.8},
+      {"who": "murat", "mood": "surprised", "text": "Karaca... Rıza Karaca mı?", "shot": "close"},
+      {"who": "murat", "mood": "sad", "text": "Ben altı yaşındaydım. Kartal'da, enkazın altında. Bir adam elimi tuttu ve korkma dedi."},
+      {"who": "riza", "mood": "smile", "text": "Adın Murat'tı. Mavi bir montun vardı."},
+      {"who": "murat", "mood": "sad", "text": "O mont hâlâ dolabımda duruyor...", "shot": "close"},
+      {"who": "murat", "mood": "smile", "text": "Rapor yeniden incelenecek. Size söz veriyorum."},
+      {"who": "zeynep", "mood": "smile", "text": "Teşekkür ederiz Murat Bey."},
+      {"who": "murat", "mood": "smile", "text": "Asıl ben teşekkür ederim. Yirmi yedi yıldır bu anı bekliyordum."}
+    ]},
+    {"bg": "street_night", "cast": ["ferit"], "lines": [
+      {"who": "ferit", "mood": "worried", "text": "Tarık Bey, belediye raporu yeniden inceleyecek!", "prop": "phone", "prop_caption": "Tarık Bey", "sfx": "phone", "sfx_dur": 1.2}
+    ]}
+  ]
+}

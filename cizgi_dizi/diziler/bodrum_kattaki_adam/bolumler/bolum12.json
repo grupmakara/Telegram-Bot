@@ -1,0 +1,31 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 12,
+  "title": "\"Kapıcı oy kullanamaz\" dediler, tapu kaydı okununca salon sustu | Bodrum Kattaki Adam 12. Bölüm",
+  "story_hook": "Kapıcının elinde ne var?",
+  "next_text": "Yıllar sonra arayan kim? 13. Bölüm'de...",
+  "teaser": [
+    "arsa sahibi kullanır",
+    "Yüzde kırk mı"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Rıza Usta'nın kamerası, çatlağı gece Ferit'in büyüttüğünü kaydetti."
+  },
+  "scenes": [
+    {"bg": "salon", "cast": ["kenan", "ferit", "selma", "riza"], "lines": [
+      {"who": "kenan", "mood": "neutral", "text": "Kentsel dönüşüm oylaması başlıyor. Kat malikleri oy verecek."},
+      {"who": "ferit", "mood": "smug", "text": "Kapıcı dışarı lütfen. Kapıcı oy kullanamaz.", "react": {"riza": "neutral"}},
+      {"who": "riza", "mood": "smile", "text": "Haklısınız. Kapıcı oy kullanamaz."},
+      {"who": "riza", "mood": "smug", "text": "Ama arsa sahibi kullanır.", "prop": "document", "prop_caption": "TAPU KAYDI|Arsa Payı: %40 – Rıza Karaca", "pause": 1.0, "shot": "close"},
+      {"who": "selma", "mood": "surprised", "text": "Yüzde kırk mı? Bu binanın neredeyse yarısı onun!", "react": {"kenan": "surprised", "ferit": "surprised"}},
+      {"who": "kenan", "mood": "surprised", "text": "Bu... Bu mümkün değil!"},
+      {"who": "ferit", "mood": "angry", "text": "Bu kâğıt sahte! Kapıcının tapusu mu olur?"},
+      {"who": "riza", "mood": "smile", "text": "Tapu, kimin hangi işi yaptığına bakmaz Ferit Bey."},
+      {"who": "riza", "mood": "neutral", "text": "Bu binayı babam yaptırdı, ben çizdim. Arsa hâlâ bizim."},
+      {"who": "ferit", "mood": "angry", "text": "Oylama iptal!"},
+      {"who": "selma", "mood": "smile", "text": "Hayır Ferit Bey. Ben oyumu kapıcıdan yana kullanıyorum."},
+      {"caption": "Selma Hanım'ın telefonu çaldı...", "dur": 1.8, "prop": "phone", "prop_caption": "Hakan", "sfx": "phone"},
+      {"who": "selma", "mood": "surprised", "text": "Hakan? Yıllardır aramıyordun...", "shot": "close"}
+    ]}
+  ]
+}

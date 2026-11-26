@@ -36,45 +36,48 @@ Her bölüm bir JSON senaryodan otomatik olarak 1080×1920 videoya dönüşür
 | Kod | Karakter | Rol | Ses |
 |---|---|---|---|
 | `riza` | **Rıza Usta**, 70 | Kapıcı. Aslında binanın proje mühendisi Rıza Karaca | Ahmet (kalın) |
-| `zeynep` | **Zeynep**, 21 | Kızı, mimarlık öğrencisi, sırrı ilk o çözer | Emel (genç) |
+| `zeynep` | **Zeynep**, 27 | Kızı, mimarlık öğrencisi, sırrı ilk o çözer | Emel (genç) |
 | `selma` | **Selma Hanım**, 50 | 5. kat, kibirli zengin komşu, Can'ın annesi | Emel (olgun) |
 | `kenan` | **Kenan Bey**, 55 | Apartman yöneticisi, Rıza'yı kovmak istiyor | Ahmet (hızlı) |
 | `can` | **Can**, 23 | Selma'nın oğlu, Zeynep'e âşık | Ahmet (genç) |
 | `ferit` | **Ferit**, 40 | Müteahhit temsilcisi, sahte rapor hazırlıyor | Ahmet (yavaş) |
 | `hoca` | **Prof. Nevzat**, 58 | Zeynep'in hocası, eskiden Rıza Karaca'nın öğrencisiydi | Ahmet (olgun) |
+| `usta` | **Hüseyin Usta**, 75 | Rıza'nın eski çırağı, asansör tamircisi | Ahmet (yaşlı) |
+| `hakan` | **Hakan Bey**, 55 | Selma'nın kocası, 1999'da Rıza'nın kurtardığı kişi | Ahmet |
+| `murat` | **Murat Bey**, 33 | Belediye imar müdürü, 1999'da kurtarılan çocuk | Ahmet |
+| `tarik` | **Tarık Kara**, 60 | Kötü adam, Yaşar Kara'nın büyük oğlu, Kenan'ın ağabeyi | Ahmet (kalın) |
+| `hirsiz` | Hırsız | Ferit'in gönderdiği adam | Ahmet |
 | `anlatici` | Anlatıcı | Sahne geçişleri | Ahmet |
 
-### Sezon 1 planı (24 bölüm = 8 gün)
-| Gün | Bölüm | Başlık (YouTube) |
-|---|---|---|
-| 1 | 1 ✅ | "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı |
-| 1 | 2 ✅ | "Bu bina çürük, yıkılacak" dediler, kapıcı kolonları tek tek saydı |
-| 1 | 3 ✅ | "Kapıcının kızıyla ne işin var?" dedi, oğlu kızın elini bırakmadı |
-| 2 | 4 ✅ | Kapıya tahliye kâğıdı astılar, kapıcı mühürdeki tarihe bakıp güldü |
-| 2 | 5 ✅ | Bodruma gizlice girdiler, sandık yerinde yoktu |
-| 2 | 6 ✅ | "Babam mühendis değil, kapıcı" dedi, hoca projeyi görünce ayağa kalktı |
-| 3 | 7 | Selma imzayı attı, sonra sözleşmenin arka sayfasını okudu |
-| 3 | 8 | Yeni güvenlik şirketi ilk gece kapıyı açık bıraktı, hırsızı kapıcı yakaladı |
-| 3 | 9 | Asansör tamircisi kapıcıyı görünce şapkasını çıkardı: "Karaca Bey?" |
-| 4 | 10 | Can annesine "Ben de bodruma taşınıyorum" dedi |
-| 4 | 11 | Ferit çatlağı büyütmek için gece matkapla geldi, kamera çaydanlığın içindeydi |
-| 4 | 12 | "Kapıcı oy kullanamaz" dediler, tapu kaydı okununca salon sustu |
-| 5 | 13 | Selma'nın kocası yıllar sonra eve döndü, ilk sarıldığı kişi kapıcıydı |
-| 5 | 14 | 1999'da enkazdan çıkardığı çocuk şimdi belediyede müdür |
-| 5 | 15 | Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi |
-| 6 | 16 | Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı |
-| 6 | 17 | Zeynep bursu kaybetti, harç parasını gizlice Selma yatırdı |
-| 6 | 18 | Tatbikatta herkes merdivene koştu, kapıcı "Kolonun yanına!" dedi |
-| 7 | 19 | Belediye binayı mühürledi, kapıcı mührün üstüne 1979 projesini koydu |
-| 7 | 20 | Ferit havalimanında kaçıyordu, telefon çaldı: arayan kapıcıydı |
-| 7 | 21 | "Bina yıkılmayacak" kararı çıktı, Kenan istifasını kapıcıya verdi |
-| 8 | 22 | Selma, Zeynep'in parmağına annesinin yüzüğünü taktı |
-| 8 | 23 | Apartman toplantısında sordular: "Yeni yönetici kapıcı mı olsun?" |
-| 8 | 24 | SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? |
+### Sezon 1 (24 bölüm = 8 gün)
+| Gün | Bölüm | Başlık (YouTube) | Saat |
+|---|---|---|---|
+| 1 | 1 ✅ | "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | 12:30 |
+| 1 | 2 ✅ | "Bu bina çürük, yıkılacak" dediler, kapıcı kolonları tek tek saydı | 18:00 |
+| 1 | 3 ✅ | "Kapıcının kızıyla ne işin var?" dedi, oğlu kızın elini bırakmadı | 21:00 |
+| 2 | 4 ✅ | Kapıya tahliye kâğıdı astılar, kapıcı mühürdeki tarihe bakıp güldü | 12:30 |
+| 2 | 5 ✅ | Bodruma gizlice girdiler, sandık yerinde yoktu | 18:00 |
+| 2 | 6 ✅ | "Babam mühendis değil, kapıcı" dedi, hoca projeyi görünce ayağa kalktı | 21:00 |
+| 3 | 7 ✅ | Sandığı oğlunun odasında buldu, mektubu okuyunca elleri titredi | 12:30 |
+| 3 | 8 ✅ | Yeni güvenlik şirketi ilk gece kapıyı açık bıraktı, hırsızı kapıcı yakaladı | 18:00 |
+| 3 | 9 ✅ | Asansör tamircisi kapıcıyı görünce şapkasını çıkardı: "Karaca Bey?" | 21:00 |
+| 4 | 10 ✅ | Can annesine "Ben de bodruma taşınıyorum" dedi | 12:30 |
+| 4 | 11 ✅ | Ferit çatlağı büyütmek için gece matkapla geldi, kamera çaydanlığın içindeydi | 18:00 |
+| 4 | 12 ✅ | "Kapıcı oy kullanamaz" dediler, tapu kaydı okununca salon sustu | 21:00 |
+| 5 | 13 ✅ | Selma'nın kocası yıllar sonra eve döndü, ilk sarıldığı kişi kapıcıydı | 12:30 |
+| 5 | 14 ✅ | 1999'da enkazdan çıkardığı çocuk şimdi belediyede müdür | 18:00 |
+| 5 | 15 ✅ | Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi | 21:00 |
+| 6 | 16 ✅ | Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı | 12:30 |
+| 6 | 17 ✅ | Zeynep bursu kaybetti, harç parasını gizlice Selma yatırdı | 18:00 |
+| 6 | 18 ✅ | Tatbikatta herkes merdivene koştu, kapıcı "Kolonun yanına!" dedi | 21:00 |
+| 7 | 19 ✅ | Belediye binayı mühürledi, kapıcı mührün üstüne 1979 projesini koydu | 12:30 |
+| 7 | 20 ✅ | Ferit havalimanında kaçıyordu, telefon çaldı: arayan kapıcıydı | 18:00 |
+| 7 | 21 ✅ | "Bina yıkılmayacak" kararı çıktı, Kenan istifasını kapıcıya verdi | 21:00 |
+| 8 | 22 ✅ | Selma, Zeynep'in parmağına annesinin yüzüğünü taktı | 12:30 |
+| 8 | 23 ✅ | Apartman toplantısında sordular: "Yeni yönetici kapıcı mı olsun?" | 18:00 |
+| 8 | 24 ✅ | SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? | 21:00 |
 
-**Büyük sır (finalde açılır):** Rıza Karaca, 1999 depreminde eşini başka bir
-müteahhidin çürük binasında kaybetti. Kendi çizdiği tek sağlam binanın başında
-durmaya yemin etti. Ferit'in patronu o müteahhidin oğludur. Bu, Sezon 2'nin kancası.
+**Büyük sır:** Rıza Karaca'nın eşi Leyla, 17 Ağustos 1999'da Yaşar Kara'nın yaptığı Kartal'daki çürük binada öldü. Rıza, bebek Zeynep'i enkazdan çıkardı ve bir daha hiçbir projeye imza atmadı; kendi çizdiği tek binanın başında kapıcı olarak durdu. Kenan ve Tarık, Yaşar Kara'nın oğulları. Finalde 2. sezon kancası: "Kartal'daki enkazdan sağ çıkan tek kişi sen değilsin."
 
 ## 3. Yayın takvimi (günde 3 video)
 
@@ -95,6 +98,8 @@ pip install edge-tts pycairo numpy        # bir kez
 python3 engine/render.py diziler/bodrum_kattaki_adam/bolumler/bolum04.json     # video
 python3 engine/render.py diziler/bodrum_kattaki_adam/bolumler/bolum04.json --preview   # hızlı kare önizleme
 ```
+
+Instagram Story görselleri: `python3 engine/story.py diziler/<dizi>/bolumler/bolumNN.json` → `cikti/<dizi>/story/storyNN.png` (bölümün `story_hook` sorusu, yayın saati).
 
 Videolar `cikti/<dizi>/bolumNN.mp4` olarak çıkar (her biri yaklaşık 50 saniyede render edilir).
 

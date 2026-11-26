@@ -1,0 +1,32 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 20,
+  "title": "Ferit havalimanında kaçıyordu, telefon çaldı: arayan kapıcıydı | Bodrum Kattaki Adam 20. Bölüm",
+  "story_hook": "Ferit kaçabilecek mi?",
+  "next_text": "Heyet kararı geliyor! 21. Bölüm'de...",
+  "teaser": [
+    "Kapıcı mı?!",
+    "Hapis yatacak olan sen olma"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Bina mühürlendi. Rıza Usta bağımsız bir heyetin binayı test etmesini istedi."
+  },
+  "scenes": [
+    {"bg": "street_night", "cast": ["ferit"], "lines": [
+      {"who": "anlatici", "text": "Havalimanı, gece yarısı..."},
+      {"who": "ferit", "mood": "smug", "text": "Bir saat sonra uçaktayım. Kimse beni bulamaz."},
+      {"caption": "Telefon çaldı...", "dur": 1.8, "prop": "phone", "prop_caption": "Kapıcı Rıza", "sfx": "phone", "react": {"ferit": "surprised"}},
+      {"who": "ferit", "mood": "surprised", "text": "Kapıcı mı?!", "shot": "close"},
+      {"who": "riza", "mood": "neutral", "text": "Ferit, kaçmana gerek yok. Sahte raporun imzası senin değil, değil mi?"},
+      {"who": "ferit", "mood": "worried", "text": "Ne demek istiyorsun?"},
+      {"who": "riza", "mood": "neutral", "text": "Raporu Tarık imzalattı. Sen sadece taşıdın. Gel, gerçeği anlat. Hapis yatacak olan sen olma."},
+      {"who": "ferit", "mood": "sad", "text": "Ya Tarık beni bulursa?"},
+      {"who": "riza", "mood": "smile", "text": "Seni ben korurum. Kapıcı her zaman evdedir."}
+    ]},
+    {"bg": "office", "cast": ["murat", "ferit"], "lines": [
+      {"who": "ferit", "mood": "sad", "text": "Müdür bey, ifade vermeye geldim. Raporu Tarık Kara'nın emriyle değiştirdim."},
+      {"who": "murat", "mood": "surprised", "text": "Bunu yazılı verir misin?"},
+      {"who": "ferit", "mood": "neutral", "text": "Hepsini yazarım.", "prop": "document", "prop_caption": "İFADE|Tarık Kara – Sahte Rapor", "pause": 1.0}
+    ]}
+  ]
+}

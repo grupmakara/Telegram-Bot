@@ -1,0 +1,40 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 24,
+  "title": "SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? | Bodrum Kattaki Adam 24. Bölüm",
+  "story_hook": "SEZON FİNALİ: Tüm sırlar açılıyor",
+  "next_text": "2. Sezon çok yakında...",
+  "teaser": [
+    "Bu tapu sahte",
+    "Annen için. Ve"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Rıza Usta yönetici seçildi. Tarık Kara, tapunun sahte olduğunu iddia etti.",
+    "say": "Önceki bölümde: Rıza Usta yönetici seçildi. Tarık Kara, tapunun sahte olduğunu iddia etti."
+  },
+  "scenes": [
+    {"bg": "office", "cast": ["tarik", "murat", "riza"], "lines": [
+      {"who": "tarik", "mood": "angry", "text": "Bu tapu sahte! O arsa babamındı!"},
+      {"who": "murat", "mood": "neutral", "text": "Tapu arşivini getirdim Tarık Bey.", "prop": "document", "prop_caption": "TAPU ARŞİVİ 1978|Malik: Rıfat Karaca", "pause": 0.8},
+      {"who": "murat", "mood": "smug", "text": "Arsa bin dokuz yüz yetmiş sekizden beri Karaca ailesinin."},
+      {"who": "tarik", "mood": "surprised", "text": "İmkânsız!", "shot": "close"},
+      {"who": "murat", "mood": "neutral", "text": "Ferit'in ifadesi ve sahte rapor savcılıkta. Sizi bekliyorlar."},
+      {"caption": "Tarık Kara gözaltına alındı.", "dur": 1.4, "sfx": "thud", "shake": true, "react": {"tarik": "sad"}}
+    ]},
+    {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
+      {"who": "zeynep", "mood": "sad", "text": "Baba, her şey bitti. Ama hep merak ettim: neden kapıcı oldun?"},
+      {"who": "riza", "mood": "sad", "text": "Kartal'dan sonra bir yemin ettim kızım: bir daha hiçbir bina gözümün önünde çökmeyecek."},
+      {"who": "riza", "mood": "smile", "text": "Bu binayı ben çizdim. Annenin en sevdiği binaydı. Başından hiç ayrılmadım."},
+      {"who": "zeynep", "mood": "sad", "text": "Yirmi iki yıl... annem için.", "shot": "close"},
+      {"who": "riza", "mood": "smile", "text": "Annen için. Ve senin için.", "shot": "close"}
+    ]},
+    {"bg": "lobby", "cast": ["selma", "riza", "zeynep", "can"], "lines": [
+      {"who": "selma", "mood": "smile", "text": "Günaydın Rıza Bey! Bu sefer çayınızı ben getirdim.", "react": {"riza": "smile", "zeynep": "smile", "can": "smile"}},
+      {"who": "riza", "mood": "smile", "text": "Teşekkür ederim Selma Hanım."},
+      {"who": "anlatici", "text": "Ve Sedef Apartmanı, bir kapıcı sayesinde ayakta kaldı."},
+      {"caption": "Rıza'nın telefonu çaldı...", "dur": 1.8, "prop": "phone", "prop_caption": "Bilinmeyen Numara", "sfx": "phone", "react": {"riza": "worried"}},
+      {"who": "riza", "mood": "worried", "text": "Alo?", "shot": "close"},
+      {"caption": "\"Kartal'daki enkazdan sağ çıkan tek kişi sen değilsin Rıza...\"", "dur": 3.0, "sfx": "sting", "react": {"riza": "surprised"}}
+    ]}
+  ]
+}

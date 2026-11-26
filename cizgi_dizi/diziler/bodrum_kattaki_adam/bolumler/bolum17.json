@@ -1,0 +1,34 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 17,
+  "title": "Zeynep bursu kaybetti, harç parasını gizlice Selma yatırdı | Bodrum Kattaki Adam 17. Bölüm",
+  "story_hook": "Harcı kim yatırdı?",
+  "next_text": "Deprem tatbikatı başlıyor! 18. Bölüm'de...",
+  "teaser": [
+    "bursun kesildi",
+    "Selma Hanım mı"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Rıza Usta, kayıp kasa defterini buldu ve Kenan'a bir şans verdi."
+  },
+  "scenes": [
+    {"bg": "classroom", "cast": ["hoca", "zeynep"], "lines": [
+      {"who": "hoca", "mood": "sad", "text": "Zeynep, bursun kesildi. Birisi şikâyet etmiş.", "react": {"zeynep": "surprised"}},
+      {"who": "zeynep", "mood": "surprised", "text": "Kim?"},
+      {"who": "hoca", "mood": "worried", "text": "Dilekçede Kara İnşaat yazıyor."}
+    ]},
+    {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
+      {"who": "zeynep", "mood": "sad", "text": "Baba, harcı yatıramazsam okuldan atılacağım."},
+      {"who": "riza", "mood": "sad", "text": "Bir yolunu buluruz kızım. Her zaman bulduk."},
+      {"who": "zeynep", "mood": "sad", "text": "Annem burada olsaydı ne yapardı?"},
+      {"who": "riza", "mood": "smile", "text": "Seninle gurur duyardı. Ve asla vazgeçmezdi."}
+    ]},
+    {"bg": "classroom", "cast": ["hoca", "zeynep"], "lines": [
+      {"who": "hoca", "mood": "smile", "text": "Zeynep, harcın yatırılmış. Hem de bir yıllık!", "react": {"zeynep": "surprised"}},
+      {"who": "zeynep", "mood": "surprised", "text": "Kim yatırmış hocam?"},
+      {"who": "hoca", "mood": "smile", "text": "Adını vermek istemedi. Sadece bir not bıraktı.", "prop": "document", "prop_caption": "NOT|Geleceğin gelinime... S.", "pause": 1.0},
+      {"who": "zeynep", "mood": "surprised", "text": "S... Selma Hanım mı?", "shot": "close"},
+      {"who": "hoca", "mood": "smile", "text": "Bazı insanlar özür dilemeyi bilmez Zeynep. Onun yerine iyilik yaparlar."}
+    ]}
+  ]
+}

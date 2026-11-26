@@ -1,0 +1,38 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 10,
+  "title": "Can annesine \"Ben de bodruma taşınıyorum\" dedi | Bodrum Kattaki Adam 10. Bölüm",
+  "story_hook": "Can evden ayrılıyor mu?",
+  "next_text": "Kenan'ın babası kim? 11. Bölüm'de...",
+  "teaser": [
+    "bodruma taşınıyorum",
+    "Yaşar... Yaşar Kara"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Hüseyin Usta, Kara ailesinin oğullarından birinin apartmanda yaşadığını söyledi."
+  },
+  "scenes": [
+    {"bg": "salon", "cast": ["selma", "can"], "lines": [
+      {"who": "selma", "mood": "angry", "text": "Can, Zeynep'le görüşmeni yasaklıyorum!", "react": {"can": "angry"}},
+      {"who": "can", "mood": "angry", "text": "O zaman ben de bu evden giderim. Ben de bodruma taşınıyorum!"},
+      {"who": "selma", "mood": "surprised", "text": "Kapıcının bodrumuna mı?"},
+      {"who": "can", "mood": "sad", "text": "Orada insanlar birbirine sevgiyle bakıyor anne. Burada sadece paraya."},
+      {"who": "selma", "mood": "sad", "text": "Ben sadece senin iyiliğini istiyorum oğlum."},
+      {"who": "can", "mood": "neutral", "text": "O zaman Zeynep'i bir kere tanı anne. Bir kere dinle."}
+    ]},
+    {"bg": "basement", "cast": ["can", "riza", "zeynep"], "lines": [
+      {"who": "riza", "mood": "neutral", "text": "Oğlum, annenin kalbini kırma.", "react": {"zeynep": "worried"}},
+      {"who": "can", "mood": "smile", "text": "Rıza amca, adam olmayı sizin yanınızda öğrendim."},
+      {"who": "zeynep", "mood": "smile", "text": "Baba, bırak kalsın. Bir hafta."},
+      {"who": "riza", "mood": "smile", "text": "Bir şartla kalırsın: annenden izin alacaksın."}
+    ]},
+    {"bg": "lobby", "cast": ["riza", "kenan"], "lines": [
+      {"who": "riza", "mood": "neutral", "text": "Hüseyin Usta bana bir isim söyledi Kenan Bey."},
+      {"who": "kenan", "mood": "worried", "text": "Ne ismi?"},
+      {"who": "riza", "mood": "neutral", "text": "Kenan Bey, babanızın adı neydi?", "react": {"kenan": "worried"}},
+      {"who": "kenan", "mood": "worried", "text": "Bu da nereden çıktı şimdi?"},
+      {"who": "riza", "mood": "angry", "text": "Söyleyin."},
+      {"who": "kenan", "mood": "sad", "text": "Yaşar... Yaşar Kara.", "shot": "close", "sfx": "thud"}
+    ]}
+  ]
+}

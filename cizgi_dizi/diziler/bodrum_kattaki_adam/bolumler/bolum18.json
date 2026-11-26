@@ -1,0 +1,34 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 18,
+  "title": "Tatbikatta herkes merdivene koştu, kapıcı \"Kolonun yanına!\" dedi | Bodrum Kattaki Adam 18. Bölüm",
+  "story_hook": "Depremde merdivene mi, kolona mı?",
+  "next_text": "Binaya mühür mü vurulacak? 19. Bölüm'de...",
+  "teaser": [
+    "Kolonun yanına çökün",
+    "tam puan alan tek kişi"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Zeynep'in harcını gizlice Selma Hanım yatırdı."
+  },
+  "scenes": [
+    {"bg": "lobby", "cast": ["kenan", "riza", "selma"], "lines": [
+      {"who": "kenan", "mood": "neutral", "text": "Bugün deprem tatbikatı var. Güvenlik şirketi yönetecek."},
+      {"caption": "Tatbikat başladı!", "dur": 1.6, "sfx": "alarm", "shake": true, "react": {"selma": "surprised", "kenan": "surprised"}},
+      {"who": "kenan", "mood": "worried", "text": "Herkes merdivene! Koşun!"},
+      {"who": "riza", "mood": "angry", "text": "Hayır! Sarsıntıda merdiven en tehlikeli yerdir. Kolonun yanına çökün!", "shot": "close"},
+      {"who": "selma", "mood": "worried", "text": "Kime inanacağız?"},
+      {"who": "riza", "mood": "neutral", "text": "Bilime inanın Selma Hanım. Çök, kapan, tutun!"}
+    ]},
+    {"bg": "lobby", "cast": ["murat", "riza", "kenan"], "lines": [
+      {"who": "murat", "mood": "smile", "text": "Doğru olan kapıcı efendi. Tatbikattan tam puan alan tek kişi o.", "react": {"kenan": "sad"}},
+      {"who": "kenan", "mood": "sad", "text": "Ben... yine yanıldım."},
+      {"who": "riza", "mood": "smile", "text": "Yanılmak ayıp değil Kenan Bey. Yanlışta ısrar etmek ayıp."}
+    ]},
+    {"bg": "street_night", "cast": ["tarik", "ferit"], "lines": [
+      {"who": "tarik", "mood": "angry", "text": "Belediyeyi bile yanına almış! Son çare: binayı mühürletin."},
+      {"who": "ferit", "mood": "worried", "text": "Nasıl?"},
+      {"who": "tarik", "mood": "smug", "text": "Benim de belediyede adamlarım var Ferit.", "shot": "close"}
+    ]}
+  ]
+}

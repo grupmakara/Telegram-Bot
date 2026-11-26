@@ -1,0 +1,34 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 15,
+  "title": "Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi | Bodrum Kattaki Adam 15. Bölüm",
+  "story_hook": "Kenan neden korkuyor?",
+  "next_text": "Kasadaki para nerede? 16. Bölüm'de...",
+  "teaser": [
+    "Ağabey, burada ne işin var",
+    "herkes öğrenir"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Belediye müdürü Murat, 1999'da Rıza Usta'nın kurtardığı çocuk çıktı."
+  },
+  "scenes": [
+    {"bg": "salon_night", "cast": ["tarik", "ferit"], "lines": [
+      {"who": "tarik", "mood": "angry", "text": "Bir kapıcıyı mı yenemedin Ferit?", "react": {"ferit": "worried"}},
+      {"who": "ferit", "mood": "worried", "text": "O sıradan bir kapıcı değil efendim. Rıza Karaca."},
+      {"who": "tarik", "mood": "smug", "text": "Rıza Karaca... Babamın peşini hiç bırakmayan adam.", "shot": "close"},
+      {"who": "tarik", "mood": "smug", "text": "Kenan'ı ara. Kardeşim bana bir iyilik borçlu."}
+    ]},
+    {"bg": "lobby", "cast": ["kenan", "tarik"], "lines": [
+      {"who": "kenan", "mood": "worried", "text": "Ağabey, burada ne işin var?", "react": {"tarik": "smug"}},
+      {"who": "tarik", "mood": "smug", "text": "Kenan, apartman kasasındaki parayı unuttun mu? Ben unutmadım."},
+      {"who": "kenan", "mood": "sad", "text": "O parayı geri koyacaktım!"},
+      {"who": "tarik", "mood": "angry", "text": "Koymadın. Ya kapıcıyı bu binadan atarsın, ya herkes öğrenir.", "shot": "close"}
+    ]},
+    {"bg": "basement", "cast": ["zeynep", "riza"], "lines": [
+      {"who": "zeynep", "mood": "worried", "text": "Baba, Kenan Bey'in ağabeyi gelmiş. Tarık Kara."},
+      {"who": "riza", "mood": "angry", "text": "Demek sonunda yüzünü gösterdi.", "shot": "close"},
+      {"who": "zeynep", "mood": "worried", "text": "Ne yapacağız baba?"},
+      {"who": "riza", "mood": "neutral", "text": "Önce Kenan'ı kurtaracağız kızım. O, ağabeyinin oyuncağı olmuş.", "shot": "close"}
+    ]}
+  ]
+}

@@ -127,11 +127,29 @@ def write_wav(path, mono):
 
 
 # ------------------------------------------------------------- timeline ----
+# edge-tts fallback: nudge rate/pitch by mood so drafts sound less flat
+MOOD_PROSODY = {"angry": (9, 6), "surprised": (6, 12), "worried": (5, 5), "sad": (-12, -8),
+                "smug": (-5, -3), "smile": (3, 4), "neutral": (0, 0)}
+
+
+def _shift(val, delta, unit):
+    return f"{int(val.rstrip(unit).rstrip('%').rstrip('Hz') or 0) + delta:+d}{unit}"
+
+
+def tr_upper(text):
+    """Turkish-aware upper case (i -> İ, ı -> I)."""
+    return text.replace("i", "İ").replace("ı", "I").upper()
+
+
 def line_audio(voice_dir, key, line, cast):
     pre = voice_dir / f"{key}.wav"
     if pre.exists():  # expressive ElevenLabs take (engine/voices.py)
         return decode(pre)
-    return speak(line.get("say", line["text"]), cast[line["who"]]["voice"])
+    voice = dict(cast[line["who"]]["voice"])
+    dr, dp = MOOD_PROSODY.get(line.get("mood", "neutral"), (0, 0))
+    voice["rate"] = _shift(voice.get("rate", "+0%"), dr, "%")
+    voice["pitch"] = _shift(voice.get("pitch", "+0Hz"), dp, "Hz")
+    return speak(line.get("say", line["text"]), voice)
 
 
 def build_timeline(ep, cast, voice_dir):
@@ -315,7 +333,7 @@ class Renderer:
         ctx.translate(-540, -860)
         ctx.select_font_face(FONT, 0, 1)
         ctx.set_font_size(92)
-        lines = wrap(ctx, self.ep["series"].upper(), 940)
+        lines = wrap(ctx, tr_upper(self.ep["series"]), 940)
         for i, l in enumerate(lines):
             e = ctx.text_extents(l)
             ctx.move_to(540 - e.x_advance / 2, 820 + i * 110)
@@ -380,6 +398,8 @@ class Renderer:
             PROPS[b["prop"]](ctx, t, b.get("prop_caption", ""))
             ctx.restore()
 
+        if getattr(self, "clean", False):  # story/thumbnail stills: no overlays or subtitles
+            return
         if b.get("teaser") or b.get("recap"):  # darkened, vignetted flash-forward / recap look
             v = cairo.RadialGradient(540, 900, 300, 540, 900, 1250)
             v.add_color_stop_rgba(0, 0, 0, 0, 0)

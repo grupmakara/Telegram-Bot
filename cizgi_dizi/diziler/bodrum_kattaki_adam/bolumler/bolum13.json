@@ -1,0 +1,33 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 13,
+  "title": "Selma'nın kocası yıllar sonra eve döndü, ilk sarıldığı kişi kapıcıydı | Bodrum Kattaki Adam 13. Bölüm",
+  "story_hook": "Hakan Bey neden kapıcıya sarıldı?",
+  "next_text": "Tarık Kara kim? 14. Bölüm'de...",
+  "teaser": [
+    "Rıza Bey! Siz misiniz",
+    "Beni çıkaran bu adamdı"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Rıza Usta'nın binanın yüzde kırkının sahibi olduğu ortaya çıktı."
+  },
+  "scenes": [
+    {"bg": "lobby", "cast": ["hakan", "selma", "can"], "lines": [
+      {"who": "hakan", "mood": "smile", "text": "Selma, Can... Ben döndüm.", "react": {"selma": "surprised", "can": "surprised"}},
+      {"who": "selma", "mood": "angry", "text": "On yıl sonra mı Hakan?"},
+      {"who": "hakan", "mood": "sad", "text": "Biliyorum. Ama önce birine teşekkür etmem lazım."}
+    ]},
+    {"bg": "lobby", "cast": ["hakan", "riza", "selma"], "lines": [
+      {"who": "hakan", "mood": "surprised", "text": "Rıza Bey! Siz misiniz gerçekten?", "shot": "close"},
+      {"caption": "Hakan Bey kapıcıya sarıldı...", "dur": 1.4, "react": {"selma": "surprised", "riza": "smile"}},
+      {"who": "selma", "mood": "surprised", "text": "Hakan, kapıcıyı nereden tanıyorsun?"},
+      {"who": "hakan", "mood": "sad", "text": "Doksan dokuzda Kartal'da enkaz altındaydım Selma. Beni çıkaran bu adamdı."},
+      {"who": "selma", "mood": "sad", "text": "Ben ona yıllarca çay taşıyan adam dedim...", "shot": "close"},
+      {"who": "riza", "mood": "smile", "text": "Geçmiş geçti Selma Hanım."},
+      {"who": "selma", "mood": "sad", "text": "Rıza Bey, size çok haksızlık ettim. Affedin beni."},
+      {"who": "riza", "mood": "smile", "text": "Affettim gitti. Ama bir çayınızı içerim."},
+      {"who": "hakan", "mood": "worried", "text": "Rıza Bey, size bir şey söylemeliyim. Bu dönüşüm işinin patronu Tarık Kara."},
+      {"who": "riza", "mood": "angry", "text": "Tarık Kara... Yaşar Kara'nın büyük oğlu.", "shot": "close", "sfx": "thud"}
+    ]}
+  ]
+}

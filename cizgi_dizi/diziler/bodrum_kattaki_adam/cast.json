@@ -165,5 +165,88 @@
    "name": "Fuat",
    "model": "eleven_v4"
   }
+ },
+ "usta": {
+  "name": "Hüseyin Usta",
+  "skin": "#DDA77F",
+  "hair_style": "short",
+  "hair": "#e8e8e8",
+  "brows": "#d0d0d0",
+  "mustache": true,
+  "mustache_color": "#efefef",
+  "wrinkles": true,
+  "brow_w": 11,
+  "outfit_type": "vest",
+  "outfit": "#7a5a3a",
+  "inner": "#d9d2c3",
+  "voice": {
+   "id": "tr-TR-AhmetNeural",
+   "pitch": "-18Hz",
+   "rate": "-12%"
+  }
+ },
+ "hakan": {
+  "name": "Hakan Bey",
+  "skin": "#EFC6A4",
+  "hair_style": "slick",
+  "hair": "#8c8c8c",
+  "outfit_type": "suit",
+  "outfit": "#5a6270",
+  "tie": "#2f5fa8",
+  "inner": "#f2f2f2",
+  "wrinkles": true,
+  "voice": {
+   "id": "tr-TR-AhmetNeural",
+   "pitch": "-6Hz",
+   "rate": "-4%"
+  }
+ },
+ "murat": {
+  "name": "Murat Bey",
+  "skin": "#E7B896",
+  "hair_style": "short",
+  "hair": "#1d1a19",
+  "beard_shadow": true,
+  "outfit_type": "suit",
+  "outfit": "#22304a",
+  "tie": "#c9a13a",
+  "voice": {
+   "id": "tr-TR-AhmetNeural",
+   "pitch": "+4Hz",
+   "rate": "+0%"
+  }
+ },
+ "tarik": {
+  "name": "Tarık Kara",
+  "skin": "#E6B58F",
+  "hair_style": "bald",
+  "hair": "#3a3330",
+  "mustache": true,
+  "mustache_color": "#3a3330",
+  "brow_w": 13,
+  "outfit_type": "suit",
+  "outfit": "#2a1f1f",
+  "tie": "#7a1020",
+  "inner": "#e6e1d8",
+  "wrinkles": true,
+  "voice": {
+   "id": "tr-TR-AhmetNeural",
+   "pitch": "-20Hz",
+   "rate": "-8%"
+  }
+ },
+ "hirsiz": {
+  "name": "Hırsız",
+  "skin": "#D9A882",
+  "hair_style": "spiky",
+  "hair": "#151313",
+  "beard_shadow": true,
+  "outfit_type": "sweater",
+  "outfit": "#2b2b30",
+  "voice": {
+   "id": "tr-TR-AhmetNeural",
+   "pitch": "+2Hz",
+   "rate": "+10%"
+  }
  }
 }

@@ -1,0 +1,33 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 9,
+  "title": "Asansör tamircisi kapıcıyı görünce şapkasını çıkardı: \"Karaca Bey?\" | Bodrum Kattaki Adam 9. Bölüm",
+  "story_hook": "Usta kapıcıyı nereden tanıyor?",
+  "next_text": "Kara ailesinin oğlu kim? 10. Bölüm'de...",
+  "teaser": [
+    "Siz... Karaca Bey",
+    "Biri burada"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Rıza Usta, sandığı çalmaya gelen hırsızı yakaladı. Hırsızı Ferit göndermişti."
+  },
+  "scenes": [
+    {"bg": "lobby", "cast": ["kenan", "usta", "riza"], "lines": [
+      {"who": "kenan", "mood": "smug", "text": "Usta, asansöre bir bak. Kapıcı kurcalamış, bozmuştur."},
+      {"who": "usta", "mood": "surprised", "text": "Siz... Karaca Bey? Rıza Karaca?", "shot": "close", "react": {"riza": "worried"}},
+      {"who": "riza", "mood": "worried", "text": "Yanılıyorsun usta."},
+      {"who": "usta", "mood": "smile", "text": "Yanılmam! Seksenlerde sizin şantiyenizde çıraktım. Bu asansörü siz hesaplamıştınız!"},
+      {"who": "kenan", "mood": "surprised", "text": "Ne? Asansörü kapıcı mı hesaplamış?"},
+      {"who": "usta", "mood": "smug", "text": "Bu binanın her vidası onun imzasıdır beyim!"}
+    ]},
+    {"bg": "basement", "cast": ["usta", "riza"], "lines": [
+      {"who": "usta", "mood": "sad", "text": "Doksan dokuzdan sonra sizi çok aradık hocam.", "say": "Doksan dokuzdan sonra sizi çok aradık hocam."},
+      {"who": "riza", "mood": "sad", "text": "Rıza Karaca o gece öldü Hüseyin."},
+      {"who": "usta", "mood": "worried", "text": "Kartal'daki binayı yapan Yaşar Kara'yı hatırlıyor musunuz?"},
+      {"who": "riza", "mood": "angry", "text": "O adamı unutmam mümkün mü?"},
+      {"who": "usta", "mood": "worried", "text": "Öldü. Ama oğulları büyük müteahhit oldu."},
+      {"who": "usta", "mood": "worried", "text": "Biri burada, bu apartmanda yaşıyor.", "shot": "close"},
+      {"who": "riza", "mood": "surprised", "text": "Kim?!", "shot": "close", "sfx": "thud"}
+    ]}
+  ]
+}

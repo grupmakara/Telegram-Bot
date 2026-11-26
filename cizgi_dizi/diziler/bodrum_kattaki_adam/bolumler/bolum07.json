@@ -1,0 +1,36 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 7,
+  "title": "Sandığı oğlunun odasında buldu, mektubu okuyunca elleri titredi | Bodrum Kattaki Adam 7. Bölüm",
+  "story_hook": "Mektubu yazan kim?",
+  "next_text": "Ferit sandığın yerini öğrendi! 8. Bölüm'de...",
+  "teaser": [
+    "Leyla Karaca",
+    "Annen o binada"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Hoca, Zeynep'e Kartal'daki binayı sormasını söyledi."
+  },
+  "scenes": [
+    {"bg": "salon", "cast": ["selma", "can"], "lines": [
+      {"who": "selma", "mood": "angry", "text": "Can! Bu sandık senin odanda ne arıyor?", "react": {"can": "worried"}},
+      {"who": "can", "mood": "worried", "text": "Anne, dokunma! O Zeynep'in babasının."},
+      {"who": "selma", "mood": "smug", "text": "Kapıcının sandığında ne olabilir ki? Eski çoraplar mı?"},
+      {"who": "selma", "mood": "worried", "text": "Rıza, Kartal'daki binanın demirleri eksik. Bu gece deprem olursa...", "prop": "document", "prop_caption": "MEKTUP|17 Ağustos 1999", "pause": 0.8},
+      {"who": "can", "mood": "surprised", "text": "Mektubu kim yazmış anne?"},
+      {"who": "selma", "mood": "sad", "text": "Altında bir imza var... Leyla Karaca.", "shot": "close"},
+      {"who": "can", "mood": "surprised", "text": "Leyla... Zeynep'in annesinin adı Leyla!"}
+    ]},
+    {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
+      {"who": "zeynep", "mood": "sad", "text": "Baba, artık saklama. Kartal'da ne oldu?", "react": {"riza": "sad"}},
+      {"who": "riza", "mood": "sad", "text": "Annen o binada mühendisti. Demirlerin eksik olduğunu fark etti."},
+      {"who": "riza", "mood": "sad", "text": "Bana bu mektubu yazdı. Ama mektup elime sabah ulaştı. Deprem gece olmuştu."},
+      {"who": "zeynep", "mood": "sad", "text": "Annem... o gece mi?", "shot": "close"},
+      {"who": "riza", "mood": "sad", "text": "Seni enkazdan ben çıkardım kızım. Bir battaniyenin içinde uyuyordun."},
+      {"who": "zeynep", "mood": "surprised", "text": "O bebek... ben miydim?"}
+    ]},
+    {"bg": "street_night", "cast": ["ferit"], "lines": [
+      {"who": "ferit", "mood": "smug", "text": "Patron, sandık artık Selma Hanım'ın evinde. Bu gece alıyoruz.", "prop": "phone", "prop_caption": "Patron", "sfx": "phone", "sfx_dur": 1.2}
+    ]}
+  ]
+}

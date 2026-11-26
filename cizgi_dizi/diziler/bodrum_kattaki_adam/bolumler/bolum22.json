@@ -1,0 +1,34 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 22,
+  "title": "Selma, Zeynep'in parmağına annesinin yüzüğünü taktı | Bodrum Kattaki Adam 22. Bölüm",
+  "story_hook": "Selma yüzüğü kime takıyor?",
+  "next_text": "Tarık Kara son hamlesini yapıyor! 23. Bölüm'de...",
+  "teaser": [
+    "annemindi",
+    "Hesap yeni açıldı"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Bina kurtuldu. Kenan, istifasını Rıza Usta'ya verdi."
+  },
+  "scenes": [
+    {"bg": "salon", "cast": ["selma", "zeynep", "can"], "lines": [
+      {"who": "selma", "mood": "smile", "text": "Zeynep, harcını ben yatırdım. Ama asıl vermem gereken başka bir şey var.", "react": {"zeynep": "surprised", "can": "smile"}},
+      {"who": "selma", "mood": "smile", "text": "Bu yüzük annemindi. Gelinime takmak için sakladım."},
+      {"who": "zeynep", "mood": "surprised", "text": "Selma Hanım..."},
+      {"who": "selma", "mood": "smile", "text": "Bundan sonra bana anne de."},
+      {"who": "can", "mood": "smile", "text": "Anne... Teşekkür ederim."}
+    ]},
+    {"bg": "basement", "cast": ["can", "riza"], "lines": [
+      {"who": "can", "mood": "worried", "text": "Rıza amca, Zeynep'i sizden istiyorum."},
+      {"who": "riza", "mood": "smile", "text": "Sandığımı nasıl koruduysan kızımı da öyle koru oğlum."},
+      {"who": "can", "mood": "smile", "text": "Söz veriyorum Rıza amca. Ömrüm boyunca."}
+    ]},
+    {"bg": "lobby_night", "cast": ["tarik", "riza"], "lines": [
+      {"who": "tarik", "mood": "smug", "text": "Rıza Karaca. Sonunda yüz yüzeyiz."},
+      {"who": "riza", "mood": "angry", "text": "Babanın yaptığı binada karım öldü Tarık."},
+      {"who": "tarik", "mood": "smug", "text": "Babam öldü. Hesap kapandı."},
+      {"who": "riza", "mood": "angry", "text": "Hayır. Sen aynısını bu binaya yapmak istedin. Hesap yeni açıldı.", "shot": "close"}
+    ]}
+  ]
+}
