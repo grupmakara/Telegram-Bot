@@ -40,6 +40,8 @@ bot.command('komut', async (ctx, next) => {
 });
 
 
+bot.use(require('./handlers/video'));
+
 bot.use(
     require('./handlers/middlewares'),
     require('./plugin')
