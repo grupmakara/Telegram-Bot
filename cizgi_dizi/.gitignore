@@ -7,3 +7,4 @@ cikti/**/*_preview.png
 .*.best.wav
 !diziler/*/sesler/*.wav
 !seslendirme/*/vox/*/*.wav
+seslendirme/*/vox/*/.try*.wav
