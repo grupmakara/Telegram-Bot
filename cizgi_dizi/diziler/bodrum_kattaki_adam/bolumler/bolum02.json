@@ -23,7 +23,7 @@
     {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
       {"who": "zeynep", "mood": "worried", "text": "Baba, o adam rapora yalan yazmış. Neden kimseye söylemiyorsun?"},
       {"who": "riza", "mood": "sad", "text": "Bir kapıcının sözüne kim inanır kızım?"},
-      {"who": "riza", "mood": "smug", "text": "Ama bu imzaya inanırlar.", "prop": "document", "prop_caption": "STATİK PROJE 1979"},
+      {"who": "riza", "mood": "smug", "text": "Ama bu imzaya inanırlar.", "prop": "document", "prop_caption": "STATİK PROJE 1979|Proje Müellifi: R. Karaca", "pause": 1.4},
       {"who": "zeynep", "mood": "surprised", "text": "Proje müellifi... R. Karaca? Baba, bu senin adın!", "shot": "close"}
     ]}
   ]

@@ -335,16 +335,23 @@ def prop_document(ctx, t, caption="RAPOR"):
     ctx.rotate(math.radians(-3))
     ctx.rectangle(-270, -340, 540, 680)
     fill_stroke(ctx, hexc("#fbfaf5"), 6)
-    _text(ctx, caption, 0, -250, 46, hexc("#24344f"))
+    title, *rows = caption.split("|")
+    _text(ctx, title, 0, -250, 46, hexc("#24344f"))
     ctx.set_source_rgb(*hexc("#9aa0a8"))
-    for i in range(9):
+    for i in range(9 - 2 * len(rows)):
         ctx.rectangle(-210, -180 + i * 50, 420 - (i % 3) * 60, 14)
         ctx.fill()
-    ellipse(ctx, 150, 250, 70, 70)
+    for j, row in enumerate(rows):  # highlighted lines, e.g. the author's name
+        y = -180 + (9 - 2 * len(rows)) * 50 + 30 + j * 70
+        ctx.rectangle(-230, y - 42, 460, 58)
+        ctx.set_source_rgba(1, 0.9, 0.3, 0.55)
+        ctx.fill()
+        _text(ctx, row, 0, y, 34, hexc("#1a1a1a"), maxw=440)
+    ellipse(ctx, 175, 285, 58, 58)
     ctx.set_source_rgba(0.75, 0.1, 0.12, 0.8)
-    ctx.set_line_width(8)
+    ctx.set_line_width(7)
     ctx.stroke()
-    _text(ctx, "MÜHÜR", 150, 262, 26, (0.75, 0.1, 0.12))
+    _text(ctx, "MÜHÜR", 175, 295, 22, (0.75, 0.1, 0.12))
     ctx.restore()
 
 

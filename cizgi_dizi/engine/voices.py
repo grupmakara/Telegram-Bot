@@ -102,10 +102,13 @@ def split_take(take, model):
     bounds = [0.0]
     for k in range(n - 1):
         if k in last and (k + 1) in first and first[k + 1] > last[k]:
-            # cut in the gap right before the next line's first word, so words
-            # Whisper split differently from the script (imza|alıyorum) stay whole
-            nxt = first[k + 1]
-            cut = (words[nxt - 1][2] + words[nxt][1]) / 2
+            # lines are separated by a pause: cut in the longest silence between
+            # the last recognised word of this line and the first of the next.
+            # (Words Whisper hears differently, e.g. "imza alıyorum", may sit on
+            # either side of the matched ones, so the longest gap is the safe cut.)
+            lo, hi = last[k], first[k + 1]
+            gi = max(range(lo, hi), key=lambda i: words[i + 1][1] - words[i][2])
+            cut = (words[gi][2] + words[gi + 1][1]) / 2
         else:
             cut = total * (k + 1) / n
             print(f"  UYARI: {take.name} replik {k + 1}/{k + 2} sınırı tahmini")
