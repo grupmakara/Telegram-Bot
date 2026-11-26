@@ -1,0 +1,22 @@
+"""Bölüm 1-3 replik bazında duygu yönlendirmeleri."""
+STYLE = {
+    'b1_p1.wav': 'tired, sighing', 'b1_p1b.wav': 'sleepy, yawning', 'b1_p3.wav': 'whispering, mysterious',
+    'b1_l2.wav': 'confused, hesitant', 'b1_l2b.wav': 'shocked, trembling', 'b1_l3.wav': 'whispering, amazed',
+    'b1_l7.wav': 'shocked, shouting', 'b1_l9.wav': 'excited realization', 'b1_c1.wav': 'sad, worried',
+    'b1_c2.wav': 'thoughtful, slow', 'b1_c3.wav': 'determined', 'b1_c4.wav': 'surprised, doubtful',
+    'b1_c5.wav': 'playful, mischievous', 'b1_c5b.wav': 'laughing, amused', 'b1_c6.wav': 'sighing, worried',
+    'b1_c7.wav': 'determined, confident', 'b1_c9.wav': 'calm, serious, inner monologue',
+    'b2_l1.wav': 'crying, desperate', 'b2_l2.wav': 'gentle, reassuring', 'b2_l2b.wav': 'worried, close to tears',
+    'b2_l2c.wav': 'concerned, quiet', 'b2_l4.wav': 'whispering', 'b2_l5.wav': 'whispering',
+    'b2_l6b.wav': 'confused, skeptical', 'b2_l7.wav': 'angry, shouting', 'b2_l8.wav': 'firm, pleading',
+    'b2_l9.wav': 'sarcastic, menacing', 'b2_l9b.wav': 'scared, panicked', 'b2_l9c.wav': 'determined',
+    'b2_l10.wav': 'whispering, tired', 'b2_l10b.wav': 'whispering, exhausted', 'b2_l10c.wav': 'praying, quiet, emotional',
+    'b2_l11.wav': 'weak, sleepy', 'b2_l12.wav': 'crying with joy', 'b2_l12b.wav': 'soft, warm, smiling',
+    'b2_l13.wav': 'suspicious, slow',
+    'b3_l1.wav': 'surprised, excited', 'b3_l2.wav': 'cheerful', 'b3_z3.wav': 'grateful, warm',
+    'b3_r1.wav': 'hoarse, tired, coughing', 'b3_r3.wav': 'amazed, happy', 'b3_hk1.wav': 'sarcastic, threatening',
+    'b3_l3.wav': 'gasping, shocked', 'b3_l5.wav': 'whispering, reading slowly', 'b3_l6.wav': 'whispering, slow',
+    'b3_l7.wav': 'excited, hopeful', 'b3_l7b.wav': 'counting slowly, determined', 'b3_l8.wav': 'shouting, banging on door',
+    'b3_l9.wav': 'scared', 'b3_l10.wav': 'stern, commanding', 'b3_l10b.wav': 'panicked, urgent',
+    'b3_l10c.wav': 'calm, brave', 'b3_l11.wav': 'determined, powerful',
+}
