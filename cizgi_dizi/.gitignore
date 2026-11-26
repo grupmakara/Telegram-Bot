@@ -5,3 +5,5 @@ cikti/**/*_preview.png
 .try*.wav
 .*.try.wav
 .*.best.wav
+!diziler/*/sesler/*.wav
+!seslendirme/*/vox/*/*.wav
