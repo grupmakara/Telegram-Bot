@@ -3,6 +3,13 @@
   "episode": 5,
   "title": "Bodruma gizlice girdiler, sandık yerinde yoktu | Bodrum Kattaki Adam 5. Bölüm",
   "next_text": "Mektupta ne yazıyor? 6. Bölüm'de...",
+  "teaser": [
+    "Bir şey mi arıyordunuz",
+    "su sayacına bakıyorduk"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Sahte tahliye kararı ortaya çıktı. Ferit, sandığın peşine düştü."
+  },
   "scenes": [
     {"bg": "basement_night", "cast": ["kenan", "ferit"], "lines": [
       {"who": "anlatici", "text": "Gece yarısı, bodrum katın kapısı usulca açıldı.", "sfx": "door"},
@@ -16,11 +23,15 @@
       {"who": "kenan", "mood": "worried", "text": "Rıza! Biz... Biz su sayacına bakıyorduk!"},
       {"who": "riza", "mood": "smile", "text": "Su sayacı merdivenin altında Kenan Bey. Yirmi iki yıldır orada."},
       {"who": "ferit", "mood": "angry", "text": "Sandık nerede kapıcı?"},
-      {"who": "riza", "mood": "smug", "text": "Hangi sandık? Benim bir yorganım, bir de çaydanlığım var.", "shot": "close"}
+      {"who": "riza", "mood": "smug", "text": "Hangi sandık? Benim bir yorganım, bir de çaydanlığım var.", "shot": "close"},
+      {"who": "kenan", "mood": "worried", "text": "Ferit Bey, gidelim. Rezil olduk!", "v": 2},
+      {"who": "riza", "mood": "smile", "text": "Bir dahaki sefere kapıyı çalın beyler. Kapıcı her zaman evdedir.", "v": 2}
     ]},
     {"bg": "street", "cast": ["can", "zeynep"], "lines": [
       {"who": "can", "mood": "worried", "text": "Zeynep, bu saatte neden dışarıdasın? Elindeki ne?"},
       {"who": "zeynep", "mood": "worried", "text": "Babamın sandığı. Dün gece onların konuştuğunu duydum, sandığı ben sakladım."},
+      {"who": "can", "mood": "worried", "text": "Sandığı saklamak tehlikeli Zeynep. Bana ver, bizim evde kimse aramaz.", "v": 2},
+      {"who": "zeynep", "mood": "smile", "text": "Sana güveniyorum Can.", "v": 2},
       {"who": "zeynep", "mood": "sad", "text": "İçinden bir mektup çıktı Can. Tarihine bak.", "prop": "document", "prop_caption": "MEKTUP|İstanbul, 17 Ağustos 1999", "pause": 1.0},
       {"who": "can", "mood": "surprised", "text": "17 Ağustos 1999... Deprem gecesi mi?", "say": "On yedi Ağustos bin dokuz yüz doksan dokuz... Deprem gecesi mi?", "shot": "close"}
     ]}

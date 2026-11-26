@@ -283,7 +283,6 @@ def bg_classroom(ctx, night=False):
     ctx.stroke()
     _text(ctx, "F = m · a", 780, 420, 52, (1, 1, 1), maxw=360)
     _text(ctx, "Deprem yükü", 780, 520, 40, (1, 1, 1), maxw=360)
-    _text(ctx, "STATİK II", 540, 230, 44, hexc("#3a3a3a"), maxw=600)
     # window + desk
     _window(ctx, 820, 880, 170, 300)
     ctx.rectangle(60, 1150, 520, 60)

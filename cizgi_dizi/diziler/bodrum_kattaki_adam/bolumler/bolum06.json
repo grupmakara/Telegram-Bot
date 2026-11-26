@@ -3,6 +3,14 @@
   "episode": 6,
   "title": "\"Babam mühendis değil, kapıcı\" dedi, hoca projeyi görünce ayağa kalktı | Bodrum Kattaki Adam 6. Bölüm",
   "next_text": "17 Ağustos gecesi ne oldu? 7. Bölüm'de...",
+  "teaser": [
+    "Rıza Karaca mı?!",
+    "benim hocamdı"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Sandıktan 17 Ağustos 1999 tarihli bir mektup çıktı.",
+    "say": "Önceki bölümde: Sandıktan on yedi Ağustos bin dokuz yüz doksan dokuz tarihli bir mektup çıktı."
+  },
   "scenes": [
     {"bg": "classroom", "cast": ["zeynep", "hoca", "can"], "lines": [
       {"who": "hoca", "mood": "neutral", "text": "Zeynep Hanım, bitirme projesi için hangi binayı inceleyeceksiniz?", "react": {"zeynep": "worried", "can": "neutral"}},
@@ -13,11 +21,15 @@
       {"who": "hoca", "mood": "surprised", "text": "Rıza Karaca mı?!", "shot": "close", "sfx": "thud"},
       {"who": "hoca", "mood": "surprised", "text": "Kızım, Rıza Karaca benim hocamdı. Bu ülkenin en iyi deprem mühendisiydi!", "react": {"zeynep": "surprised", "can": "surprised"}},
       {"who": "can", "mood": "surprised", "text": "Hocam, emin misiniz? Zeynep'in babası yirmi iki yıldır kapıcılık yapıyor."},
-      {"who": "hoca", "mood": "sad", "text": "99 depreminden sonra ortadan kayboldu. Hepimiz öldü sandık.", "say": "Doksan dokuz depreminden sonra ortadan kayboldu. Hepimiz öldü sandık."}
+      {"who": "hoca", "mood": "sad", "text": "99 depreminden sonra ortadan kayboldu. Hepimiz öldü sandık.", "say": "Doksan dokuz depreminden sonra ortadan kayboldu. Hepimiz öldü sandık."},
+      {"who": "zeynep", "mood": "sad", "text": "Hocam, babam neden saklanmış olabilir?", "v": 2},
+      {"who": "hoca", "mood": "worried", "text": "Bunu bir tek o bilir kızım. Ona Kartal'daki binayı sor.", "v": 2, "shot": "close"}
     ]},
     {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
       {"who": "zeynep", "mood": "sad", "text": "Baba, hocam seni tanıdı. Neden bize hiç anlatmadın?", "react": {"riza": "sad"}},
       {"who": "riza", "mood": "sad", "text": "Bazı yükleri bir baba, kızına taşıtmaz."},
+      {"who": "zeynep", "mood": "worried", "text": "Hocam bana Kartal'daki binayı sormamı söyledi.", "v": 2},
+      {"who": "riza", "mood": "surprised", "text": "Kartal mı? O adı nereden duydun?", "v": 2, "shot": "close"},
       {"who": "zeynep", "mood": "worried", "text": "O mektubu okudum baba. On yedi Ağustos gecesi ne oldu?"},
       {"who": "riza", "mood": "sad", "text": "O gece... Sana hiç anlatmadığım bir şey oldu kızım.", "shot": "close"}
     ]}

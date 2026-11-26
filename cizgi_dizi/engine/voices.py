@@ -35,7 +35,14 @@ def take_dir(ep_path):
     return ROOT / "seslendirme" / ep_path.parent.parent.name / ep_path.stem
 
 
+def clip_name(si, li):
+    """Per-line clip file name; the recap line uses scene key 'r'."""
+    return f"s{si}_l{li}.wav"
+
+
 def spoken_lines(ep):
+    if ep.get("recap"):
+        yield "r", 0, dict(ep["recap"], who="anlatici", v=ep["recap"].get("v", 2))
     for si, sc in enumerate(ep["scenes"]):
         for li, ln in enumerate(sc["lines"]):
             if ln.get("who") and ln.get("text"):
@@ -49,9 +56,11 @@ def tagged(ln):
     return f"{tag} {ln.get('say', ln['text'])}".strip()
 
 
-def prompts(ep):
+def prompts(ep, version=None):
     by = {}
     for si, li, ln in spoken_lines(ep):
+        if version is not None and ln.get("v", 1) != version:
+            continue
         by.setdefault(ln["who"], []).append(tagged(ln))
     return {who: "\n\n".join(lines) for who, lines in by.items()}
 
@@ -73,7 +82,10 @@ def decode(path, sr):
 def split_take(take, model):
     """take file name: <who>__<bolumA>+<bolumB>.mp3 inside seslendirme/<dizi>/takes/."""
     take = Path(take)
-    who, eps = take.stem.split("__")
+    parts = take.stem.split("__")
+    who, eps = parts[0], parts[1]
+    # lines added later carry "v": 2 and live in takes named <who>__<eps>__v2
+    version = int(parts[2][1:]) if len(parts) > 2 else 1
     dizi = take.parent.parent.name
     items = []  # (out_path, text)
     for stem in eps.split("+"):
@@ -82,8 +94,8 @@ def split_take(take, model):
         d = take_dir(ep_path)
         d.mkdir(parents=True, exist_ok=True)
         for si, li, ln in spoken_lines(ep):
-            if ln["who"] == who:
-                items.append((d / f"s{si}_l{li}.wav", ln.get("say", ln["text"])))
+            if ln["who"] == who and ln.get("v", 1) == version:
+                items.append((d / clip_name(si, li), ln.get("say", ln["text"])))
     audio = decode(take, SR)
     a16 = decode(take, 16000)
     segs, _ = model.transcribe(a16, language="tr", word_timestamps=True)

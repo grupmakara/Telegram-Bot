@@ -3,9 +3,18 @@
   "episode": 3,
   "title": "\"Kapıcının kızıyla ne işin var?\" dedi, oğlu kızın elini bırakmadı | Bodrum Kattaki Adam 3. Bölüm",
   "next_text": "Ferit'in patronu kim? 4. Bölüm'de...",
+  "teaser": [
+    "Kapıcının kızıyla ne işin var",
+    "Zeynep'in elini bırakmıyorum"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Zeynep, babasının imzasını eski bir projede buldu."
+  },
   "scenes": [
     {"bg": "street", "cast": ["can", "zeynep"], "lines": [
       {"who": "can", "mood": "smile", "text": "Zeynep, fakülteye beraber gidelim mi? Arabam kapıda.", "react": {"zeynep": "smile"}},
+      {"who": "zeynep", "mood": "smile", "text": "Dün babam asansörü tek başına kurtarmış, duydun mu?", "v": 2},
+      {"who": "can", "mood": "smile", "text": "Bütün apartman onu konuşuyor. Annem bile sustu!", "v": 2},
       {"who": "zeynep", "mood": "worried", "text": "Ben otobüsle giderim Can. Annen görürse kıyamet kopar."},
       {"who": "can", "mood": "neutral", "text": "Annemden korkmuyorum. Sen benim için..."}
     ]},
@@ -19,7 +28,8 @@
       {"who": "riza", "mood": "neutral", "text": "Selma Hanım, kızıma laf ettiğinizi duydum."},
       {"who": "selma", "mood": "smug", "text": "Ne olacak? Beni de mi kovduracaksın, kapıcı?"},
       {"who": "riza", "mood": "smile", "text": "Hayır. Sadece şunu bilin: imzalayacağınız kâğıt sizi evsiz bırakır."},
-      {"who": "selma", "mood": "surprised", "text": "Ne... Ne diyorsun sen?", "shot": "close"}
+      {"who": "selma", "mood": "surprised", "text": "Ne... Ne diyorsun sen?", "shot": "close"},
+      {"who": "riza", "mood": "neutral", "text": "Sözleşmenin arka sayfasını okuyun Selma Hanım. Okursanız anlarsınız.", "v": 2}
     ]},
     {"bg": "street_night", "cast": ["ferit"], "lines": [
       {"who": "anlatici", "text": "Aynı gece, apartmanın önünde...", "sfx": "phone", "sfx_dur": 1.6},

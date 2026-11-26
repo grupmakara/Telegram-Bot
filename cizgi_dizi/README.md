@@ -107,7 +107,11 @@ Videolar `cikti/<dizi>/bolumNN.mp4` olarak çıkar (her biri yaklaşık 50 saniy
    {"who": "riza", "mood": "smile", "text": "...", "prop": "document", "prop_caption": "TAPU", "shot": "close"}
  ]}]}
 ```
-- **Mekânlar (`bg`):** `lobby`, `basement`, `salon`, `street`; gece için sonuna `_night` eklenir.
+- **Ön gösterim (`teaser`):** Bölümün başında oynatılacak repliklerin metninden bir parça (ör. `["İmdat! Asansör", "Çekilin!"]`). Bu replikler "BU BÖLÜMDE…" etiketiyle gösterilir, ardından başlık kartı gelir. Mevcut sesler kullanıldığı için ek kota harcamaz.
+- **Özet (`recap`):** `{"text": "Önceki bölümde: ..."}`. Anlatıcı okur, ekranda "ÖNCEKİ BÖLÜMDE" etiketi çıkar.
+- **Sonradan eklenen replikler:** `"v": 2` ile işaretlenir ve sesleri `<karakter>__<bölümler>__v2.mp3` kayıtlarına gider, böylece eski kayıtlar bozulmaz.
+- **Okunuş (`say`):** Altyazıda rakam görünsün ama ses yazıyla okusun diye kullanılır (ör. `"text": "1979"`, `"say": "bin dokuz yüz yetmiş dokuz"`).
+- **Mekânlar (`bg`):** `lobby`, `basement`, `salon`, `street`, `classroom`; gece için sonuna `_night` eklenir.
 - **Duygular (`mood`):** `neutral`, `smile`, `angry`, `surprised`, `sad`, `smug`, `worried`.
 - **Objeler (`prop`):** `phone` (yazı = arayan), `photo`, `document`, `money`, `crack`.
 - **Efektler (`sfx`):** `thud`, `sting`, `ding`, `phone`, `alarm`, `elevator`, `whoosh`, `door`.

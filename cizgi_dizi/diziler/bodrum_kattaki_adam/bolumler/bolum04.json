@@ -3,6 +3,12 @@
   "episode": 4,
   "title": "Kapıya tahliye kâğıdı astılar, kapıcı mühürdeki tarihe bakıp güldü | Bodrum Kattaki Adam 4. Bölüm",
   "next_text": "Sandık tehlikede! 5. Bölüm'de...",
+  "teaser": [
+    "Otuz bir Eylül mü?"
+  ],
+  "recap": {
+    "text": "Önceki bölümde: Ferit, kapıcıyı bu hafta bodrumdan çıkarmaya yemin etti."
+  },
   "scenes": [
     {"bg": "lobby", "cast": ["kenan", "riza", "ferit"], "lines": [
       {"who": "kenan", "mood": "smug", "text": "Rıza Efendi, kapına bak bakalım. Resmî tahliye kararı geldi.", "react": {"riza": "worried", "ferit": "smug"}},
@@ -12,12 +18,15 @@
       {"caption": "Kenan kâğıda bir daha baktı...", "sfx": "thud", "dur": 1.3, "react": {"kenan": "surprised", "ferit": "worried"}},
       {"who": "kenan", "mood": "worried", "text": "Ferit Bey... Bu mühür sahte mi?"},
       {"who": "ferit", "mood": "angry", "text": "Saçmalama! Yazım hatası olmuştur."},
-      {"who": "riza", "mood": "smug", "text": "Mahkeme yazım hatası yapmaz. Ama sahtecilik yapanı mahkemeye verir."}
+      {"who": "riza", "mood": "smug", "text": "Mahkeme yazım hatası yapmaz. Ama sahtecilik yapanı mahkemeye verir."},
+      {"who": "ferit", "mood": "angry", "text": "Bu iş burada bitmedi kapıcı!", "v": 2, "shot": "close"}
     ]},
     {"bg": "lobby", "cast": ["selma", "kenan"], "lines": [
       {"who": "selma", "mood": "worried", "text": "Kenan Bey, duydum! O kâğıt sahte miymiş?", "react": {"kenan": "worried"}},
       {"who": "kenan", "mood": "worried", "text": "Selma Hanım, sesinizi alçaltın. Komşular duymasın."},
-      {"who": "selma", "mood": "angry", "text": "Ben o adama imza veriyordum! Bana hemen gerçeği söyleyin!"}
+      {"who": "selma", "mood": "angry", "text": "Ben o adama imza veriyordum! Bana hemen gerçeği söyleyin!"},
+      {"who": "kenan", "mood": "worried", "text": "Bilmiyorum Selma Hanım! Kâğıdı Ferit Bey getirdi.", "v": 2},
+      {"who": "selma", "mood": "angry", "text": "O zaman imza falan yok! Önce gerçeği öğreneceğim.", "v": 2}
     ]},
     {"bg": "street_night", "cast": ["ferit", "kenan"], "lines": [
       {"who": "ferit", "mood": "angry", "text": "Kâğıtla olmadı Kenan. Başka bir yol bulacağız."},

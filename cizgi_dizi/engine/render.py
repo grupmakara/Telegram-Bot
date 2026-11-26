@@ -127,24 +127,54 @@ def write_wav(path, mono):
 
 
 # ------------------------------------------------------------- timeline ----
+def line_audio(voice_dir, key, line, cast):
+    pre = voice_dir / f"{key}.wav"
+    if pre.exists():  # expressive ElevenLabs take (engine/voices.py)
+        return decode(pre)
+    return speak(line.get("say", line["text"]), cast[line["who"]]["voice"])
+
+
 def build_timeline(ep, cast, voice_dir):
-    beats, t = [], 0.35
+    """Teaser (flash-forward) -> title card -> recap -> the episode itself."""
+    story, t = [], 0.0
     for si, scene in enumerate(ep["scenes"]):
         for li, line in enumerate(scene["lines"]):
             b = dict(line, scene=si, index=li)
             if "who" in line:
-                pre = voice_dir / f"s{si}_l{li}.wav"
-                if pre.exists():  # expressive ElevenLabs take (engine/voices.py)
-                    b["audio"] = decode(pre)
-                else:
-                    b["audio"] = speak(line.get("say", line["text"]), cast[line["who"]]["voice"])
+                b["audio"] = line_audio(voice_dir, f"s{si}_l{li}", line, cast)
                 dur = len(b["audio"]) / SR
             else:
                 dur = line.get("dur", 1.2)
-            b["start"], b["end"] = t, t + dur
-            t += dur + line.get("pause", 0.28)
-            beats.append(b)
-        t += 0.25
+            b["dur"] = dur
+            story.append(b)
+
+    intro = []
+    for needle in ep.get("teaser", []):
+        src = next(b for b in story if needle in (b.get("text") or b.get("caption") or ""))
+        tb = dict(src, teaser=True, orig=src, pause=0.15)
+        tb.pop("prop", None) if src.get("who") else None
+        if src.get("who") and src["who"] in ep["scenes"][src["scene"]]["cast"]:
+            tb["shot"] = "close"
+        intro.append(tb)
+    if intro:
+        intro.append({"titlecard": True, "scene": 0, "index": 0, "dur": 1.7, "sfx": "whoosh",
+                      "sfx_dur": 0.9, "pause": 0.1})
+    if ep.get("recap"):
+        rl = dict(ep["recap"], who="anlatici")
+        intro.append(dict(rl, recap=True, scene=0, index=0, shot="wide",
+                          audio=line_audio(voice_dir, "sr_l0", rl, cast), pause=0.35))
+        intro[-1]["dur"] = len(intro[-1]["audio"]) / SR
+
+    beats, t = [], 0.25
+    prev_scene = None
+    for b in intro + story:
+        if not b.get("teaser") and not b.get("titlecard") and not b.get("recap"):
+            if prev_scene is not None and b["scene"] != prev_scene:
+                t += 0.25
+            prev_scene = b["scene"]
+        b["start"], b["end"] = t, t + b["dur"]
+        t += b["dur"] + b.get("pause", 0.28)
+        beats.append(b)
     return beats, t
 
 
@@ -254,8 +284,12 @@ class Renderer:
         return 0.0
 
     def mood_state(self, upto):
+        if upto.get("teaser"):
+            upto = upto["orig"]
         moods = {}
         for b in self.beats:
+            if b.get("teaser") or b.get("titlecard") or b.get("recap"):
+                continue
             if b is upto:
                 break
             if b.get("who"):
@@ -268,8 +302,33 @@ class Renderer:
             moods[k] = v
         return moods
 
+    def title_card(self, ctx, local):
+        g = cairo.LinearGradient(0, 0, 0, H)
+        g.add_color_stop_rgb(0, *hexc("#15132e"))
+        g.add_color_stop_rgb(1, *hexc("#3a2b8c"))
+        ctx.set_source(g)
+        ctx.paint()
+        k = min(1, local / 0.3)
+        ctx.save()
+        ctx.translate(540, 860)
+        ctx.scale(0.8 + 0.2 * k, 0.8 + 0.2 * k)
+        ctx.translate(-540, -860)
+        ctx.select_font_face(FONT, 0, 1)
+        ctx.set_font_size(92)
+        lines = wrap(ctx, self.ep["series"].upper(), 940)
+        for i, l in enumerate(lines):
+            e = ctx.text_extents(l)
+            ctx.move_to(540 - e.x_advance / 2, 820 + i * 110)
+            ctx.set_source_rgba(1, 1, 1, k)
+            ctx.show_text(l)
+        draw_pill(ctx, f"{self.ep['episode']}. BÖLÜM", y=840 + len(lines) * 110, size=56)
+        ctx.restore()
+
     def frame(self, ctx, t):
         b = self.beat_at(t)
+        if b.get("titlecard"):
+            self.title_card(ctx, t - b["start"])
+            return
         scene = self.ep["scenes"][b["scene"]]
         local = t - b["start"]
         moods = self.mood_state(b)
@@ -321,7 +380,19 @@ class Renderer:
             PROPS[b["prop"]](ctx, t, b.get("prop_caption", ""))
             ctx.restore()
 
-        draw_pill(ctx, f"{self.ep['series']} • {self.ep['episode']}. Bölüm", y=140, size=34)
+        if b.get("teaser") or b.get("recap"):  # darkened, vignetted flash-forward / recap look
+            v = cairo.RadialGradient(540, 900, 300, 540, 900, 1250)
+            v.add_color_stop_rgba(0, 0, 0, 0, 0)
+            v.add_color_stop_rgba(1, 0, 0, 0, 0.75)
+            ctx.set_source(v)
+            ctx.paint()
+            if b.get("teaser") and local < 0.12:  # camera-flash cut
+                ctx.set_source_rgba(1, 1, 1, 0.8 * (1 - local / 0.12))
+                ctx.paint()
+            draw_pill(ctx, "BU BÖLÜMDE..." if b.get("teaser") else "ÖNCEKİ BÖLÜMDE", y=150, size=44,
+                      bg="#e23b3b" if b.get("teaser") else "#ffffff", fg="#ffffff" if b.get("teaser") else "#15132e")
+        else:
+            draw_pill(ctx, f"{self.ep['series']} • {self.ep['episode']}. Bölüm", y=140, size=34)
         if b.get("caption"):
             draw_subtitle(ctx, b["caption"], narrator=True)
         elif b.get("text"):
