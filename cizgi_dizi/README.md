@@ -111,4 +111,12 @@ Videolar `cikti/<dizi>/bolumNN.mp4` olarak çıkar (her biri yaklaşık 50 saniy
 - **Objeler (`prop`):** `phone` (yazı = arayan), `photo`, `document`, `money`, `crack`.
 - **Efektler (`sfx`):** `thud`, `sting`, `ding`, `phone`, `alarm`, `elevator`, `whoosh`, `door`.
 - **Çekim (`shot`):** `wide`, `close` ya da `two:a,b`; boş bırakılırsa otomatik seçilir.
-- **Ses:** Microsoft Edge'in ücretsiz Türkçe neural sesleri (`edge-tts`), karakter başına farklı ton ve hız.
+### Seslendirme (duygulu)
+Her karaktere ayrı bir ElevenLabs sesi atanmıştır (`cast.json` → `elevenlabs`); model `eleven_v4`, duygu etiketleriyle ("[angrily]", "[whispering]", "[mocking laugh]" gibi).
+
+1. `python3 engine/voices.py prompts diziler/<dizi>/bolumler/bolumNN.json`: her karakterin repliklerini duygu etiketleriyle yazdırır.
+2. Her metni o karakterin sesiyle üret ve `seslendirme/<dizi>/takes/<karakter>__bolumNN[+bolumMM].mp3` olarak kaydet. Bir dosya birden çok bölümün repliklerini sırayla içerebilir.
+3. `python3 engine/voices.py split seslendirme/<dizi>/takes/*.mp3`: Whisper ile repliklere böler (`bolumNN/s<sahne>_l<replik>.wav`).
+4. `render.py` bu dosyaları otomatik kullanır. Eksik replik olursa yedek olarak ücretsiz `edge-tts` sesine düşer (daha duygusuz).
+
+**Kota:** Bir bölüm ElevenLabs'te yaklaşık 1.200 kredi harcıyor. Ücretsiz plan (aylık 10.000 kredi) yaklaşık 8 bölüme yetiyor. Günde 3 bölüm için ayda yaklaşık 110.000 kredi gerekir; bu da **Creator (100k)** ya da **Pro (500k)** plan demek.

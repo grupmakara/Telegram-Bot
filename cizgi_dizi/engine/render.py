@@ -127,14 +127,17 @@ def write_wav(path, mono):
 
 
 # ------------------------------------------------------------- timeline ----
-def build_timeline(ep, cast):
+def build_timeline(ep, cast, voice_dir):
     beats, t = [], 0.35
     for si, scene in enumerate(ep["scenes"]):
         for li, line in enumerate(scene["lines"]):
             b = dict(line, scene=si, index=li)
             if "who" in line:
-                voice = cast[line["who"]]["voice"]
-                b["audio"] = speak(line["text"], voice)
+                pre = voice_dir / f"s{si}_l{li}.wav"
+                if pre.exists():  # expressive ElevenLabs take (engine/voices.py)
+                    b["audio"] = decode(pre)
+                else:
+                    b["audio"] = speak(line["text"], cast[line["who"]]["voice"])
                 dur = len(b["audio"]) / SR
             else:
                 dur = line.get("dur", 1.2)
@@ -345,7 +348,7 @@ def render(ep_path, preview=False):
     ep_path = Path(ep_path)
     ep = json.loads(ep_path.read_text(encoding="utf-8"))
     cast = json.loads((ep_path.parent.parent / "cast.json").read_text(encoding="utf-8"))
-    beats, story_end = build_timeline(ep, cast)
+    beats, story_end = build_timeline(ep, cast, ROOT / "seslendirme" / ep_path.parent.parent.name / ep_path.stem)
     end_len = 2.6
     total = story_end + end_len
     r = Renderer(ep, cast, beats, total)
