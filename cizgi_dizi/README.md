@@ -129,4 +129,10 @@ Her karaktere ayrı bir ElevenLabs sesi atanmıştır (`cast.json` → `elevenla
 3. `python3 engine/voices.py split seslendirme/<dizi>/takes/*.mp3`: Whisper ile repliklere böler (`bolumNN/s<sahne>_l<replik>.wav`).
 4. `render.py` bu dosyaları otomatik kullanır. Eksik replik olursa yedek olarak ücretsiz `edge-tts` sesine düşer (daha duygusuz).
 
+### Açık kaynak seslendirme (ses klonlama, kota yok)
+`engine/clone.py`, **XTTS-v2** ile her karakterin sesini 1–6. bölümlerdeki ElevenLabs kayıtlarından klonlar. Her repliğe aynı karakterin **aynı duygudaki** kayıtları referans verilir, böylece hem ses rengi hem duygu taşınır. ElevenLabs kaydı olmayan karakterlerin sesi başka bir karakterden türetilir (ton/hız kaydırma: Usta ← Rıza, Tarık ← Ferit, Hakan ← Kenan, Murat ve Hırsız ← Can).
+- Her replik Whisper ile kontrol edilir; metinle uyuşmazsa 5 denemeye kadar yeniden üretilir, sondaki fazladan sesler kesilir.
+- `python3 engine/clone.py diziler/<dizi>/bolumler/bolumNN.json` eksik replikleri üretir; `--fix` yalnızca düşük puanlıları yeniden dener, `--force` hepsini yeniden üretir.
+- Lisans notu: XTTS-v2 model ağırlıkları Coqui Public Model License ile dağıtılır (ticari olmayan kullanım).
+
 **Kota:** Bir bölüm ElevenLabs'te yaklaşık 1.200 kredi harcıyor. Ücretsiz plan (aylık 10.000 kredi) yaklaşık 8 bölüme yetiyor. Günde 3 bölüm için ayda yaklaşık 110.000 kredi gerekir; bu da **Creator (100k)** ya da **Pro (500k)** plan demek.
