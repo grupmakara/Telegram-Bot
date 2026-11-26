@@ -1,0 +1,35 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 1,
+  "title": "\"Asansörü de kapıcıya mı soracağız?\" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm",
+  "next_text": "Fotoğraftaki genç adam kim? 2. Bölüm'de...",
+  "scenes": [
+    {"bg": "lobby", "cast": ["kenan", "riza", "selma"], "lines": [
+      {"who": "kenan", "mood": "smug", "text": "Rıza Efendi, ay sonunda bu apartmandan çıkıyorsun. Güvenlik şirketiyle anlaştık.", "react": {"riza": "sad", "selma": "smile"}},
+      {"who": "riza", "mood": "sad", "text": "Yirmi iki yıldır bu kapıdayım Kenan Bey."},
+      {"who": "selma", "mood": "smug", "text": "Yirmi iki yıl çay taşıdın, o kadar. Artık modern bir bina olacağız."},
+      {"who": "riza", "mood": "neutral", "text": "Asansörün halatı gıcırdıyor Selma Hanım. Bugün binmeseniz iyi olur."},
+      {"who": "selma", "mood": "angry", "text": "Ne yani, asansörü de kapıcıya mı soracağız?", "react": {"kenan": "smile"}},
+      {"caption": "Selma Hanım asansöre bindi...", "sfx": "door", "dur": 1.4}
+    ]},
+    {"bg": "lobby", "cast": ["kenan", "riza"], "lines": [
+      {"caption": "GÜM!", "sfx": "elevator", "shake": true, "dur": 1.3, "react": {"kenan": "surprised", "riza": "worried"}},
+      {"who": "selma", "mood": "surprised", "text": "İmdat! Asansör iki kat arasında kaldı!", "shot": "wide"},
+      {"who": "kenan", "mood": "worried", "text": "Servisi aradım, ancak üç saat sonra gelebilirlermiş!"},
+      {"who": "riza", "mood": "neutral", "text": "Üç saat beklerse kalbi dayanmaz. Makine dairesinin anahtarı bende."},
+      {"who": "kenan", "mood": "angry", "text": "Sen ne anlarsın makineden? Dokunma, bozarsın!"},
+      {"who": "riza", "mood": "angry", "text": "Fren kolunu yarım tur açarsam kabin kendi ağırlığıyla kata iner. Çekilin!"},
+      {"caption": "Kabin yavaşça zemin kata indi...", "sfx": "ding", "dur": 1.6, "react": {"kenan": "surprised", "riza": "neutral"}}
+    ]},
+    {"bg": "lobby", "cast": ["selma", "riza", "kenan"], "lines": [
+      {"who": "selma", "mood": "angry", "text": "Bir şey olmadı zaten. Abartmayın!", "react": {"riza": "neutral", "kenan": "worried"}},
+      {"who": "kenan", "mood": "worried", "text": "Rıza... Fren kolunu sen nereden biliyorsun?"},
+      {"who": "riza", "mood": "smile", "text": "Kapıcı her şeyi bilir Kenan Bey. Bilmesi gereken her şeyi."}
+    ]},
+    {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
+      {"who": "anlatici", "text": "O gece Zeynep, babasının kilitli sandığında bir fotoğraf buldu."},
+      {"who": "zeynep", "mood": "surprised", "text": "Baba... Bu fotoğraftaki genç adam sen misin?", "prop": "photo", "prop_caption": "Sedef Apt. — Temel atma, 1979"},
+      {"who": "riza", "mood": "worried", "text": "Zeynep... O sandığı kimseye gösterme kızım.", "shot": "close", "sfx": "thud"}
+    ]}
+  ]
+}

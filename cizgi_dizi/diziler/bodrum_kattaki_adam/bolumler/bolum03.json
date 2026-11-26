@@ -1,0 +1,30 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 3,
+  "title": "\"Kapıcının kızıyla ne işin var?\" dedi, oğlu kızın elini bırakmadı | Bodrum Kattaki Adam 3. Bölüm",
+  "next_text": "Ferit'in patronu kim? 4. Bölüm'de...",
+  "scenes": [
+    {"bg": "street", "cast": ["can", "zeynep"], "lines": [
+      {"who": "can", "mood": "smile", "text": "Zeynep, fakülteye beraber gidelim mi? Arabam kapıda.", "react": {"zeynep": "smile"}},
+      {"who": "zeynep", "mood": "worried", "text": "Ben otobüsle giderim Can. Annen görürse kıyamet kopar."},
+      {"who": "can", "mood": "neutral", "text": "Annemden korkmuyorum. Sen benim için..."}
+    ]},
+    {"bg": "street", "cast": ["selma", "can", "zeynep"], "lines": [
+      {"who": "selma", "mood": "angry", "text": "Can! Kapıcının kızıyla ne işin var senin?", "sfx": "door", "react": {"can": "surprised", "zeynep": "sad"}},
+      {"who": "zeynep", "mood": "sad", "text": "Selma Hanım, biz sadece sınıf arkadaşıyız."},
+      {"who": "selma", "mood": "smug", "text": "Haddini bil kızım. Baban ay sonunda kapıdan kovuluyor, unutma."},
+      {"who": "can", "mood": "angry", "text": "Anne, yeter! Zeynep'in elini bırakmıyorum.", "react": {"zeynep": "surprised", "selma": "surprised"}}
+    ]},
+    {"bg": "lobby", "cast": ["riza", "selma"], "lines": [
+      {"who": "riza", "mood": "neutral", "text": "Selma Hanım, kızıma laf ettiğinizi duydum."},
+      {"who": "selma", "mood": "smug", "text": "Ne olacak? Beni de mi kovduracaksın, kapıcı?"},
+      {"who": "riza", "mood": "smile", "text": "Hayır. Sadece şunu bilin: imzalayacağınız kâğıt sizi evsiz bırakır."},
+      {"who": "selma", "mood": "surprised", "text": "Ne... Ne diyorsun sen?", "shot": "close"}
+    ]},
+    {"bg": "street_night", "cast": ["ferit"], "lines": [
+      {"who": "anlatici", "text": "Aynı gece, apartmanın önünde...", "sfx": "phone", "sfx_dur": 1.6},
+      {"who": "ferit", "mood": "worried", "text": "Patron, kapıcı bir şeyler biliyor. Kolonları saydı.", "prop": "phone", "prop_caption": "Patron"},
+      {"who": "ferit", "mood": "angry", "text": "Ay sonunu beklemeyelim. O adam bu hafta o bodrumdan çıkmalı.", "shot": "close"}
+    ]}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "riza":   {"name": "Rıza Usta", "skin": "#E3AE86", "hair_style": "short", "hair": "#2f2a28", "gray_temples": true,
+             "mustache": true, "wrinkles": true, "brow_w": 12, "outfit_type": "vest", "outfit": "#6d6f73", "inner": "#a9c6e0",
+             "beard_shadow": true,
+             "voice": {"id": "tr-TR-AhmetNeural", "pitch": "-12Hz", "rate": "-6%"}},
+  "zeynep": {"name": "Zeynep", "female": true, "skin": "#F2C9A6", "hair_style": "long", "hair": "#4a2f22", "eyes": "#4b3020",
+             "outfit_type": "sweater", "outfit": "#d9a33b", "lips": "#b5545a",
+             "voice": {"id": "tr-TR-EmelNeural", "pitch": "+12Hz", "rate": "+4%"}},
+  "selma":  {"name": "Selma Hanım", "female": true, "skin": "#F4D2B8", "hair_style": "bob", "hair": "#e3be5c", "brows": "#9c7a3a",
+             "eyes": "#3d6b8f", "outfit_type": "blazer", "outfit": "#8d1f3a", "inner": "#f3e6d4", "pearls": true, "lips": "#c22a3a",
+             "voice": {"id": "tr-TR-EmelNeural", "pitch": "-6Hz", "rate": "-2%"}},
+  "kenan":  {"name": "Kenan Bey", "skin": "#EDBE98", "hair_style": "bald", "hair": "#5a4a3e", "glasses": true,
+             "outfit_type": "suit", "outfit": "#24344f", "tie": "#b3262e",
+             "voice": {"id": "tr-TR-AhmetNeural", "pitch": "+6Hz", "rate": "+8%"}},
+  "can":    {"name": "Can", "skin": "#F0C29C", "hair_style": "spiky", "hair": "#1f1b1a",
+             "outfit_type": "denim", "outfit": "#4a78b0", "inner": "#f7f7f7",
+             "voice": {"id": "tr-TR-AhmetNeural", "pitch": "+16Hz", "rate": "+5%"}},
+  "ferit":  {"name": "Ferit", "skin": "#E2B08B", "hair_style": "slick", "hair": "#141212", "beard_shadow": true,
+             "outfit_type": "suit", "outfit": "#1c1c1f", "tie": "#141416", "inner": "#e9e9e9",
+             "voice": {"id": "tr-TR-AhmetNeural", "pitch": "-4Hz", "rate": "-10%"}},
+  "anlatici": {"name": "Anlatıcı", "voice": {"id": "tr-TR-AhmetNeural", "pitch": "-8Hz", "rate": "-4%"}}
+}

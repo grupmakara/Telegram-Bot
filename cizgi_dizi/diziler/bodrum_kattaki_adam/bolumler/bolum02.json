@@ -1,0 +1,30 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 2,
+  "title": "\"Bu bina çürük, yıkılacak\" dediler, kapıcı kolonları tek tek saydı | Bodrum Kattaki Adam 2. Bölüm",
+  "next_text": "R. Karaca kim? 3. Bölüm'de...",
+  "scenes": [
+    {"bg": "lobby", "cast": ["kenan", "ferit", "selma"], "lines": [
+      {"who": "kenan", "mood": "smile", "text": "Komşular, müjde! Ferit Bey'in şirketi binamızı dönüşüme alıyor.", "react": {"selma": "smile", "ferit": "smug"}},
+      {"who": "ferit", "mood": "smug", "text": "Raporumuz hazır. Bina çürük. Yıkıp yerine yenisini dikeceğiz."},
+      {"who": "selma", "mood": "smile", "text": "Peki daire başına ne veriyorsunuz Ferit Bey?"},
+      {"who": "ferit", "mood": "smug", "text": "Daire başı on milyon. Yeter ki bu hafta imzalayın.", "prop": "money", "prop_caption": "10 MİLYON", "sfx": "ding"},
+      {"who": "selma", "mood": "surprised", "text": "On milyon mu? Kalemi verin, hemen imzalıyorum!", "react": {"kenan": "smile"}}
+    ]},
+    {"bg": "lobby", "cast": ["ferit", "riza", "kenan"], "lines": [
+      {"who": "ferit", "mood": "smug", "text": "İşte kanıt. Taşıyıcı duvar ortadan çatlamış.", "prop": "crack", "prop_caption": "Lobi duvarı", "react": {"riza": "neutral"}},
+      {"who": "riza", "mood": "smile", "text": "O duvar taşıyıcı değil beyefendi. Sıva çatlağı bu. Alçı kabarmış, o kadar."},
+      {"who": "ferit", "mood": "angry", "text": "Sen kapıcı mısın, mühendis mi?", "react": {"kenan": "smug"}},
+      {"who": "kenan", "mood": "smug", "text": "Rıza, sen git merdivenleri sil. Büyükler konuşuyor."},
+      {"who": "riza", "mood": "neutral", "text": "Raporunuzda on iki kolon yazıyor. Bu binada on altı kolon var."},
+      {"caption": "Ferit'in yüzü bembeyaz oldu...", "sfx": "thud", "dur": 1.3, "react": {"ferit": "surprised", "kenan": "surprised"}},
+      {"who": "ferit", "mood": "worried", "text": "Sen... kolonları nereden saydın?"}
+    ]},
+    {"bg": "basement_night", "cast": ["zeynep", "riza"], "lines": [
+      {"who": "zeynep", "mood": "worried", "text": "Baba, o adam rapora yalan yazmış. Neden kimseye söylemiyorsun?"},
+      {"who": "riza", "mood": "sad", "text": "Bir kapıcının sözüne kim inanır kızım?"},
+      {"who": "riza", "mood": "smug", "text": "Ama bu imzaya inanırlar.", "prop": "document", "prop_caption": "STATİK PROJE 1979"},
+      {"who": "zeynep", "mood": "surprised", "text": "Proje müellifi... R. Karaca? Baba, bu senin adın!", "shot": "close"}
+    ]}
+  ]
+}

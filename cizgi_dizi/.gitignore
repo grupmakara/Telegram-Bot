@@ -1,0 +1,4 @@
+.cache/
+__pycache__/
+cikti/**/*_preview.png
+*.wav
