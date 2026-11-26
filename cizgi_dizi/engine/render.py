@@ -142,8 +142,11 @@ def tr_upper(text):
 
 
 def line_audio(voice_dir, key, line, cast):
+    vox = voice_dir.parent / "vox" / voice_dir.name / f"{key}.wav"
+    if vox.exists():  # VoxCPM2 designed voices (engine/vox.py), commercial-safe
+        return decode(vox)
     pre = voice_dir / f"{key}.wav"
-    if pre.exists():  # expressive ElevenLabs take (engine/voices.py)
+    if pre.exists():  # ElevenLabs take (engine/voices.py)
         return decode(pre)
     voice = dict(cast[line["who"]]["voice"])
     dr, dp = MOOD_PROSODY.get(line.get("mood", "neutral"), (0, 0))
