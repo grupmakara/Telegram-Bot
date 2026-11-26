@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 VOICE_DESIGN = {
     "riza": "A 70-year-old Turkish man, warm, slightly husky, calm and wise voice",
     "zeynep": "A 27-year-old Turkish woman, soft, clear and warm voice, gentle and emotional",
-    "selma": "A 50-year-old elegant upper-class Istanbul woman, sharp, haughty and confident voice",
+    "selma": "A 38-year-old elegant upper-class Istanbul woman, sarcastic, mocking and snobbish voice with a teasing smirk",
     "kenan": "A 55-year-old Turkish man, nervous, fast-talking, slightly nasal bureaucrat voice",
     "can": "A 25-year-old Turkish man, friendly, energetic and sincere young voice",
     "ferit": "A 40-year-old Turkish man, smooth, deep, cold and cunning voice",
@@ -41,6 +41,7 @@ VOICE_DESIGN = {
     "hirsiz": "A 30-year-old Turkish man, rough street voice, aggressive and edgy",
 }
 DESIGN_TEXT = {
+    "selma": "Ne yani, asansörü de kapıcıya mı soracağız artık? Yirmi iki yıl çay taşıdın, o kadar. Aman ne büyük iş!",
     "default": "Bu apartmanda yıllardır yaşıyorum. Herkesi tanırım, her sırrı bilirim. Ama bugün her şey değişecek.",
 }
 MOOD_CUE = {
