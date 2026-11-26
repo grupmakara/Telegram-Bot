@@ -32,7 +32,7 @@
     ]},
     {"bg": "lobby", "cast": ["selma", "riza", "kenan"], "lines": [
       {"who": "selma", "mood": "angry", "text": "Bir şey olmadı zaten. Abartmayın!", "react": {"riza": "neutral", "kenan": "worried"}},
-      {"who": "kenan", "mood": "worried", "text": "Rıza... Fren kolunu sen nereden biliyorsun?"},
+      {"who": "kenan", "mood": "worried", "text": "Rıza... Fren kolunu sen nereden biliyorsun?", "say": "Rıza... Fren kolunu, sen nereden biliyorsun?"},
       {"who": "riza", "mood": "smile", "text": "Kapıcı her şeyi bilir Kenan Bey. Bilmesi gereken her şeyi."},
       {"who": "selma", "mood": "smug", "text": "Bu sefer şanslıydın kapıcı. Ay sonunda yine gidiyorsun.", "v": 2}
     ]},
