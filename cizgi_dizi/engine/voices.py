@@ -46,7 +46,7 @@ def tagged(ln):
     tag = ln.get("tag") or MOOD_TAG.get(ln.get("mood", "neutral"), "")
     if ln.get("who") == "anlatici" and not ln.get("tag"):
         tag = "[mysteriously]"
-    return f"{tag} {ln['text']}".strip()
+    return f"{tag} {ln.get('say', ln['text'])}".strip()
 
 
 def prompts(ep):
@@ -83,7 +83,7 @@ def split_take(take, model):
         d.mkdir(parents=True, exist_ok=True)
         for si, li, ln in spoken_lines(ep):
             if ln["who"] == who:
-                items.append((d / f"s{si}_l{li}.wav", ln["text"]))
+                items.append((d / f"s{si}_l{li}.wav", ln.get("say", ln["text"])))
     audio = decode(take, SR)
     a16 = decode(take, 16000)
     segs, _ = model.transcribe(a16, language="tr", word_timestamps=True)

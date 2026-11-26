@@ -35,12 +35,13 @@ Her bölüm bir JSON senaryodan otomatik olarak 1080×1920 videoya dönüşür
 ### Karakterler
 | Kod | Karakter | Rol | Ses |
 |---|---|---|---|
-| `riza` | **Rıza Usta**, 58 | Kapıcı. Aslında binanın proje mühendisi Rıza Karaca | Ahmet (kalın) |
+| `riza` | **Rıza Usta**, 70 | Kapıcı. Aslında binanın proje mühendisi Rıza Karaca | Ahmet (kalın) |
 | `zeynep` | **Zeynep**, 21 | Kızı, mimarlık öğrencisi, sırrı ilk o çözer | Emel (genç) |
 | `selma` | **Selma Hanım**, 50 | 5. kat, kibirli zengin komşu, Can'ın annesi | Emel (olgun) |
 | `kenan` | **Kenan Bey**, 55 | Apartman yöneticisi, Rıza'yı kovmak istiyor | Ahmet (hızlı) |
 | `can` | **Can**, 23 | Selma'nın oğlu, Zeynep'e âşık | Ahmet (genç) |
 | `ferit` | **Ferit**, 40 | Müteahhit temsilcisi, sahte rapor hazırlıyor | Ahmet (yavaş) |
+| `hoca` | **Prof. Nevzat**, 58 | Zeynep'in hocası, eskiden Rıza Karaca'nın öğrencisiydi | Ahmet (olgun) |
 | `anlatici` | Anlatıcı | Sahne geçişleri | Ahmet |
 
 ### Sezon 1 planı (24 bölüm = 8 gün)
@@ -49,9 +50,9 @@ Her bölüm bir JSON senaryodan otomatik olarak 1080×1920 videoya dönüşür
 | 1 | 1 ✅ | "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı |
 | 1 | 2 ✅ | "Bu bina çürük, yıkılacak" dediler, kapıcı kolonları tek tek saydı |
 | 1 | 3 ✅ | "Kapıcının kızıyla ne işin var?" dedi, oğlu kızın elini bırakmadı |
-| 2 | 4 | Kapıya tahliye kâğıdı astılar, kapıcı mühürdeki tarihe bakıp güldü |
-| 2 | 5 | Bodruma gizlice girdiler, sandık yerinde yoktu |
-| 2 | 6 | "Babam mühendis değil, kapıcı" dedi, hoca projeyi görünce ayağa kalktı |
+| 2 | 4 ✅ | Kapıya tahliye kâğıdı astılar, kapıcı mühürdeki tarihe bakıp güldü |
+| 2 | 5 ✅ | Bodruma gizlice girdiler, sandık yerinde yoktu |
+| 2 | 6 ✅ | "Babam mühendis değil, kapıcı" dedi, hoca projeyi görünce ayağa kalktı |
 | 3 | 7 | Selma imzayı attı, sonra sözleşmenin arka sayfasını okudu |
 | 3 | 8 | Yeni güvenlik şirketi ilk gece kapıyı açık bıraktı, hırsızı kapıcı yakaladı |
 | 3 | 9 | Asansör tamircisi kapıcıyı görünce şapkasını çıkardı: "Karaca Bey?" |

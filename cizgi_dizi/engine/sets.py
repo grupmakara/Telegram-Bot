@@ -259,7 +259,41 @@ def bg_street(ctx, night=False):
     fill_stroke(ctx, hexc("#ffe28a" if night else "#f3f0e0"), 4)
 
 
-BACKGROUNDS = {"lobby": bg_lobby, "basement": bg_basement, "salon": bg_salon, "street": bg_street}
+def bg_classroom(ctx, night=False):
+    _grad(ctx, 0, 1350, "#e4e9e1", "#d3dacf")
+    ctx.rectangle(0, 1350, W, H - 1350)
+    ctx.set_source_rgb(*hexc("#9b7653"))
+    ctx.fill()
+    # chalkboard with a structural sketch
+    rrect(ctx, 70, 250, 940, 560, 10)
+    fill_stroke(ctx, hexc("#7a5132"))
+    ctx.rectangle(95, 275, 890, 510)
+    fill_stroke(ctx, hexc("#2f5d48"), 4)
+    ctx.set_source_rgba(1, 1, 1, 0.85)
+    ctx.set_line_width(5)
+    for x in (200, 360, 520):  # frame: columns + beams
+        ctx.move_to(x, 720)
+        ctx.line_to(x, 380)
+    for y in (380, 500, 620):
+        ctx.move_to(200, y)
+        ctx.line_to(520, y)
+    ctx.stroke()
+    ctx.move_to(170, 720)
+    ctx.line_to(550, 720)
+    ctx.stroke()
+    _text(ctx, "F = m · a", 780, 420, 52, (1, 1, 1), maxw=360)
+    _text(ctx, "Deprem yükü", 780, 520, 40, (1, 1, 1), maxw=360)
+    _text(ctx, "STATİK II", 540, 230, 44, hexc("#3a3a3a"), maxw=600)
+    # window + desk
+    _window(ctx, 820, 880, 170, 300)
+    ctx.rectangle(60, 1150, 520, 60)
+    fill_stroke(ctx, hexc("#a8784c"))
+    for i, col in enumerate(["#c94c3c", "#3c6fc9", "#e0b84a"]):
+        ctx.rectangle(110 + i * 70, 1080 - i * 8, 55, 70 + i * 8)
+        fill_stroke(ctx, hexc(col), 3)
+
+
+BACKGROUNDS = {"classroom": bg_classroom, "lobby": bg_lobby, "basement": bg_basement, "salon": bg_salon, "street": bg_street}
 
 
 def make_background(name):

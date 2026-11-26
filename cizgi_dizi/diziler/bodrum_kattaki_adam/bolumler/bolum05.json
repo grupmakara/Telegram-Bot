@@ -1,0 +1,28 @@
+{
+  "series": "Bodrum Kattaki Adam",
+  "episode": 5,
+  "title": "Bodruma gizlice girdiler, sandık yerinde yoktu | Bodrum Kattaki Adam 5. Bölüm",
+  "next_text": "Mektupta ne yazıyor? 6. Bölüm'de...",
+  "scenes": [
+    {"bg": "basement_night", "cast": ["kenan", "ferit"], "lines": [
+      {"who": "anlatici", "text": "Gece yarısı, bodrum katın kapısı usulca açıldı.", "sfx": "door"},
+      {"who": "kenan", "mood": "worried", "text": "Çabuk ol Ferit! Rıza çatıdaki depoya çıktı, on dakikamız var.", "react": {"ferit": "neutral"}},
+      {"who": "ferit", "mood": "angry", "text": "Sandık burada değil! Yatağın altında yok, dolapta yok!"},
+      {"who": "kenan", "mood": "surprised", "text": "Olamaz! Akşam buradaydı, kendi gözümle gördüm!"},
+      {"caption": "Birden ışık yandı...", "sfx": "thud", "shake": true, "dur": 1.3, "react": {"kenan": "surprised", "ferit": "surprised"}}
+    ]},
+    {"bg": "basement", "cast": ["kenan", "riza", "ferit"], "lines": [
+      {"who": "riza", "mood": "neutral", "text": "Bir şey mi arıyordunuz beyler?", "react": {"kenan": "worried", "ferit": "angry"}},
+      {"who": "kenan", "mood": "worried", "text": "Rıza! Biz... Biz su sayacına bakıyorduk!"},
+      {"who": "riza", "mood": "smile", "text": "Su sayacı merdivenin altında Kenan Bey. Yirmi iki yıldır orada."},
+      {"who": "ferit", "mood": "angry", "text": "Sandık nerede kapıcı?"},
+      {"who": "riza", "mood": "smug", "text": "Hangi sandık? Benim bir yorganım, bir de çaydanlığım var.", "shot": "close"}
+    ]},
+    {"bg": "street", "cast": ["can", "zeynep"], "lines": [
+      {"who": "can", "mood": "worried", "text": "Zeynep, bu saatte neden dışarıdasın? Elindeki ne?"},
+      {"who": "zeynep", "mood": "worried", "text": "Babamın sandığı. Dün gece onların konuştuğunu duydum, sandığı ben sakladım."},
+      {"who": "zeynep", "mood": "sad", "text": "İçinden bir mektup çıktı Can. Tarihine bak.", "prop": "document", "prop_caption": "MEKTUP|İstanbul, 17 Ağustos 1999", "pause": 1.0},
+      {"who": "can", "mood": "surprised", "text": "17 Ağustos 1999... Deprem gecesi mi?", "say": "On yedi Ağustos bin dokuz yüz doksan dokuz... Deprem gecesi mi?", "shot": "close"}
+    ]}
+  ]
+}

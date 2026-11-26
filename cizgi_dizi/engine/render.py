@@ -137,7 +137,7 @@ def build_timeline(ep, cast, voice_dir):
                 if pre.exists():  # expressive ElevenLabs take (engine/voices.py)
                     b["audio"] = decode(pre)
                 else:
-                    b["audio"] = speak(line["text"], cast[line["who"]]["voice"])
+                    b["audio"] = speak(line.get("say", line["text"]), cast[line["who"]]["voice"])
                 dur = len(b["audio"]) / SR
             else:
                 dur = line.get("dur", 1.2)

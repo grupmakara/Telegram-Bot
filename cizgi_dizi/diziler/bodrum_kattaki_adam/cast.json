@@ -140,5 +140,30 @@
    "name": "Servet Ersoy",
    "model": "eleven_v4"
   }
+ },
+ "hoca": {
+  "name": "Prof. Nevzat",
+  "skin": "#EBC1A0",
+  "hair_style": "short",
+  "hair": "#8f8f8f",
+  "brows": "#6e6e6e",
+  "mustache": true,
+  "mustache_color": "#9a9a9a",
+  "glasses": true,
+  "wrinkles": true,
+  "outfit_type": "suit",
+  "outfit": "#6b4a33",
+  "tie": "#2f4f3a",
+  "inner": "#efe9dc",
+  "voice": {
+   "id": "tr-TR-AhmetNeural",
+   "pitch": "-14Hz",
+   "rate": "-10%"
+  },
+  "elevenlabs": {
+   "voice_id": "vMjxJEFgGax0pBcIUul4",
+   "name": "Fuat",
+   "model": "eleven_v4"
+  }
  }
 }
