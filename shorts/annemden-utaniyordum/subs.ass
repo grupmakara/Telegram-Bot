@@ -1,0 +1,93 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,DejaVu Sans,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,3,2,70,70,560,1
+Style: Moral,DejaVu Sans,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,1,0,0,0,100,100,0,0,3,24,0,5,80,80,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.32,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Her{\r} sabah okula
+Dialogue: 0,0:00:00.32,0:00:00.74,Sub,,0,0,0,,Her {\c&H00D7FF&\fscx110\fscy110}sabah{\r} okula
+Dialogue: 0,0:00:00.74,0:00:01.33,Sub,,0,0,0,,Her sabah {\c&H00D7FF&\fscx110\fscy110}okula{\r}
+Dialogue: 0,0:00:01.18,0:00:01.52,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}arka{\r} kapıdan giriyordum.
+Dialogue: 0,0:00:01.52,0:00:01.96,Sub,,0,0,0,,arka {\c&H00D7FF&\fscx110\fscy110}kapıdan{\r} giriyordum.
+Dialogue: 0,0:00:01.96,0:00:02.63,Sub,,0,0,0,,arka kapıdan {\c&H00D7FF&\fscx110\fscy110}giriyordum.{\r}
+Dialogue: 0,0:00:02.82,0:00:03.20,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Çünkü{\r} kimse annemi
+Dialogue: 0,0:00:03.20,0:00:03.56,Sub,,0,0,0,,Çünkü {\c&H00D7FF&\fscx110\fscy110}kimse{\r} annemi
+Dialogue: 0,0:00:03.56,0:00:04.15,Sub,,0,0,0,,Çünkü kimse {\c&H00D7FF&\fscx110\fscy110}annemi{\r}
+Dialogue: 0,0:00:04.00,0:00:05.01,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}görmemeliydi.{\r}
+Dialogue: 0,0:00:05.42,0:00:05.84,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Annem{\r} okulun önünde
+Dialogue: 0,0:00:05.84,0:00:06.28,Sub,,0,0,0,,Annem {\c&H00D7FF&\fscx110\fscy110}okulun{\r} önünde
+Dialogue: 0,0:00:06.28,0:00:06.77,Sub,,0,0,0,,Annem okulun {\c&H00D7FF&\fscx110\fscy110}önünde{\r}
+Dialogue: 0,0:00:06.62,0:00:06.98,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}simit{\r} satıyordu.
+Dialogue: 0,0:00:06.98,0:00:07.69,Sub,,0,0,0,,simit {\c&H00D7FF&\fscx110\fscy110}satıyordu.{\r}
+Dialogue: 0,0:00:08.26,0:00:09.10,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Arkadaşlarıma{\r} babamın mühendis
+Dialogue: 0,0:00:09.10,0:00:09.58,Sub,,0,0,0,,Arkadaşlarıma {\c&H00D7FF&\fscx110\fscy110}babamın{\r} mühendis
+Dialogue: 0,0:00:09.58,0:00:10.19,Sub,,0,0,0,,Arkadaşlarıma babamın {\c&H00D7FF&\fscx110\fscy110}mühendis{\r}
+Dialogue: 0,0:00:10.04,0:00:10.38,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}olduğunu{\r} söylemiştim.
+Dialogue: 0,0:00:10.38,0:00:11.29,Sub,,0,0,0,,olduğunu {\c&H00D7FF&\fscx110\fscy110}söylemiştim.{\r}
+Dialogue: 0,0:00:11.64,0:00:11.76,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Bir{\r} gün Defne'nin
+Dialogue: 0,0:00:11.76,0:00:11.98,Sub,,0,0,0,,Bir {\c&H00D7FF&\fscx110\fscy110}gün{\r} Defne'nin
+Dialogue: 0,0:00:11.98,0:00:12.69,Sub,,0,0,0,,Bir gün {\c&H00D7FF&\fscx110\fscy110}Defne'nin{\r}
+Dialogue: 0,0:00:12.54,0:00:12.90,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}parası{\r} eksik çıktı.
+Dialogue: 0,0:00:12.90,0:00:13.30,Sub,,0,0,0,,parası {\c&H00D7FF&\fscx110\fscy110}eksik{\r} çıktı.
+Dialogue: 0,0:00:13.30,0:00:13.79,Sub,,0,0,0,,parası eksik {\c&H00D7FF&\fscx110\fscy110}çıktı.{\r}
+Dialogue: 0,0:00:14.12,0:00:14.82,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Annem{\r} “Sonra verirsin
+Dialogue: 0,0:00:14.82,0:00:14.98,Sub,,0,0,0,,Annem {\c&H00D7FF&\fscx110\fscy110}“Sonra{\r} verirsin
+Dialogue: 0,0:00:14.98,0:00:15.65,Sub,,0,0,0,,Annem “Sonra {\c&H00D7FF&\fscx110\fscy110}verirsin{\r}
+Dialogue: 0,0:00:15.50,0:00:15.89,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}kızım”{\r}
+Dialogue: 0,0:00:15.74,0:00:16.39,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}dedi.{\r}
+Dialogue: 0,0:00:16.84,0:00:17.18,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Defne{\r} arkasından güldü.
+Dialogue: 0,0:00:17.18,0:00:17.80,Sub,,0,0,0,,Defne {\c&H00D7FF&\fscx110\fscy110}arkasından{\r} güldü.
+Dialogue: 0,0:00:17.80,0:00:18.47,Sub,,0,0,0,,Defne arkasından {\c&H00D7FF&\fscx110\fscy110}güldü.{\r}
+Dialogue: 0,0:00:18.80,0:00:19.24,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}“Zavallı{\r} kadın.”
+Dialogue: 0,0:00:19.24,0:00:19.61,Sub,,0,0,0,,“Zavallı {\c&H00D7FF&\fscx110\fscy110}kadın.”{\r}
+Dialogue: 0,0:00:20.06,0:00:20.47,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Ben...{\r}
+Dialogue: 0,0:00:20.32,0:00:21.49,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}sustum.{\r}
+Dialogue: 0,0:00:21.82,0:00:22.22,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Sonra{\r} yangın alarmı
+Dialogue: 0,0:00:22.22,0:00:22.62,Sub,,0,0,0,,Sonra {\c&H00D7FF&\fscx110\fscy110}yangın{\r} alarmı
+Dialogue: 0,0:00:22.62,0:00:23.23,Sub,,0,0,0,,Sonra yangın {\c&H00D7FF&\fscx110\fscy110}alarmı{\r}
+Dialogue: 0,0:00:23.08,0:00:23.61,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}çaldı!{\r}
+Dialogue: 0,0:00:23.80,0:00:24.12,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Defne{\r} merdivende düştü.
+Dialogue: 0,0:00:24.12,0:00:24.62,Sub,,0,0,0,,Defne {\c&H00D7FF&\fscx110\fscy110}merdivende{\r} düştü.
+Dialogue: 0,0:00:24.62,0:00:25.27,Sub,,0,0,0,,Defne merdivende {\c&H00D7FF&\fscx110\fscy110}düştü.{\r}
+Dialogue: 0,0:00:25.46,0:00:25.82,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Herkes{\r} yanından geçip
+Dialogue: 0,0:00:25.82,0:00:26.24,Sub,,0,0,0,,Herkes {\c&H00D7FF&\fscx110\fscy110}yanından{\r} geçip
+Dialogue: 0,0:00:26.24,0:00:26.83,Sub,,0,0,0,,Herkes yanından {\c&H00D7FF&\fscx110\fscy110}geçip{\r}
+Dialogue: 0,0:00:26.68,0:00:27.11,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}gitti...{\r}
+Dialogue: 0,0:00:27.52,0:00:27.80,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}biri{\r} hariç.
+Dialogue: 0,0:00:27.80,0:00:28.41,Sub,,0,0,0,,biri {\c&H00D7FF&\fscx110\fscy110}hariç.{\r}
+Dialogue: 0,0:00:28.26,0:00:28.98,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Annem{\r} tezgâhını bıraktı.
+Dialogue: 0,0:00:28.98,0:00:29.50,Sub,,0,0,0,,Annem {\c&H00D7FF&\fscx110\fscy110}tezgâhını{\r} bıraktı.
+Dialogue: 0,0:00:29.50,0:00:30.21,Sub,,0,0,0,,Annem tezgâhını {\c&H00D7FF&\fscx110\fscy110}bıraktı.{\r}
+Dialogue: 0,0:00:30.28,0:00:30.58,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}İçeri{\r} koştu ve
+Dialogue: 0,0:00:30.58,0:00:31.04,Sub,,0,0,0,,İçeri {\c&H00D7FF&\fscx110\fscy110}koştu{\r} ve
+Dialogue: 0,0:00:31.04,0:00:31.37,Sub,,0,0,0,,İçeri koştu {\c&H00D7FF&\fscx110\fscy110}ve{\r}
+Dialogue: 0,0:00:31.22,0:00:31.70,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Defne'yi{\r} sırtında dışarı
+Dialogue: 0,0:00:31.70,0:00:32.14,Sub,,0,0,0,,Defne'yi {\c&H00D7FF&\fscx110\fscy110}sırtında{\r} dışarı
+Dialogue: 0,0:00:32.14,0:00:32.67,Sub,,0,0,0,,Defne'yi sırtında {\c&H00D7FF&\fscx110\fscy110}dışarı{\r}
+Dialogue: 0,0:00:32.52,0:00:33.17,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}çıkardı.{\r}
+Dialogue: 0,0:00:33.50,0:00:34.00,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Ertesi{\r} gün müdür
+Dialogue: 0,0:00:34.00,0:00:34.12,Sub,,0,0,0,,Ertesi {\c&H00D7FF&\fscx110\fscy110}gün{\r} müdür
+Dialogue: 0,0:00:34.12,0:00:34.63,Sub,,0,0,0,,Ertesi gün {\c&H00D7FF&\fscx110\fscy110}müdür{\r}
+Dialogue: 0,0:00:34.48,0:00:34.62,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}bir{\r} kahramandan bahsetti.
+Dialogue: 0,0:00:34.62,0:00:35.26,Sub,,0,0,0,,bir {\c&H00D7FF&\fscx110\fscy110}kahramandan{\r} bahsetti.
+Dialogue: 0,0:00:35.26,0:00:36.07,Sub,,0,0,0,,bir kahramandan {\c&H00D7FF&\fscx110\fscy110}bahsetti.{\r}
+Dialogue: 0,0:00:36.42,0:00:36.80,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}“Elif'in{\r} annesi.”
+Dialogue: 0,0:00:36.80,0:00:37.45,Sub,,0,0,0,,“Elif'in {\c&H00D7FF&\fscx110\fscy110}annesi.”{\r}
+Dialogue: 0,0:00:37.76,0:00:37.86,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}O{\r} gün ilk
+Dialogue: 0,0:00:37.86,0:00:38.04,Sub,,0,0,0,,O {\c&H00D7FF&\fscx110\fscy110}gün{\r} ilk
+Dialogue: 0,0:00:38.04,0:00:38.47,Sub,,0,0,0,,O gün {\c&H00D7FF&\fscx110\fscy110}ilk{\r}
+Dialogue: 0,0:00:38.32,0:00:39.01,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}kez...{\r}
+Dialogue: 0,0:00:38.86,0:00:39.54,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}gururdan{\r} ağladım.
+Dialogue: 0,0:00:39.54,0:00:40.11,Sub,,0,0,0,,gururdan {\c&H00D7FF&\fscx110\fscy110}ağladım.{\r}
+Dialogue: 0,0:00:40.48,0:00:40.92,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}Artık{\r} ön kapıdan
+Dialogue: 0,0:00:40.92,0:00:41.12,Sub,,0,0,0,,Artık {\c&H00D7FF&\fscx110\fscy110}ön{\r} kapıdan
+Dialogue: 0,0:00:41.12,0:00:41.71,Sub,,0,0,0,,Artık ön {\c&H00D7FF&\fscx110\fscy110}kapıdan{\r}
+Dialogue: 0,0:00:41.56,0:00:42.17,Sub,,0,0,0,,{\c&H00D7FF&\fscx110\fscy110}giriyorum.{\r}
+Dialogue: 1,0:00:42.10,0:00:44.00,Moral,,0,0,0,,{\fad(400,0)}Ailenin işi değil,\Nkalbi önemlidir ♥
