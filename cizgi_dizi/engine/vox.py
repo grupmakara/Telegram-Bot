@@ -105,7 +105,7 @@ def voice_episode(ep_path, force=False, fix=False):
         out = out_dir / clip_name(si, li)
         meta = out_dir / f"{clip_name(si, li)}.txt"
         if out.exists() and not force:
-            if not (fix and meta.exists() and float(meta.read_text().split()[0]) < 0.9):
+            if not (fix and meta.exists() and float(meta.read_text().split()[0]) < 0.8):
                 continue
         ref = voice_dir(dizi) / f"{ln['who']}.wav"
         text = ln.get("say", ln["text"])
@@ -113,14 +113,14 @@ def voice_episode(ep_path, force=False, fix=False):
         if ln["who"] == "anlatici":
             cue = "dramatic, mysterious"
         best = None
-        for attempt in range(4):
+        for attempt in range(2):  # Whisper often mishears correct speech; avoid needless retries
             tmp = out_dir / f".try{attempt}.wav"
             save(model().generate(text=f"({cue}){text}", reference_wav_path=str(ref), cfg_value=2.0,
                                   inference_timesteps=10), tmp)
             score, heard, cut = check(tmp, text)
             if best is None or score > best[0]:
                 best = (score, tmp, heard, cut)
-            if score >= 0.9:
+            if score >= 0.8:
                 break
         score, tmp, heard, cut = best
         if cut:
@@ -131,7 +131,7 @@ def voice_episode(ep_path, force=False, fix=False):
         for f in out_dir.glob(".try*.wav"):
             f.unlink()
         meta.write_text(f"{score:.3f} {heard}\n")
-        flag = "  " if score >= 0.9 else "!!"
+        flag = "  " if score >= 0.8 else "!!"
         print(f"{flag} {ep_path.stem}/{out.name} {ln['who']:8} {score:.2f} | {heard}", flush=True)
 
 
