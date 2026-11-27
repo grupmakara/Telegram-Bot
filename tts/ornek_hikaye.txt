@@ -1,0 +1,9 @@
+# Örnek senaryo: tts/hikaye_seslendir.py ile seslendirilir
+@anlatici: Middle-aged man, warm deep voice, calm storyteller
+@elif: Young girl, bright cheerful voice
+
+anlatici [anlatıcı]: Bir zamanlar küçük bir köyde, Elif adında meraklı bir kız yaşarmış.
+elif [mutlu]: Bugün ormana gideceğim, çok heyecanlıyım!
+anlatici [gizemli]: Ama ormanın derinliklerinde onu bekleyen bir sır varmış.
+elif [korkmuş]: Bu ses de ne? Orada biri mi var?
+elif [fısıltı]: Sana bir sır vereceğim, kimseye söyleme.
