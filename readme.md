@@ -30,3 +30,16 @@ python3 -m venv /opt/omnivoice
 | `TTS_MAX_CHARS` | `300` | Tek istekte en fazla karakter |
 
 Not: Heroku'nun standart dyno'ları (512 MB RAM) bu model için yetersizdir; botu en az 4 GB RAM'li bir sunucuda çalıştırın.
+
+## Hikâye / Bölüm Seslendirme (VoxCPM2)
+
+Duygulu, çok karakterli Türkçe seslendirme için `tts/hikaye_seslendir.py`. Varsayılan motor [VoxCPM2](https://huggingface.co/openbmb/VoxCPM2) (Apache-2.0): yerel ve tamamen ücretsiz. İsteğe bağlı olarak `--motor gemini` (Gemini 3.1 Flash TTS, ücretsiz kota günde 10 istek, `GEMINI_API_KEY` gerekir) ya da `--motor ikisi` (her replik iki motorla, daha doğru olan seçilir) kullanılabilir. Senaryo biçimi için `tts/ornek_hikaye.txt` dosyasına bakın.
+
+```bash
+python3 -m venv /opt/voxcpm
+/opt/voxcpm/bin/pip install torch==2.8.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+/opt/voxcpm/bin/pip install voxcpm==2.0.3 "torchcodec==0.7.*" openai-whisper
+/opt/voxcpm/bin/python tts/hikaye_seslendir.py tts/ornek_hikaye.txt -o ornek.mp3
+```
+
+Duygular: sakin, anlatıcı, mutlu, heyecanlı, coşkulu, üzgün, ağlamaklı, öfkeli, sinirli, korkmuş, şaşkın, fısıltı, gizemli, alaycı, yorgun, sevecen, kararlı (ya da İngilizce serbest tarif). Karakter sesleri `tts/sesler/` içinde saklanır, bölümden bölüme aynı kalır.
