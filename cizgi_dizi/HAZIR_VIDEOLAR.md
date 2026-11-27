@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (14 bölüm)
+## Hazır (15 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -16,12 +16,13 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 6 | 77 sn | ElevenLabs (yayında) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum06.mp4` |
 | 7 | 77 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum07.mp4` |
 | 8 | 67 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum08.mp4` |
-| 9 | 61 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` |
+| 9 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` |
 | 10 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum10.mp4` |
-| 11 | 65 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
+| 11 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
 | 12 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` |
-| 13 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
+| 13 | 61 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
 | 14 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` |
+| 15 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -84,7 +85,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Kısa başlık (Instagram):** Tamirci kapıcıyı tanıdı: "Karaca Bey?" 😮
 **Açıklama:** Kara ailesinin oğlu kim? Devamı 10. bölümde!
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
-**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` (61 sn)
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` (62 sn)
 
 ### 10. Bölüm
 **Başlık:** Can annesine "Ben de bodruma taşınıyorum" dedi | Bodrum Kattaki Adam 10. Bölüm
@@ -98,7 +99,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Kısa başlık (Instagram):** Çatlağı gece kim büyüttü? 📹
 **Açıklama:** Çaydanlıktaki kamera her şeyi gördü… Devamı 12. bölümde!
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
-**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` (65 sn)
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` (64 sn)
 
 ### 12. Bölüm
 **Başlık:** "Kapıcı oy kullanamaz" dediler, tapu kaydı okununca salon sustu | Bodrum Kattaki Adam 12. Bölüm
@@ -112,7 +113,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Kısa başlık (Instagram):** Kocası döndü, ilk kapıcıya sarıldı 🤗
 **Açıklama:** 1999'da ne oldu? Devamı 14. bölümde!
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
-**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` (63 sn)
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` (61 sn)
 
 ### 14. Bölüm
 **Başlık:** 1999'da enkazdan çıkardığı çocuk şimdi belediyede müdür | Bodrum Kattaki Adam 14. Bölüm
@@ -121,11 +122,17 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` (60 sn)
 
-## Henüz hazır değil (10 bölüm)
+### 15. Bölüm
+**Başlık:** Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi | Bodrum Kattaki Adam 15. Bölüm
+**Kısa başlık (Instagram):** Kötü adam ilk kez göründü 😈
+**Açıklama:** Kenan neden korkuyor? Devamı 16. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` (62 sn)
+
+## Henüz hazır değil (9 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **15. Bölüm:** Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi | Bodrum Kattaki Adam 15. Bölüm. Kenan neden korkuyor? Devamı 16. bölümde!
 - **16. Bölüm:** Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı | Bodrum Kattaki Adam 16. Bölüm. Kayıp defter nerede? Devamı 17. bölümde!
 - **17. Bölüm:** Zeynep bursu kaybetti, harç parasını gizlice Selma yatırdı | Bodrum Kattaki Adam 17. Bölüm. Nottaki "S." kim? Devamı 18. bölümde!
 - **18. Bölüm:** Tatbikatta herkes merdivene koştu, kapıcı "Kolonun yanına!" dedi | Bodrum Kattaki Adam 18. Bölüm. Kapıcı yine haklı çıktı… Devamı 19. bölümde!
