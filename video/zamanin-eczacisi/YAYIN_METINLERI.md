@@ -40,9 +40,9 @@ Kopyalayıp yapıştırmaya hazır. Başlık 70 karakterin altında; açıklama 
 #ZamanınEczacısı #animasyon #duygusal #osmanlı #tarih
 
 ## Bölüm 8 · 4. gün (1. Sezon Finali)
-**Başlık:** Gerçek Ayşe 2026'da Uyandı! | Zamanın Eczacısı Sezon Finali
+**Başlık:** Gerçek Ayşe 2026'da Uyandı! | Zamanın Eczacısı 1. Sezon Finali
 **Açıklama:** Havandan bir ses geliyor: gerçek Ayşe, 2026'da Elif'in bedeninde! İki kız, iki yüzyıl ve eve dönmek için 58 can daha. 🌍⏳
-#ZamanınEczacısı #animasyon #sezonfinali #zamanyolculuğu #tarih
+#ZamanınEczacısı #animasyon #1sezonfinali #sezonfinali #zamanyolculuğu #tarih
 
 ---
 
