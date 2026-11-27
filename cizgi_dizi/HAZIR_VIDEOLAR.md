@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (12 bölüm)
+## Hazır (13 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -20,6 +20,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 10 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum10.mp4` |
 | 11 | 65 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
 | 12 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` |
+| 13 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -105,11 +106,17 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` (62 sn)
 
-## Henüz hazır değil (12 bölüm)
+### 13. Bölüm
+**Başlık:** Selma'nın kocası yıllar sonra eve döndü, ilk sarıldığı kişi kapıcıydı | Bodrum Kattaki Adam 13. Bölüm
+**Kısa başlık (Instagram):** Kocası döndü, ilk kapıcıya sarıldı 🤗
+**Açıklama:** 1999'da ne oldu? Devamı 14. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` (63 sn)
+
+## Henüz hazır değil (11 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **13. Bölüm:** Selma'nın kocası yıllar sonra eve döndü, ilk sarıldığı kişi kapıcıydı | Bodrum Kattaki Adam 13. Bölüm. 1999'da ne oldu? Devamı 14. bölümde!
 - **14. Bölüm:** 1999'da enkazdan çıkardığı çocuk şimdi belediyede müdür | Bodrum Kattaki Adam 14. Bölüm. Mavi montu unutmamış… Devamı 15. bölümde!
 - **15. Bölüm:** Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi | Bodrum Kattaki Adam 15. Bölüm. Kenan neden korkuyor? Devamı 16. bölümde!
 - **16. Bölüm:** Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı | Bodrum Kattaki Adam 16. Bölüm. Kayıp defter nerede? Devamı 17. bölümde!
