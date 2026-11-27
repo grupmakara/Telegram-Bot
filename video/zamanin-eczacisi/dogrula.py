@@ -32,6 +32,8 @@ for ep in sys.argv[1:]:
     for key, spec in mod.LINES.items():
         f = os.path.join(SES, spec[0])
         if not os.path.exists(f):
+            print(f'EKSİK {spec[0]}', flush=True)
+            bad.append(spec[0])
             continue
         st = os.stat(f)
         ck = f'{spec[0]}:{st.st_mtime}'
