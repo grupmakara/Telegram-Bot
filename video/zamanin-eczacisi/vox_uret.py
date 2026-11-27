@@ -1,0 +1,75 @@
+#!/opt/voxcpm/bin/python
+"""VoxCPM2 (Apache-2.0, ücretsiz) ile Türkçe seslendirme — Bölüm 4'ten itibaren.
+Her karakter referans/<karakter>.wav (VoxCPM2 ile tasarlanmış yapay Türkçe ses) üzerinden klonlanır,
+böylece ses bölümden bölüme aynı kalır. Duygu, metnin başına eklenen İngilizce talimatla verilir;
+bağırma talimatları ölçülü karşılıklarına çevrilir.
+Kullanım: vox_uret.py bolum4 bolum5 ...   (çıktı ses6/, var olanlar atlanır; SEED_EK ile farklı tohum)
+"""
+import importlib, os, re, subprocess, sys, time
+import soundfile as sf
+import torch
+from num2words import num2words
+from voxcpm import VoxCPM
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses6'))
+REF = os.path.join(ROOT, 'referans')
+SAYI = {'1665': 'bin altı yüz altmış beş', '2026': 'iki bin yirmi altı'}
+sys.path.insert(0, ROOT)
+
+# Bağırma yok: yüksek sesli talimatları ölçülü karşılıklarına çevir
+YUMUSAT = [
+    (r'\b(shouting|yelling|screaming|loud)\b', 'intense, firm, raised voice but not shouting'),
+    (r'\bwhisper(ing)?\b', 'quiet breathy whisper, speaking slowly and clearly'),
+    (r'\bpanick?ed\b', 'urgent, worried, fast'),
+    (r'\bangry\b', 'angry but controlled'),
+]
+
+
+def stil_yaz(style):
+    s = (style or 'natural, conversational').lower()
+    for pat, rep in YUMUSAT:
+        s = re.sub(pat, rep, s)
+    return s + ', natural Turkish speech'
+
+
+def hedef_lufs(style):
+    s = (style or '').lower()
+    if any(w in s for w in ('whisper', 'quiet', 'soft', 'weak', 'sleepy', 'praying', 'to himself', 'calm')):
+        return -22
+    if any(w in s for w in ('angry', 'shout', 'loud', 'commanding', 'panick', 'urgent', 'shock')):
+        return -19
+    return -20
+
+
+def sayi_yaz(m):
+    return SAYI.get(m.group()) or num2words(int(m.group()), lang='tr')
+
+
+torch.set_num_threads(os.cpu_count() or 4)
+os.makedirs(OUT, exist_ok=True)
+model = VoxCPM.from_pretrained('openbmb/VoxCPM2', load_denoiser=False, optimize=False, device='cpu')
+sr = model.tts_model.sample_rate
+for ep in sys.argv[1:]:
+    for key, spec in importlib.import_module(ep).LINES.items():
+        if len(spec) < 5:
+            continue  # kanca kesitleri (h0 vb.) ana replikten türetilir
+        fname, who, text = spec[:3]
+        dst = os.path.join(OUT, fname)
+        if os.path.exists(dst):
+            continue
+        style = spec[5] if len(spec) > 5 else ''
+        clean = re.sub(r'\d+', sayi_yaz, text.replace('"', ''))
+        torch.manual_seed(sum(map(ord, fname)) + int(os.environ.get('SEED_EK', '0')))
+        t = time.time()
+        wav = model.generate(text=f'({stil_yaz(style)}){clean}',
+                             reference_wav_path=os.path.join(REF, f'{who}.wav'),
+                             cfg_value=2.0, inference_timesteps=10)
+        raw = dst + '.raw.wav'
+        sf.write(raw, wav, sr)
+        flt = ('silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
+               f'loudnorm=I={hedef_lufs(style)}:TP=-2:LRA=11,aresample=24000')
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', raw, '-af', flt, '-ac', '1', dst], check=True)
+        os.remove(raw)
+        print(f'{fname} {who} {time.time() - t:.0f}s', flush=True)
+print('TAMAM', flush=True)
