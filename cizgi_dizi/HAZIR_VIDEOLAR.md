@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (11 bölüm)
+## Hazır (12 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -19,6 +19,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 9 | 61 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` |
 | 10 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum10.mp4` |
 | 11 | 65 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
+| 12 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -97,11 +98,17 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` (65 sn)
 
-## Henüz hazır değil (13 bölüm)
+### 12. Bölüm
+**Başlık:** "Kapıcı oy kullanamaz" dediler, tapu kaydı okununca salon sustu | Bodrum Kattaki Adam 12. Bölüm
+**Kısa başlık (Instagram):** "Kapıcı oy kullanamaz" dediler 📜
+**Açıklama:** Tapuda kimin adı var? Devamı 13. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` (62 sn)
+
+## Henüz hazır değil (12 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **12. Bölüm:** "Kapıcı oy kullanamaz" dediler, tapu kaydı okununca salon sustu | Bodrum Kattaki Adam 12. Bölüm. Tapuda kimin adı var? Devamı 13. bölümde!
 - **13. Bölüm:** Selma'nın kocası yıllar sonra eve döndü, ilk sarıldığı kişi kapıcıydı | Bodrum Kattaki Adam 13. Bölüm. 1999'da ne oldu? Devamı 14. bölümde!
 - **14. Bölüm:** 1999'da enkazdan çıkardığı çocuk şimdi belediyede müdür | Bodrum Kattaki Adam 14. Bölüm. Mavi montu unutmamış… Devamı 15. bölümde!
 - **15. Bölüm:** Ferit'in patronu ilk kez göründü: Kenan'ın ağabeyi | Bodrum Kattaki Adam 15. Bölüm. Kenan neden korkuyor? Devamı 16. bölümde!
