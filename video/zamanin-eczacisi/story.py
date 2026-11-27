@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Instagram/Facebook story görselleri (1080x1920): bölüm başına bir story + her gün için 'bugün 2 yeni bölüm'.
 Kareler story/kare/bolumN.png (altyazısız, bölüm animasyonundan). Çıktı: story/*.png
+'python3 story.py aksam 5' yalnızca 'Bölüm 5 bu akşam yayında' afişini üretir (story/story-bolum5-aksam.png).
 """
-import os, subprocess, json
+import os, subprocess, json, sys
 R = os.path.dirname(os.path.abspath(__file__))
 S = os.path.join(R, 'story')
 BOLUM = {
@@ -37,6 +38,12 @@ body {{ width: 1080px; height: 1920px; overflow: hidden; background: #120B07; co
 .cizgi {{ width: 300px; height: 4px; margin: 34px auto; background: linear-gradient(90deg, transparent, #C9A55A, transparent); }}
 .merak {{ font-family: Nunito; font-style: italic; font-weight: 800; font-size: 46px; line-height: 1.3; color: #F4EBD8; text-shadow: 0 3px 10px rgba(0,0,0,.8); }}
 .cta {{ position: absolute; bottom: 90px; left: 0; right: 0; text-align: center; font-family: Nunito; font-style: italic; font-weight: 800; font-size: 38px; color: #E8C987; }}
+.aksam {{ position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,40,.95) 0%, rgba(10,14,40,.82) 30%, rgba(10,14,40,.45) 40%, rgba(40,20,30,.05) 50%, rgba(60,25,15,.55) 64%, rgba(18,11,7,.97) 84%); }}
+.ay {{ position: absolute; top: 330px; right: 120px; width: 110px; height: 110px; border-radius: 50%; box-shadow: -26px 14px 0 0 #F3E3B5; filter: drop-shadow(0 0 30px rgba(243,227,181,.6)); }}
+.yildiz {{ position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #FFF6DC; box-shadow: 0 0 10px #FFF6DC; }}
+.buaksam {{ position: absolute; top: 360px; left: 0; right: 0; text-align: center; }}
+.buaksam h1 {{ font-family: Cinzel; font-size: 120px; line-height: 1; color: #F3E3B5; text-shadow: 0 0 40px rgba(243,227,181,.45), 0 6px 24px rgba(0,0,0,.8); margin-top: 26px; }}
+.buaksam h2 {{ font-family: Cinzel; font-size: 72px; letter-spacing: .12em; color: #fff; margin-top: 8px; text-shadow: 0 6px 24px rgba(0,0,0,.8); }}
 .gun {{ position: absolute; top: 330px; left: 0; right: 0; text-align: center; }}
 .gun h1 {{ font-family: Cinzel; font-size: 84px; line-height: 1.1; color: #fff; margin-top: 30px; text-shadow: 0 6px 24px rgba(0,0,0,.8); }}
 .kartlar {{ position: absolute; top: 700px; left: 70px; right: 70px; display: flex; gap: 40px; }}
@@ -68,6 +75,18 @@ for g, a, b in GUNLER:
              f'<div class="gun"><span class="rozet">{g}. GÜN</span><h1>Bugün<br>2 yeni bölüm!</h1></div>'
              f'<div class="kartlar">{kart(a)}{kart(b)}</div><div class="cta">▲ İzlemek için profile git</div>')
     isler.append((f'{S}/story-gun{g}.html', f'{S}/story-gun{g}.png', sayfa(govde)))
+if len(sys.argv) > 2 and sys.argv[1] == 'aksam':
+    e = int(sys.argv[2])
+    baslik, merak = BOLUM[e]
+    merak = merak.replace('. ', '.<br>', 1)
+    yildizlar = ''.join(f'<div class="yildiz" style="left:{x}px;top:{y}px;opacity:{o}"></div>'
+                        for x, y, o in [(110, 300, .9), (260, 420, .6), (420, 330, .8), (700, 290, .7), (860, 470, .5), (190, 560, .5), (980, 260, .8), (560, 520, .4)])
+    govde = (f'<div class="bg" style="background-image:url(file://{S}/kare/bolum{e}.png)"></div><div class="aksam"></div>{yildizlar}<div class="ay"></div>'
+             f'<div class="logo">ZAMANIN ECZACISI<small>1665 · İSTANBUL</small></div>'
+             f'<div class="buaksam"><span class="rozet">🌙 BÖLÜM {e}</span><h1>BU AKŞAM</h1><h2>YAYINDA</h2></div>'
+             f'<div class="alt"><div class="baslik">{tr_buyuk(baslik)}</div><div class="cizgi"></div><div class="merak">{merak}</div></div>'
+             f'<div class="cta">🔔 Bildirimleri aç, kaçırma!</div>')
+    isler = [(f'{S}/story-bolum{e}-aksam.html', f'{S}/story-bolum{e}-aksam.png', sayfa(govde))]
 for html, _, icerik in isler:
     open(html, 'w').write(icerik)
 js = f'''const {{ chromium }} = require('playwright');
