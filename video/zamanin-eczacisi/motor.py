@@ -116,6 +116,8 @@ def build(ep_name):
             if mode == 'all':
                 args = []
             elif mode == 'until':
+                if not cut:
+                    print(f'UYARI: kanca kelimesi bulunamadı ({src_key}: {word}); 1.6 sn kullanılıyor', flush=True)
                 cut = cut or 1.6
                 args = ['-t', f'{cut - 0.05:.2f}', '-af', f'afade=t=out:st={max(cut - 0.2, 0):.2f}:d=0.15']
             else:

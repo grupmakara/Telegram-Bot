@@ -3,7 +3,7 @@ OUT = 'proje10'
 TITLE = ('BÖLÜM 10', "Kemal Bey'in Şüphesi")
 HOOK = ('Eczanede kimse yok...', 'Ve Kemal Bey <b>yere yığıldı!</b>')
 END = ('Havanı kim bıraktı?', 'Bölüm 11 yakında...')
-HOOK_CUT = ('l9', 'Kemal', 'h0', 'until')
+HOOK_CUT = ('l9', 'yine', 'h0', 'until')  # Whisper 'İğne'yi 'yine' duyuyor
 LINES = {
     'h0': ('b10_h0.wav', 'ayseg', 'Kemal Bey! Beni duyuyor musunuz?', 2.4),
     'l1': ('b10_l1.wav', 'kemal', 'Elif, kızım... Son günlerde sen hiç sen değilsin.', 3.8, 0.5, 'suspicious, gentle'),

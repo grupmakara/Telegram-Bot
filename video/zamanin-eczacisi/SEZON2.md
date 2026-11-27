@@ -11,8 +11,8 @@ Hekim Ahmet Efendi ve çırağı Yusuf artık Elif'in yanında.
 |---|---|---|---|
 | 9 | Şifahane | 1665 | Şifahane açılıyor. Denizci reisinin diş etleri kanıyor, Hekim kan almak istiyor; Elif turunç ve limonla iskorbütü tedavi ediyor. Gece havandan Ayşe'nin sesi: "Burada biri benden şüpheleniyor." |
 | 10 | Kemal Bey'in Şüphesi | 2026 | Eczane sahibi Kemal Bey "Elif"in değiştiğini fark ediyor. Kemal Bey şeker düşmesiyle yere yığılınca Ayşe 1665'te öğrendiği bilgiyle bal veriyor. Havan bunu da sayıyor: iki dünya aynı sayaçta. |
-| 11 | Mühürlü Mektup | 1665 | Havanın dibinde gizli bir mühür bulunuyor. Kadı Efendi mühürü tanıyor: yüz yıl önce kaybolan bir attara ait. |
-| 12 | Eski Kitap | 2026 | Ayşe kütüphanede aynı mührü taşıyan bir 1500'ler kitabı buluyor; içinde havanın çizimi var. |
+| 11 | Mühürlü Mektup | 1665 | Havanın dibinde bir mühür: hilal ve yılan. Kadı Efendi tanıyor: yüz yıl önce kaybolan Attar Lokman Efendi. Mektubu: "Yüz can, iki el, tek havan." Elif, subaşının iltihaplı yarasını temizliyor (51). |
+| 12 | Eski Kitap | 2026 | Kemal Bey dedesinin Lokman mühürlü kitabını getiriyor; Ayşe eski yazıyı okuyabiliyor ve gerçeği anlatıyor. Kitapta veba uyarısı ve Elif'in yüzünün resmi var. |
 | 13 | Veba Söylentisi | 1665 | Şehirde veba söylentisi yayılıyor. Elif karantinayı anlatıyor; panik ve isyan. |
 | 14 | Kırık Havan | iki dünya | Havan çatlıyor; ses kesilmeye başlıyor. İki kız son bir yol arıyor. |
 | 15 | Doksan Dokuz | iki dünya | Sayaç doksan dokuzda. Son can kimin olacak? |

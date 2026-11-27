@@ -3,7 +3,7 @@ OUT = 'proje9'
 TITLE = ('BÖLÜM 9', 'Şifahane')
 HOOK = ('Hekim kan almak istiyor...', 'Ama Elif <b>başka bir yol</b> biliyor!')
 END = ('Ayşe 2026\'da tehlikede mi?', 'Bölüm 10 yakında...')
-HOOK_CUT = ('l9', 'Durun', 'h0', 'until')
+HOOK_CUT = ('l9', 'Bu', 'h0', 'until')
 LINES = {
     'h0': ('b9_h0.wav', 'ayse', 'Durun, Ahmet Efendi!', 2.0),
     'l1': ('b9_l1.wav', 'huseyin', 'Kızım, bak! Kapının önü sabahtan beri dolu.', 3.6, 0.6, 'amazed, proud'),
