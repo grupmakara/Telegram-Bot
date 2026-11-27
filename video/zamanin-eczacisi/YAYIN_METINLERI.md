@@ -39,7 +39,19 @@ Kopyalayıp yapıştırmaya hazır. Başlık 70 karakterin altında; açıklama 
 **Açıklama:** Kapıdaki Hekim Ahmet Efendi; kızı Leyla nefes alamıyor. Elif, onu cadılıkla suçlayan adamın kızını kurtaracak mı? 🌙🫁
 #ZamanınEczacısı #animasyon #duygusal #osmanlı #tarih
 
-## Bölüm 8 · 4. gün (Sezon Finali)
+## Bölüm 8 · 4. gün (1. Sezon Finali)
 **Başlık:** Gerçek Ayşe 2026'da Uyandı! | Zamanın Eczacısı Sezon Finali
 **Açıklama:** Havandan bir ses geliyor: gerçek Ayşe, 2026'da Elif'in bedeninde! İki kız, iki yüzyıl ve eve dönmek için 58 can daha. 🌍⏳
 #ZamanınEczacısı #animasyon #sezonfinali #zamanyolculuğu #tarih
+
+---
+
+## Bölüm 9 · 2. Sezon başlıyor
+**Başlık:** Hekim Kan Almak İstedi, Elif Limon Getirdi! | Zamanın Eczacısı 9. Bölüm
+**Açıklama:** Şifahane açıldı! Denizci reisinin diş etleri kanıyor; Hekim kan almak istiyor, Elif ise turunç ve limonla başka bir yol deniyor. 🍋⚓
+#ZamanınEczacısı #animasyon #ikincisezon #osmanlı #tarih
+
+## Bölüm 10
+**Başlık:** Eczacı Yere Yığıldı, Ayşe Ne Yapacak? | Zamanın Eczacısı 10. Bölüm
+**Açıklama:** 2026'da eczanenin sahibi Kemal Bey "Elif"ten şüpheleniyor... ve bir anda yere yığılıyor! Ayşe'nin 1665'ten getirdiği bilgi hayat kurtarabilir mi? 💉🍯
+#ZamanınEczacısı #animasyon #zamanyolculuğu #eczane #tarih

@@ -12,7 +12,9 @@ Ortak etiketler: #ZamanınEczacısı #animasyon #tarih
 | 5 | Limandaki Salgın | 2:00 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum5.mp4` |
 | 6 | Çeşmenin Sırrı | 2:04 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum6.mp4` |
 | 7 | Hekim'in Kızı | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum7.mp4` |
-| 8 | İki Dünya (Sezon Finali) | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum8.mp4` |
+| 8 | İki Dünya (1. Sezon Finali) | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum8.mp4` |
+| 9 | Şifahane (2. sezon) | 2:03 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum9.mp4` |
+| 10 | Kemal Bey'in Şüphesi | 2:02 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum10.mp4` |
 
 ## Bölüm 1 · Yanlış Yüzyıl
 Gece nöbetindeki eczacı Elif gizemli bir havana dokunur ve 1665 İstanbul'unda bir attarın kızı olarak uyanır. Ne ilaç var ne cihaz... ama bilgisi yanında. 💊⏳
@@ -42,8 +44,16 @@ Hastalık mahalleye sıçradı. Elif hastaları tek tek işaretler ve iz yüz y�
 Gece yarısı kapıyı çalan, en büyük düşmanı: Hekim Ahmet Efendi. Kızı nefes alamıyor. Elif onu kurtarabilecek mi? 🌙🫁
 #ZamanınEczacısı #animasyon #duygusal #osmanlı #tarih
 
-## Bölüm 8 · İki Dünya (Sezon Finali)
+## Bölüm 8 · İki Dünya (1. Sezon Finali)
 Havandan bir ses geliyor: gerçek Ayşe, 2026'da, Elif'in bedeninde! İki kız, iki yüzyıl ve eve dönmek için 58 can daha. 🌍⏳
 #ZamanınEczacısı #animasyon #sezonfinali #zamanyolculuğu #tarih
 
-Tüm sezon hazır. Yayın başlıkları: `YAYIN_METINLERI.md`. Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.
+## Bölüm 9 · Şifahane (2. Sezon)
+Şifahane açıldı! Denizci reisinin diş etleri kanıyor; Hekim kan almak istiyor, Elif ise turunç ve limonla başka bir yol deniyor. 🍋⚓
+#ZamanınEczacısı #animasyon #ikincisezon #osmanlı #tarih
+
+## Bölüm 10 · Kemal Bey'in Şüphesi
+2026'da eczanenin sahibi Kemal Bey "Elif"ten şüpheleniyor... ve bir anda yere yığılıyor! Ayşe'nin 1665'ten getirdiği bilgi hayat kurtarabilir mi? 💉🍯
+#ZamanınEczacısı #animasyon #zamanyolculuğu #eczane #tarih
+
+1. sezon tamamlandı, 2. sezon devam ediyor. Yayın başlıkları: `YAYIN_METINLERI.md`. Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.
