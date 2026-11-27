@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (17 bölüm)
+## Hazır (18 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -25,6 +25,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 15 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` |
 | 16 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum16.mp4` |
 | 17 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum17.mp4` |
+| 18 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum18.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -145,11 +146,17 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum17.mp4` (60 sn)
 
-## Henüz hazır değil (7 bölüm)
+### 18. Bölüm
+**Başlık:** Tatbikatta herkes merdivene koştu, kapıcı "Kolonun yanına!" dedi | Bodrum Kattaki Adam 18. Bölüm
+**Kısa başlık (Instagram):** Depremde merdivene mi, kolona mı? ⚠️
+**Açıklama:** Kapıcı yine haklı çıktı… Devamı 19. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum18.mp4` (62 sn)
+
+## Henüz hazır değil (6 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **18. Bölüm:** Tatbikatta herkes merdivene koştu, kapıcı "Kolonun yanına!" dedi | Bodrum Kattaki Adam 18. Bölüm. Kapıcı yine haklı çıktı… Devamı 19. bölümde!
 - **19. Bölüm:** Belediye binayı mühürledi, kapıcı mührün üstüne 1979 projesini koydu | Bodrum Kattaki Adam 19. Bölüm. Bina kurtulacak mı? Devamı 20. bölümde!
 - **20. Bölüm:** Ferit havalimanında kaçıyordu, telefon çaldı: arayan kapıcıydı | Bodrum Kattaki Adam 20. Bölüm. Ferit konuşacak mı? Devamı 21. bölümde!
 - **21. Bölüm:** "Bina yıkılmayacak" kararı çıktı, Kenan istifasını kapıcıya verdi | Bodrum Kattaki Adam 21. Bölüm. Kenan'dan beklenmedik itiraf… Devamı 22. bölümde!
