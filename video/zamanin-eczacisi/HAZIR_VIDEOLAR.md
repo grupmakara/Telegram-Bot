@@ -9,6 +9,7 @@ Ortak etiketler: #ZamanınEczacısı #animasyon #tarih
 | 2 | İlk Reçete | 2:04 | ElevenLabs (yayınlandı) | `cikti/zamanin-eczacisi-bolum2.mp4` |
 | 3 | Havanın Sırrı | 2:03 | Chatterbox | `cikti/zamanin-eczacisi-bolum3.mp4` |
 | 4 | Kadı'nın Huzurunda | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum4.mp4` |
+| 5 | Limandaki Salgın | 2:00 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum5.mp4` |
 
 ## Bölüm 1 · Yanlış Yüzyıl
 Gece nöbetindeki eczacı Elif gizemli bir havana dokunur ve 1665 İstanbul'unda bir attarın kızı olarak uyanır. Ne ilaç var ne cihaz... ama bilgisi yanında. 💊⏳

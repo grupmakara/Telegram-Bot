@@ -27,7 +27,7 @@ from sanat import (ayse, huseyin, mehmet, shop_bg, window_view, jars_closeup, ph
 SES = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses5'))
 KONTROL = os.path.join(ROOT, 'kontrol')
 W, H = 1080, 1920
-PAD_IN, PAD_OUT = 0.25, 0.6
+PAD_IN, PAD_OUT = 0.25, float(os.environ.get('PAD_OUT', '0.6'))
 
 
 # ---------------------------------------------------------------- ses analizi
