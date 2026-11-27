@@ -74,4 +74,5 @@ def plan(add, S):
     add('d10c', 'stage', 'l10c', bg=shopm, cam=S.close(A(), 2.5, 2.7), chars=[H(), A(brow='determined', mouth='flat')])
     add('d11a', 'stage', 'l11', 'a', bg=shopm, cam=S.close(A(), 2.5, 2.7), chars=[H(), A(brow='determined', mouth='flat')])
     add('d11b', 'stage', 'l11', 'b', extra=0.6, bg=shopm, cam=S.close(A(), 2.9, 3.5), chars=[H(), A(brow='determined', mouth='flat')])
+    add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub="Elif, Kadı Efendi'nin karşısında: bir cadı mı, yoksa bir şifacı mı?")
     add('son', 'end', dur=3.5)

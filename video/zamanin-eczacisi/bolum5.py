@@ -42,6 +42,7 @@ def plan(add, S):
     add('kanca', 'stage', 'h0', extra=0.4, bg=port, hook=True, cam=S.close(A(), 2.5, 3.0), chars=[D(), A(brow='determined', mouth='o', shock=True)])
     add('baslik', 'title', dur=1.9)
     add('ozet', 'black', dur=3.8, text='Önceki bölümde...', sub="Kadı, Elif'e yedi gün süre verdi. Limanda gizemli bir hastalık başladı.")
+    add('w0', 'window', dur=3.0)
     add('po', 'stage', dur=3.0, bg=port, cam=((1.0, 540, 960), (1.08, 540, 900)), chars=[])
     add('p1', 'stage', 'l1', bg=port, cam=S.close(D(), 2.2, 2.4), chars=[D(brow='determined', point=True), A()])
     add('p2', 'stage', 'l2', bg=port, cam=S.close(A(), 2.4, 2.6), chars=[D(), A(brow='determined', mouth='flat')])
@@ -69,4 +70,5 @@ def plan(add, S):
     add('p20b', 'stage', 'l20', 'b', bg=port, cam=S.close(Y(), 2.5, 2.7), chars=[Y(brow='worried'), A()])
     add('p21', 'stage', 'l21', bg=port, cam=S.close(A(), 2.5, 2.7), chars=[Y(), A(brow='surprised', mouth='flat')])
     add('p22', 'stage', 'l22', extra=0.6, bg=port, cam=S.close(Y(), 2.4, 2.9), chars=[Y(brow='worried'), A()])
+    add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub='Hastalık mahalle çeşmesine sıçradı. Ve çeşmenin bir sırrı var...')
     add('son', 'end', dur=3.5)

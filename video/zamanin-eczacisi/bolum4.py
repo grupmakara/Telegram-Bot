@@ -72,4 +72,5 @@ def plan(add, S):
     add('s21', 'stage', 'l21', bg=street, cam=S.close(As(), 2.5, 2.7), chars=[R(), As(brow='surprised', mouth='o', eyes='wide')])
     add('s22', 'stage', 'l22', bg=street, cam=S.close(R(), 2.3, 2.5), chars=[R(brow='worried'), As()])
     add('s23', 'stage', 'l23', extra=0.6, bg=street, cam=S.close(As(), 2.7, 3.3), chars=[R(), As(brow='worried', mouth='flat', shock=True)])
+    add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub='Limanda gemiciler bir bir düşüyor. Elif salgının kaynağını bulabilecek mi?')
     add('son', 'end', dur=3.5)

@@ -68,4 +68,5 @@ def plan(add, S):
     add('d18', 'stage', 'l18', bg=shopm, cam=S.close(H(), 2.4, 2.6), chars=[H(brow='happy'), As()])
     add('d19', 'stage', 'l19', extra=0.4, bg=shopm, cam=S.close(As(), 2.6, 3.0), chars=[H(), As(brow='happy', mouth='smirk')])
     add('w20', 'window', 'l20', extra=1.0)
+    add('sonraki', 'black', dur=4.5, text='Sezon finali', sub='Elli sekiz can daha... Elif eve dönebilecek mi?')
     add('son', 'end', dur=4.0)

@@ -73,4 +73,5 @@ def plan(add, S):
     add('m20', 'mortar', 'l20', extra=0.3, zoom=(1.1, 1.3), old=True)
     add('b21', 'bowl', 'l21', extra=0.3)
     add('b22', 'stage', 'l22', extra=0.8, bg=shopm, cam=S.close(As(), 2.8, 3.4), chars=[H(), As(eyes='wide', brow='surprised', mouth='o', shock=True)])
+    add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub="İki kız, iki yüzyıl... Elif, gerçek Ayşe'yle ilk kez konuşacak.")
     add('son', 'end', dur=3.5)
