@@ -142,6 +142,8 @@ MEN = {
     'kadi': ('#E8E2D0', '#3F6B3F', '#C9A55A', '#8E6A2A', '#E2B48E', 'white'),
     'denizci': ('#2E4A6B', '#F2ECDD', '#B2452E', '#E3B65A', '#B9805A', 'mustache'),
     'yusuf': ('#5E7A3A', '#E3D9C0', '#6E4B2F', '#C9A55A', '#E0AE88', 'none'),
+    # 2026: eczane sahibi Kemal Bey (beyaz önlük, mavi gömlek, gözlük)
+    'kemal': ('#F3F6F6', '#8FB3C9', '#3F7F7A', '#2E5F5A', '#D9A47E', 'mustache_gray'),
 }
 
 
@@ -159,6 +161,9 @@ def huseyin(p, brow='neutral', arm=0, variant='huseyin'):
         beard_svg = (path('M -68,-778 C -74,-680 -40,-590 0,-570 C 40,-590 74,-680 68,-778 C 58,-738 38,-722 0,-722 C -38,-722 -58,-738 -68,-778 Z', fill='#EEEBE4', stroke=OUTLINE, sw=3)
                      + path('M -36,-690 Q -30,-640 -18,-600 M 26,-692 Q 22,-650 14,-610 M -4,-680 L -2,-590', stroke='#C9C4BA', sw=3))
         stache = path('M -32,-728 Q -14,-744 0,-734 Q 14,-744 32,-728 Q 16,-720 0,-726 Q -16,-720 -32,-728 Z', fill='#EEEBE4', stroke=OUTLINE, sw=2.5)
+    elif beard == 'mustache_gray':
+        beard_svg = ''
+        stache = path('M -40,-726 Q -18,-746 0,-734 Q 18,-746 40,-726 Q 22,-718 0,-728 Q -22,-718 -40,-726 Z', fill='#8C8682', stroke=OUTLINE, sw=2.5)
     elif beard == 'none':
         beard_svg = ''
         stache = ''
@@ -182,6 +187,12 @@ def huseyin(p, brow='neutral', arm=0, variant='huseyin'):
     elif variant in ('riza', 'denizci'):
         hat = (path('M -52,-850 L -46,-905 Q 0,-918 46,-905 L 52,-850 Z', fill='#A33A2E', stroke=OUTLINE, sw=3)
                + path('M 0,-912 Q 30,-920 40,-880', stroke='#1E1A18', sw=4))
+    elif variant == 'kemal':
+        # kısa kır saç + gözlük
+        hat = (path('M -70,-790 C -76,-860 -40,-884 0,-884 C 40,-884 76,-860 70,-790 C 62,-830 40,-846 0,-844 C -40,-846 -62,-830 -70,-790 Z', fill='#8C8682', stroke=OUTLINE, sw=3)
+               + '<g fill="rgba(220,235,240,.25)" stroke="#2A2422" stroke-width="4">'
+               + '<rect x="-52" y="-798" width="42" height="32" rx="10"/><rect x="10" y="-798" width="42" height="32" rx="10"/></g>'
+               + path('M -10,-784 L 10,-784', stroke='#2A2422', sw=4))
     elif variant == 'subasi':
         hat = (path('M -66,-836 C -70,-940 -30,-1010 20,-1000 C 60,-990 72,-930 66,-836 Z', fill='#A33A2E', stroke=OUTLINE, sw=3)
                + '<rect x="-74" y="-860" width="148" height="34" rx="6" fill="#D7B25A" stroke="' + OUTLINE + '" stroke-width="3"/>'

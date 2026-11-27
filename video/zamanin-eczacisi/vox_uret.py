@@ -4,6 +4,8 @@ Her karakter referans/<karakter>.wav (VoxCPM2 ile tasarlanmış yapay Türkçe s
 böylece ses bölümden bölüme aynı kalır. Duygu, metnin başına eklenen İngilizce talimatla verilir;
 bağırma talimatları ölçülü karşılıklarına çevrilir.
 Kullanım: vox_uret.py bolum4 bolum5 ...   (çıktı ses6/, var olanlar atlanır; SEED_EK ile farklı tohum)
+DUZEN=1 (2. sezon varsayılanı): hızı karakter bandının çok dışında kalan replik 3 tohuma kadar denenir,
+en dengelisi seçilir ve duzen.py ile hız/seviye/tını düzenlenir. Ham çıktı ses_ham/ altında saklanır.
 """
 import importlib, os, re, subprocess, sys, time
 import soundfile as sf
@@ -16,6 +18,10 @@ OUT = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses6'))
 REF = os.path.join(ROOT, 'referans')
 SAYI = {'1665': 'bin altı yüz altmış beş', '2026': 'iki bin yirmi altı'}
 sys.path.insert(0, ROOT)
+from duzen import duzenle, hece, hiz_bandi
+DUZEN = os.environ.get('DUZEN', '1') == '1'
+HAM = os.path.join(ROOT, 'ses_ham')
+os.makedirs(HAM, exist_ok=True)
 
 # Bağırma yok: yüksek sesli talimatları ölçülü karşılıklarına çevir
 YUMUSAT = [
@@ -60,16 +66,34 @@ for ep in sys.argv[1:]:
             continue
         style = spec[5] if len(spec) > 5 else ''
         clean = re.sub(r'\d+', sayi_yaz, text.replace('"', ''))
-        torch.manual_seed(sum(map(ord, fname)) + int(os.environ.get('SEED_EK', '0')))
+        seed0 = sum(map(ord, fname)) + int(os.environ.get('SEED_EK', '0'))
         t = time.time()
-        wav = model.generate(text=f'({stil_yaz(style)}){clean}',
-                             reference_wav_path=os.path.join(REF, f'{who}.wav'),
-                             cfg_value=2.0, inference_timesteps=10)
-        raw = dst + '.raw.wav'
-        sf.write(raw, wav, sr)
-        flt = ('silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
-               f'loudnorm=I={hedef_lufs(style)}:TP=-2:LRA=11,aresample=24000')
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', raw, '-af', flt, '-ac', '1', dst], check=True)
-        os.remove(raw)
-        print(f'{fname} {who} {time.time() - t:.0f}s', flush=True)
+        alt, ust = hiz_bandi(who, style)
+        en_iyi = None
+        for d in range(3 if DUZEN else 1):
+            torch.manual_seed(seed0 + d * 7919)
+            wav = model.generate(text=f'({stil_yaz(style)}){clean}',
+                                 reference_wav_path=os.path.join(REF, f'{who}.wav'),
+                                 cfg_value=2.0, inference_timesteps=10)
+            # konuşma süresi (baş/son sessizlik hariç kaba ölçüm)
+            import numpy as np
+            a = np.abs(wav); ses = np.where(a > a.max() * 0.03)[0]
+            konusma = (ses[-1] - ses[0]) / sr if len(ses) else len(wav) / sr
+            hiz = hece(clean) / max(0.3, konusma)
+            sapma = max(0.0, alt * 0.88 - hiz, hiz - ust * 1.12)
+            if en_iyi is None or sapma < en_iyi[0]:
+                en_iyi = (sapma, wav, hiz)
+            if sapma == 0:
+                break
+        raw = os.path.join(HAM, fname)
+        sf.write(raw, en_iyi[1], sr)
+        if DUZEN:
+            _, tempo = duzenle(raw, dst, clean, who, style)
+        else:
+            tempo = 1.0
+            flt = ('silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
+                   f'loudnorm=I={hedef_lufs(style)}:TP=-2:LRA=11,aresample=24000')
+            subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', raw, '-af', flt, '-ac', '1', dst], check=True)
+        print(f'{fname} {who} hız={en_iyi[2]:.1f} deneme={d + 1} tempo={tempo}', end=' ')
+        print(f'{time.time() - t:.0f}s', flush=True)
 print('TAMAM', flush=True)
