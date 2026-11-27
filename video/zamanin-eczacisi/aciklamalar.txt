@@ -35,7 +35,8 @@ Havandan bir ses geliyor: gerçek Ayşe, 2026'da, Elif'in bedeninde! İki kız, 
 
 
 YAYIN PLANI (günde 2 bölüm)
-1. gün: Bölüm 3 + Bölüm 4   → story: story-gun1.png, story-bolum3.png, story-bolum4.png
-2. gün: Bölüm 5 + Bölüm 6   → story: story-gun2.png, story-bolum5.png, story-bolum6.png
-3. gün: Bölüm 7 + Bölüm 8   → story: story-gun3.png, story-bolum7.png, story-bolum8.png
+1. gün: Bölüm 1 + Bölüm 2   → yayınlandı
+2. gün (bugün): Bölüm 3 + Bölüm 4   → story: story-gun2.png, story-bolum3.png, story-bolum4.png
+3. gün: Bölüm 5 + Bölüm 6   → story: story-gun3.png, story-bolum5.png, story-bolum6.png
+4. gün: Bölüm 7 + Bölüm 8   → story: story-gun4.png, story-bolum7.png, story-bolum8.png
 Öneri: sabah "story-gunN" duyurusu; her bölüm yayınlandığında o bölümün story'si.

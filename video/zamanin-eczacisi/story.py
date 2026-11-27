@@ -13,7 +13,7 @@ BOLUM = {
     7: ("Hekim'in Kızı", 'En büyük düşmanı, gece yarısı kapısını çalıyor.'),
     8: ('İki Dünya', "Havandan gelen ses... Gerçek Ayşe 2026'da!"),
 }
-GUNLER = [(1, 3, 4), (2, 5, 6), (3, 7, 8)]
+GUNLER = [(2, 3, 4), (3, 5, 6), (4, 7, 8)]  # 1. gün: Bölüm 1-2 (yayınlandı)
 
 
 def tr_buyuk(t):
