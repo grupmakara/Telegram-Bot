@@ -71,5 +71,10 @@ VoxCPM2 runs on CPU at roughly 45–60 s per line; a whole season takes hours.
   "Anne" → "en"). Add a respelling to `PRONUNCIATION` in `vox.py` (`Can` → `Djan`,
   `Anne` → `Annee`); it only changes the text sent to the model. Test candidate spellings on a
   single line first: several obvious ones (`Jan`, `Cann`, `Cân`, `Caan`) did not work.
+- A word at the very start of a line followed by `...` can be dropped entirely ("Anne... Teşekkür
+  ederim." came out as "Teşekkür ederim." in 8 tries). If a respelling does not help, change the
+  word in both `text` and `say` (e.g. `Anneciğim`).
+- Whisper cannot tell a final `-n` from `-m` (`yenemedin`/`yenemedim`, `Seninleyim`/`Seninleyin`):
+  a 0.67–0.8 score caused only by that is not a reason to regenerate.
 - Without VoxCPM2 clips, `render.py` falls back to ElevenLabs clips in
   `seslendirme/<dizi>/bolumNN/`, then to edge-tts (flat; drafts only).
