@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (21 bölüm)
+## Hazır (22 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -29,6 +29,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 19 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum19.mp4` |
 | 20 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum20.mp4` |
 | 21 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` |
+| 22 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum22.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -177,10 +178,16 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` (63 sn)
 
-## Henüz hazır değil (3 bölüm)
+### 22. Bölüm
+**Başlık:** Selma, Zeynep'in parmağına annesinin yüzüğünü taktı | Bodrum Kattaki Adam 22. Bölüm
+**Kısa başlık (Instagram):** Selma yüzüğü Zeynep'e taktı 💍
+**Açıklama:** Kapıcı ve Tarık yüz yüze! Devamı 23. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum22.mp4` (64 sn)
+
+## Henüz hazır değil (2 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **22. Bölüm:** Selma, Zeynep'in parmağına annesinin yüzüğünü taktı | Bodrum Kattaki Adam 22. Bölüm. Kapıcı ve Tarık yüz yüze! Devamı 23. bölümde!
 - **23. Bölüm:** Apartman toplantısında sordular: "Yeni yönetici kapıcı mı olsun?" | Bodrum Kattaki Adam 23. Bölüm. Tapudaki imza sahte mi? Sezon finali yarın!
 - **24. Bölüm:** SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? | Bodrum Kattaki Adam 24. Bölüm. Tüm sırlar açılıyor… 2. sezon çok yakında!
