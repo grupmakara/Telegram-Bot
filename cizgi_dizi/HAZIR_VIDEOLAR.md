@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (15 bölüm)
+## Hazır (16 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -23,6 +23,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 13 | 61 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
 | 14 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` |
 | 15 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` |
+| 16 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum16.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -129,11 +130,17 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` (62 sn)
 
-## Henüz hazır değil (9 bölüm)
+### 16. Bölüm
+**Başlık:** Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı | Bodrum Kattaki Adam 16. Bölüm
+**Kısa başlık (Instagram):** Apartman kasası boş çıktı 💸
+**Açıklama:** Kayıp defter nerede? Devamı 17. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum16.mp4` (62 sn)
+
+## Henüz hazır değil (8 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **16. Bölüm:** Apartman kasası boşaltılmış, kayıp defter bodrumda çıktı | Bodrum Kattaki Adam 16. Bölüm. Kayıp defter nerede? Devamı 17. bölümde!
 - **17. Bölüm:** Zeynep bursu kaybetti, harç parasını gizlice Selma yatırdı | Bodrum Kattaki Adam 17. Bölüm. Nottaki "S." kim? Devamı 18. bölümde!
 - **18. Bölüm:** Tatbikatta herkes merdivene koştu, kapıcı "Kolonun yanına!" dedi | Bodrum Kattaki Adam 18. Bölüm. Kapıcı yine haklı çıktı… Devamı 19. bölümde!
 - **19. Bölüm:** Belediye binayı mühürledi, kapıcı mührün üstüne 1979 projesini koydu | Bodrum Kattaki Adam 19. Bölüm. Bina kurtulacak mı? Devamı 20. bölümde!
