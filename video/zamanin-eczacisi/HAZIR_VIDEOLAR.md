@@ -12,6 +12,7 @@ Ortak etiketler: #ZamanınEczacısı #animasyon #tarih
 | 5 | Limandaki Salgın | 2:00 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum5.mp4` |
 | 6 | Çeşmenin Sırrı | 2:04 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum6.mp4` |
 | 7 | Hekim'in Kızı | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum7.mp4` |
+| 8 | İki Dünya (Sezon Finali) | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum8.mp4` |
 
 ## Bölüm 1 · Yanlış Yüzyıl
 Gece nöbetindeki eczacı Elif gizemli bir havana dokunur ve 1665 İstanbul'unda bir attarın kızı olarak uyanır. Ne ilaç var ne cihaz... ama bilgisi yanında. 💊⏳
@@ -29,13 +30,20 @@ Havanın yazısı çözülüyor: eve dönmek için yüz can kurtarmalı! Ama kap
 Cadılıkla suçlanan bir eczacı, karşısında Kadı Efendi. Elif'in tek silahı bilgisi... ve Kadı'nın sakladığı bir hastalık. 🏛️🩺
 #ZamanınEczacısı #animasyon #mahkeme #osmanlı #tarih
 
-## Henüz hazır değil (VoxCPM2 ile yeniden üretiliyor)
-Sesler hazır ve doğrulandı; videolar sırayla render ediliyor. Eski Chatterbox sürümleri
-`cikti/` içinde duruyor ama yerlerine yenileri gelecek.
+## Bölüm 5 · Limandaki Salgın
+Gemiciler bir bir düşüyor. Elif salgının kaynağını bulur: içtikleri su! "Suyu kaynatın!" dediğinde ona kimse inanmaz. ⚓💧
+#ZamanınEczacısı #animasyon #salgın #liman #tarih
 
-- **Bölüm 5 · Limandaki Salgın** — Gemiciler bir bir düşüyor. Elif salgının kaynağını bulur: içtikleri su! "Suyu kaynatın!" dediğinde ona kimse inanmaz. ⚓💧 #salgın #liman
-- **Bölüm 6 · Çeşmenin Sırrı** — Hastalık mahalleye sıçradı. Elif hastaları tek tek işaretler ve iz yüz yıllık çeşmeye çıkar. Ve havan ilk kez kendi kendine parlar... ⛲✨ #gizem #istanbul
-- **Bölüm 7 · Hekim'in Kızı** — Gece yarısı kapıyı çalan, en büyük düşmanı: Hekim Ahmet Efendi. Kızı nefes alamıyor. Elif onu kurtarabilecek mi? 🌙🫁 #duygusal #osmanlı
-- **Bölüm 8 · İki Dünya (Sezon Finali)** — Havandan bir ses geliyor: gerçek Ayşe, 2026'da, Elif'in bedeninde! İki kız, iki yüzyıl ve eve dönmek için 58 can daha. 🌍⏳ #sezonfinali #zamanyolculuğu
+## Bölüm 6 · Çeşmenin Sırrı
+Hastalık mahalleye sıçradı. Elif hastaları tek tek işaretler ve iz yüz yıllık çeşmeye çıkar. Ve havan ilk kez kendi kendine parlar... ⛲✨
+#ZamanınEczacısı #animasyon #gizem #istanbul #tarih
 
-Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.
+## Bölüm 7 · Hekim'in Kızı
+Gece yarısı kapıyı çalan, en büyük düşmanı: Hekim Ahmet Efendi. Kızı nefes alamıyor. Elif onu kurtarabilecek mi? 🌙🫁
+#ZamanınEczacısı #animasyon #duygusal #osmanlı #tarih
+
+## Bölüm 8 · İki Dünya (Sezon Finali)
+Havandan bir ses geliyor: gerçek Ayşe, 2026'da, Elif'in bedeninde! İki kız, iki yüzyıl ve eve dönmek için 58 can daha. 🌍⏳
+#ZamanınEczacısı #animasyon #sezonfinali #zamanyolculuğu #tarih
+
+Tüm sezon hazır. Yayın başlıkları: `YAYIN_METINLERI.md`. Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.
