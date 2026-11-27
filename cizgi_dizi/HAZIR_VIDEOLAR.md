@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (23 bölüm)
+## Hazır (24 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -31,6 +31,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 21 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` |
 | 22 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum22.mp4` |
 | 23 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum23.mp4` |
+| 24 | 77 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum24.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -193,8 +194,14 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum23.mp4` (62 sn)
 
-## Henüz hazır değil (1 bölüm)
+### 24. Bölüm
+**Başlık:** SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? | Bodrum Kattaki Adam 24. Bölüm
+**Kısa başlık (Instagram):** SEZON FİNALİ: Neden 22 yıl kapıcı oldu? 🎬
+**Açıklama:** Tüm sırlar açılıyor… 2. sezon çok yakında!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum24.mp4` (77 sn)
+
+## Henüz hazır değil (0 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **24. Bölüm:** SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? | Bodrum Kattaki Adam 24. Bölüm. Tüm sırlar açılıyor… 2. sezon çok yakında!
