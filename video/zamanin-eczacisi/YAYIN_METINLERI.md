@@ -55,3 +55,13 @@ Kopyalayıp yapıştırmaya hazır. Başlık 70 karakterin altında; açıklama 
 **Başlık:** Eczacı Yere Yığıldı, Ayşe Ne Yapacak? | Zamanın Eczacısı 10. Bölüm
 **Açıklama:** 2026'da eczanenin sahibi Kemal Bey "Elif"ten şüpheleniyor... ve bir anda yere yığılıyor! Ayşe'nin 1665'ten getirdiği bilgi hayat kurtarabilir mi? 💉🍯
 #ZamanınEczacısı #animasyon #zamanyolculuğu #eczane #tarih
+
+## Bölüm 11
+**Başlık:** Havanın Dibinde Gizli Mühür! | Zamanın Eczacısı 11. Bölüm
+**Açıklama:** Havanın dibinden bir mühür çıktı: hilal ve yılan. Kadı Efendi onu tanıyor... Yüz yıl önce kaybolan Attar Lokman Efendi kimdi? 🔍📜
+#ZamanınEczacısı #animasyon #gizem #osmanlı #tarih
+
+## Bölüm 12
+**Başlık:** Yüzyıllık Kitapta Kendi Yüzünü Gördü! | Zamanın Eczacısı 12. Bölüm
+**Açıklama:** Kemal Bey dedesinin yüzyıllık kitabını getirdi ve onu yalnızca Ayşe okuyabiliyor. Son sayfadaki resimde tanıdık bir yüz var! 📖😨
+#ZamanınEczacısı #animasyon #gizem #zamanyolculuğu #tarih

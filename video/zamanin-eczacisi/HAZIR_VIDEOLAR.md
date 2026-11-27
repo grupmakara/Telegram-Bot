@@ -15,6 +15,8 @@ Ortak etiketler: #ZamanınEczacısı #animasyon #tarih
 | 8 | İki Dünya (1. Sezon Finali) | 2:05 | **VoxCPM2 (yeni)** | `cikti/zamanin-eczacisi-bolum8.mp4` |
 | 9 | Şifahane (2. sezon) | 2:03 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum9.mp4` |
 | 10 | Kemal Bey'in Şüphesi | 2:02 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum10.mp4` |
+| 11 | Mühürlü Mektup | 2:03 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum11.mp4` |
+| 12 | Eski Kitap | 2:01 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum12.mp4` |
 
 ## Bölüm 1 · Yanlış Yüzyıl
 Gece nöbetindeki eczacı Elif gizemli bir havana dokunur ve 1665 İstanbul'unda bir attarın kızı olarak uyanır. Ne ilaç var ne cihaz... ama bilgisi yanında. 💊⏳
@@ -55,5 +57,13 @@ Havandan bir ses geliyor: gerçek Ayşe, 2026'da, Elif'in bedeninde! İki kız, 
 ## Bölüm 10 · Kemal Bey'in Şüphesi
 2026'da eczanenin sahibi Kemal Bey "Elif"ten şüpheleniyor... ve bir anda yere yığılıyor! Ayşe'nin 1665'ten getirdiği bilgi hayat kurtarabilir mi? 💉🍯
 #ZamanınEczacısı #animasyon #zamanyolculuğu #eczane #tarih
+
+## Bölüm 11 · Mühürlü Mektup
+Havanın dibinden bir mühür çıktı: hilal ve yılan. Kadı Efendi onu tanıyor... Yüz yıl önce kaybolan Attar Lokman Efendi kimdi? 🔍📜
+#ZamanınEczacısı #animasyon #gizem #osmanlı #tarih
+
+## Bölüm 12 · Eski Kitap
+Kemal Bey dedesinin yüzyıllık kitabını getirdi ve onu yalnızca Ayşe okuyabiliyor. Son sayfadaki resimde tanıdık bir yüz var! 📖😨
+#ZamanınEczacısı #animasyon #gizem #zamanyolculuğu #tarih
 
 1. sezon tamamlandı, 2. sezon devam ediyor. Yayın başlıkları: `YAYIN_METINLERI.md`. Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.
