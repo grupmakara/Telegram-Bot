@@ -1,0 +1,55 @@
+<template>
+  <style>
+    @font-face { font-family: "InterTR"; font-weight: 900; src: url("assets/fonts/Inter-Black.otf"); }
+    @font-face { font-family: "InterTR"; font-weight: 700; src: url("assets/fonts/Inter-Bold.otf"); }
+    #root { position: absolute; inset: 0; font-family: "InterTR", sans-serif; }
+    #m-scrim {
+      position: absolute; left: 0; right: 0; top: 0; height: 780px;
+      background: linear-gradient(180deg, rgba(23,19,46,0.92) 0%, rgba(23,19,46,0.85) 62%, rgba(23,19,46,0) 100%);
+    }
+    .m-card { position: absolute; left: 120px; right: 192px; top: 340px; }
+    .m-chip {
+      display: inline-block; background: #f5c542; color: #17132e;
+      font-weight: 900; font-size: 44px; padding: 10px 28px; border-radius: 16px;
+      border: 5px solid #17132e;
+    }
+    .m-title {
+      margin-top: 22px; color: #fff; font-weight: 900; font-size: 78px;
+      line-height: 1.04; letter-spacing: -0.015em; text-shadow: 0 5px 0 #17132e;
+    }
+    #m-dots { position: absolute; left: 120px; top: 300px; display: flex; gap: 14px; }
+    .m-dot { width: 70px; height: 12px; border-radius: 6px; background: rgba(255,255,255,0.35); }
+    .m-dot i { display: block; width: 100%; height: 100%; border-radius: 6px; background: #f5c542; transform-origin: left center; }
+    #m-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="montage" data-width="1080" data-height="1920">
+    <div id="m-scrim" class="clip" data-start="0" data-duration="11.4"></div>
+
+    <div id="m-g1" class="clip" data-start="0.0" data-duration="1.9"><div class="m-card"><div class="m-chip">1. BÖLÜM</div><div class="m-title">Asansörü kapıcıya sormadılar</div></div></div>
+    <div id="m-g2" class="clip" data-start="1.9" data-duration="1.9"><div class="m-card"><div class="m-chip">2. BÖLÜM</div><div class="m-title">“Bu bina çürük” dediler</div></div></div>
+    <div id="m-g3" class="clip" data-start="3.8" data-duration="1.9"><div class="m-card"><div class="m-chip">3. BÖLÜM</div><div class="m-title">“Kapıcının kızı mı?”</div></div></div>
+    <div id="m-g4" class="clip" data-start="5.7" data-duration="1.9"><div class="m-card"><div class="m-chip">4. BÖLÜM</div><div class="m-title">Tahliye kararı sahte çıktı</div></div></div>
+    <div id="m-g5" class="clip" data-start="7.6" data-duration="1.9"><div class="m-card"><div class="m-chip">5. BÖLÜM</div><div class="m-title">Bodruma gizlice girdiler</div></div></div>
+    <div id="m-g6" class="clip" data-start="9.5" data-duration="1.9"><div class="m-card"><div class="m-chip">6. BÖLÜM</div><div class="m-title">Hoca ayağa kalktı</div></div></div>
+
+    <div id="m-dotrow" class="clip" data-start="0" data-duration="11.4">
+      <div id="m-dots">
+        <div class="m-dot"><i id="m-d1"></i></div><div class="m-dot"><i id="m-d2"></i></div><div class="m-dot"><i id="m-d3"></i></div>
+        <div class="m-dot"><i id="m-d4"></i></div><div class="m-dot"><i id="m-d5"></i></div><div class="m-dot"><i id="m-d6"></i></div>
+      </div>
+    </div>
+    <div id="m-flashwrap" class="clip" data-start="0" data-duration="11.4"><div id="m-flash"></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    for (let i = 1; i <= 6; i++) {
+      const t = (i - 1) * 1.9;
+      tl.fromTo(`#m-g${i} .m-chip`, { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, t);
+      tl.fromTo(`#m-g${i} .m-title`, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, t + 0.06);
+      tl.fromTo(`#m-d${i}`, { scaleX: 0 }, { scaleX: 1, duration: 1.9, ease: "none" }, t);
+      if (i > 1) { tl.set("#m-flash", { opacity: 0.55 }, t); tl.to("#m-flash", { opacity: 0, duration: 0.16, ease: "power2.out" }, t); }
+    }
+    tl.set("#m-flash", { opacity: 0 }, 0);
+    window.__timelines["montage"] = tl;
+  </script>
+</template>

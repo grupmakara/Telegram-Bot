@@ -1,0 +1,39 @@
+<template>
+  <style>
+    @font-face { font-family: "InterTR"; font-weight: 900; src: url("assets/fonts/Inter-Black.otf"); }
+    @font-face { font-family: "InterTR"; font-weight: 700; src: url("assets/fonts/Inter-Bold.otf"); }
+    #root { position: absolute; inset: 0; font-family: "InterTR", sans-serif; }
+    #hook-scrim {
+      position: absolute; left: 0; right: 0; top: 0; height: 1000px;
+      background: linear-gradient(180deg, rgba(23,19,46,0.94) 0%, rgba(23,19,46,0.88) 66%, rgba(23,19,46,0) 100%);
+    }
+    #hook-stack { position: absolute; left: 120px; right: 192px; top: 318px; }
+    #hook-badge {
+      display: inline-block; background: #e03c3c; color: #fff;
+      font-weight: 900; font-size: 40px; letter-spacing: 0.04em;
+      padding: 14px 30px; border-radius: 999px; border: 5px solid #17132e;
+    }
+    #hook-title {
+      margin-top: 26px; color: #f5c542; font-weight: 900; font-size: 112px;
+      line-height: 0.98; letter-spacing: -0.02em; text-shadow: 0 6px 0 #17132e;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-scrim" class="clip" data-start="0" data-duration="3.6"></div>
+    <div id="hook-group" class="clip" data-start="0" data-duration="3.6">
+      <div id="hook-stack">
+        <div id="hook-badge" data-var-text="badge">YENİ DİZİ YAYINDA</div>
+        <div id="hook-title" data-var-text="series">BODRUM KATTAKİ ADAM</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Frame 0 already shows the title (it is the thumbnail); the badge punches.
+    tl.fromTo("#hook-badge", { scale: 0.82, rotation: -4 }, { scale: 1, rotation: -2, duration: 0.35, ease: "back.out(3)" }, 0);
+    tl.fromTo("#hook-title", { y: 14 }, { y: 0, duration: 0.5, ease: "power3.out" }, 0);
+    tl.to("#hook-badge", { scale: 1.08, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1 }, 1.6);
+    tl.to("#hook-stack", { y: -40, opacity: 0, duration: 0.22, ease: "power2.in" }, 3.34);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>
