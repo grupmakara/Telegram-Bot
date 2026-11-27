@@ -57,9 +57,15 @@ os.makedirs(OUT, exist_ok=True)
 model = VoxCPM.from_pretrained('openbmb/VoxCPM2', load_denoiser=False, optimize=False, device='cpu')
 sr = model.tts_model.sample_rate
 for ep in sys.argv[1:]:
-    for key, spec in importlib.import_module(ep).LINES.items():
+    mod = importlib.import_module(ep)
+    for key, spec in mod.LINES.items():
         if len(spec) < 5:
-            continue  # kanca kesitleri (h0 vb.) ana replikten türetilir
+            # kanca (h0): kesmek yerine aynı karakter ve duyguyla ayrı seslendirilir
+            hc = getattr(mod, 'HOOK_CUT', None)
+            if not hc or hc[2] != key or not os.environ.get('KANCA_TTS', '1') == '1':
+                continue
+            kaynak = mod.LINES[hc[0]]
+            spec = (spec[0], spec[1], spec[2], spec[3], kaynak[4], kaynak[5] if len(kaynak) > 5 else '')
         fname, who, text = spec[:3]
         dst = os.path.join(OUT, fname)
         if os.path.exists(dst):

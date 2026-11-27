@@ -73,8 +73,31 @@ def word_times(path):
     return [(w['word'].strip(' ,.!?"\''), w['start']) for s in d['segments'] for w in s.get('words', [])]
 
 
+def pauses(path, min_d=0.08, db=-32):
+    """Sessizlik aralıkları [(başlangıç, bitiş)] (ffmpeg silencedetect)."""
+    err = subprocess.run(['ffmpeg', '-i', path, '-af', f'silencedetect=n={db}dB:d={min_d}', '-f', 'null', '-'],
+                         capture_output=True, text=True).stderr
+    st = [float(x.split('silence_start: ')[1].split()[0]) for x in err.splitlines() if 'silence_start' in x]
+    en = [float(x.split('silence_end: ')[1].split()[0]) for x in err.splitlines() if 'silence_end' in x]
+    return list(zip(st, en))
+
+
+def snap(path, t, edge):
+    """Whisper zamanını en yakın gerçek nefes boşluğuna oturt (edge: 'start' kesmeden önce, 'end' sonra)."""
+    ps = [p for p in pauses(path) if p[0] > 0.05]
+    if not ps:
+        return t
+    a, b = min(ps, key=lambda p: abs((p[0] + p[1]) / 2 - t))
+    if abs((a + b) / 2 - t) > 0.9:
+        return t
+    return a + 0.04 if edge == 'start' else max(b - 0.04, 0)
+
+
 def find_word(path, word):
-    return next((t for w, t in word_times(path) if w.lower().startswith(word.lower())), None)
+    wt = [(w.lower().strip('.,!?…'), t) for w, t in word_times(path)]
+    w0 = word.lower()
+    # önce tam eşleşme (ör. 'Ne' kelimesi 'nefes' ile karışmasın), yoksa ön ek eşleşmesi
+    return next((t for w, t in wt if w == w0), None) or next((t for w, t in wt if w.startswith(w0)), None)
 
 
 # ---------------------------------------------------------------- yardımcılar (senaryolar için)
@@ -115,11 +138,13 @@ def build(ep_name):
             cut = find_word(src, word)
             if mode == 'all':
                 args = []
+            if mode == 'all':
+                pass
             elif mode == 'until':
                 if not cut:
                     print(f'UYARI: kanca kelimesi bulunamadı ({src_key}: {word}); 1.6 sn kullanılıyor', flush=True)
                 cut = cut or 1.6
-                args = ['-t', f'{cut - 0.05:.2f}', '-af', f'afade=t=out:st={max(cut - 0.2, 0):.2f}:d=0.15']
+                args = ['-t', f'{cut:.2f}', '-af', f'afade=t=out:st={max(cut - 0.1, 0):.2f}:d=0.1']
             else:
                 args = ['-ss', f'{max((cut or 0) - 0.08, 0):.2f}', '-af', 'afade=t=in:d=0.05']
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, *args, dst], check=True)

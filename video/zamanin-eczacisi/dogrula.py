@@ -30,8 +30,6 @@ bad = []
 for ep in sys.argv[1:]:
     mod = importlib.import_module(ep)
     for key, spec in mod.LINES.items():
-        if len(spec) < 5:
-            continue
         f = os.path.join(SES, spec[0])
         if not os.path.exists(f):
             continue
