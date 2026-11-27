@@ -21,14 +21,15 @@ for k, li in t['lines'].items():
         continue
     inputs += ['-i', li['file']]
     ms = int(li['start'] * 1000)
-    filters.append(f'[{n}:a]aresample=48000,adelay={ms}|{ms},volume=1.6[v{n}]')
+    # hafif oda tınısı: sesler sahnenin içinden geliyormuş gibi
+    filters.append(f'[{n}:a]aresample=48000,highpass=f=70,aecho=0.8:0.6:35|60:0.10|0.06,adelay={ms}|{ms},volume=1.6[v{n}]')
     labels.append(f'[v{n}]')
     n += 1
 
 if os.path.exists(music):
     inputs += ['-stream_loop', '-1', '-i', music]
     # konuşma sırasında müziği kıs (sidechain yerine sabit düşük seviye + giriş/çıkış)
-    filters.append(f'[{n}:a]aresample=48000,volume=0.18,afade=t=in:d=1.5,afade=t=out:st={total - 2.5}:d=2.5[m]')
+    filters.append(f'[{n}:a]aresample=48000,volume=0.09,afade=t=in:d=1.5,afade=t=out:st={total - 2.5}:d=2.5[m]')
 else:
     inputs += ['-f', 'lavfi', '-i', f'anoisesrc=color=brown:amplitude=0.02:d={total}']
     filters.append(f'[{n}:a]lowpass=f=400,aresample=48000,afade=t=in:d=1,afade=t=out:st={total - 2}:d=2[m]')
@@ -50,7 +51,7 @@ for kind, at in t.get('sfx', []):
     n += 1
 
 filters.append(f'{"".join(labels)}amix=inputs={len(labels)}:normalize=0:duration=longest,'
-               f'atrim=0:{total},alimiter=limit=0.9[a]')
+               f'atrim=0:{total},loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[a]')
 cmd = ['ffmpeg', '-y', '-v', 'error', *inputs, '-filter_complex', ';'.join(filters),
        '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k',
        '-movflags', '+faststart', '-shortest', os.path.join(R, out)]

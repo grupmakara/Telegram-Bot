@@ -24,9 +24,9 @@ def sayi_yaz(m):
 def hedef_lufs(style):
     s = (style or '').lower()
     if any(w in s for w in ('whisper', 'quiet', 'soft', 'weak', 'sleepy', 'praying', 'to himself', 'calm')):
-        return -24
+        return -22
     if any(w in s for w in ('angry', 'shout', 'loud', 'commanding', 'panick', 'urgent', 'shock')):
-        return -18
+        return -19
     return -20
 
 
@@ -43,13 +43,13 @@ for ep in sys.argv[1:]:
             continue
         style = (spec[5] if len(spec) > 5 else None) or STYLE.get(fname, '')
         # 0.35..1.0 aralığındaki senaryo yoğunluğunu ölçülü 0.35..0.7 aralığına indir
-        ex = round(min(0.7, max(0.35, 0.35 + (exag - 0.35) * 0.55)), 2)
+        ex = round(min(0.58, max(0.35, 0.35 + (exag - 0.35) * 0.4)), 2)
         clean = re.sub(r'\d+', sayi_yaz, text.replace('"', ''))
         seed = sum(map(ord, fname)) + int(os.environ.get('SEED_EK', '0'))
         torch.manual_seed(seed)
         t = time.time()
         wav = model.generate(clean, language_id='tr', audio_prompt_path=os.path.join(REF, f'{who}.wav'),
-                             exaggeration=ex, cfg_weight=0.45 if ex >= 0.6 else 0.5, temperature=0.7)
+                             exaggeration=ex, cfg_weight=0.5, temperature=0.8)
         raw = dst + '.raw.wav'
         torchaudio.save(raw, wav, model.sr)
         flt = ('silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,'
