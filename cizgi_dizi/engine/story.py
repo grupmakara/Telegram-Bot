@@ -116,7 +116,7 @@ def make_story(ep_path):
 
     # episode + time
     slot = SLOTS[(n - 1) % 3]
-    label = "SEZON FİNALİ" if n == 24 else f"{n}. BÖLÜM"
+    label = "SEZON FİNALİ" if ep.get("finale") else f"{n}. BÖLÜM"
     render.draw_pill(ctx, f"{label} • BUGÜN {slot}", y=1610, size=46, bg="#e23b3b", fg="#ffffff")
 
     out = render.ROOT / "cikti" / ep_path.parent.parent.name / "story" / f"story{n:02d}.png"

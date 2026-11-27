@@ -343,6 +343,8 @@ class Renderer:
             ctx.set_source_rgba(1, 1, 1, k)
             ctx.show_text(l)
         draw_pill(ctx, f"{self.ep['episode']}. BÖLÜM", y=840 + len(lines) * 110, size=56)
+        if self.ep.get("finale"):
+            draw_pill(ctx, "SEZON FİNALİ", y=980 + len(lines) * 110, size=64, bg="#e23b3b", fg="#ffffff")
         ctx.restore()
 
     def frame(self, ctx, t):
@@ -412,10 +414,11 @@ class Renderer:
             if b.get("teaser") and local < 0.12:  # camera-flash cut
                 ctx.set_source_rgba(1, 1, 1, 0.8 * (1 - local / 0.12))
                 ctx.paint()
-            draw_pill(ctx, "BU BÖLÜMDE..." if b.get("teaser") else "ÖNCEKİ BÖLÜMDE", y=150, size=44,
+            draw_pill(ctx, ("SEZON FİNALİNDE..." if self.ep.get("finale") else "BU BÖLÜMDE...") if b.get("teaser") else "ÖNCEKİ BÖLÜMDE", y=150, size=44,
                       bg="#e23b3b" if b.get("teaser") else "#ffffff", fg="#ffffff" if b.get("teaser") else "#15132e")
         else:
-            draw_pill(ctx, f"{self.ep['series']} • {self.ep['episode']}. Bölüm", y=140, size=34)
+            ep_label = "Sezon Finali" if self.ep.get("finale") else f"{self.ep['episode']}. Bölüm"
+            draw_pill(ctx, f"{self.ep['series']} • {ep_label}", y=140, size=34)
         if b.get("caption"):
             draw_subtitle(ctx, b["caption"], narrator=True)
         elif b.get("text"):
