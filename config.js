@@ -8,7 +8,8 @@ module.exports = {
 
             'Swearing.js',
             'MildSwearing.js',
-            'DublicateMessage.js'
+            'DublicateMessage.js',
+            'OmniVoiceTTS.js'
 
         ]
 
