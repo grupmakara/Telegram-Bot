@@ -6,3 +6,5 @@ muzik.wav
 __pycache__/
 *.raw.wav
 *.log
+.sessiz*
+teslim/
