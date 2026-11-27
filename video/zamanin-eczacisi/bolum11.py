@@ -21,7 +21,7 @@ LINES = {
     'l13': ('b11_l13.wav', 'kadi', 'Yüz can, iki el, tek havan. Kimse anlamadı. Mahkeme sandığında saklanıyor.', 5.2, 0.5, 'quiet, mysterious'),
     'l14': ('b11_l14.wav', 'ayse', 'Yüz can... İki el... Ben ve Ayşe!', 3.0, 0.6, 'whispering, realization'),
     'l15': ('b11_l15.wav', 'subasi', 'Kızım, kolumun ateşi düştü. Sana bir özrüm var. Seni cadı sanmıştım.', 4.8, 0.5, 'embarrassed, grateful'),
-    'l16': ('b11_l16.wav', 'ayse', 'Elli bir can. Ve ilk ipucu.', 2.6, 0.5, 'whispering, counting, determined'),
+    'l16': ('b11_l16.wav', 'ayse', 'Elli bir can. Ve ilk ipucu.', 2.6, 0.5, 'quiet, determined, speaking slowly and clearly'),
     'l17': ('b11_l17.wav', 'ayse', 'Ayşe! Havanı yapan kişinin adı Lokman Efendi. Bir attarmış.', 4.0, 0.6, 'excited, whispering'),
     'l18': ('b11_l18.wav', 'ayseg', 'Lokman mı? Elif... Kemal Bey\'in dedesinin eczanesinin adı Lokman Eczanesi!', 4.8, 0.7, 'shocked, whispering'),
 }
