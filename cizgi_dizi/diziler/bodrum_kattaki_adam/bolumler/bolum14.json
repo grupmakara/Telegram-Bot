@@ -19,8 +19,8 @@
       {"who": "riza", "mood": "neutral", "text": "Bu projeyi ben çizdim.", "prop": "document", "prop_caption": "STATİK PROJE 1979|Proje Müellifi: R. Karaca", "pause": 0.8},
       {"who": "murat", "mood": "surprised", "text": "Karaca... Rıza Karaca mı?", "shot": "close"},
       {"who": "murat", "mood": "sad", "text": "Ben altı yaşındaydım. Kartal'da, enkazın altında. Bir adam elimi tuttu ve korkma dedi."},
-      {"who": "riza", "mood": "smile", "text": "Adın Murat'tı. Mavi bir montun vardı."},
-      {"who": "murat", "mood": "sad", "text": "O mont hâlâ dolabımda duruyor...", "shot": "close"},
+      {"who": "riza", "mood": "smile", "text": "Adın Murat'tı. Mavi bir montun vardı.", "say": "Senin adın Murat'tı. Mavi bir montun vardı."},
+      {"who": "murat", "mood": "sad", "text": "O mont hâlâ dolabımda duruyor...", "say": "O mont hâlâ dolabımda duruyor.", "shot": "close"},
       {"who": "murat", "mood": "smile", "text": "Rapor yeniden incelenecek. Size söz veriyorum."},
       {"who": "zeynep", "mood": "smile", "text": "Teşekkür ederiz Murat Bey."},
       {"who": "murat", "mood": "smile", "text": "Asıl ben teşekkür ederim. Yirmi yedi yıldır bu anı bekliyordum."}
