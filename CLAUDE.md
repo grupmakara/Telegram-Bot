@@ -2,8 +2,8 @@
 
 ## Seslendirme kuralı
 
-- **Tüm hikâyeler ve yeni bölümler `--motor ikisi` (varsayılan) ile seslendirilir:** her replik hem Gemini 3.1 Flash TTS (`gemini-3.1-flash-tts-preview`) hem VoxCPM2 (VoiceStudio motoru, `openbmb/VoxCPM2`, Apache-2.0) ile üretilir; Whisper'ın daha doğru bulduğu kalır, eşitlikte Gemini.
-- Gemini ücretsiz kotası **günde 10 istek**; dolunca araç kalan replikleri kendiliğinden VoxCPM2 ile bitirir. Bunu kullanıcıya bildirin.
+- **Tüm hikâyeler ve yeni bölümler VoxCPM2 ile seslendirilir** (VoiceStudio motoru, `openbmb/VoxCPM2`, Apache-2.0, yerel ve tamamen ücretsiz). Kullanıcı tamamen ücretsiz olanı istedi; bu aracın varsayılan motorudur (`--motor voxcpm`).
+- Gemini 3.1 Flash TTS (`--motor gemini` / `ikisi`) sadece kullanıcı açıkça isterse kullanılır; ücretsiz kotası günde 10 istektir.
 - Araç: `tts/hikaye_seslendir.py`. Senaryo biçimi dosyanın başında ve `tts/ornek_hikaye.txt` içinde.
   ```bash
   /opt/voxcpm/bin/python tts/hikaye_seslendir.py senaryo.txt -o bolum.mp3

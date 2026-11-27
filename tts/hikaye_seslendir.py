@@ -2,14 +2,13 @@
 """Hikâye / bölüm seslendirici (Türkçe, duygulu).
 
 Motorlar (--motor):
-  ikisi   (varsayılan) her replik Gemini 3.1 ve VoxCPM2 ile üretilir; Whisper'ın
-                       daha doğru bulduğu kalır (eşitlikte Gemini)
-  gemini  sadece Gemini 3.1 Flash TTS — Google API, hızlı
-  voxcpm  sadece VoxCPM2 (VoiceStudio motoru) — yerel, ücretsiz, Apache-2.0
+  voxcpm  (varsayılan) VoxCPM2 (VoiceStudio motoru) — yerel, tamamen ücretsiz, Apache-2.0
+  gemini  Gemini 3.1 Flash TTS — Google API; ücretsiz kota günde 10 istek
+  ikisi   her replik iki motorla üretilir, Whisper'ın daha doğru bulduğu kalır
 
 Kullanım:
     /opt/voxcpm/bin/python tts/hikaye_seslendir.py bolum1.txt -o bolum1.mp3
-    /opt/voxcpm/bin/python tts/hikaye_seslendir.py bolum1.txt --motor voxcpm
+    /opt/voxcpm/bin/python tts/hikaye_seslendir.py bolum1.txt --motor gemini
 
 Senaryo dosyası biçimi:
 
@@ -208,9 +207,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("senaryo")
     ap.add_argument("-o", "--cikti", help="çıktı dosyası (.mp3 veya .wav)")
-    ap.add_argument("--motor", choices=["ikisi", "gemini", "voxcpm"], default="ikisi",
-                    help="ikisi (varsayılan): her replik iki motorla üretilir, Whisper'ın daha doğru bulduğu "
-                         "kalır; gemini: sadece Gemini 3.1 Flash TTS; voxcpm: sadece VoxCPM2 (yerel, ücretsiz)")
+    ap.add_argument("--motor", choices=["voxcpm", "gemini", "ikisi"], default="voxcpm",
+                    help="voxcpm (varsayılan): VoxCPM2, yerel ve tamamen ücretsiz; gemini: Gemini 3.1 Flash TTS "
+                         "(günde 10 ücretsiz istek); ikisi: her replik iki motorla, daha doğru olan kalır")
     ap.add_argument("--deneme", type=int, default=4, help="replik başına en fazla deneme")
     ap.add_argument("--esik", type=float, default=0.99, help="kabul için Whisper kelime benzerliği eşiği (1 = birebir)")
     ap.add_argument("--ara", type=float, default=0.45, help="replikler arası sessizlik (sn)")
