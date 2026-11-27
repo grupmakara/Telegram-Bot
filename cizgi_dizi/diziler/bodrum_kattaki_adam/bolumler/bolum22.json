@@ -17,7 +17,7 @@
       {"who": "selma", "mood": "smile", "text": "Bu yüzük annemindi. Gelinime takmak için sakladım."},
       {"who": "zeynep", "mood": "surprised", "text": "Selma Hanım..."},
       {"who": "selma", "mood": "smile", "text": "Bundan sonra bana anne de."},
-      {"who": "can", "mood": "smile", "text": "Anne... Teşekkür ederim.", "say": "Anne, teşekkür ederim."}
+      {"who": "can", "mood": "smile", "text": "Anneciğim... Teşekkür ederim.", "say": "Anneciğim, teşekkür ederim."}
     ]},
     {"bg": "basement", "cast": ["can", "riza"], "lines": [
       {"who": "can", "mood": "worried", "text": "Rıza amca, Zeynep'i sizden istiyorum."},
