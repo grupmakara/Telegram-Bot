@@ -13,8 +13,8 @@ import whisper
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
-SES = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses4'))
-CACHE = os.path.join(ROOT, 'kontrol4', 'dogrulama.json')
+SES = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses5'))
+CACHE = os.path.join(ROOT, 'kontrol5', 'dogrulama.json')
 os.makedirs(os.path.dirname(CACHE), exist_ok=True)
 cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
 model = whisper.load_model('small')

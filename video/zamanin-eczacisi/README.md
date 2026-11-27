@@ -1,14 +1,17 @@
 # Zamanın Eczacısı — animasyon dizisi üretim hattı
 
 2D kukla tarzı, dikey (1080×1920) Türkçe animasyon bölümleri. Görseller SVG olarak koddan çizilir,
-HyperFrames ile render edilir; seslendirme Gemini TTS ile yapılır.
+HyperFrames ile render edilir; seslendirme Chatterbox Multilingual (MIT) ile, `referans/` içindeki
+Türkçe tasarlanmış yapay seslerden yapılır.
 
 | Dosya | Görev |
 |---|---|
 | `sanat.py` | Karakterler (Elif/Ayşe, Hüseyin, Hekim, Kadı…) ve mekânlar (dükkân, oda, mahkeme, liman, sokak…) |
 | `motor.py` | Senaryoyu çekimlere çevirir: kamera, ağız senkronu, göz kırpma, altyazı, kanca → `projeN/index.html` |
 | `bolumN.py` | Bölüm senaryosu: replikler, duygu yönlendirmeleri, çekim listesi |
-| `gem_uret.py` | Gemini TTS ile eksik replikleri üretir (kota dolunca sonraki modele geçer) |
+| `cb_uret.py` | Chatterbox ile eksik replikleri üretir (`ses5/`) |
+| `uret.sh` | Seslendir → doğrula → yeniden üret → render → miksaj (`./uret.sh 3 4`) |
+| `gem_uret.py` | (yedek) Gemini TTS ile üretim, ücretsiz günlük kotalı |
 | `dogrula.py` | Replikleri Whisper ile senaryoya karşı kontrol eder |
 | `miks.py` / `muzik.py` | Ses miksajı / özgün telifsiz fon müziği |
 | `gunluk.sh` | Günlük otomatik üretim (seslendir → doğrula → render → `cikti/`) |

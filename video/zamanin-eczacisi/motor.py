@@ -24,7 +24,7 @@ from sanat import (ayse, huseyin, mehmet, shop_bg, window_view, jars_closeup, ph
                    pharmacy_front, mortar_closeup, room_bg, room_front, door_view, bowl_closeup,
                    court_bg, port_bg, street_bg)
 
-SES = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses4'))
+SES = os.path.join(ROOT, os.environ.get('SES_DIR', 'ses5'))
 KONTROL = os.path.join(ROOT, 'kontrol')
 W, H = 1080, 1920
 PAD_IN, PAD_OUT = 0.25, 0.5
