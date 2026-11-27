@@ -31,9 +31,9 @@ python3 -m venv /opt/omnivoice
 
 Not: Heroku'nun standart dyno'ları (512 MB RAM) bu model için yetersizdir; botu en az 4 GB RAM'li bir sunucuda çalıştırın.
 
-## Hikâye / Bölüm Seslendirme (VoxCPM2)
+## Hikâye / Bölüm Seslendirme (Gemini 3.1 + VoxCPM2)
 
-Duygulu, çok karakterli Türkçe seslendirme için `tts/hikaye_seslendir.py` ([VoxCPM2](https://huggingface.co/openbmb/VoxCPM2), Apache-2.0). Senaryo biçimi için `tts/ornek_hikaye.txt` dosyasına bakın.
+Duygulu, çok karakterli Türkçe seslendirme için `tts/hikaye_seslendir.py`. Varsayılan `--motor ikisi`: her replik Gemini 3.1 Flash TTS ve [VoxCPM2](https://huggingface.co/openbmb/VoxCPM2) (Apache-2.0) ile üretilir, Whisper'ın daha doğru bulduğu seçilir. Gemini ücretsiz kotası günde 10 istektir; dolunca VoxCPM2 ile devam edilir. Gemini için `GEMINI_API_KEY` gerekir. Senaryo biçimi için `tts/ornek_hikaye.txt` dosyasına bakın.
 
 ```bash
 python3 -m venv /opt/voxcpm
