@@ -4,7 +4,7 @@ Her paylaşımda etiketler: `#bodrumkattakiadam #minidizi #animasyon #dizi #reel
 
 Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `cizgi_dizi/cikti/bodrum_kattaki_adam/story/storyNN.png`.
 
-## Hazır (19 bölüm)
+## Hazır (21 bölüm)
 
 | Bölüm | Süre | Ses | Dosya |
 |---|---|---|---|
@@ -27,6 +27,8 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 17 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum17.mp4` |
 | 18 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum18.mp4` |
 | 19 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum19.mp4` |
+| 20 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum20.mp4` |
+| 21 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -161,12 +163,24 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
 **Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum19.mp4` (60 sn)
 
-## Henüz hazır değil (5 bölüm)
+### 20. Bölüm
+**Başlık:** Ferit havalimanında kaçıyordu, telefon çaldı: arayan kapıcıydı | Bodrum Kattaki Adam 20. Bölüm
+**Kısa başlık (Instagram):** Kaçarken telefon çaldı: arayan kapıcı 📞
+**Açıklama:** Ferit konuşacak mı? Devamı 21. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum20.mp4` (62 sn)
+
+### 21. Bölüm
+**Başlık:** "Bina yıkılmayacak" kararı çıktı, Kenan istifasını kapıcıya verdi | Bodrum Kattaki Adam 21. Bölüm
+**Kısa başlık (Instagram):** "Bina yıkılmayacak" kararı çıktı 🎉
+**Açıklama:** Kenan'dan beklenmedik itiraf… Devamı 22. bölümde!
+**Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` (63 sn)
+
+## Henüz hazır değil (3 bölüm)
 
 Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 
-- **20. Bölüm:** Ferit havalimanında kaçıyordu, telefon çaldı: arayan kapıcıydı | Bodrum Kattaki Adam 20. Bölüm. Ferit konuşacak mı? Devamı 21. bölümde!
-- **21. Bölüm:** "Bina yıkılmayacak" kararı çıktı, Kenan istifasını kapıcıya verdi | Bodrum Kattaki Adam 21. Bölüm. Kenan'dan beklenmedik itiraf… Devamı 22. bölümde!
 - **22. Bölüm:** Selma, Zeynep'in parmağına annesinin yüzüğünü taktı | Bodrum Kattaki Adam 22. Bölüm. Kapıcı ve Tarık yüz yüze! Devamı 23. bölümde!
 - **23. Bölüm:** Apartman toplantısında sordular: "Yeni yönetici kapıcı mı olsun?" | Bodrum Kattaki Adam 23. Bölüm. Tapudaki imza sahte mi? Sezon finali yarın!
 - **24. Bölüm:** SEZON FİNALİ: Rıza Karaca neden 22 yıl kapıcı oldu? | Bodrum Kattaki Adam 24. Bölüm. Tüm sırlar açılıyor… 2. sezon çok yakında!
