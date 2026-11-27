@@ -253,7 +253,10 @@ def build(ep_name):
                     chars_svg += g
             hook = ''
             if s.get('hook'):
-                hook = (f'<div class="hook" id="{sid}-kanca"><div class="h1">{ep.HOOK[0]}</div><div class="h2">{ep.HOOK[1]}</div></div>'
+                rozet = (f'<div style="display:inline-block;margin-bottom:22px;padding:12px 34px;border-radius:40px;background:#B2452E;'
+                         f'color:#fff;font-family:Nunito,sans-serif;font-style:italic;font-weight:800;font-size:42px;'
+                         f'box-shadow:0 6px 20px rgba(0,0,0,.5)">{ep.TITLE[2]}</div><br>' if len(ep.TITLE) > 2 else '')
+                hook = (f'<div class="hook" id="{sid}-kanca">{rozet}<div class="h1">{ep.HOOK[0]}</div><div class="h2">{ep.HOOK[1]}</div></div>'
                         f'<div class="flashred" id="{sid}-kirmizi"></div>')
             shot_div(sid, st, du, back + chars_svg + front + behind_front, extra=hook)
             cam_anim(sid, s['cam'], du, st)
