@@ -223,7 +223,11 @@ def build(ep_name):
 
         if kind == 'title':
             card(sid, st, du, f'<div class="ornament">✦</div><div class="title">ZAMANIN<br>ECZACISI</div><div class="rule"></div>'
-                              f'<div class="subtitle">{ep.TITLE[0]}</div><div class="small">{ep.TITLE[1]}</div>', scale_from=1.08)
+                              f'<div class="subtitle">{ep.TITLE[0]}</div><div class="small">{ep.TITLE[1]}</div>'
+                              + (f'<div style="display:inline-block;margin-top:44px;padding:16px 40px;border-radius:44px;background:#B2452E;'
+                                 f'color:#fff;font-family:Nunito,sans-serif;font-style:italic;font-weight:800;font-size:46px;'
+                                 f'letter-spacing:.04em;box-shadow:0 8px 24px rgba(0,0,0,.5)">{ep.TITLE[2]}</div>' if len(ep.TITLE) > 2 else ''),
+                 scale_from=1.08)
             continue
         if kind == 'end':
             card(sid, st, du, f'<div class="small">{ep.END[0]}</div><div class="title sm">ZAMANIN ECZACISI</div><div class="small">{ep.END[1]}</div>',

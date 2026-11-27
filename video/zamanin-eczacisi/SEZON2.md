@@ -16,6 +16,9 @@ Hekim Ahmet Efendi ve çırağı Yusuf artık Elif'in yanında.
 | 13 | Veba Söylentisi | 1665 | Şehirde veba söylentisi yayılıyor. Elif karantinayı anlatıyor; panik ve isyan. |
 | 14 | Kırık Havan | iki dünya | Havan çatlıyor; ses kesilmeye başlıyor. İki kız son bir yol arıyor. |
 | 15 | Doksan Dokuz | iki dünya | Sayaç doksan dokuzda. Son can kimin olacak? |
-| 16 | Eve Dönüş (Sezon Finali) | iki dünya | Yüzüncü can ve büyük seçim: dönmek mi, kalmak mı? |
+| 16 | Eve Dönüş (2. Sezon Finali) | iki dünya | Yüzüncü can ve büyük seçim: dönmek mi, kalmak mı? |
 
 Ses: VoxCPM2 + duzen.py (hız ve seviye düzeni). Yeni karakter: Kemal Bey (`kemal`, VoxCPM2 ile tasarlanmış ses).
+
+Sezon finali kuralı: finalin `TITLE` üçlüsüne rozet eklenir (ör. `('BÖLÜM 16', 'Eve Dönüş', '2. SEZON FİNALİ')`);
+başlık kartında kırmızı rozet çıkar. `END[0]` ve kapanış kartında da "N. Sezon Finali" yazılır.
