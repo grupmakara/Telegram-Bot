@@ -21,7 +21,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 11 | 65 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
 | 12 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` |
 | 13 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
-| 14 | 58 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` |
+| 14 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -119,7 +119,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Kısa başlık (Instagram):** Enkazdan kurtardığı çocuk şimdi müdür 💙
 **Açıklama:** Mavi montu unutmamış… Devamı 15. bölümde!
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
-**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` (58 sn)
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` (60 sn)
 
 ## Henüz hazır değil (10 bölüm)
 
