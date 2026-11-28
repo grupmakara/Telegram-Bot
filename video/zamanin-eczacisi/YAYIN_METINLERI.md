@@ -65,3 +65,13 @@ Kopyalayıp yapıştırmaya hazır. Başlık 70 karakterin altında; açıklama 
 **Başlık:** Yüzyıllık Kitapta Kendi Yüzünü Gördü! | Zamanın Eczacısı 12. Bölüm
 **Açıklama:** Kemal Bey dedesinin yüzyıllık kitabını getirdi ve onu yalnızca Ayşe okuyabiliyor. Son sayfadaki resimde tanıdık bir yüz var! 📖😨
 #ZamanınEczacısı #animasyon #gizem #zamanyolculuğu #tarih
+
+## Bölüm 13
+**Başlık:** Limana Veba Gemisi Geldi! | Zamanın Eczacısı 13. Bölüm
+**Açıklama:** Limana veba taşıyan bir gemi geldi! Elif kırk günlük karantinayla şehri koruyor... ama öfkeli kalabalık onu suçluyor. 🚢⚠️
+#ZamanınEczacısı #animasyon #veba #karantina #tarih
+
+## Bölüm 14
+**Başlık:** Havan Kırıldı, Ses Kesiliyor! | Zamanın Eczacısı 14. Bölüm
+**Açıklama:** Havan çatladı, iki dünya arasındaki ses kesiliyor! Tek çare: dolunay gecesi iki el aynı anda... Peki havan neden kırmızı parlıyor? 🌕🔴
+#ZamanınEczacısı #animasyon #gizem #zamanyolculuğu #tarih

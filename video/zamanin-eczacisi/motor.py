@@ -363,7 +363,7 @@ def build(ep_name):
                 if not any(c.get('shock') for c in s['chars']):
                     sfx.append(('boom', st))
         elif kind == 'mortar':
-            shot_div(sid, st, du, mortar_closeup(sid, old=s.get('old', False), crack=bool(s.get('crack'))))
+            shot_div(sid, st, du, mortar_closeup(sid, old=s.get('old', False), crack=bool(s.get('crack')), color=s.get('color', '#FFD36A')))
             if s.get('crack') == 'anim':
                 # çatlak bu çekimde oluşur: titreme + gümleme
                 ca = round(st + du * 0.45, 3)

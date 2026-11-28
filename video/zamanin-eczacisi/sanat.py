@@ -408,13 +408,13 @@ def jars_closeup(p='k', labels=False):
 
 
 
-def stone_mortar(cx, cy, s, p, glow=True):
+def stone_mortar(cx, cy, s, p, glow=True, color='#FFD36A'):
     """Gizemli taş havan. Kabartma yazı şeridi parlar (id: {p}-yazi, {p}-hale)."""
     glyphs = ''.join(path(f'M {cx + (i - 3.5) * 26 * s:.0f},{cy + 10 * s:.0f} q {6 * s:.0f},{-14 * s:.0f} {12 * s:.0f},0 t {12 * s:.0f},0',
-                          stroke='#FFD36A', sw=4 * s) for i in range(8))
+                          stroke=color, sw=4 * s) for i in range(8))
     hale = (f'<circle id="{p}-hale" cx="{cx}" cy="{cy}" r="{200 * s:.0f}" fill="url(#{p}-hg)" opacity=".35"/>' if glow else '')
     return f'''
-  <defs><radialGradient id="{p}-hg"><stop offset="0" stop-color="#FFD36A" stop-opacity=".9"/><stop offset="1" stop-color="#FFD36A" stop-opacity="0"/></radialGradient></defs>
+  <defs><radialGradient id="{p}-hg"><stop offset="0" stop-color="{color}" stop-opacity=".9"/><stop offset="1" stop-color="{color}" stop-opacity="0"/></radialGradient></defs>
   {hale}
   {path(f'M {cx - 130 * s:.0f},{cy - 60 * s:.0f} L {cx + 130 * s:.0f},{cy - 60 * s:.0f} L {cx + 100 * s:.0f},{cy + 90 * s:.0f} Q {cx},{cy + 110 * s:.0f} {cx - 100 * s:.0f},{cy + 90 * s:.0f} Z', fill='#8E8A84', stroke=OUTLINE, sw=4 * s)}
   {ell(cx, cy - 60 * s, 130 * s, 26 * s, '#6E6A65', f'stroke="{OUTLINE}" stroke-width="{4 * s:.1f}"')}
@@ -481,7 +481,7 @@ def pharmacy_front(p):
   {stone_mortar(840, 1200, 0.42, p)}'''
 
 
-def mortar_closeup(p, old=False, crack=False):
+def mortar_closeup(p, old=False, crack=False, color='#FFD36A'):
     hand = f'''
   <g id="{p}-el">
     {path('M 1250,1500 L 1010,1330', stroke=OUTLINE, sw=96)}{path('M 1250,1500 L 1010,1330', stroke='#F3F6F6', sw=88)}
@@ -497,7 +497,7 @@ def mortar_closeup(p, old=False, crack=False):
      + '<rect x="0" y="720" width="1080" height="34" fill="#7A5132"/><rect width="1080" height="1290" fill="#3A2416" opacity=".45"/>'
      + '<rect x="0" y="1270" width="1080" height="650" fill="#7A5132"/><rect x="0" y="1260" width="1080" height="30" fill="#8E623E"/>') if old else
     ('<rect width="1080" height="1920" fill="url(#' + p + '-bg)"/><rect x="0" y="1290" width="1080" height="630" fill="#E9EFEF"/><rect x="0" y="1270" width="1080" height="30" fill="#C9D3D3"/>')}
-  {stone_mortar(540, 1170, 1.9, p)}
+  {stone_mortar(540, 1170, 1.9, p, color=color)}
   {('<g id="' + p + '-catlak">' + path('M 568,1000 L 548,1070 L 584,1120 L 550,1190 L 590,1250 L 566,1320', stroke='#1A1210', sw=12)
      + path('M 584,1120 L 640,1150 M 550,1190 L 500,1215', stroke='#1A1210', sw=7) + '</g>') if crack else ''}
   {sparks}

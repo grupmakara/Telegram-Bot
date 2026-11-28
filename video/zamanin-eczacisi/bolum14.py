@@ -70,6 +70,6 @@ def plan(add, S):
     add('m17', 'mortar', 'l17', zoom=(1.0, 1.3), old=True, crack=True, touch=True)
     add('e18', 'stage', 'l18', bg=ph, cam=S.close(G(), 2.5, 2.8), chars=[K(brow='happy'), G(brow='happy', mouth='o')])
     add('m18', 'mortar', dur=2.4, zoom=(1.3, 1.1), touch=True, flash=True)
-    add('m19', 'mortar', 'l19', extra=0.8, zoom=(1.1, 1.4), old=True)
+    add('m19', 'mortar', 'l19', extra=0.8, zoom=(1.1, 1.4), old=True, color='#FF4A3D')
     add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub='Kırmızı ışık ne anlama geliyor? Sayaç doksan dokuza yaklaşıyor...')
     add('son', 'end', dur=5.2)
