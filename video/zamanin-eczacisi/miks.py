@@ -40,6 +40,7 @@ SRC = {
     'boom': ("aevalsrc='0.9*sin(2*PI*(38+60*exp(-t*6))*t)*exp(-t*3.2)+0.25*(random(0)*2-1)*exp(-t*18)':d=1.8:s=48000", 'volume=0.9'),
     'whoosh': ('anoisesrc=color=pink:amplitude=0.7:d=1.6:r=48000',
                'bandpass=f=1200:w=900,afade=t=in:d=1.0:curve=exp,afade=t=out:st=1.0:d=0.6,volume=0.9'),
+    'pop': ("aevalsrc='0.6*sin(2*PI*(500+900*t*8)*t)*exp(-t*28)':d=0.25:s=48000", 'highpass=f=300,volume=0.5'),
     'knock': ("aevalsrc='0.8*sin(2*PI*90*t)*exp(-t*40)+0.5*(random(0)*2-1)*exp(-t*60)':d=0.4:s=48000", 'lowpass=f=900,volume=1.4'),
 }
 for kind, at in t.get('sfx', []):

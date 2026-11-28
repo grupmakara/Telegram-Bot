@@ -3,6 +3,7 @@ OUT = 'proje13'
 TITLE = ('BÖLÜM 13', 'Veba Söylentisi')
 HOOK = ('İstanbul\'a veba geliyor...', 'Ve kalabalık <b>Elif\'i</b> suçluyor!')
 END = ('Havan kırıldı mı?', 'Bölüm 14 yakında...')
+CTA = True  # bitişte takip/beğeni animasyonu
 HOOK_CUT = ('l17', 'Vebayı', 'h0', 'until')
 LINES = {
     'h0': ('b13_h0.wav', 'riza', 'Cadı bu! Vebayı o getirdi!', 2.2),
@@ -72,4 +73,4 @@ def plan(add, S):
     add('s18', 'stage', 'l18', bg=shopm, cam=S.close(A(), 2.6, 3.0), chars=[H(brow='worried'), A(eyes='wide', brow='worried', mouth='o', shock=True)])
     add('m19', 'mortar', dur=2.6, zoom=(1.2, 1.5), old=True, crack='anim')
     add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub='Havan çatladı. Ayşe\'nin sesi kesik kesik geliyor...')
-    add('son', 'end', dur=4.0)
+    add('son', 'end', dur=5.2)

@@ -3,6 +3,7 @@ OUT = 'proje14'
 TITLE = ('BÖLÜM 14', 'Kırık Havan')
 HOOK = ('Havan çatladı...', 'Ve iki dünya arasındaki <b>ses kesiliyor!</b>')
 END = ('Yüz cana ulaşabilecekler mi?', 'Bölüm 15 yakında...')
+CTA = True  # bitişte takip/beğeni animasyonu
 HOOK_CUT = ('l3', 'Elif', 'h0', 'until')
 LINES = {
     'h0': ('b14_h0.wav', 'ayse', 'Ayşe! Beni duyuyor musun?', 2.2),
@@ -71,4 +72,4 @@ def plan(add, S):
     add('m18', 'mortar', dur=2.4, zoom=(1.3, 1.1), touch=True, flash=True)
     add('m19', 'mortar', 'l19', extra=0.8, zoom=(1.1, 1.4), old=True)
     add('sonraki', 'black', dur=4.5, text='Sonraki bölümde...', sub='Kırmızı ışık ne anlama geliyor? Sayaç doksan dokuza yaklaşıyor...')
-    add('son', 'end', dur=4.0)
+    add('son', 'end', dur=5.2)

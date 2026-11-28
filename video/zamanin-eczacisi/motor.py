@@ -257,8 +257,38 @@ def build(ep_name):
                  scale_from=1.08)
             continue
         if kind == 'end':
-            card(sid, st, du, f'<div class="small">{ep.END[0]}</div><div class="title sm">ZAMANIN ECZACISI</div><div class="small">{ep.END[1]}</div>',
+            cta = ''
+            if getattr(ep, 'CTA', False):
+                btn = ('display:inline-flex;align-items:center;gap:16px;margin:0 14px;padding:22px 40px;border-radius:60px;'
+                       'font-family:Nunito,sans-serif;font-style:italic;font-weight:800;font-size:44px;position:relative;'
+                       'box-shadow:0 8px 24px rgba(0,0,0,.5)')
+                kalp = ('<svg width="54" height="50" viewBox="0 0 24 22"><path id="{id}" d="M12 21 C5 15 1 11.5 1 7 A5.5 5.5 0 0 1 12 4.5 '
+                        'A5.5 5.5 0 0 1 23 7 C23 11.5 19 15 12 21 Z" fill="none" stroke="#fff" stroke-width="2.2"/></svg>')
+                halka = '<span id="{id}" style="position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;border:5px solid #fff;opacity:0"></span>'
+                cta = (f'<div style="margin-top:70px;white-space:nowrap">'
+                       f'<span id="{sid}-begen" style="{btn};background:#2A1A10;border:4px solid #C9A55A;color:#fff">'
+                       f'{kalp.format(id=sid + "-kalp")}Beğen{halka.format(id=sid + "-h1")}</span>'
+                       f'<span id="{sid}-takip" style="{btn};background:#B2452E;color:#fff">'
+                       f'<span id="{sid}-t1">+ Takip Et</span><span id="{sid}-t2" style="display:none">✓ Takip Ediliyor</span>'
+                       f'{halka.format(id=sid + "-h2")}</span></div>'
+                       f'<div id="{sid}-not" class="small" style="margin-top:34px;opacity:0">Yeni bölümleri kaçırmamak için takipte kal!</div>')
+            card(sid, st, du, f'<div class="small">{ep.END[0]}</div><div class="title sm">ZAMANIN ECZACISI</div><div class="small">{ep.END[1]}</div>{cta}',
                  fade_in=0.8, fade_out=0)
+            if cta:
+                t1, t2 = round(st + 1.3, 3), round(st + 2.4, 3)
+                anim.append(f'tl.fromTo(["#{sid}-begen", "#{sid}-takip"], {{scale: 0, opacity: 0}}, {{scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)", stagger: 0.15}}, {st + 0.5:.3f});')
+                for b, h, t in (('begen', 'h1', t1), ('takip', 'h2', t2)):
+                    anim.append(f'tl.to("#{sid}-{b}", {{scale: 0.9, duration: 0.08}}, {t});')
+                    anim.append(f'tl.to("#{sid}-{b}", {{scale: 1.08, duration: 0.18, ease: "back.out(3)"}}, {t + 0.08:.3f});')
+                    anim.append(f'tl.to("#{sid}-{b}", {{scale: 1, duration: 0.2}}, {t + 0.26:.3f});')
+                    anim.append(f'tl.fromTo("#{sid}-{h}", {{scale: 0.5, opacity: 0.9}}, {{scale: 4, opacity: 0, duration: 0.5, ease: "power2.out"}}, {t});')
+                anim.append(f'tl.set("#{sid}-kalp", {{attr: {{fill: "#E0393E", stroke: "#E0393E"}}}}, {t1 + 0.05:.3f});')
+                anim.append(f'tl.set("#{sid}-t1", {{display: "none"}}, {t2 + 0.05:.3f});')
+                anim.append(f'tl.set("#{sid}-t2", {{display: "inline"}}, {t2 + 0.05:.3f});')
+                anim.append(f'tl.set("#{sid}-takip", {{background: "#3F7F7A"}}, {t2 + 0.05:.3f});')
+                anim.append(f'tl.to("#{sid}-not", {{opacity: 1, duration: 0.4}}, {t2 + 0.4:.3f});')
+                sfx.append(('pop', t1))
+                sfx.append(('pop', t2))
             continue
         if kind == 'black':
             card(sid, st, du, f'<div class="small big">{s["text"]}</div>' + (f'<div class="small">{s["sub"]}</div>' if s.get('sub') else ''), fade_in=0.4, fade_out=0.3, scale_from=1.0)

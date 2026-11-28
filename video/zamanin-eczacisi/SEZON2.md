@@ -22,3 +22,6 @@ Ses: VoxCPM2 + duzen.py (hız ve seviye düzeni). Yeni karakter: Kemal Bey (`kem
 
 Sezon finali kuralı: finalin `TITLE` üçlüsüne rozet eklenir (ör. `('BÖLÜM 16', 'Eve Dönüş', '2. SEZON FİNALİ')`);
 başlık kartında kırmızı rozet çıkar. `END[0]` ve kapanış kartında da "N. Sezon Finali" yazılır.
+
+Bitiş animasyonu: Bölüm 13'ten itibaren her bölümde `CTA = True` ve `add('son', 'end', dur=5.2)`; bitiş kartında
+Beğen (kalp kırmızıya döner) ve Takip Et (✓ Takip Ediliyor) düğmelerine dokunma animasyonu ve "pop" sesi.
