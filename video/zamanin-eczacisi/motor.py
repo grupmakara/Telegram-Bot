@@ -333,7 +333,13 @@ def build(ep_name):
                 if not any(c.get('shock') for c in s['chars']):
                     sfx.append(('boom', st))
         elif kind == 'mortar':
-            shot_div(sid, st, du, mortar_closeup(sid, old=s.get('old', False)))
+            shot_div(sid, st, du, mortar_closeup(sid, old=s.get('old', False), crack=bool(s.get('crack'))))
+            if s.get('crack') == 'anim':
+                # çatlak bu çekimde oluşur: titreme + gümleme
+                ca = round(st + du * 0.45, 3)
+                anim.append(f'tl.fromTo("#{sid}-catlak", {{opacity: 0}}, {{opacity: 1, duration: 0.08}}, {ca});')
+                shake(f'#{sid}-w', ca, n=8, amp=14)
+                sfx.append(('boom', ca))
             z0, z1 = s['zoom']
             anim.append(f'tl.fromTo("#{sid}-w", {{scale: {z0}, x: {-(z0 - 1) * 540:.0f}, y: {-(z0 - 1) * 1170:.0f}}}, '
                         f'{{scale: {z1}, x: {-(z1 - 1) * 540:.0f}, y: {-(z1 - 1) * 1170:.0f}, duration: {du}, ease: "sine.inOut"}}, {st});')

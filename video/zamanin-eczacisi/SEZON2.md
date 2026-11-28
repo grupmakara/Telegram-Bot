@@ -13,8 +13,8 @@ Hekim Ahmet Efendi ve çırağı Yusuf artık Elif'in yanında.
 | 10 | Kemal Bey'in Şüphesi | 2026 | Eczane sahibi Kemal Bey "Elif"in değiştiğini fark ediyor. Kemal Bey şeker düşmesiyle yere yığılınca Ayşe 1665'te öğrendiği bilgiyle bal veriyor. Havan bunu da sayıyor: iki dünya aynı sayaçta. |
 | 11 | Mühürlü Mektup | 1665 | Havanın dibinde bir mühür: hilal ve yılan. Kadı Efendi tanıyor: yüz yıl önce kaybolan Attar Lokman Efendi. Mektubu: "Yüz can, iki el, tek havan." Elif, subaşının iltihaplı yarasını temizliyor (51). |
 | 12 | Eski Kitap | 2026 | Kemal Bey dedesinin Lokman mühürlü kitabını getiriyor; Ayşe eski yazıyı okuyabiliyor ve gerçeği anlatıyor. Kitapta veba uyarısı ve Elif'in yüzünün resmi var. |
-| 13 | Veba Söylentisi | 1665 | Şehirde veba söylentisi yayılıyor. Elif karantinayı anlatıyor; panik ve isyan. |
-| 14 | Kırık Havan | iki dünya | Havan çatlıyor; ses kesilmeye başlıyor. İki kız son bir yol arıyor. |
+| 13 | Veba Söylentisi | 1665 | Limana veba taşıyan bir gemi geliyor. Elif fare-pire bağlantısını anlatıyor; Kadı kırk günlük karantina emrediyor. On iki can kurtuluyor, şehir korunuyor (63). Ama öfkeli bir tüccarın taşı havanı çatlatıyor. |
+| 14 | Kırık Havan | iki dünya | Ses kesiliyor. Kemal Bey'in kitabı ve Kadı'nın mektubu aynı sırrı söylüyor: dolunay gecesi iki el aynı anda. Elif Yusuf'un çıkan kolunu yerine oturtuyor (64). Havan onarılıyor ama kırmızı parlıyor. |
 | 15 | Doksan Dokuz | iki dünya | Sayaç doksan dokuzda. Son can kimin olacak? |
 | 16 | Eve Dönüş (2. Sezon Finali) | iki dünya | Yüzüncü can ve büyük seçim: dönmek mi, kalmak mı? |
 

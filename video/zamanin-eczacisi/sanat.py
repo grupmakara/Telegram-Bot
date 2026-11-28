@@ -481,7 +481,7 @@ def pharmacy_front(p):
   {stone_mortar(840, 1200, 0.42, p)}'''
 
 
-def mortar_closeup(p, old=False):
+def mortar_closeup(p, old=False, crack=False):
     hand = f'''
   <g id="{p}-el">
     {path('M 1250,1500 L 1010,1330', stroke=OUTLINE, sw=96)}{path('M 1250,1500 L 1010,1330', stroke='#F3F6F6', sw=88)}
@@ -498,6 +498,8 @@ def mortar_closeup(p, old=False):
      + '<rect x="0" y="1270" width="1080" height="650" fill="#7A5132"/><rect x="0" y="1260" width="1080" height="30" fill="#8E623E"/>') if old else
     ('<rect width="1080" height="1920" fill="url(#' + p + '-bg)"/><rect x="0" y="1290" width="1080" height="630" fill="#E9EFEF"/><rect x="0" y="1270" width="1080" height="30" fill="#C9D3D3"/>')}
   {stone_mortar(540, 1170, 1.9, p)}
+  {('<g id="' + p + '-catlak">' + path('M 568,1000 L 548,1070 L 584,1120 L 550,1190 L 590,1250 L 566,1320', stroke='#1A1210', sw=12)
+     + path('M 584,1120 L 640,1150 M 550,1190 L 500,1215', stroke='#1A1210', sw=7) + '</g>') if crack else ''}
   {sparks}
   {hand}'''
 
