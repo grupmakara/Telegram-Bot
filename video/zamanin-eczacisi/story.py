@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Instagram/Facebook story görselleri (1080x1920): bölüm başına bir story + her gün için 'bugün 2 yeni bölüm'.
 Kareler story/kare/bolumN.png (altyazısız, bölüm animasyonundan). Çıktı: story/*.png
+'python3 story.py final 8' sezon finali afişi üretir (story/story-final-bolum8.png; kareler story/kare/final8_sol/sag.png).
 'python3 story.py aksam 5' yalnızca 'Bölüm 5 bu akşam yayında' afişini üretir (story/story-bolum5-aksam.png).
 """
 import os, subprocess, json, sys
@@ -87,6 +88,28 @@ if len(sys.argv) > 2 and sys.argv[1] == 'aksam':
              f'<div class="alt"><div class="baslik">{tr_buyuk(baslik)}</div><div class="cizgi"></div><div class="merak">{merak}</div></div>'
              f'<div class="cta">🔔 Bildirimleri aç, kaçırma!</div>')
     isler = [(f'{S}/story-bolum{e}-aksam.html', f'{S}/story-bolum{e}-aksam.png', sayfa(govde))]
+FINAL = {8: ('1. SEZON FİNALİ', 'İki Dünya', '1665', '2026', 'İki kız. İki yüzyıl. Tek havan.', 'Yüz cana 58 kaldı...')}
+if len(sys.argv) > 2 and sys.argv[1] == 'final':
+    import sanat
+    e = int(sys.argv[2])
+    rozet, baslik, y1, y2, slogan, merak = FINAL[e]
+    havan = sanat.stone_mortar(0, 0, 1.0, 'fh')
+    govde = f'''
+<div style="position:absolute;inset:0;background:#120B07"></div>
+<div style="position:absolute;inset:0;clip-path:polygon(0 0,62% 0,38% 100%,0 100%);background:url(file://{S}/kare/final{e}_sol.png) 30% 40%/cover;filter:sepia(.35) saturate(1.1)"></div>
+<div style="position:absolute;inset:0;clip-path:polygon(62% 0,100% 0,100% 100%,38% 100%);background:url(file://{S}/kare/final{e}_sag.png) 60% 40%/cover;filter:saturate(.9) hue-rotate(-8deg)"></div>
+<svg style="position:absolute;inset:0" width="1080" height="1920"><line x1="670" y1="0" x2="410" y2="1920" stroke="#FFD36A" stroke-width="10"/><line x1="670" y1="0" x2="410" y2="1920" stroke="#FFF3C4" stroke-width="3"/></svg>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,11,7,.92) 0%,rgba(18,11,7,.35) 20%,rgba(18,11,7,0) 38%,rgba(18,11,7,0) 52%,rgba(18,11,7,.75) 68%,rgba(18,11,7,.97) 84%)"></div>
+<div style="position:absolute;top:470px;left:60px;font-family:Cinzel;font-size:64px;color:#F3E3B5;text-shadow:0 4px 16px #000">{y1}</div>
+<div style="position:absolute;top:470px;right:60px;font-family:Cinzel;font-size:64px;color:#DDF3F3;text-shadow:0 4px 16px #000">{y2}</div>
+<div class="logo">ZAMANIN ECZACISI<small>BÖLÜM {e}</small></div>
+<div style="position:absolute;top:330px;left:0;right:0;text-align:center"><span class="rozet" style="font-size:56px;padding:16px 46px">{rozet}</span></div>
+<svg style="position:absolute;left:420px;top:1165px;overflow:visible" width="240" height="240" viewBox="-150 -170 300 300">
+  <circle cx="0" cy="-20" r="190" fill="url(#fh-hg)" opacity=".9"/>{havan}</svg>
+<div class="alt" style="bottom:230px"><div class="baslik" style="font-size:110px">{tr_buyuk(baslik)}</div><div class="cizgi"></div>
+<div class="merak">{slogan}<br><span style="color:#E8C987">{merak}</span></div></div>
+<div class="cta">▲ İzlemek için profile git</div>'''
+    isler = [(f'{S}/story-final-bolum{e}.html', f'{S}/story-final-bolum{e}.png', sayfa(govde))]
 for html, _, icerik in isler:
     open(html, 'w').write(icerik)
 js = f'''const {{ chromium }} = require('playwright');
