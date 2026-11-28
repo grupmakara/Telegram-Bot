@@ -21,7 +21,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from clone import check  # noqa: E402  (Whisper word-level check)
+from clone import _words, check  # noqa: E402  (Whisper word-level check)
 from voices import clip_name, spoken_lines  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,6 +32,26 @@ EXAGGERATION = {"angry": 0.8, "surprised": 0.75, "smug": 0.7, "worried": 0.65, "
                 "smile": 0.55, "neutral": 0.5}
 NARRATOR_EXAGGERATION = 0.6
 ACCEPT = 0.9
+
+
+def judge(text, heard, score):
+    """Whisper score, made strict about the clip's edges.
+
+    Chatterbox sometimes swallows the first word or keeps talking after the line ends
+    (made-up words). `check` ignores trailing extra words, so penalise them here, and a
+    missing first or last word too.
+    """
+    import difflib
+    want, got = _words(text), _words(heard)
+    if not want or not got:
+        return 0.0
+    blocks = [b for b in difflib.SequenceMatcher(a=want, b=got, autojunk=False).get_matching_blocks() if b.size]
+    extra = len(got) - (blocks[-1].b + blocks[-1].size) if blocks else len(got)
+    if extra >= 2:
+        score *= len(want) / (len(want) + extra)
+    if want[0] not in got[:2] and len(want) > 2:
+        score = min(score, 0.85)
+    return score
 
 _model = None
 
@@ -90,6 +110,7 @@ def voice_episode(ep_path, force=False, fix=False):
             save(model().generate(text, language_id="tr", audio_prompt_path=str(ref), exaggeration=ex,
                                   cfg_weight=cfg), tmp)
             score, heard, _ = check(tmp, text)
+            score = judge(text, heard, score)
             if best is None or score > best[0]:
                 best = (score, tmp, heard)
             if score >= ACCEPT:
