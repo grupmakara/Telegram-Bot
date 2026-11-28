@@ -14,24 +14,24 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 | 4 | 71 sn | ElevenLabs (yayında) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum04.mp4` |
 | 5 | 73 sn | ElevenLabs (yayında) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum05.mp4` |
 | 6 | 77 sn | ElevenLabs (yayında) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum06.mp4` |
-| 7 | 77 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum07.mp4` |
-| 8 | 67 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum08.mp4` |
-| 9 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` |
-| 10 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum10.mp4` |
-| 11 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
-| 12 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` |
-| 13 | 61 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
-| 14 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` |
-| 15 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` |
-| 16 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum16.mp4` |
-| 17 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum17.mp4` |
-| 18 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum18.mp4` |
-| 19 | 60 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum19.mp4` |
-| 20 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum20.mp4` |
-| 21 | 63 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` |
-| 22 | 64 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum22.mp4` |
-| 23 | 62 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum23.mp4` |
-| 24 | 77 sn | VoxCPM2 (tasarlanmış sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum24.mp4` |
+| 7 | 79 sn | Chatterbox (yeni sesler) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum07.mp4` |
+| 8 | 67 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum08.mp4` |
+| 9 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum09.mp4` |
+| 10 | 64 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum10.mp4` |
+| 11 | 64 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum11.mp4` |
+| 12 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum12.mp4` |
+| 13 | 61 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum13.mp4` |
+| 14 | 60 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum14.mp4` |
+| 15 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum15.mp4` |
+| 16 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum16.mp4` |
+| 17 | 60 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum17.mp4` |
+| 18 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum18.mp4` |
+| 19 | 60 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum19.mp4` |
+| 20 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum20.mp4` |
+| 21 | 63 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum21.mp4` |
+| 22 | 64 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum22.mp4` |
+| 23 | 62 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum23.mp4` |
+| 24 | 77 sn | VoxCPM2 (eski, düzeltilecek) | `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum24.mp4` |
 
 ### 1. Bölüm
 **Başlık:** "Asansörü de kapıcıya mı soracağız?" dedi, beş dakika sonra iki kat arasında kaldı | Bodrum Kattaki Adam 1. Bölüm
@@ -80,7 +80,7 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 **Kısa başlık (Instagram):** Sandıktan çıkan mektup her şeyi değiştirdi ✉️
 **Açıklama:** Mektubu yazan kim? Devamı 8. bölümde!
 **Etiketler:** #bodrumkattakiadam #minidizi #animasyon #dizi #reels
-**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum07.mp4` (77 sn)
+**Dosya:** `cizgi_dizi/cikti/bodrum_kattaki_adam/bolum07.mp4` (79 sn)
 
 ### 8. Bölüm
 **Başlık:** Yeni güvenlik şirketi ilk gece kapıyı açık bıraktı, hırsızı kapıcı yakaladı | Bodrum Kattaki Adam 8. Bölüm
@@ -203,5 +203,5 @@ Yayın sırası: günde 3 bölüm (12:30, 18:00, 21:00). Story görselleri: `ciz
 
 ## Henüz hazır değil (0 bölüm)
 
-Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
+Bu bölümler Chatterbox ile yeniden seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.
 

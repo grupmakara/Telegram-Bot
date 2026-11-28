@@ -32,12 +32,13 @@ def is_ready(n, ep, video):
         return False, ""
     if n in PUBLISHED_ELEVENLABS:
         return True, "ElevenLabs (yayında)"
-    d = ROOT / "seslendirme" / DIZI / "vox" / f"bolum{n:02d}"
-    clips = [d / clip_name(si, li) for si, li, _ in spoken_lines(ep)]
-    if not clips or not all(c.exists() for c in clips):
-        return False, ""
-    newest = max(c.stat().st_mtime for c in clips)
-    return video.stat().st_mtime > newest, "VoxCPM2 (tasarlanmış sesler)"
+    for engine, label in [("cb", "Chatterbox (yeni sesler)"), ("vox", "VoxCPM2 (eski, düzeltilecek)")]:
+        d = ROOT / "seslendirme" / DIZI / engine / f"bolum{n:02d}"
+        clips = [d / clip_name(si, li) for si, li, _ in spoken_lines(ep)]
+        if clips and all(c.exists() for c in clips):
+            newest = max(c.stat().st_mtime for c in clips)
+            return video.stat().st_mtime > newest, label
+    return False, ""
 
 
 def main():
@@ -64,7 +65,7 @@ def main():
         out += [f"### {n}. Bölüm", f"**Başlık:** {title}", f"**Kısa başlık (Instagram):** {short}",
                 f"**Açıklama:** {caption}", f"**Etiketler:** {TAGS}", f"**Dosya:** `{path}` ({dur:.0f} sn)", ""]
     out += [f"## Henüz hazır değil ({len(pending)} bölüm)", "",
-            "Bu bölümler VoxCPM2 ile seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. "
+            "Bu bölümler Chatterbox ile yeniden seslendiriliyor; bitince render edilip yukarıdaki listeye eklenecek. "
             "Klasörde bu bölümlerin eski taslak videoları (düz Edge sesi) olabilir: onları yayınlama.", ""]
     out += [f"- **{n}. Bölüm:** {title}. {caption}" for n, title, _, caption, _, _, _ in pending]
     (ROOT / "HAZIR_VIDEOLAR.md").write_text("\n".join(out) + "\n", encoding="utf-8")
