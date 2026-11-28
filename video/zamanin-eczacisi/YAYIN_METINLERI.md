@@ -75,3 +75,13 @@ Kopyalayıp yapıştırmaya hazır. Başlık 70 karakterin altında; açıklama 
 **Başlık:** Havan Kırıldı, Ses Kesiliyor! | Zamanın Eczacısı 14. Bölüm
 **Açıklama:** Havan çatladı, iki dünya arasındaki ses kesiliyor! Tek çare: dolunay gecesi iki el aynı anda... Peki havan neden kırmızı parlıyor? 🌕🔴
 #ZamanınEczacısı #animasyon #gizem #zamanyolculuğu #tarih
+
+## Bölüm 15
+**Başlık:** Yüzüncü Can Babası mı Olacak? | Zamanın Eczacısı 15. Bölüm
+**Açıklama:** Sayaç doksan dokuzda ve havan son kez açılacak... Ama yüzüncü can, Elif'in hiç beklemediği biri olabilir! ⏳❤️
+#ZamanınEczacısı #animasyon #duygusal #zamanyolculuğu #tarih
+
+## Bölüm 16 · 2. Sezon Finali
+**Başlık:** Eve Dönüş! | Zamanın Eczacısı 2. Sezon Finali
+**Açıklama:** Yüzüncü can, son geçit, iki veda. Lokman Efendi'nin sırrı çözülüyor... ve havan yeni birini bekliyor! 🌕🏠
+#ZamanınEczacısı #animasyon #2sezonfinali #sezonfinali #zamanyolculuğu

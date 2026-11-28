@@ -19,6 +19,8 @@ Ortak etiketler: #ZamanınEczacısı #animasyon #tarih
 | 12 | Eski Kitap | 2:01 | VoxCPM2 + düzenli ses | `cikti/zamanin-eczacisi-bolum12.mp4` |
 | 13 | Veba Söylentisi | 2:03 | VoxCPM2 + düzenli ses, beğen/takip sonu | `cikti/zamanin-eczacisi-bolum13.mp4` |
 | 14 | Kırık Havan | 2:03 | VoxCPM2 + düzenli ses, beğen/takip sonu | `cikti/zamanin-eczacisi-bolum14.mp4` |
+| 15 | Doksan Dokuz | 2:02 | VoxCPM2 + düzenli ses, beğen/takip sonu | `cikti/zamanin-eczacisi-bolum15.mp4` |
+| 16 | Eve Dönüş (2. Sezon Finali) | 2:06 | VoxCPM2 + düzenli ses, beğen/takip sonu | `cikti/zamanin-eczacisi-bolum16.mp4` |
 
 ## Bölüm 1 · Yanlış Yüzyıl
 Gece nöbetindeki eczacı Elif gizemli bir havana dokunur ve 1665 İstanbul'unda bir attarın kızı olarak uyanır. Ne ilaç var ne cihaz... ama bilgisi yanında. 💊⏳
@@ -76,4 +78,12 @@ Limana veba taşıyan bir gemi geldi! Elif kırk günlük karantinayla şehri ko
 Havan çatladı, iki dünya arasındaki ses kesiliyor! Tek çare: dolunay gecesi iki el aynı anda... Peki havan neden kırmızı parlıyor? 🌕🔴
 #ZamanınEczacısı #animasyon #gizem #zamanyolculuğu #tarih
 
-1. sezon tamamlandı, 2. sezon devam ediyor. Yayın başlıkları: `YAYIN_METINLERI.md`. Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.
+## Bölüm 15 · Doksan Dokuz
+Sayaç doksan dokuzda ve havan son kez açılacak... Ama yüzüncü can, Elif'in hiç beklemediği biri olabilir! ⏳❤️
+#ZamanınEczacısı #animasyon #duygusal #zamanyolculuğu #tarih
+
+## Bölüm 16 · Eve Dönüş (2. Sezon Finali)
+Yüzüncü can, son geçit, iki veda. Lokman Efendi'nin sırrı çözülüyor... ve havan yeni birini bekliyor! 🌕🏠
+#ZamanınEczacısı #animasyon #2sezonfinali #sezonfinali #zamanyolculuğu
+
+1. ve 2. sezon tamamlandı. Yayın başlıkları: `YAYIN_METINLERI.md`. Yayın planı ve story görselleri: `aciklamalar.txt`, `story/`.

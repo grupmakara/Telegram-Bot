@@ -88,7 +88,9 @@ if len(sys.argv) > 2 and sys.argv[1] == 'aksam':
              f'<div class="alt"><div class="baslik">{tr_buyuk(baslik)}</div><div class="cizgi"></div><div class="merak">{merak}</div></div>'
              f'<div class="cta">🔔 Bildirimleri aç, kaçırma!</div>')
     isler = [(f'{S}/story-bolum{e}-aksam.html', f'{S}/story-bolum{e}-aksam.png', sayfa(govde))]
-FINAL = {8: ('1. SEZON FİNALİ', 'İki Dünya', '1665', '2026', 'İki kız. İki yüzyıl. Tek havan.', 'Yüz cana 58 kaldı...')}
+FINAL = {8: ('1. SEZON FİNALİ', 'İki Dünya', '1665', '2026', 'İki kız. İki yüzyıl. Tek havan.', 'Yüz cana 58 kaldı...'),
+         16: ('2. SEZON FİNALİ', 'Eve Dönüş', '1665', '2026', 'Yüzüncü can. Son geçit. İki veda.', 'Havan yeni birini bekliyor...')}
+HAVANLI = {16}  # karede zaten havan var, ikinci havan çizilmez
 if len(sys.argv) > 2 and sys.argv[1] == 'final':
     import sanat
     e = int(sys.argv[2])
@@ -104,8 +106,8 @@ if len(sys.argv) > 2 and sys.argv[1] == 'final':
 <div style="position:absolute;top:470px;right:60px;font-family:Cinzel;font-size:64px;color:#DDF3F3;text-shadow:0 4px 16px #000">{y2}</div>
 <div class="logo">ZAMANIN ECZACISI<small>BÖLÜM {e}</small></div>
 <div style="position:absolute;top:330px;left:0;right:0;text-align:center"><span class="rozet" style="font-size:56px;padding:16px 46px">{rozet}</span></div>
-<svg style="position:absolute;left:420px;top:1165px;overflow:visible" width="240" height="240" viewBox="-150 -170 300 300">
-  <circle cx="0" cy="-20" r="190" fill="url(#fh-hg)" opacity=".9"/>{havan}</svg>
+{'' if e in HAVANLI else f'''<svg style="position:absolute;left:420px;top:1165px;overflow:visible" width="240" height="240" viewBox="-150 -170 300 300">
+  <circle cx="0" cy="-20" r="190" fill="url(#fh-hg)" opacity=".9"/>{havan}</svg>'''}
 <div class="alt" style="bottom:230px"><div class="baslik" style="font-size:110px">{tr_buyuk(baslik)}</div><div class="cizgi"></div>
 <div class="merak">{slogan}<br><span style="color:#E8C987">{merak}</span></div></div>
 <div class="cta">▲ İzlemek için profile git</div>'''
