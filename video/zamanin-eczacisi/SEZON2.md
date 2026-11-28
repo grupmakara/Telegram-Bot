@@ -15,8 +15,8 @@ Hekim Ahmet Efendi ve çırağı Yusuf artık Elif'in yanında.
 | 12 | Eski Kitap | 2026 | Kemal Bey dedesinin Lokman mühürlü kitabını getiriyor; Ayşe eski yazıyı okuyabiliyor ve gerçeği anlatıyor. Kitapta veba uyarısı ve Elif'in yüzünün resmi var. |
 | 13 | Veba Söylentisi | 1665 | Limana veba taşıyan bir gemi geliyor. Elif fare-pire bağlantısını anlatıyor; Kadı kırk günlük karantina emrediyor. On iki can kurtuluyor, şehir korunuyor (63). Ama öfkeli bir tüccarın taşı havanı çatlatıyor. |
 | 14 | Kırık Havan | iki dünya | Ses kesiliyor. Kemal Bey'in kitabı ve Kadı'nın mektubu aynı sırrı söylüyor: dolunay gecesi iki el aynı anda. Elif Yusuf'un çıkan kolunu yerine oturtuyor (64). Havan onarılıyor ama kırmızı parlıyor. |
-| 15 | Doksan Dokuz | iki dünya | Sayaç doksan dokuzda. Son can kimin olacak? |
-| 16 | Eve Dönüş (2. Sezon Finali) | iki dünya | Yüzüncü can ve büyük seçim: dönmek mi, kalmak mı? |
+| 15 | Doksan Dokuz | iki dünya | Kırmızı ışık son geçit demek: yüzüncü canda havan son kez açılacak. Hekim ve Yusuf Elif'in usulüyle, Ayşe Kemal Bey'in yanında can kurtarıyor; sayaç 99. Hüseyin kalp kriziyle yığılıyor. |
+| 16 | Eve Dönüş (2. Sezon Finali) | iki dünya | Elif babasını kurtarıyor: yüzüncü can. Lokman'ın son mektubu: o da gelecekten gelen bir eczacıydı ve kalmayı seçti. Dolunayda iki kız evlerine dönüyor. Kitabın son sayfasında yeni bir yüz: 3. sezon. |
 
 Ses: VoxCPM2 + duzen.py (hız ve seviye düzeni). Yeni karakter: Kemal Bey (`kemal`, VoxCPM2 ile tasarlanmış ses).
 
