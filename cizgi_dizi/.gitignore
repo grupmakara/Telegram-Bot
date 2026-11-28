@@ -11,3 +11,4 @@ seslendirme/*/vox/*/.try*.wav
 !seslendirme/*/cb/*/*.wav
 seslendirme/*/cb/*/.try*.wav
 .cache/
+seslendirme/*/cb/*/.fix*.wav
