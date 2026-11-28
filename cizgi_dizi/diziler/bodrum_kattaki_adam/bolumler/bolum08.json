@@ -9,7 +9,8 @@
     "Beni Ferit gönderdi"
   ],
   "recap": {
-    "text": "Önceki bölümde: Zeynep, 1999 depreminde enkazdan çıkarılan bebeğin kendisi olduğunu öğrendi."
+    "text": "Önceki bölümde: Zeynep, 1999 depreminde enkazdan çıkarılan bebeğin kendisi olduğunu öğrendi.",
+    "say": "Önceki bölümde: Zeynep, bin dokuz yüz doksan dokuz depreminde enkazdan çıkarılan bebeğin kendisi olduğunu öğrendi."
   },
   "scenes": [
     {"bg": "lobby_night", "cast": ["kenan", "riza"], "lines": [

@@ -9,7 +9,8 @@
     "herkes öğrenir"
   ],
   "recap": {
-    "text": "Önceki bölümde: Belediye müdürü Murat, 1999'da Rıza Usta'nın kurtardığı çocuk çıktı."
+    "text": "Önceki bölümde: Belediye müdürü Murat, 1999'da Rıza Usta'nın kurtardığı çocuk çıktı.",
+    "say": "Önceki bölümde: Belediye müdürü Murat, bin dokuz yüz doksan dokuzda Rıza Usta'nın kurtardığı çocuk çıktı."
   },
   "scenes": [
     {"bg": "salon_night", "cast": ["tarik", "ferit"], "lines": [
