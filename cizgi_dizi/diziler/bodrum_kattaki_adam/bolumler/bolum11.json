@@ -13,7 +13,7 @@
   },
   "scenes": [
     {"bg": "lobby_night", "cast": ["ferit"], "lines": [
-      {"who": "anlatici", "text": "Gece üçte lobide bir matkap sesi..."},
+      {"who": "anlatici", "text": "Gece saat üçte, lobiden bir matkap sesi geliyordu."},
       {"who": "ferit", "mood": "smug", "text": "Bir çatlak daha. Sabah herkes binanın çöktüğünü sanacak.", "sfx": "alarm", "sfx_dur": 0.8}
     ]},
     {"bg": "basement", "cast": ["riza", "zeynep"], "lines": [
