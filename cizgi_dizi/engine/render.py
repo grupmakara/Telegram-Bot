@@ -142,6 +142,9 @@ def tr_upper(text):
 
 
 def line_audio(voice_dir, key, line, cast):
+    cb = voice_dir.parent / "cb" / voice_dir.name / f"{key}.wav"
+    if cb.exists():  # Chatterbox Multilingual (engine/cb.py), MIT, commercial-safe
+        return decode(cb)
     vox = voice_dir.parent / "vox" / voice_dir.name / f"{key}.wav"
     if vox.exists():  # VoxCPM2 designed voices (engine/vox.py), commercial-safe
         return decode(vox)

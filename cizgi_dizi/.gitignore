@@ -8,3 +8,6 @@ cikti/**/*_preview.png
 !diziler/*/sesler/*.wav
 !seslendirme/*/vox/*/*.wav
 seslendirme/*/vox/*/.try*.wav
+!seslendirme/*/cb/*/*.wav
+seslendirme/*/cb/*/.try*.wav
+.cache/
